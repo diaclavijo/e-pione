@@ -1,0 +1,105 @@
+<%= form_for(@patient) do |f| %>
+  <% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :surname %><br>
+    <%= f.text_field :surname %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :birth %><br>
+    <%= f.date_select :birth %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :civil_status %><br>
+    <%= f.text_field :civil_status %>
+  </div>
+  <div class="field">
+    <%= f.label :NIF %><br>
+    <%= f.text_field :NIF %>
+  </div>
+  <div class="field">
+    <%= f.label :passport %><br>
+    <%= f.text_field :passport %>
+  </div>
+  <div class="field">
+    <%= f.label :public_insurance_number %><br>
+    <%= f.text_field :public_insurance_number %>
+  </div>
+  <div class="field">
+    <%= f.label :private_insurance_number %><br>
+    <%= f.text_field :private_insurance_number %>
+  </div>
+  <div class="field">
+    <%= f.label :exitus %><br>
+    <%= f.check_box :exitus %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_house %><br>
+    <%= f.number_field :phone_house %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile_phone %><br>
+    <%= f.number_field :mobile_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :other_phone %><br>
+    <%= f.number_field :other_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :education %><br>
+    <%= f.text_field :education %>
+  </div>
+  <div class="field">
+    <%= f.label :occupation %><br>
+    <%= f.text_field :occupation %>
+  </div>
+  <div class="field">
+    <%= f.label :employment %><br>
+    <%= f.text_field :employment %>
+  </div>
+  <div class="field">
+    <%= f.label :economic_situation %><br>
+    <%= f.text_field :economic_situation %>
+  </div>
+  <div class="field">
+    <%= f.label :institutionalized %><br>
+    <%= f.text_field :institutionalized %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

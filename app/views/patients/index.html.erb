@@ -1,0 +1,109 @@
+<div class="container"> <!--Container to keep everything inside the page centered-->
+
+  <!--Page header and breadcrumb -->   <!-- TODO - Page crumbs -->
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-8">
+        <ol class="breadcrumb">
+          <li><a href="welcome.html">Inicio</a></li>
+          <li class="active">Búsqueda de pacientes
+        </ol>
+        <h1 class="featurette-heading">Búsqueda de Pacientes</h1>
+      </div>
+
+      <div class="col-md-4">
+        <h2 class="text-muted">Lunes, 2 de Abril de 2014</h2>
+      </div>
+    </div>
+    <!--/row-->
+  </div>
+  <!--/page-header-->
+
+
+  <!--Jumbotron containing two rows, one with one row (a table) and one with three columns (pagination, two buttons and an input field)-->
+  <div class="jumbotron">
+    <div class="row">
+
+      <h4>Últimos pacientes atendidos</h4>
+
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <tr>
+            <th>Apellidos</th>
+            <th>Nombre</th>
+            <th>NHC</th>
+            <th>NIF</th>
+            <th>F.NAC</th>
+            <th>Sexo</th>
+            <th>Exitus</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <% @patients.each do |patient| %>
+              <tr>
+                <td><%= patient.surname %> </td>
+                <!-- Apellidos-->
+                <td><%= patient.name %> </td>
+                <!-- Nombre-->
+                <td><%= patient.id %> </td>
+                <!-- NHC-->
+                <td><%= patient.NIF %> </td>
+                <!-- NIF-->
+                <td><%= patient.birth %> </td>
+                <!-- Fecha Nacimiento-->
+                <td><%= patient.gender %> </td>
+                <!-- Sexo-->
+                <td><%= patient.exitus %> </td>
+                <!-- Exitus-->
+                <td> <%= link_to 'Más datos', edit_patient_path(patient) %> </td>
+                <td><a href="history.html">Historia clínica</a></td>
+                <!-- Historia-->
+              </tr>
+          <% end %>
+
+        </table>
+      </div>
+      <!--/.responsive-table-->
+    </div>
+    <!--/row-->
+    <div class="row"><!--Row with three columns of size 6 (pagination), 4 (button and input field) and 2 (button)-->
+      <div class="col-md-4">
+
+        <%= paginate @patients %>
+      </div>
+      <%= form_tag("", method: "get") do %>
+      <div class="col-md-2">
+        <%= select_tag(:search_type, options_for_select([['Buscar por', 0],['Nombre', 1], ['Apellido', 2]]) ) %>
+      </div>
+      <div class="col-md-4">
+
+        <div class="input-group">
+          <%= text_field_tag(:search) %>
+
+          <div class="input-group-btn">
+            <%= submit_tag("Buscar") %>
+          </div>
+      <% end %>
+
+          <!-- /btn-group -->
+        </div>
+        <!-- /input-group -->
+      </div>
+      <!--/col-md-4-->
+
+      <div class="col-md-2">
+        <%= link_to 'Nuevo paciente', new_patient_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <!--/row-->
+
+
+  </div> <!--/jumbotron -->
+
+
+  <%= link_to '<<Volver', :back %>   <!-- TODO This is javascript, make this link to be html -->
+
+</div> <!-- /container -->
+
+
+

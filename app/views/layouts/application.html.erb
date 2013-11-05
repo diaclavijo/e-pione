@@ -1,14 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>RailsSIAD</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
+  <title>Bienvenido a Babel</title>
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+
+  <%= csrf_meta_tags %>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="/assets/html5shiv.js"></script>
+      <script src="/assets/respond.min.js"></script>
+  <![endif]-->
+</head>
+<bod<% if notice %>
+    <p class="notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p class="alert"><%= alert %></p>
+<% end %></p>
+
+
+<%= render 'shared/header' %>
 <%= yield %>
 
 </body>
+
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

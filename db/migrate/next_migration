@@ -1,0 +1,7 @@
+def change
+   # username is a required, unique field
+    add_column :physicians, :username, :string, :null => false, :default => ""
+    add_column :physicians, :name, :string, :null => false, :default => ""
+    add_column :physicians, :surname, :string, :null => false, :default => ""
+    add_index :physicians, :username, :unique => true
+  end

@@ -8,6 +8,8 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
+ * Directives are documented on Rails Documentation at the 2.4, on 2.2 is documented organization in http://guides.rubyonrails.org/asset_pipeline.html
+ *
+ *= require bootstrap
+ *= require styles
  */

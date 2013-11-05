@@ -1,4 +1,29 @@
 RailsSIAD::Application.routes.draw do
+
+
+
+  resources :patients
+
+  # the following solution was found in http://stackoverflow.com/questions/3791096/devise-logged-in-root-route-rails-3
+  authenticated :physician do
+    root :to => "home#index"
+  end
+  unauthenticated :physician do
+    devise_scope :physician do
+      get "/" => "devise/sessions#new"
+    end
+  end
+
+  devise_for :physicians, controllers: {:sessions => "physicians/sessions"}
+
+
+
+  devise_for :admins  # This line has to be above mount RailsAdmin::Engine , if not , it makes an endless loop.
+
+  mount RailsAdmin::Engine => '/administrator', :as => 'rails_admin'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +78,7 @@ RailsSIAD::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+
+
 end

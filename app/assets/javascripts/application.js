@@ -9,8 +9,11 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
+// It is also documented on Rails Documentation at the 2.4 in http://guides.rubyonrails.org/asset_pipeline.html
 //
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require bootstrap
+
+

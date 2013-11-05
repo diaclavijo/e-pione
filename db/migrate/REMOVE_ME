@@ -1,0 +1,7 @@
+CreatePacients
+  surname:string
+  name:string
+  birth:date
+  gender:string
+          civil_status:string
+            NIF:integer:unique

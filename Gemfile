@@ -43,3 +43,17 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+# by lantius
+
+gem 'rails_admin'
+#gem 'cancan'   # for roles
+gem 'kaminari' # For pagination . There is an alternative that is call will_paginate
+
+
+#end by lantius
+
+
+
+gem "devise"
