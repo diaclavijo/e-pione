@@ -56,7 +56,7 @@
                 <td><%= patient.exitus %> </td>
                 <!-- Exitus-->
                 <td> <%= link_to 'Más datos', edit_patient_path(patient) %> </td>
-                <td><a href="history.html">Historia clínica</a></td>
+                <td><%= link_to 'Historia clínica', patient_consultations_path(patient.id)  %></td>
                 <!-- Historia-->
               </tr>
           <% end %>
@@ -73,12 +73,12 @@
       </div>
       <%= form_tag("", method: "get") do %>
       <div class="col-md-2">
-        <%= select_tag(:search_type, options_for_select([['Buscar por', 0],['Nombre', 1], ['Apellido', 2]]) ) %>
+        <%= select_tag(:search_type, options_for_select([['Buscar por', 0],['Nombre', 1], ['Apellido', 2]], params[:search_type]) ) %>    <!-- TODO it has to be changed the style according to what was designed, It was made using a <ul> style see the sources  -->
       </div>
       <div class="col-md-4">
 
         <div class="input-group">
-          <%= text_field_tag(:search) %>
+          <%= text_field_tag(:search, params[:search]) %>
 
           <div class="input-group-btn">
             <%= submit_tag("Buscar") %>

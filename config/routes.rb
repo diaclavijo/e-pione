@@ -1,8 +1,12 @@
 RailsSIAD::Application.routes.draw do
 
+  resources :consultations, only: [] do
+    resources :cognitive_symptomatologies, only: [:create, :new, :index, :edit, :update, :show]
+  end
 
-
-  resources :patients
+  resources :patients  do
+    resources :consultations, only: [:create, :new, :index, :show]
+  end
 
   # the following solution was found in http://stackoverflow.com/questions/3791096/devise-logged-in-root-route-rails-3
   authenticated :physician do

@@ -1,0 +1,56 @@
+<% content_for :top_right do %>
+    <h2 class="text-muted"> <%= @patient.full_name %></h2>
+    <h4>Número historia clínica: <span class="text-muted"> <%= @patient.id %> </span> <h4>
+<% end %>
+
+<% content_for :top_left do %>
+    <ol class="breadcrumb">
+      <li>breadcrumbs</li>
+    </ol>
+    <h1 class="featurette-heading">Historia clínica <span class="text-muted"></span></h1>
+<% end %>
+
+
+<%= render 'consultations/first_menu' %>
+
+
+  <div class="jumbotron">
+    <h4>Lista de consultas del paciente</h4>
+
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <tr>
+
+          <th>NHC</th>
+          <th>Consulta</th>
+          <th>Fecha</th>
+          <th>Tipo</th>
+          <th>Facultativo</th>
+          <th>Detalles</th>
+        </tr>
+        <% @consultations.each do |consultation| %>
+            <tr>
+              <td><%= consultation.Patient_id %> </td>        <!-- NHC-->
+
+              <td><%= consultation.id %> </td>        <!-- Consulta-->
+
+              <td><%= consultation.date %>  </td>   <!-- Fecha-->
+
+              <td><%= consultation.activity %></td>    <!-- Tipo-->
+
+              <td><%= consultation.Physician.full_name %></td> <!-- Facultativo-->
+
+              <td><%= link_to 'Ver historia consulta', [consultation.Patient, consultation] %></td>
+              <!-- Historia-->
+            </tr>
+        <% end %>
+    </div>
+    <!--/.responsive-table-->
+
+
+  </div>
+  <!-- /container -->
+
+
+
+

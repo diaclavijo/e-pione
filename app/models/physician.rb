@@ -5,4 +5,10 @@ class Physician < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, :surname, presence: true
+
+  has_many :consultations
+
+  def full_name
+    self[:name] + ' ' + self[:surname]
+  end
 end

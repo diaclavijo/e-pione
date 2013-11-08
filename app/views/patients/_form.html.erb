@@ -25,11 +25,13 @@
   </div>
   <div class="field">
     <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
+
+    <%= f.select :gender, Patient::GENDERS,  { include_blank: 'Seleccionar...' } %>
+
   </div>
   <div class="field">
     <%= f.label :civil_status %><br>
-    <%= f.text_field :civil_status %>
+    <%= f.select :civil_status, Patient::CIVIL_STATUSES , { include_blank: 'Seleccionar...' }%>
   </div>
   <div class="field">
     <%= f.label :NIF %><br>
@@ -81,23 +83,23 @@
   </div>
   <div class="field">
     <%= f.label :education %><br>
-    <%= f.text_field :education %>
+    <%= f.select :education, Patient::EDUCATIONS , { include_blank: 'Seleccionar...' }%>
   </div>
   <div class="field">
     <%= f.label :occupation %><br>
-    <%= f.text_field :occupation %>
+    <%= f.select :occupation, Patient::OCCUPATIONS , { include_blank: 'Seleccionar...' }%>
   </div>
   <div class="field">
     <%= f.label :employment %><br>
-    <%= f.text_field :employment %>
+    <%= f.select :employment, Patient::EMPLOYMENTS , { include_blank: 'Seleccionar...' }%>
   </div>
   <div class="field">
     <%= f.label :economic_situation %><br>
-    <%= f.text_field :economic_situation %>
+    <%= f.select :economic_situation, Patient::ECONOMIC_SITUATIONS , { include_blank: 'Seleccionar...' }%>
   </div>
   <div class="field">
     <%= f.label :institutionalized %><br>
-    <%= f.text_field :institutionalized %>
+    <%= f.select :institutionalized, Patient::INSTITUTIONALIZEDS , { include_blank: 'Seleccionar...' }%>
   </div>
   <div class="actions">
     <%= f.submit %>

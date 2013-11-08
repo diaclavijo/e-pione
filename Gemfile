@@ -50,8 +50,9 @@ end
 gem 'rails_admin'
 #gem 'cancan'   # for roles
 gem 'kaminari' # For pagination . There is an alternative that is call will_paginate
-
-
+gem 'nilify_blanks'       # for avoiding storing empty strings
+gem 'debugger'
+gem 'gretel' # for breadcrumbs
 #end by lantius
 
 
