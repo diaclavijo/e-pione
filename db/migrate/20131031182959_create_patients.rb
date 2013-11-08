@@ -4,8 +4,8 @@ class CreatePatients < ActiveRecord::Migration
       t.string :surname
       t.string :name
       t.date :birth
-      t.string :gender
-      t.string :civil_status
+      t.integer :gender
+      t.integer :civil_status
       t.string :NIF
       t.string :passport
       t.string :public_insurance_number
@@ -18,11 +18,11 @@ class CreatePatients < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :country
-      t.string :education
-      t.string :occupation
-      t.string :employment
-      t.string :economic_situation
-      t.string :institutionalized
+      t.integer :education
+      t.integer :occupation
+      t.integer :employment
+      t.integer :economic_situation
+      t.integer :institutionalized
 
       t.timestamps
     end

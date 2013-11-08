@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131031182959) do
+ActiveRecord::Schema.define(version: 20131107171346) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +31,35 @@ ActiveRecord::Schema.define(version: 20131031182959) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "cognitive_symptomatologies", force: true do |t|
+    t.integer  "Consultation_id"
+    t.integer  "memory"
+    t.integer  "disorientation"
+    t.integer  "aphasia"
+    t.integer  "apraxia"
+    t.integer  "agnosia"
+    t.integer  "executive"
+    t.integer  "reasoning"
+    t.integer  "spatial"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cognitive_symptomatologies", ["Consultation_id"], name: "index_cognitive_symptomatologies_on_Consultation_id", using: :btree
+
+  create_table "consultations", force: true do |t|
+    t.integer  "Patient_id"
+    t.integer  "Physician_id"
+    t.integer  "activity"
+    t.date     "date"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "consultations", ["Patient_id"], name: "index_consultations_on_Patient_id", using: :btree
+  add_index "consultations", ["Physician_id"], name: "index_consultations_on_Physician_id", using: :btree
+
   create_table "destroys", force: true do |t|
     t.string   "Pacient"
     t.datetime "created_at"
@@ -41,8 +70,8 @@ ActiveRecord::Schema.define(version: 20131031182959) do
     t.string   "surname"
     t.string   "name"
     t.date     "birth"
-    t.string   "gender"
-    t.string   "civil_status"
+    t.integer  "gender"
+    t.integer  "civil_status"
     t.string   "NIF"
     t.string   "passport"
     t.string   "public_insurance_number"
@@ -55,11 +84,11 @@ ActiveRecord::Schema.define(version: 20131031182959) do
     t.string   "city"
     t.string   "state"
     t.string   "country"
-    t.string   "education"
-    t.string   "occupation"
-    t.string   "employment"
-    t.string   "economic_situation"
-    t.string   "institutionalized"
+    t.integer  "education"
+    t.integer  "occupation"
+    t.integer  "employment"
+    t.integer  "economic_situation"
+    t.integer  "institutionalized"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

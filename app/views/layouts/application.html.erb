@@ -17,6 +17,8 @@
       <script src="/assets/html5shiv.js"></script>
       <script src="/assets/respond.min.js"></script>
   <![endif]-->
+
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </head>
 <bod<% if notice %>
     <p class="notice"><%= notice %></p>
@@ -24,14 +26,27 @@
 <% if alert %>
     <p class="alert"><%= alert %></p>
 <% end %></p>
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
 
 
-<%= render 'shared/header' %>
-<%= yield %>
+
+
+<%= render 'shared/top_menu' %>
+
+<div class="container">
+    <%= render 'shared/header' %>
+
+
+    <%= yield %>
+
+</div>
+
 
 </body>
 
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
 </html>
 
 

@@ -1,10 +1,12 @@
 class PatientsController < ApplicationController
+
+  before_filter :authenticate_physician!
+
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
   # GET /patients
   # GET /patients.json
   def index
-
     if params[:search]
       @patients = Patient.search(params[:search], params[:search_type]).page params[:page]
     else

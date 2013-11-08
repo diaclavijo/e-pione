@@ -28,3 +28,16 @@ es:
       previous: "&lsaquo;"
       next: "&rsaquo;"
       truncate: "..."
+
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+
+
+
+  simple_form:
+    labels:
+      defaults:
+        activity: 'Actividad'
