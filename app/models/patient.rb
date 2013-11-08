@@ -14,7 +14,7 @@ class Patient < ActiveRecord::Base
 
 
   # Enum types and functions for select methods
-  GENDERS = { 'Hombre arisco' => 4, Mujer: 1, Desconocido: 2 }
+  GENDERS = { 'Hombre arisco' => 0, 'Mujer' => 1, 'Desconocido' => 2 }
 
   CIVIL_STATUSES = { Soltero: 0, Casado: 1, Viudo: 2, Divorciado: 3, Desconocido: 4}
 
