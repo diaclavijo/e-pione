@@ -16,4 +16,6 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 .project
-
+*/.idea/workspace.xml
+*/.idea/tasks.xml
+*/.idea/vcs.xml
