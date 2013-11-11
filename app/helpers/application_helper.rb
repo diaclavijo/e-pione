@@ -9,7 +9,6 @@ module ApplicationHelper
           super(method,options),
           class: 'col-md-4'
       )
-
     end
 
     def number_field(method, options = {})
