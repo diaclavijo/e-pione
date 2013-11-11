@@ -2,6 +2,9 @@ module ApplicationHelper
 
   class MyFormBuilder < ActionView::Helpers::FormBuilder
 
+    def text_field(method, options = {})
+      super(method, options)
+    end
     def select(method, choices, options = {}, html_options = {})
       html_options[:class] = 'form-control'
       @template.content_tag(
