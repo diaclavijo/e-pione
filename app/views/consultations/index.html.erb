@@ -30,17 +30,17 @@
         </tr>
         <% @consultations.each do |consultation| %>
             <tr>
-              <td><%= consultation.Patient_id %> </td>        <!-- NHC-->
+              <td><%= consultation.patient_id %> </td>        <!-- NHC-->
 
               <td><%= consultation.id %> </td>        <!-- Consulta-->
 
               <td><%= consultation.date %>  </td>   <!-- Fecha-->
 
-              <td><%= consultation.activity %></td>    <!-- Tipo-->
+              <td><%= consultation.activity_text %></td>    <!-- Tipo-->
 
-              <td><%= consultation.Physician.full_name %></td> <!-- Facultativo-->
+              <td><%= consultation.physician.full_name %></td> <!-- Facultativo-->
 
-              <td><%= link_to 'Ver historia consulta', [consultation.Patient, consultation] %></td>
+              <td><%= link_to 'Ver historia consulta', [consultation.patient, consultation] %></td>
               <!-- Historia-->
             </tr>
         <% end %>

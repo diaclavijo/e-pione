@@ -1,18 +1,19 @@
 class Consultation < ActiveRecord::Base
-  belongs_to :Patient
-  belongs_to :Physician
+  belongs_to :patient
+  belongs_to :physician
+  has_one :cognitive_symptomatology
 
   validates :activity, presence: true # example for prohibiting it to be saved at least is presented the value
 
 
-  validates :Patient, presence: true
-  validates :Physician, presence: true
+  validates :patient, presence: true
+  validates :physician, presence: true
 
 
 
   ACTIVITY = { 'Atención especializada' => 0, 'Atención primaria' => 1, 'Otras atenciones sociosanitarias' => 2}
 
-  def activity
+  def activity_text
     ACTIVITY.key self[:activity]
   end
 

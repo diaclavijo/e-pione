@@ -28,31 +28,31 @@ class Patient < ActiveRecord::Base
 
   INSTITUTIONALIZEDS = { 'Desconocido' => 0, 'No' => 1, 'Hospital' => 2, 'Residencia' => 3 , 'Clínica' => 4, 'Otro' => 5  }
 
-  def gender
+  def gender_text
     GENDERS.key self[:gender]
   end
 
-  def civil_status
+  def civil_status_text
     CIVIL_STATUSES.key self[:civil_status]
   end
 
-  def education
+  def education_text
     EDUCATIONS.key self[:education]
   end
 
-  def occupation
+  def occupation_text
     OCCUPATIONS.key self[:occupation]
   end
 
-  def employment
+  def employment_text
     EMPLOYMENTS.key self[:employment]
   end
 
-  def economic_situation
+  def economic_situation_text
     ECONOMIC_SITUATIONS.key self[:economic_situation]
   end
 
-  def institutionalized
+  def institutionalized_text
     INSTITUTIONALIZEDS.key self[:institutionalized]
   end
 
