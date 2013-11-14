@@ -2,7 +2,7 @@ class Patient < ActiveRecord::Base
 
 
   has_many :consultations
-
+  has_many :physicians, through: :consultations
 
   # Validations
   validates :name, :surname, presence: true
