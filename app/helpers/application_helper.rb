@@ -9,6 +9,7 @@ module ApplicationHelper
           super(method,options),
           class: 'col-md-4'
       )
+
     end
 
     def number_field(method, options = {})
@@ -18,9 +19,19 @@ module ApplicationHelper
         super(method,options),
         class: 'col-md-4'
       )
-
     end
 
+
+
+    def date_select(method, options = {}, html_options = {})
+      options[:class] ='form-control'
+      @template.content_tag(
+          :div,
+          super(method,options,html_options),
+          class: 'col-md-4'
+      )
+
+    end
     def select(method, choices, options = {}, html_options = {})
       html_options[:class] = 'form-control'
       @template.content_tag(
@@ -39,6 +50,7 @@ module ApplicationHelper
       )
     end
 
+
     def button(value = nil, options = {}, &block)
       options[:class] = 'btn btn-default'
       @template.content_tag(
@@ -49,7 +61,7 @@ module ApplicationHelper
     end
 
     def submit(value=nil, options={})
-      options[:class] = 'btn btn-default'
+      options[:class] = 'btn btn-info'
       @template.content_tag(
           :div,
           super(value, options),
@@ -57,6 +69,14 @@ module ApplicationHelper
           )
     end
 
+  end
+  def flash_class(level)
+    case level
+      when :notice then "alert alert-info alert-dismissable col-md-6 col-md-offset-3 lead text-center"
+      when :success then "alert alert-success alert-dismissable col-md-6 col-md-offset-3 lead text-center"
+      when :error then "alert alert-warning alert-dismissable col-md-6 col-md-offset-3"
+      when :alert then "alert alert-danger alert-dismissable col-md-6 col-md-offset-3 lead text-center"
+    end
   end
 
 end
