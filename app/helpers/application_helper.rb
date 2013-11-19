@@ -34,6 +34,7 @@ module ApplicationHelper
     end
     def select(method, choices, options = {}, html_options = {})
       html_options[:class] = 'form-control'
+      options[:include_blank] = 'Seleccionar...'
       @template.content_tag(
           :div,
           super(method, choices, options, html_options),
