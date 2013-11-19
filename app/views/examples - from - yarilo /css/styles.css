@@ -1,33 +1,18 @@
-body {  
-/*padding: 20px;*/
-  /*min-height: 1000px;*/
+/*File used to define the style of every site once you have signed in.
+It is used in:
+welcome.html
+search.html
+new_consultation.html
+consultation.html
 
+history.html
+full_history.html
+history_kinds.html
+(every_kind_of_history).html
+(every_kind_of_consultation).html
 
-}
+*/
 
-.navbar {
- }
-
-/* CUSTOMIZE THE NAVBAR
--------------------------------------------------- */
-
-/* Special class on .container surrounding .navbar, used for positioning it into place.  */
-.navbar-wrapper {
-  	position: relative;
-  	z-index: 15;
-  	margin-right: 0px;
-	margin-left: 0px;
- 	margin-top: 0px;
-}
-
-/* Navbar positioning foo */
-  .navbar-wrapper {
-   
-  }
-  /* The navbar becomes detached from the top, so we round the corners */
-  .navbar-wrapper .navbar {
-    border-radius: 4px;
-  }
 
 .navbar-static-top {
   margin-bottom: 0px;
@@ -65,3 +50,11 @@ margin-left: 120px;
 
 }
 
+.hr_consult{
+
+  border-color: #BDBDBD -moz-use-text-color #FFFFFF;
+}
+
+.smaller{
+  font-size: 80%;
+}

@@ -1,7 +1,7 @@
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .form-signin {
@@ -37,4 +37,14 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.front{
+ 
+  text-align: center;
+}
+.checkbox{
+  padding-top: 0px;
+  text-align: left;
+  line-height: 1.2; /*Controla el tema del checkbox*/ 
+
 }
