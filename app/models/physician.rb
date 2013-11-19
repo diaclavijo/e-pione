@@ -7,6 +7,7 @@ class Physician < ActiveRecord::Base
   validates :name, :surname, presence: true
 
   has_many :consultations
+  has_many :patients, through: :consultations
 
   def full_name
     self[:name] + ' ' + self[:surname]
