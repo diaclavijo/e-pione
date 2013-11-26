@@ -1,11 +1,19 @@
-<% content_for :top_left do %>
-    <ol class="breadcrumb">
-      <li>breadcrumbs</li>
-    </ol>
-    <h1 class="featurette-heading"> Registrar nuevo paciente<span class="text-muted"></span></h1>
+<% breadcrumb :new_patient %>
+
+<% content_for :title do %>
+    Registrar nuevo paciente
 <% end %>
 
- <!--TODO: Título y breadcrumbs -->
+<% content_for :top_title do %>
+    Registrar nuevo paciente
+<% end %>
+
+
+
+
+
+
+
 <%= render 'form' %>
 
 <%= link_to '<<Volver', patients_path %>
