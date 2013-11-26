@@ -1,6 +1,5 @@
-class PatientsController < ApplicationController
+class PatientsController < ApplicationControllerSigned
 
-  before_filter :authenticate_physician!
 
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
