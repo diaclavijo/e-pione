@@ -1,107 +1,151 @@
-<%= form_for(@patient) do |f| %>
+<%= form_for @patient, builder: ApplicationHelper::MyFormBuilder,  :html => { :class => 'form-horizontal' }   do |f| %>
+
   <% if @patient.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
-
-      <ul>
-      <% @patient.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <div class="<%= flash_class(:error) %>">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h3><%= pluralize(@patient.errors.count, "errore") %> impiden que este paciente sea creado</h3>
+            <ul>
+            <% @patient.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+            </ul>
+        </div>
     </div>
   <% end %>
+   <!--TODO: Validación de campos hecha, pero sólo se comprueba la presencia o no del campo.
+   TODO: Checkbox está hecho de forma "manual" y embellecer fecha en application helper
+   -->
+    <div class="form-group">
+        <%= f.label :name, 'Nombre (*)' %>
+        <%= f.text_field :name %>
+    </div>
 
-  <div class="field">
-    <%= f.label :surname %><br>
-    <%= f.text_field :surname %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :birth %><br>
-    <%= f.date_select :birth %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
+    <div class="form-group">
+        <%= f.label :surname, 'Apellido (*)' %>
+        <%= f.text_field :surname, class: 'form-control' %>
+    </div>
 
-    <%= f.select :gender, Patient::GENDERS,  { include_blank: 'Seleccionar...' } %>
+    <div class="form-group">
+        <%= f.label :birth, 'Fecha de nacimiento (*)' %>
+        <%= f.date_select :birth %>     <!--TODO: Darle estilo a estos dropdowns -->
+    </div>
 
-  </div>
-  <div class="field">
-    <%= f.label :civil_status %><br>
-    <%= f.select :civil_status, Patient::CIVIL_STATUSES , { include_blank: 'Seleccionar...' }%>
-  </div>
-  <div class="field">
-    <%= f.label :NIF %><br>
-    <%= f.text_field :NIF %>
-  </div>
-  <div class="field">
-    <%= f.label :passport %><br>
-    <%= f.text_field :passport %>
-  </div>
-  <div class="field">
-    <%= f.label :public_insurance_number %><br>
-    <%= f.text_field :public_insurance_number %>
-  </div>
-  <div class="field">
-    <%= f.label :private_insurance_number %><br>
-    <%= f.text_field :private_insurance_number %>
-  </div>
-  <div class="field">
-    <%= f.label :exitus %><br>
-    <%= f.check_box :exitus %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_house %><br>
-    <%= f.number_field :phone_house %>
-  </div>
-  <div class="field">
-    <%= f.label :mobile_phone %><br>
-    <%= f.number_field :mobile_phone %>
-  </div>
-  <div class="field">
-    <%= f.label :other_phone %><br>
-    <%= f.number_field :other_phone %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :education %><br>
-    <%= f.select :education, Patient::EDUCATIONS , { include_blank: 'Seleccionar...' }%>
-  </div>
-  <div class="field">
-    <%= f.label :occupation %><br>
-    <%= f.select :occupation, Patient::OCCUPATIONS , { include_blank: 'Seleccionar...' }%>
-  </div>
-  <div class="field">
-    <%= f.label :employment %><br>
-    <%= f.select :employment, Patient::EMPLOYMENTS , { include_blank: 'Seleccionar...' }%>
-  </div>
-  <div class="field">
-    <%= f.label :economic_situation %><br>
-    <%= f.select :economic_situation, Patient::ECONOMIC_SITUATIONS , { include_blank: 'Seleccionar...' }%>
-  </div>
-  <div class="field">
-    <%= f.label :institutionalized %><br>
-    <%= f.select :institutionalized, Patient::INSTITUTIONALIZEDS , { include_blank: 'Seleccionar...' }%>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-group">
+        <%= f.label :gender, 'Sexo (*)' %>
+        <%= f.select :gender, Patient::GENDERS,  { include_blank: 'Seleccionar...' }, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :civil_status, 'Estado civil (*)' %>
+        <%= f.select :civil_status, Patient::CIVIL_STATUSES , { include_blank: 'Seleccionar...' }, class:'form-control'%>
+    </div>
+
+    <div class="col-md-4 col-md-offset-6">
+        <hr class="hr_consult"></hr>  <!--Separator -->
+    </div>
+
+    <div class="form-group">
+        <%= f.label :NIF, 'NIF (*)' %>
+        <%= f.text_field :NIF %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :passport, 'Pasaporte (Si es extranjero)' %>
+        <%= f.text_field :passport, class:'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :public_insurance_number, 'Núm. Seg. Social'%>
+        <%= f.text_field :public_insurance_number, class:'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :private_insurance_number, 'Tarjeta sanitaria' %>
+        <%= f.text_field :private_insurance_number, class:'form-control' %>
+    </div>
+
+    <div class="col-md-4 col-md-offset-6">
+        <hr class="hr_consult"></hr>  <!--Separator -->
+    </div>
+    <!--TODO: NHC y Fecha de creación..NHC can be interested to fill here if the real clinic_story_number is different from the id of the table-->
+
+    <div class="form-group">
+        <%= f.label :exitus, 'Exitus' %>
+        <div class="col-md-4">
+            <div class="checkbox">
+                <%= f.check_box :exitus, type:'checkbox' %> Sí
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-md-offset-6">
+        <hr class="hr_consult"></hr>  <!--Separator -->
+    </div>
+    <div class="form-group">
+       <%= f.label :phone_house, 'Teléfono fijo' %>
+       <%= f.number_field :phone_house, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :mobile_phone, 'Teléfono móvil' %>
+        <%= f.number_field :mobile_phone, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :other_phone, 'Otro teléfono' %>
+        <%= f.number_field :other_phone, class:'form-control' %>
+    </div>
+
+    <div class="col-md-4 col-md-offset-6">
+        <hr class="hr_consult"></hr>  <!--Separator -->
+    </div>
+
+    <div class="form-group">
+        <%= f.label :address, 'Dirección' %>
+        <%= f.text_field :address %>
+    </div>
+    <div class="form-group">
+        <%= f.label :city,'Ciudad (*)' %>
+        <%= f.text_field :city %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :state, 'Provincia (*)' %>
+        <%= f.text_field :state, class:'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :country, 'Pais (*)' %>
+        <%= f.text_field :country, class:'form-control' %>
+    </div>
+
+    <div class="col-md-4 col-md-offset-6">
+        <hr class="hr_consult"></hr>  <!--Separator -->
+    </div>
+
+    <div class="form-group">
+        <%= f.label :education, 'Escolaridad' %>
+        <%= f.select :education, Patient::EDUCATIONS , { include_blank: 'Seleccionar...' }, class:'form-control'%>
+    </div>
+    <div class="form-group">
+        <%= f.label :occupation, 'Profesión' %>
+        <%= f.select :occupation, Patient::OCCUPATIONS , { include_blank: 'Seleccionar...' }, class:'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :employment, 'Situación laboral' %>
+      <%= f.select :employment, Patient::EMPLOYMENTS , { include_blank: 'Seleccionar...' }%>
+    </div>
+    <div class="form-group">
+      <%= f.label :economic_situation, 'Situación económica' %>
+      <%= f.select :economic_situation, Patient::ECONOMIC_SITUATIONS , { include_blank: 'Seleccionar...' }%>
+    </div>
+    <div class="form-group">
+      <%= f.label :institutionalized,'¿Institucionalizado?' %>
+      <%= f.select :institutionalized, Patient::INSTITUTIONALIZEDS , { include_blank: 'Seleccionar...' }%>
+    </div>
+    <div class="form-group">
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+    </div>
 <% end %>
