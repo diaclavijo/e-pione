@@ -53,6 +53,7 @@ gem 'kaminari' # For pagination . There is an alternative that is call will_pagi
 gem 'nilify_blanks'       # for avoiding storing empty strings
 gem 'debugger'
 gem 'gretel' # for breadcrumbs
+gem 'devise'
 #end by lantius
 
 #by yarilo
@@ -65,7 +66,7 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem "devise"
+
 gem "launchy"
 gem 'capybara-screenshot', :group => :test
 #end by yarilo
