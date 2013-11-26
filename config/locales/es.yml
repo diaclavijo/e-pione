@@ -1,43 +1,78 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 es:
-  hello: "Hola mundo "
-  views:
-    pagination:
-      first: "&laquo;"
-      last: "&raquo;"
-      previous: "&lsaquo;"
-      next: "&rsaquo;"
-      truncate: "..."
 
-  date:
-    order:
-      - :day
-      - :month
-      - :year
+  helpers:
+      submit:
+        create: "Crear %{model}"
+        update: "Editar %{model}"
+
+  activerecord:
+    models:
+      patient: "paciente"
+      physician: "Facultativo"
+    attributes:
+      patient:
+        name: "Nombre"
+        surname: "Apellido"
+        gender: "Sexo"
+        civil_status: "Estado civil"
+        nif: "NIF"
+        city: "Ciudad"
+        state: "Provincia"
+        country: "País"
+    errors:
+      messages:
+        blank: "ausente"
+
+  errors:
+    messages:
+      not_found: 'no encontrado'
+      already_confirmed: 'ya ha sido confirmada'
+      not_locked: 'no está bloqueada'
+      expired: "ha caducado, por favor pida uno nuevo"
+      not_saved:
+        one: "1 error evitó guardar este %{resource}:"
+        other: "%{count} errores evitaron guardar este %{resource}:"
+
+  devise:
+    failure:
+      already_authenticated: 'Ya está conectado/a.'
+      unauthenticated: 'Necesita acceder a su cuenta o registrarse antes de continuar.'
+      unconfirmed: 'Necesita confirmar su cuenta antes de continuar.'
+      locked: 'Su cuenta está bloqueada.'
+      invalid: 'Contraseña o Email incorrecto.'
+      not_found_in_database: 'Contraseña o Email incorrecto.'
+      invalid_token: 'Token de autenticación incorrecto.'
+      timeout: 'Su sesión ha expirado, por favor acceda de nuevo para continuar.'
+      inactive: 'Su cuenta no ha sido activada.'
+    sessions:
+      signed_in: 'Conectado correctamente'
+      signed_out: 'Desconectado correctamente'
+    passwords:
+      send_instructions: 'Recibirá un email con instrucciones para cambiar su contraseña en pocos minutos.'
+      updated: 'Su contraseña ha sido modificada. Ya ha accedido a su cuenta.'
+      send_paranoid_instructions: 'Si su email ya existe en nuestra base de datos, recibirá un enlace para recuperar su contraseña en su correo'
+    confirmations:
+      send_instructions: 'Recibirá un email con instrucciones para confirmar su cuenta en pocos minutos.'
+      send_paranoid_instructions: 'Si su email ya existe en nuestra base de datos, recibirá un email con instrucciones para confirmar su cuenta en pocos minutos.'
+      confirmed: 'Su cuenta ha sido confirmada. Ya ha accedido a su cuenta.'
+    registrations:
+      signed_up: '¡Bienvenido! Le ha registrado correctamente.'
+      inactive_signed_up: 'Le ha registrado correctamente. Sin embargo, no está conectado todavía porque su cuenta está %{reason}.'
+      updated: 'Ha actualizado su cuenta correctamente.'
+      destroyed: '¡Hasta luego! Su cuenta ha sido cancelada. Esperamos verle pronto.'
+    unlocks:
+      send_instructions: 'Recibirá un email con instrucciones para desbloquear su cuenta en pocos minutos.'
+      unlocked: 'Su cuenta ha sido desbloqueada. Ya ha accedido a su cuenta.'
+      send_paranoid_instructions: 'Si su cuenta existe, recibirá un email con instrucciones para desbloquear su cuenta en pocos minutos.'
+    oauth_callbacks:
+      success: 'Ha sido autorizado satisfactoriamente de la cuenta %{kind}.'
+      failure: 'No ha sido autorizado en la cuenta %{kind} porque "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Instrucciones de confirmación'
+      reset_password_instructions:
+        subject: 'Instrucciones para cambiar su contraseña'
+      unlock_instructions:
+        subject: 'Instrucciones para desbloquear su cuenta'
 
 
-
-  simple_form:
-    labels:
-      defaults:
-        activity: 'Actividad'
