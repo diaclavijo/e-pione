@@ -80,4 +80,60 @@ module ApplicationHelper
     end
   end
 
+  # Dado el valor que devuelve Time.now.wday , devuelve el día de la semana en español
+  def dia_semana(dia)
+    case dia
+      when 0
+        'Domingo'
+      when 1
+        'Lunes'
+      when 2
+        'Martes'
+      when 3
+        'Miércoles'
+      when 4
+        'Jueves'
+      when 5
+        'Viernes'
+      when 6
+        'Sábado'
+    end
+  end
+
+
+  # Dado el valor que devuelve Time.now.wday , devuelve el día de la semana en español
+  def dia_mes(mes)
+    case mes
+      when 1
+        'Enero'
+      when 2
+        'Febrero'
+      when 3
+        'Marzo'
+      when 4
+        'Abril'
+      when 5
+        'Mayo'
+      when 6
+        'Junio'
+      when 7
+        'Julio'
+      when 8
+        'Agosto'
+      when 9
+        'Septiembre'
+      when 10
+        'Octubre'
+      when 11
+        'Noviembre'
+      when 12
+        'Diciembre'
+    end
+  end
+
+  def fecha_actual()
+    t = Time.now
+    dia_semana(t.wday)+', '+t.day.to_s+' de '+dia_mes(t.month)+ ' de '+t.year.to_s
+  end
+
 end
