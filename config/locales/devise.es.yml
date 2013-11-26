@@ -1,28 +1,4 @@
 es:
-
-  helpers:
-      submit:
-        create: "Crear %{model}"
-        update: "Editar %{model}"
-
-  activerecord:
-    models:
-      patient: "paciente"
-      physician: "Facultativo"
-    attributes:
-      patient:
-        name: "Nombre"
-        surname: "Apellido"
-        gender: "Sexo"
-        civil_status: "Estado civil"
-        nif: "NIF"
-        city: "Ciudad"
-        state: "Provincia"
-        country: "País"
-    errors:
-      messages:
-        blank: "ausente"
-
   errors:
     messages:
       not_found: 'no encontrado'
@@ -40,13 +16,12 @@ es:
       unconfirmed: 'Necesita confirmar su cuenta antes de continuar.'
       locked: 'Su cuenta está bloqueada.'
       invalid: 'Contraseña o Email incorrecto.'
-      not_found_in_database: 'Contraseña o Email incorrecto.'
       invalid_token: 'Token de autenticación incorrecto.'
       timeout: 'Su sesión ha expirado, por favor acceda de nuevo para continuar.'
       inactive: 'Su cuenta no ha sido activada.'
     sessions:
-      signed_in: 'Conectado correctamente'
-      signed_out: 'Desconectado correctamente'
+      signed_in: 'Le ha conectado correctamente.'
+      signed_out: 'Ha salido correctamente.'
     passwords:
       send_instructions: 'Recibirá un email con instrucciones para cambiar su contraseña en pocos minutos.'
       updated: 'Su contraseña ha sido modificada. Ya ha accedido a su cuenta.'
@@ -74,5 +49,3 @@ es:
         subject: 'Instrucciones para cambiar su contraseña'
       unlock_instructions:
         subject: 'Instrucciones para desbloquear su cuenta'
-
-

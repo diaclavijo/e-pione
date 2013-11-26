@@ -55,6 +55,17 @@ gem 'debugger'
 gem 'gretel' # for breadcrumbs
 #end by lantius
 
-
+#by yarilo
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem "rspec-rails", ">= 2.0.1"
+  gem 'database_cleaner'
+  gem 'capybara-webkit'  #needed to install qt4-dev-tools libqt4-dev libqt4-core libqt4-gui first
+  gem 'selenium-webdriver'
+end
 
 gem "devise"
+gem "launchy"
+gem 'capybara-screenshot', :group => :test
+#end by yarilo
