@@ -64,9 +64,7 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara-webkit'  #needed to install qt4-dev-tools libqt4-dev libqt4-core libqt4-gui first
   gem 'selenium-webdriver'
+  gem 'capybara-screenshot' #To implement screenshots when capybara fails
 end
-
-
 gem "launchy"
-gem 'capybara-screenshot', :group => :test
 #end by yarilo

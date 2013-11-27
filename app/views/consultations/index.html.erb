@@ -12,7 +12,7 @@
 
 <% content_for :top_right do %>
     <h2 class="text-muted"> <%= @patient.full_name %></h2>
-    <h4>Número historia clínica: <span class="text-muted"> <%= @patient.id %> </span> <h4>
+    <h4>Número historia clínica: <span class="text-muted"> <%= @patient.id %> </span> </h4>
 <% end %>
 
 
@@ -49,8 +49,9 @@
               <!-- Historia-->
             </tr>
         <% end %>
+      </table>
     </div>
-    <!--/.responsive-table-->
+   <!--/.responsive-table-->
 
 
   </div>

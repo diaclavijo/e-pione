@@ -1,12 +1,14 @@
-<h2>Forgot your password?</h2>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
-<% end %>
+<div class="container">
+  <h2 class="text-center">¿Problemas para acceder?</h2>
+  <h3 class="text-center text-muted">Envía un e-mail con tus datos a la siguiente dirección y te atenderemos rápidamente</h3>
+  <hr>
 
-<%= render "physicians/shared/links" %>
+
+
+      <a href="mailto: soporte@binnac.com"><h3 class="text-center text-primary"> soporte@binnac.com</h3></a>
+
+  <%= render "physicians/shared/links" %>
+</div>

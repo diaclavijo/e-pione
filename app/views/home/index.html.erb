@@ -9,21 +9,21 @@ Bienvenido a Babel
 <% end %>
 
 
-<div class="container">
+<div class="container" id="container-welcome"> <!--container-welcome has the structure presented below, created just to name this structure of row + 3 col-md-4-->
   <div class="row">
 
     <div class="col-md-4">
-      <img class="img-circle" src="qui_va_una_imagen_que_no_he_elegido_note_rayes.png" alt="Detras de ti! Un mono de tres cabezas">
+      <a href="#"><img class="img-circle" src="aqui_va_una_imagen_que_no_he_elegido_note_rayes1.png" alt="Solicitar Diagnóstico"></a>
       <h2>Solicitar Diagnóstico</h2>
     </div><!-- /.col-md-4 -->
 
     <div class="col-md-4">
-      <img class="img-circle" src="aqui_va_una_imagen_que_no_he_elegido_note_rayes.png" alt="Detras de ti! Un mono de tres cabezas">
-      <h2>Búsqueda de pacientes</h2>
+       <img class="img-circle" src="aqui_va_una_imagen_que_no_he_elegido_note_rayes2.png" alt=""><%= link_to 'Búsqueda de pacientes', patients_path %>
+     <h2>Búsqueda de pacientes</h2>
     </div><!-- /.col-md-4 -->
 
     <div class="col-md-4">
-      <img class="img-circle" src="aqui_va_una_imagen_que_no_he_elegido_note_rayes.png"  alt="Detras de ti! Un mono de tres cabezas">
+      <img class="img-circle" src="aqui_va_una_imagen_que_no_he_elegido_note_rayes3.png"  alt=""><%= link_to 'Registrar nuevo paciente', new_patient_path %>
       <h2>Registrar nuevo paciente</h2>
     </div><!-- /.col-md-4 -->
 

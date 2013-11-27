@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
+
   <meta name="author" content="">
   <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
@@ -21,14 +22,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if notice %>
-    <p class="notice"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert"><%= alert %></p>
-  <% end %>
 
-  <%= yield %>
+  <% if flash[:alert] %>
+    <div class="alert alert-warning alert-dismissable col-md-6 col-md-offset-3 lead text-center">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= flash[:alert] %>
+    </div>
+<% end %>
+
+
+<%= yield %>
 
   </body>
 

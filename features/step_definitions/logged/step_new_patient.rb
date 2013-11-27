@@ -22,12 +22,6 @@ When(/^when I select in the following:$/) do |table|
   select_dropdowns(data)
 end
 
-When(/^when I fill in the following:$/) do |table|
-  # table is a |Ciudad (*)   | <city>    |
-  data= table.raw
-  fill_fields(data)
-end
-
 When(/^click on "([^"]*)" button$/) do |arg|
   click_button(arg)
 end
