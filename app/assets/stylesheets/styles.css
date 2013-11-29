@@ -65,3 +65,15 @@ margin-left: 120px;
 
 }
 
+
+
+
+.field_with_errors input {
+    padding: 3px 2px;
+    border: 2px solid red;
+}
+
+.field_with_errors select {
+    padding: 3px 2px;
+    border: 2px solid red;
+}
