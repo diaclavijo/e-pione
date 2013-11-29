@@ -13,6 +13,16 @@ module ApplicationHelper
 
     end
 
+    def text_area(method, options = {})
+      options[:class] ='form-control'
+      @template.content_tag(
+          :div,
+          super(method,options),
+          class: 'col-md-4'
+      )
+
+    end
+
     def number_field(method, options = {})
       options[:class] ='form-control'
       @template.content_tag(
