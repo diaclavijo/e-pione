@@ -1,0 +1,3 @@
+class ExaminationsController < ConsultationResourcesController
+
+end
