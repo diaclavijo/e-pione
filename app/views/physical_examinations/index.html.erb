@@ -1,0 +1,61 @@
+<h1>Listing physical_examinations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Talla</th>
+      <th>Peso</th>
+      <th>Tension</th>
+      <th>F1</th>
+      <th>F2</th>
+      <th>F3</th>
+      <th>F4</th>
+      <th>F5</th>
+      <th>F6</th>
+      <th>F7</th>
+      <th>F8</th>
+      <th>F9</th>
+      <th>F10</th>
+      <th>F11</th>
+      <th>F12</th>
+      <th>F13</th>
+      <th>F14</th>
+      <th>Consultation</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @physical_examinations.each do |physical_examination| %>
+      <tr>
+        <td><%= physical_examination.talla %></td>
+        <td><%= physical_examination.peso %></td>
+        <td><%= physical_examination.tension %></td>
+        <td><%= physical_examination.f1 %></td>
+        <td><%= physical_examination.f2 %></td>
+        <td><%= physical_examination.f3 %></td>
+        <td><%= physical_examination.f4 %></td>
+        <td><%= physical_examination.f5 %></td>
+        <td><%= physical_examination.f6 %></td>
+        <td><%= physical_examination.f7 %></td>
+        <td><%= physical_examination.f8 %></td>
+        <td><%= physical_examination.f9 %></td>
+        <td><%= physical_examination.f10 %></td>
+        <td><%= physical_examination.f11 %></td>
+        <td><%= physical_examination.f12 %></td>
+        <td><%= physical_examination.f13 %></td>
+        <td><%= physical_examination.f14 %></td>
+        <td><%= physical_examination.consultation %></td>
+        <td><%= link_to 'Show', physical_examination %></td>
+        <td><%= link_to 'Edit', edit_physical_examination_path(physical_examination) %></td>
+        <td><%= link_to 'Destroy', physical_examination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Physical examination', new_physical_examination_path %>

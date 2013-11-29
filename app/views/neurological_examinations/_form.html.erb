@@ -1,0 +1,169 @@
+<%= form_for([@consultation, @neurological_examination],
+    html: {class: 'form-horizontal', role: 'form'},
+    builder: ApplicationHelper::MyFormBuilder ,
+    url: consultation_neurological_examination_path(@consultation)) do |f| %>
+  <% if @neurological_examination.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@neurological_examination.errors.count, "error") %> prohibited this neurological_examination from being saved:</h2>
+
+      <ul>
+      <% @neurological_examination.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :f1, 'Anomalías Pupilares(*)'%><br>
+    <%= f.select :f1, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f2, 'Papiledema(*)'%><br>
+    <%= f.select :f2, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f3, 'Pérdida de Agudeza Auditiva(*)'%><br>
+    <%= f.select :f3, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f4, 'Pérdida de Agudeza Visual (*)'%><br>
+    <%= f.select :f4, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f5, 'Defectos Campimétricos(*)'%><br>
+    <%= f.select :f5, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f6, 'Alt. Motilidad Ocular Global (*)'%><br>
+    <%= f.select :f6, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f7, 'Alt. Mirada Conjugada Vertical(*)'%><br>
+    <%= f.select :f7, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f8, 'Paresia Facial(*)'%><br>
+    <%= f.select :f8, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f9, 'Pares IX, X(*)'%><br>
+    <%= f.select :f9, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f10, 'Pares XI, XII(*)'%><br>
+    <%= f.select :f10, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f11, 'Paresia (Braquial/Crural)(*)'%><br>
+    <%= f.select :f11, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f12, 'Hiperreflexia / Espasticidad(*)'%><br>
+    <%= f.select :f12, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f13, 'Signo de Babinski(*)'%><br>
+    <%= f.select :f13, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f14, 'Paraparesia(*)'%><br>
+    <%= f.select :f14, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f15, 'Síndrome Pseudobulbar(*)'%><br>
+    <%= f.select :f15, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f16, 'Dismetría / Adiadococinesia(*)'%><br>
+    <%= f.select :f16, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f17, 'Oposicionismo / Paratonía (*)'%><br>
+    <%= f.select :f17, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f18, 'Alt. Sensibilidad Superficial (*)'%><br>
+    <%= f.select :f18, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f19, 'Alt. Sensibilidad Profunda(*)'%><br>
+    <%= f.select :f19, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f20, 'Acinesia/Hipocinesia/Bradic. (*)'%><br>
+    <%= f.select :f20, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f21, 'Hipofonía(*)'%><br>
+    <%= f.select :f21, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f22, 'Amimia(*)'%><br>
+    <%= f.select :f22, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f23, 'Rigidez Plástica(*)'%><br>
+    <%= f.select :f23, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f24, 'Rueda Dentada(*)'%><br>
+    <%= f.select :f24, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f25, 'Temblor de Reposo(*)'%><br>
+    <%= f.select :f25, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f26, 'Temblor de Actitud(*)'%><br>
+    <%= f.select :f26, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f27, 'Mioclonías(*)'%><br>
+    <%= f.select :f27, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f28, 'Movimientos Anormales(*)'%><br>
+    <%= f.select :f28, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f29, 'Tics(*)'%><br>
+    <%= f.select :f29, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f30, 'Marcha Parética (*)'%><br>
+    <%= f.select :f30, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f31, 'Marcha Atáxica(*)'%><br>
+    <%= f.select :f31, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f32, 'Marcha Parkinsoniana(*)'%><br>
+    <%= f.select :f32, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f33, 'Marcha Apráxica(*)'%><br>
+    <%= f.select :f33, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f34, 'Ref. Glabelar(*)'%><br>
+    <%= f.select :f34, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f35, 'Ref. Perioral(*)'%><br>
+    <%= f.select :f35, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f36, 'Ref. de Prensión(*)'%><br>
+    <%= f.select :f36, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :f37, 'Ref. Pólico/Palmo-Mentoniano (*)'%><br>
+    <%= f.select :f37, NeurologicalExamination::NEUROPTIONS %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

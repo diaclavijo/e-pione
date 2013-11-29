@@ -1,0 +1,86 @@
+<% disabled = false unless defined? disabled %>
+<%= form_for([@consultation, @test_iqcode],
+             builder: ApplicationHelper::MyFormBuilder,
+             disabled: disabled ) do |f| %>
+  <% if @test_iqcode.errors.any? %>
+    <%= error_message %>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first, 'Para recordar los nombres de personas más íntimas (parientes, amigos) (*)' %><br>
+    <%= f.select :first, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :second, 'Recordar cosas que han sucedido recientemente, durante los dos o tres últimos meses (noticias, cosas suyas o de sus familiares) (*)' %><br>
+    <%= f.select :second, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :third, 'Recordad de qué se habló en una conversación unos días antes (*)' %><br>
+    <%= f.select :third, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :forth, 'Olvidar que ha dicho unos minutos antes, pararse en mitad de una frase y no saber que iba a decir, repetir lo dicho un rato antes (*)' %><br>
+    <%= f.select :forth, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :fifth, 'Recordar la fecha en que se vive (*)' %><br>
+    <%= f.select :fifth, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :sixth, 'Conocer el lugar exacto de los armarios de su casa y dónde se guardan las cosas (*)' %><br>
+    <%= f.select :sixth, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :seventh, 'Saber donde va una cosa que se ha encontrado descolocada (*)' %><br>
+    <%= f.select :seventh, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :eighth, 'Aprender a utilizar un aparato nuevo (lavadora, tocadiscos, radio, etc.) (*)' %><br>
+    <%= f.select :eighth, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :ninth, 'Recordar las cosas que han sucedido recientemente (*)' %><br>
+    <%= f.select :ninth, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :tenth, 'Aprender cosas nuevas (en general) (*)' %><br>
+    <%= f.select :tenth, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :eleventh, 'Comprender el significado de palabras poco usuales (del periodico, TV, conversación) (*)' %><br>
+    <%= f.select :eleventh, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :twelfth, 'Entender los artículos de periódicos y revistas en los que está interesado (*)' %><br>
+    <%= f.select :twelfth, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :thirteenth, 'Seguir una historia en un libro, la prensa, el cine, la radio o la TV (*)' %><br>
+    <%= f.select :thirteenth, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :fourteenth, 'Tomar decisiones tanto en cuestiones cotidianas (qué ropa ponerse, qué comida preparar) como un asuntos de más trascendencia (donde invertir el dinero, o ir de vacaciones) (*)' %><br>
+    <%= f.select :fourteenth, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :fifteenth, 'Control de los asunto financieros (cobrar la pensión, pagar los impuestos, troto con el banco) (*)' %><br>
+    <%= f.select :fifteenth, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :sixteenth, 'Control de otros problemas de cálculo cotidiano (tiempo entre visitas de familiares, distancias entre lugares y cuánta comida comprar y preparar especialmente si hay invitados) (*)' %><br>
+    <%= f.select :sixteenth, TestIqcode::OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :seventeenth, '¿Cree que sus inteligencias (en general) ha cambiado duranto los últimos diez años? (*)' %><br>
+    <%= f.select :seventeenth, TestIqcode::OPTIONS %>
+  </div>
+
+  <% if not disabled %>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+  <% end %>
+<% end %>
+
+
+

@@ -1,0 +1,49 @@
+<h1>Listing test_pfeiffers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>F1</th>
+      <th>F2</th>
+      <th>F3</th>
+      <th>F4</th>
+      <th>F5</th>
+      <th>F6</th>
+      <th>F7</th>
+      <th>F8</th>
+      <th>F9</th>
+      <th>F10</th>
+      <th>F11</th>
+      <th>Consultation</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_pfeiffers.each do |test_pfeiffer| %>
+      <tr>
+        <td><%= test_pfeiffer.f1 %></td>
+        <td><%= test_pfeiffer.f2 %></td>
+        <td><%= test_pfeiffer.f3 %></td>
+        <td><%= test_pfeiffer.f4 %></td>
+        <td><%= test_pfeiffer.f5 %></td>
+        <td><%= test_pfeiffer.f6 %></td>
+        <td><%= test_pfeiffer.f7 %></td>
+        <td><%= test_pfeiffer.f8 %></td>
+        <td><%= test_pfeiffer.f9 %></td>
+        <td><%= test_pfeiffer.f10 %></td>
+        <td><%= test_pfeiffer.f11 %></td>
+        <td><%= test_pfeiffer.consultation %></td>
+        <td><%= link_to 'Show', test_pfeiffer %></td>
+        <td><%= link_to 'Edit', edit_test_pfeiffer_path(test_pfeiffer) %></td>
+        <td><%= link_to 'Destroy', test_pfeiffer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test pfeiffer', new_test_pfeiffer_path %>

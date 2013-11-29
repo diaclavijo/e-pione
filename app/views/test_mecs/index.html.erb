@@ -1,0 +1,53 @@
+<h1>Listing test_mecs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>F1</th>
+      <th>F2</th>
+      <th>F3</th>
+      <th>F4</th>
+      <th>F5</th>
+      <th>F6</th>
+      <th>F7</th>
+      <th>F8</th>
+      <th>F9</th>
+      <th>F10</th>
+      <th>F11</th>
+      <th>F12</th>
+      <th>F13</th>
+      <th>Consultation</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_mecs.each do |test_mec| %>
+      <tr>
+        <td><%= test_mec.f1 %></td>
+        <td><%= test_mec.f2 %></td>
+        <td><%= test_mec.f3 %></td>
+        <td><%= test_mec.f4 %></td>
+        <td><%= test_mec.f5 %></td>
+        <td><%= test_mec.f6 %></td>
+        <td><%= test_mec.f7 %></td>
+        <td><%= test_mec.f8 %></td>
+        <td><%= test_mec.f9 %></td>
+        <td><%= test_mec.f10 %></td>
+        <td><%= test_mec.f11 %></td>
+        <td><%= test_mec.f12 %></td>
+        <td><%= test_mec.f13 %></td>
+        <td><%= test_mec.consultation %></td>
+        <td><%= link_to 'Show', test_mec %></td>
+        <td><%= link_to 'Edit', edit_test_mec_path(test_mec) %></td>
+        <td><%= link_to 'Destroy', test_mec, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test mec', new_test_mec_path %>

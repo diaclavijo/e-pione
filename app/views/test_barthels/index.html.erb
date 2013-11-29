@@ -1,0 +1,45 @@
+<h1>Listing test_barthels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>F1</th>
+      <th>F2</th>
+      <th>F3</th>
+      <th>F4</th>
+      <th>F5</th>
+      <th>F6</th>
+      <th>F7</th>
+      <th>F8</th>
+      <th>F9</th>
+      <th>F10</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_barthels.each do |test_barthel| %>
+      <tr>
+        <td><%= test_barthel.f1 %></td>
+        <td><%= test_barthel.f2 %></td>
+        <td><%= test_barthel.f3 %></td>
+        <td><%= test_barthel.f4 %></td>
+        <td><%= test_barthel.f5 %></td>
+        <td><%= test_barthel.f6 %></td>
+        <td><%= test_barthel.f7 %></td>
+        <td><%= test_barthel.f8 %></td>
+        <td><%= test_barthel.f9 %></td>
+        <td><%= test_barthel.f10 %></td>
+        <td><%= link_to 'Show', test_barthel %></td>
+        <td><%= link_to 'Edit', edit_test_barthel_path(test_barthel) %></td>
+        <td><%= link_to 'Destroy', test_barthel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test barthel', new_test_barthel_path %>

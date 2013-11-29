@@ -1,0 +1,33 @@
+<h1>Listing test_relojs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>F1</th>
+      <th>F2</th>
+      <th>F3</th>
+      <th>F4</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_relojs.each do |test_reloj| %>
+      <tr>
+        <td><%= test_reloj.f1 %></td>
+        <td><%= test_reloj.f2 %></td>
+        <td><%= test_reloj.f3 %></td>
+        <td><%= test_reloj.f4 %></td>
+        <td><%= link_to 'Show', test_reloj %></td>
+        <td><%= link_to 'Edit', edit_test_reloj_path(test_reloj) %></td>
+        <td><%= link_to 'Destroy', test_reloj, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test reloj', new_test_reloj_path %>

@@ -1,0 +1,63 @@
+<%= form_for([@consultation,@test_pfeiffer],
+             builder: ApplicationHelper::MyFormBuilder ) do |f| %>
+  <% if @test_pfeiffer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@test_pfeiffer.errors.count, "error") %> prohibited this test_pfeiffer from being saved:</h2>
+
+      <ul>
+      <% @test_pfeiffer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :f1, 'Nivel Educativo del Paciente (*)' %><br>
+    <%= f.select :f1, TestPfeiffer::EDUCACION %>
+  </div>
+  <div class="field">
+    <%= f.label :f2, '¿Qué día es hoy? (*)' %><br>
+    <%= f.select :f2, TestPfeiffer::FAILURE %>
+  </div>
+  <div class="field">
+    <%= f.label :f3, '¿Dué día de la semana es hoy? (*)' %><br>
+    <%= f.select :f3, TestPfeiffer::FAILURE %>
+  </div>
+  <div class="field">
+    <%= f.label :f4, '¿Dónde estamos ahora? (*)' %><br>
+    <%= f.select :f4, TestPfeiffer::FAILURE %>
+  </div>
+  <div class="field">
+    <%= f.label :f5, '¿Cuál es su número de teléfono? (*)' %><br>
+    <%= f.select :f5, TestPfeiffer::FAILURE %>
+  </div>
+  <div class="field">
+    <%= f.label :f6, '¿Cuántos años tiene? (*)' %><br>
+    <%= f.select :f6, TestPfeiffer::FAILURE %>
+  </div>
+  <div class="field">
+    <%= f.label :f7, '¿Cuál es la fecha de su nacimiento? (*)' %><br>
+    <%= f.select :f7, TestPfeiffer::FAILURE %>
+  </div>
+  <div class="field">
+    <%= f.label :f8, '¿Quién es ahora el Presidente del Gobierno? (*)' %><br>
+    <%= f.select :f8, TestPfeiffer::FAILURE %>
+  </div>
+  <div class="field">
+    <%= f.label :f9, '¿Quién fue el anterior Presidente del Gobierno? (*)' %><br>
+    <%= f.select :f9, TestPfeiffer::FAILURE %>
+  </div>
+  <div class="field">
+    <%= f.label :f10, '¿Cuáles son los dos apellidos de su madre? (*)' %><br>
+    <%= f.select :f10, TestPfeiffer::FAILURE %>
+  </div>
+  <div class="field">
+    <%= f.label :f11, 'Vaya restando de 3 en 3, desde 20 hasta llegar a 0. Repetir desde 29. (*)' %><br>
+    <%= f.select :f11, TestPfeiffer::FAILURE %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
