@@ -1,6 +1,6 @@
 class TestIqcode < ActiveRecord::Base
 
-  validates :first, :second, :third, :forth,  :sixth, :seventh, :eighth, :ninth,  :tenth, :eleventh, :twelfth,  :thirteenth,  :fourteenth,  :fifteenth,  :sixteenth, :seventeenth, presence: true, inclusion: { in: 0..5 , message: 'Not in the range'}
+  validates :first, :second, :third, :forth, :fifth, :sixth, :seventh, :eighth, :ninth,  :tenth, :eleventh, :twelfth,  :thirteenth,  :fourteenth,  :fifteenth,  :sixteenth, :seventeenth, presence: true, inclusion: { in: 0..5 , message: 'Not in the range'}
 
   OPTIONS = { 'Ha mejorado mucho'         => 1,
               'Ha mejorado levemente'     => 2,
