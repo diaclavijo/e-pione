@@ -3,9 +3,14 @@ class Patient < ActiveRecord::Base
 
   has_many :consultations
   has_many :physicians, through: :consultations
+  has_many :tests, through: :consultations
+
 
   # Validations
   validates :name, :surname, :birth, :gender, :civil_status, :NIF, :city, :state, :country, presence: true
+
+  validates :phone_house, :other_phone, :mobile_phone, length: {maximum: 9}
+  validates :NIF, uniqueness: true
 
   # Configuration
   paginates_per 10
@@ -77,6 +82,20 @@ class Patient < ActiveRecord::Base
     self[:name]+' '+self[:surname]
   end
 
+
+  # Methods for relations
+
+  def cognitive_tests( page= 0 )
+    self.tests.where(category: 0).page page
+  end
+
+  def no_cognitive_tests( page= 0 )
+    self.tests.where(category: 1).page page
+  end
+
+  def exploracion_funcional_tests( page= 0 )
+    self.tests.where(category: 2).page page
+  end
 
 
 end
