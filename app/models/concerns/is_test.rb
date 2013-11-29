@@ -10,6 +10,8 @@ module IsTest
     before_create :store_in_test_index
     before_update :update_in_test_index
 
+
+
     private
 
     def store_in_test_index
@@ -20,6 +22,7 @@ module IsTest
     def update_in_test_index
       self.test.update(score: self.score)
     end
+
   end
 
 end
