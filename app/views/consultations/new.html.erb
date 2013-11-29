@@ -1,21 +1,18 @@
-<!-- TODO - se tiene que poner bien esta vista, adaptado al diseño -->
-<!-- URL: patients/1/consultations/new -->
-<% breadcrumb :new_patient_consultation, @patient %>
+
+<% breadcrumb :patient, @patient%>
 
 <% content_for :title do %>
-    Nueva consulta para <%= @patient.full_name %>
+  Nueva consulta
 <% end %>
 
 <% content_for :top_title do %>
-    Nueva consulta para <%= @patient.full_name %>
+   Nueva consulta
 <% end %>
 
 <% content_for :top_right do %>
     <h2 class="text-muted"> <%= @patient.full_name %></h2>
-    <h4>Número historia clínica: <span class="text-muted"> <%= @patient.id %> </span> <h4>
+    <h4>Número historia clínica: <span class="text-muted"> <%= @patient.id %> </span> </h4>
 <% end %>
-
-
 
 <%= render 'form' %>
 

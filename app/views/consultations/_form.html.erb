@@ -1,4 +1,7 @@
-<%= form_for([@patient,@consultation]  ) do |f| %>
+<%= form_for([@patient, @consultation] ,
+             builder: ApplicationHelper::MyFormBuilder,
+             :html => { :class => 'form-horizontal' } )  do |f| %>
+
   <% if @consultation.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@consultation.errors.count, "error") %> prohibited this consultation from being saved:</h2>
@@ -12,16 +15,16 @@
   <% end %>
 
 
-  <div class="field">
-    <%= f.label :activity %><br>
+  <div class="form-group">
+    <%= f.label :activity,'Tipo atención' %><br>
     <%= f.select :activity, Consultation::ACTIVITY, { include_blank: 'Seleccionar...' } %>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
+  <div class="form-group">
+    <%= f.label :date,'Fecha consulta' %><br>
     <%= f.date_select :date %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
+  <div class="form-group">
+    <%= f.label :description,'Observaciones' %><br>
     <%= f.text_area :description %>
   </div>
   <div class="actions">
