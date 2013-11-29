@@ -17,9 +17,38 @@ crumb :edit_patient do |patient|
 end
 
 crumb :patient do |patient|
-  link patient.full_name, patient_path(patient)
+  link patient.full_name, patient_consultations_path(patient)
   parent :patients
 end
+
+crumb :new_patient_consultation do |patient|
+  link 'Nueva consulta'
+  parent :patient, patient
+end
+
+crumb :patient_consultation do |patient, consultation|
+  link ('Consulta '+consultation.id.to_s), patient_consultation_path(patient, consultation)
+  parent :patient, patient
+end
+
+crumb :consultation_cognitive_symptomatology do |consultation|
+  link 'Sintomatologia cognitiva', consultation_cognitive_symptomatology_path(consultation)
+  parent :patient_consultation, consultation.patient, consultation
+end
+
+
+
+
+test_names = { :test_iqcode => 'test del informador', :test_minimental => 'test minimental' }
+
+test_names.each{|key, value|
+  crumb :"new_consultation_#{key}" do |consultation|
+    link 'Nuevo '+value, send("new_consultation_#{key}_path", consultation)
+    parent :consultation_cognitive_symptomatology, consultation
+  end
+}
+
+
 
 
 # crumb :projects do

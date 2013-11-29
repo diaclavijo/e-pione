@@ -1,0 +1,38 @@
+<div class="jumbotron">
+
+  <h4>Resumen de sintomatologías exploradas</h4>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <tr>
+
+        <th>NHC</th>
+        <th>Consulta</th>
+        <th>Fecha</th>
+        <th>Tipo exploración</th>
+        <th>Facultativo</th>
+        <th>Detalles</th>
+      </tr>
+
+      <% examinations.each do |examination| %>
+          <tr>
+            <td><%= examination.patient.id %></td>       <!-- NHC -->
+            <td><%= examination.consultation.id %></td>       <!-- Consulta -->
+            <td><%= examination.consultation.created_at.to_date %></td>       <!-- Fecha -->
+            <td><%= examination.examination_data_type %></td>       <!-- Tipo de exploracion -->
+            <td><%= examination.physician.full_name %></td>       <!-- Facultativo -->
+            <td><%= link_to 'Ver detalles' , [consultation, examination.examination_data] %> </td>       <!-- Detalles -->
+
+          </tr>
+      <% end %>
+
+    </table>
+  </div> <!--/.responsive-table-->
+
+
+    <%= paginate consultation.cognitive_tests.page(page) %>  <!-- TODO - This should be made with javascript to get better behavior -->
+
+
+
+</div> <!--/jumbotron-->
+
+   

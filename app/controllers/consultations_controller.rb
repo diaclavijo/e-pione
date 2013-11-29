@@ -1,7 +1,7 @@
-class ConsultationsController < ApplicationController
+class ConsultationsController < ApplicationControllerSigned
   before_action :set_consultation, only: [:show, :edit, :update, :destroy]
+  layout  "consultation_resources", only: [:show]
 
-  before_filter :authenticate_physician!
   # GET /consultations
   # GET /consultations.json
   def index
@@ -14,6 +14,7 @@ class ConsultationsController < ApplicationController
   def show
     @patient = Patient.find(params[:patient_id])
     @consultation = @patient.consultations.find params[:id]
+
   end
 
   # GET /consultations/new
@@ -30,9 +31,9 @@ class ConsultationsController < ApplicationController
   # POST /consultations.json
   def create
     @consultation = Consultation.new(consultation_params)
-    @consultation.Patient_id = params[:patient_id]
-    @consultation.Physician_id = current_physician.id
     @patient = Patient.find(params[:patient_id])
+    @consultation.patient_id = params[:patient_id]
+    @consultation.physician_id = current_physician.id
 
     respond_to do |format|
       if @consultation.save

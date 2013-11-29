@@ -1,38 +1,32 @@
-class CognitiveSymptomatologiesController < ApplicationController
-  before_action :set_cognitive_symptomatology, only: [:show, :edit, :update, :destroy]
+class CognitiveSymptomatologiesController < ExaminationsController
+  before_action :set_cognitive_symptomatology, only: [:show, :update, :destroy]
 
-  # GET /cognitive_symptomatologies
-  # GET /cognitive_symptomatologies.json
-  def index
-    @cognitive_symptomatologies = CognitiveSymptomatology.all
-  end
 
   # GET /cognitive_symptomatologies/1
   # GET /cognitive_symptomatologies/1.json
   def show
   end
 
-  # GET /cognitive_symptomatologies/new
-  def new
-    @cognitive_symptomatology = CognitiveSymptomatology.new
-    @consultation = Consultation.find(params[:consultation_id])
+  # GET /consultations/1/cognitive_symptomatology
+  def new_or_edit
+    @cognitive_symptomatology =
+        ( @consultation.cognitive_symptomatology or
+          @consultation.build_cognitive_symptomatology )
+
+
   end
 
-  # GET /cognitive_symptomatologies/1/edit
-  def edit
-  end
-
-  # POST /cognitive_symptomatologies
+  # POST /consultations/1/cognitive_symptomatology
   # POST /cognitive_symptomatologies.json
   def create
-    @cognitive_symptomatology = CognitiveSymptomatology.new(cognitive_symptomatology_params)
+    @cognitive_symptomatology = @consultation.build_cognitive_symptomatology(cognitive_symptomatology_params)
 
     respond_to do |format|
       if @cognitive_symptomatology.save
-        format.html { redirect_to @cognitive_symptomatology, notice: 'Cognitive symptomatology was successfully created.' }
+        format.html { redirect_to [@consultation, :cognitive_symptomatology], notice: 'Cognitive examination was successfully created.' }
         format.json { render action: 'show', status: :created, location: @cognitive_symptomatology }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new_or_edit' }
         format.json { render json: @cognitive_symptomatology.errors, status: :unprocessable_entity }
       end
     end
@@ -43,10 +37,10 @@ class CognitiveSymptomatologiesController < ApplicationController
   def update
     respond_to do |format|
       if @cognitive_symptomatology.update(cognitive_symptomatology_params)
-        format.html { redirect_to @cognitive_symptomatology, notice: 'Cognitive symptomatology was successfully updated.' }
+        format.html { redirect_to consultation_cognitive_symptomatology_path(@consultation), notice: 'Cognitive examination was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'new_or_edit' }
         format.json { render json: @cognitive_symptomatology.errors, status: :unprocessable_entity }
       end
     end
@@ -65,11 +59,11 @@ class CognitiveSymptomatologiesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cognitive_symptomatology
-      @cognitive_symptomatology = CognitiveSymptomatology.find(params[:id])
+      @cognitive_symptomatology = @consultation.cognitive_symptomatology
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cognitive_symptomatology_params
-      params.require(:cognitive_symptomatology).permit(:Consultation_id, :memory, :disorientation, :aphasia, :apraxia, :agnosia, :executive, :reasoning, :spatial)
+      params.require(:cognitive_symptomatology).permit(:consultation_id, :memory, :disorientation, :aphasia, :apraxia, :agnosia, :executive, :reasoning, :spatial)
     end
 end

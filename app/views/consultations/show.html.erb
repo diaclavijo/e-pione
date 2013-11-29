@@ -1,17 +1,30 @@
-<% content_for :top_right do %>
-    <h2 class="text-muted"> <%= @patient.full_name %></h2>
-    <h4>Número historia clínica: <span class="text-muted"> <%= @patient.id %> </span> <h4>
-      <h4 >Fecha consulta: <span class="text-muted"> <%= @consultation.date %> </span><h4>
+<!-- URL patients/1/consultations/1 -->
+
+<% breadcrumb :patient_consultation, @patient, @consultation %>
+
+<% content_for :title do %>
+    Protocolo clínico
 <% end %>
 
-<% content_for :top_left do %>
-    <ol class="breadcrumb">
-      <li>breadcrumbs</li>
-    </ol>
-    <h1 class="featurette-heading">Protocolo clínico de consulta <span class="text-muted"><%= @consultation.id %></span></h1>
+<% content_for :top_title do %>
+    Protocolo clínico de consulta <span class="text-muted"> <%= @consultation.id %>   </span>
 <% end %>
+
+
 
 <%= render 'consultations/select'   %>
+
+<!-- RESUMEN DE SINTOMATOLOGÍAS EXPLORADAS EN ESTA CONSULTA  -->
+
+<%= render partial: 'shared/examinations_history', locals: { consultation: @consultation ,
+                                                      page: params[:page],
+                                                      examinations: @consultation.examinations.page(params[:page]).order(created_at: :desc)} %>
+
+<!-- RESUMEN DE TEST REALIZADOS EN ESTA CONSULTA   -->
+
+<%= render partial: 'shared/tests_history_typed', locals: { consultation: @consultation ,
+                                                      page: params[:page],
+                                                      tests: @consultation.tests.page(params[:page]).order(created_at: :desc)} %>
 
 
 

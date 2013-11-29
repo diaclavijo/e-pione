@@ -1,0 +1,50 @@
+<h1 class="featurette-heading">Realización de tests <span class="text-muted"></span></h1>
+<!--TODO: Mirar bien este layout, automáticamente se crean dos filas si nos pasamos con las columnas (i.e 4x3 +3x1) -->
+<div class="jumbotron">
+  <div class="container">
+
+    <div class="col-md-3">
+      <div class="icon-wrapper">
+        <span class="glyphicon glyphicon-eye-open"></span>
+        <p></p>
+      </div>
+      <%= link_to 'Realizar Test Informador', new_consultation_test_iqcode_path(@consultation), class: 'btn btn-default'  %>
+    </div>
+
+    <div class="col-md-3">
+      <div class="icon-wrapper">
+        <span class="glyphicon glyphicon-book"></span>
+        <p> </p>
+      </div>
+
+      <%= link_to 'Realizar Test Minimental', new_consultation_test_minimental_path(@consultation), class: 'btn btn-default'  %>
+    </div>
+
+    <div class="col-md-3">
+      <div class="icon-wrapper">
+        <span class="glyphicon glyphicon-book"></span>
+        <p>
+      </div>
+      <%= link_to 'Realizar Test MEC', new_consultation_test_mec_path(@consultation), class: 'btn btn-default'  %>
+    </div>
+
+    <div class="col-md-3">
+      <div class="icon-wrapper">
+        <span class="glyphicon glyphicon-book"></span>
+        <p>
+      </div>
+      <%= link_to 'Realizar Test Pfeiffer', new_consultation_test_pfeiffer_path(@consultation), class: 'btn btn-default'  %>
+    </div>
+
+    <div class="col-md-3">
+      <div class="icon-wrapper">
+        <span class="glyphicon glyphicon-book"></span>
+        <p>
+      </div>
+      <%= link_to 'Realizar Test del Reloj', new_consultation_test_reloj_path(@consultation), class: 'btn btn-default'  %>
+    </div>
+
+  </div> <!--/container-->
+</div> <!--/Jumbotro n-->
+
+

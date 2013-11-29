@@ -1,0 +1,17 @@
+<!--URL consultations/1/cognitive_symptomatology -->
+<% breadcrumb :consultation_cognitive_symptomatology, @consultation %>
+<% content_for :top_title do %>
+    Sintomatología Cognitiva <span class="text-muted"><%= @consultation.id %></span>
+<% end %>
+<% content_for :title do %>
+    Sintomatología Cognitiva
+<% end %>
+
+
+<%= render 'form' %>
+
+<%= render 'test_choice' %>
+
+<%= render partial: 'shared/tests_history', locals: { consultation: @consultation ,
+            page: params[:page],
+            tests: @consultation.patient.cognitive_tests.page(params[:page]).order(created_at: :desc)} %>

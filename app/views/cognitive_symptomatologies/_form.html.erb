@@ -1,20 +1,11 @@
-<% content_for :top_right do %>
-    <h2 class="text-muted"> <%= @consultation.Patient.full_name %></h2>
-    <h4>Número historia clínica: <span class="text-muted"> <%= @consultation.Patient.id %> </span> <h4>
-      <h4 >Fecha consulta: <span class="text-muted"> <%= @consultation.date %> </span><h4>
-<% end %>
-
-<% content_for :top_left do %>
-    <ol class="breadcrumb">
-      <li>breadcrumbs</li>
-    </ol>
-    <h1 class="featurette-heading">Sintomatología Cognitiva <span class="text-muted"><%= @consultation.id %></span></h1>
-<% end %>
-
 <div class="jumbotron">
   <div class="container">
 
-    <%= form_for([@consultation, @cognitive_symptomatology]) do |f| %>
+    <%= form_for([@consultation, @cognitive_symptomatology],
+                 html: {class: 'form-horizontal', role: 'form'},
+                 builder: ApplicationHelper::MyFormBuilder ,
+                 url: consultation_cognitive_symptomatology_path(@consultation) ) do |f| %>
+
         <% if @cognitive_symptomatology.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(@cognitive_symptomatology.errors.count, "error") %> prohibited this cognitive_symptomatology
@@ -28,63 +19,52 @@
             </div>
         <% end %>
 
-        <% @fields.each do |field| %>
-            <%= f.label field.name %>
-            <%= f.integer field.name %>
-        <% end %>
-        <%= f.submit %>
+        <div class='form-group'>
+          <%= f.label :memory, 'Alteración de memoria (*)' %>
+          <%= f.select :memory, Examination::NOYESUNKNOWN %>
+        </div>
 
         <div class='form-group'>
-          <%= f.label :memory %>
-          <br>
-          <%= f.select :memory, CognitiveSymptomatology::COGNITIVESYMPTOMATOLOGY, {include_blank: 'Seleccionar...'} %>
+          <%= f.label :disorientation, 'Desorientación (*)' %>
+          <%= f.select :disorientation, Examination::NOYESUNKNOWN %>
         </div>
+
         <div class='form-group'>
-          <%= f.label :disorientation %>
-          <br>
-          <%= f.select :disorientation, CognitiveSymptomatology::COGNITIVESYMPTOMATOLOGY, {include_blank: 'Seleccionar...'} %>
-        </div>
-        <div class='form-group'>
-          <%= f.label :aphasia %>
-          <br>
+          <%= f.label :aphasia, 'Trastorno del lenguaje (Afasia) (*)' %>
           <%= f.select :aphasia,
-                       CognitiveSymptomatology::COGNITIVESYMPTOMATOLOGY, {include_blank: 'Seleccionar...'} %>
+                       Examination::NOYESUNKNOWN %>
         </div>
         <div class='form-group'>
-          <%= f.label :apraxia %>
-          <br>
-          <%= f.select :apraxia, CognitiveSymptomatology::COGNITIVESYMPTOMATOLOGY, {include_blank: 'Seleccionar...'} %>
+          <%= f.label :apraxia, 'Trastorno motor (Apraxia) (*)' %>
+          <%= f.select :apraxia, Examination::NOYESUNKNOWN %>
         </div>
         <div class='form-group'>
-          <%= f.label :agnosia %>
-          <br>
+          <%= f.label :agnosia, 'Trastorno sensitivo (*)' %>
           <%= f.select :agnosia,
-                       CognitiveSymptomatology::COGNITIVESYMPTOMATOLOGY, {include_blank: 'Seleccionar...'} %>
+                       Examination::NOYESUNKNOWN %>
         </div>
         <div class='form-group'>
-          <%= f.label :executive %>
-          <br>
-          <%= f.select :executive, CognitiveSymptomatology::COGNITIVESYMPTOMATOLOGY, {include_blank: 'Seleccionar...'} %>
+          <%= f.label :executive, 'Alteración de las funciones ejecutivas (*)' %>
+          <%= f.select :executive, Examination::NOYESUNKNOWN %>
         </div>
         <div class='form-group'>
-          <%= f.label :reasoning %>
-          <br>
+          <%= f.label :reasoning, 'Trastorno del razonamiento y la abstracción (*)' %>
           <%= f.select :reasoning,
-                       CognitiveSymptomatology::COGNITIVESYMPTOMATOLOGY, {include_blank: 'Seleccionar...'} %>
+                       Examination::NOYESUNKNOWN %>
         </div>
         <div class='form-group'>
-          <%= f.label :spatial %>
-          <br>
+          <%= f.label :spatial, 'Alteración de las funciones visuoespaciales(*)' %>
           <%= f.select :spatial,
-                       CognitiveSymptomatology::COGNITIVESYMPTOMATOLOGY, {include_blank: 'Seleccionar...'} %>
+                       Examination::NOYESUNKNOWN %>
         </div>
-        <div class="actions">
-          <%= f.submit %>
+
+        <div class="form-group">
+          <%= f.button 'Almacenar Sintomatología Cognitiva' %>
         </div>
+
     <% end %>
 
 
   </div> <!--/jumbotron-->
 
-  <a href="consultation.html"><< Volver</a>
 </div> <!-- /container -->

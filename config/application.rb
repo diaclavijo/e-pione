@@ -20,6 +20,10 @@ module RailsSIAD
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.i18n.default_locale = :es
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
     config.autoload_paths +=  Dir[Rails.root.join('app', 'models', '**', '*.rb')]   # this is done to load subfolder in models
+    config.autoload_paths += %W(#{config.root}/lib)
+
   end
 end

@@ -1,0 +1,8 @@
+
+<%= render 'form' %>
+
+<%= render 'test_choice' %>
+
+<%= render partial: 'shared/tests_history', locals: { consultation: @consultation ,
+  page: params[:page],
+  tests: @consultation.patient.no_cognitive_tests.page(params[:page]).order(created_at: :desc)} %>

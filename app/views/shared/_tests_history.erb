@@ -1,0 +1,44 @@
+<!--Jumbotron containing a table -->
+<div class="jumbotron">
+
+  <h4>Test Realizados</h4>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <tr>
+
+        <th>NHC</th>
+        <th>Consulta</th>
+        <th>Fecha</th>
+        <th>ID Test</th>
+        <th>Tipo Test</th>
+        <th>Score</th>
+        <th>Detalles</th>
+      </tr>
+
+
+      <% tests.each do |test| %>
+          <tr>
+            <td><%= test.patient.id %></td>       <!-- NHC -->
+            <td><%= test.consultation.id %></td>       <!-- Consulta -->
+            <td><%= test.consultation.created_at.to_date %></td>       <!-- Fecha -->
+            <td><%= test.id %></td>       <!-- ID Test -->
+            <td><%= test.test_data_type %></td>       <!-- Tipo de Test -->
+            <td><%= test.score%></td>       <!-- Score -->
+            <td><%= link_to 'Ver detalles' , [consultation, test.test_data]%> </td>       <!-- Detalles -->
+
+          </tr>
+      <% end %>
+
+
+
+    </table>
+  </div> <!--/.responsive-table-->
+
+  <%= paginate tests.page(page) %>  <!-- TODO - This should be made with javascript to get better behavior   -->
+
+
+
+
+
+
+</div> <!--/jumbotron-->

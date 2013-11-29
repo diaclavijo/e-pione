@@ -1,0 +1,8 @@
+<h1> Exploración Funcional </h1>
+
+
+<%= render 'test_choice' %>
+
+<%= render partial: 'shared/tests_history', locals: { consultation: @consultation ,
+                                                      page: params[:page],
+                                                      tests: @consultation.patient.exploracion_funcional_tests.page(params[:page]).order(created_at: :desc)} %>
