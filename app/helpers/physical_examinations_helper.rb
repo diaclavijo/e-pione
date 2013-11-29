@@ -1,0 +1,2 @@
+module PhysicalExaminationsHelper
+end
