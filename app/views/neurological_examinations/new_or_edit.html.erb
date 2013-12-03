@@ -1,5 +1,11 @@
-<h1>Exploración Neurológica de la Consulta Actual </h1>
-
+<!--URL consultations/1/neurological_examination-->
+<% breadcrumb :consultation_neurological_examination, @consultation %>
+<% content_for :top_title do %>
+    Exploración Neurológica <span class="text-muted"><%= @consultation.id %></span>
+<% end %>
+<% content_for :title do %>
+    Exploración Neurológica
+<% end %>
 <%= render 'form' %>
 
 
