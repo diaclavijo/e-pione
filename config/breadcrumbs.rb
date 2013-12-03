@@ -36,15 +36,30 @@ crumb :consultation_cognitive_symptomatology do |consultation|
   parent :patient_consultation, consultation.patient, consultation
 end
 
+crumb :consultation_no_cognitive_symptomatology do |consultation|
+  link 'Sintomatologia no cognitiva', consultation_no_cognitive_symptomatology_path(consultation)
+  parent :patient_consultation, consultation.patient, consultation
+end
+
+crumb :consultation_exploracion_funcional do |consultation|
+  link 'Exploracion funcional', consultation_exploracion_funcional_path(consultation)
+  parent :patient_consultation, consultation.patient, consultation
+end
 
 
+# This finds all the tests defined in the folder tests, and from that it infers the breadcrumbs for all of them
+tests = Pathname.glob('app/models/tests/*').map{ |i| i.basename.to_s.gsub('.rb','') }
 
-test_names = { :test_iqcode => 'test del informador', :test_minimental => 'test minimental' }
+tests.each{|test_key|
 
-test_names.each{|key, value|
-  crumb :"new_consultation_#{key}" do |consultation|
-    link 'Nuevo '+value, send("new_consultation_#{key}_path", consultation)
-    parent :consultation_cognitive_symptomatology, consultation
+  crumb :"new_consultation_#{test_key}" do |consultation|
+    link 'Nuevo '+test_key.classify.constantize::NAME, send("new_consultation_#{test_key}_path", consultation)
+    parent test_key.classify.constantize::FATHER_BREADCRUMBS, consultation
+  end
+
+  crumb :"consultation_#{test_key}" do |consultation, test_var|
+    link test_key, send("consultation_#{test_key}_path", consultation, test_var)
+    parent test_key.classify.constantize::FATHER_BREADCRUMBS, consultation
   end
 }
 

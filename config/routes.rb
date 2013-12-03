@@ -7,24 +7,27 @@ RailsSIAD::Application.routes.draw do
     post 'cognitive_symptomatology', to: 'cognitive_symptomatologies#create', as: nil
     patch 'cognitive_symptomatology', to: 'cognitive_symptomatologies#update', as: nil
 
-    resources :test_minimentals, only: [:new, :create, :show]
-    resources :test_iqcodes, only: [:new, :create, :show]
-    resources :test_mecs, only: [:new, :create, :show]
-    resources :test_pfeiffers, only: [:new, :create, :show]
-    resources :test_relojs, only: [:new, :create, :show]
+    resources :test_minimentals, only: [:new, :create, :show, :destroy]
+    resources :test_iqcodes, only: [:new, :create, :show, :destroy]
+    resources :test_mecs, only: [:new, :create, :show, :destroy]
+    resources :test_pfeiffers, only: [:new, :create, :show, :destroy]
+    resources :test_relojs, only: [:new, :create, :show, :destroy]
 
     get 'no_cognitive_symptomatology', to: 'no_cognitive_symptomatologies#new_or_edit', as: 'no_cognitive_symptomatology'
     post 'no_cognitive_symptomatology', to: 'no_cognitive_symptomatologies#create', as: nil
     patch 'no_cognitive_symptomatology', to: 'no_cognitive_symptomatologies#update', as: nil
 
-    resources :test_yesavage4s, only: [:new, :create, :show]
-    resources :test_yesavage10s, only: [:new, :create, :show]
-    resources :test_yesavage15s, only: [:new, :create, :show]
-    resources :test_yesavage30s, only: [:new, :create, :show]
-    resources :test_npis, only: [:new, :create, :show]
+    resources :test_yesavage4s, only: [:new, :create, :show, :destroy]
+    resources :test_yesavage10s, only: [:new, :create, :show, :destroy]
+    resources :test_yesavage15s, only: [:new, :create, :show, :destroy]
+    resources :test_yesavage30s, only: [:new, :create, :show, :destroy]
+    resources :test_npis, only: [:new, :create, :show, :destroy]
 
     get 'exploracion_funcional', to: 'exploracion_funcional#show', as: 'exploracion_funcional'
-    resources :test_barthels, only: [:new, :create, :show]
+    resources :test_barthels, only: [:new, :create, :show, :destroy]
+    resources :test_fasts, only: [:new, :create, :show, :destroy]
+    resources :test_katzs, only: [:new, :create, :show, :destroy]
+    resources :test_lawtons, only: [:new, :create, :show, :destroy]
 
     get 'neurological_examination', to: 'neurological_examinations#new_or_edit', as: 'neurological_examination'
     post 'neurological_examination', to: 'neurological_examinations#create', as: nil
