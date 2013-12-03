@@ -1,4 +1,11 @@
-
+<!--URL consultations/1/physical_examination-->
+<% breadcrumb :consultation_physical_examination, @consultation %>
+<% content_for :top_title do %>
+    Exploración física <span class="text-muted"><%= @consultation.id %></span>
+<% end %>
+<% content_for :title do %>
+    Exploración física
+<% end %>
 
 <%= render 'form' %>
 
