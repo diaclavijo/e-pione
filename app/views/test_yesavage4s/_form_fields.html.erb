@@ -1,0 +1,19 @@
+
+
+  <div class="form-group">
+    <%= f.label :first, '¿Está usted satisfecho de su vida?' %><br>
+    <%= f.select :first, Test::YESNO  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :second, '¿Siente que su vida está vacía?' %><br>
+    <%= f.select :second, Test::YESNO  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :third, '¿Tiene miedo de que algo malo de vaya a pasar?' %><br>
+    <%= f.select :third, Test::YESNO  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :forth, '¿Se siente usted feliz la mayoría del tiempo?' %><br>
+    <%= f.select :forth, Test::YESNO  %>
+  </div>
+

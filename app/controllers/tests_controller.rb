@@ -1,5 +1,4 @@
 class TestsController < ConsultationResourcesController
-  before_action :set_test_iqcode, only: [:show, :edit, :update, :destroy]
 
   def show
   end
@@ -11,6 +10,7 @@ class TestsController < ConsultationResourcesController
             collection_name
         ).build # @test_iqcode = @consultation.test_iqcodes.build
     )
+    render 'tests/new'
   end
 
 
@@ -30,6 +30,18 @@ class TestsController < ConsultationResourcesController
       else
         format.html { render action: 'new' }
       end
+    end
+  end
+
+
+  # DELETE /test_iqcodes/1
+  # DELETE /test_iqcodes/1.json
+  def destroy
+    # TODO - It has to be required the physician to be the one who made the test
+    get_resource_ivar.destroy
+
+    respond_to do |format|
+      format.html { redirect_to [@consultation, resource_class::REDIRECT_TO_AFTER_CREATION], notice: t('tests.deleted')  }
     end
   end
 

@@ -2,28 +2,33 @@ class Consultation < ActiveRecord::Base
   belongs_to :patient
   belongs_to :physician
 
-  has_many :tests # super index for listing differente resources
-  has_many :examinations # super index for listing different resources
+  has_many :tests, dependent: :destroy # super index for listing differente resources
+  has_many :examinations, dependent: :destroy # super index for listing different resources
 
-  has_one :cognitive_symptomatology
-  has_many :test_minimentals
-  has_many :test_iqcodes
-  has_many :test_mecs
-  has_one :no_cognitive_symptomatology
-  has_many :test_yesavage4s
-  has_many :test_yesavage10s
-  has_many :test_yesavage15s
-  has_many :test_yesavage30s
-  has_many :test_npis
-  has_many :test_pfeiffers
-  has_many :test_relojs
+
+  has_one :cognitive_symptomatology, dependent: :destroy
+  has_many :test_minimentals, dependent: :destroy
+
+  has_many :test_iqcodes, dependent: :destroy
+  has_many :test_mecs, dependent: :destroy
+  has_one :no_cognitive_symptomatology, dependent: :destroy
+  has_many :test_yesavage4s, dependent: :destroy
+  has_many :test_yesavage10s, dependent: :destroy
+  has_many :test_yesavage15s, dependent: :destroy
+  has_many :test_yesavage30s, dependent: :destroy
+  has_many :test_npis, dependent: :destroy
+  has_many :test_pfeiffers, dependent: :destroy
+  has_many :test_relojs, dependent: :destroy
 
   #exploracion funcional tests
-  has_many :test_barthels
+  has_many :test_barthels, dependent: :destroy
+  has_many :test_fasts, dependent: :destroy
+  has_many :test_katzs, dependent: :destroy
+  has_many :test_lawtons, dependent: :destroy
 
-  has_one :neurological_examination
+  has_one :neurological_examination, dependent: :destroy
 
-  has_one :physical_examination
+  has_one :physical_examination, dependent: :destroy
 
 
 
@@ -50,6 +55,10 @@ class Consultation < ActiveRecord::Base
 
   def no_cognitive_tests( page= 0 )
     self.tests.where(category: 1).page page
+  end
+
+  def exploracion_funcional_tests( page= 0 )
+    self.tests.where(category: 2).page page
   end
 
 end

@@ -1,0 +1,13 @@
+
+<% breadcrumb :"consultation_#{resource_instance_name}", @consultation, get_resource_ivar %>
+<% content_for :top_title do %>
+    <%= resource_class::NAME %>
+<% end %>
+<% content_for :title do %>
+    <%= resource_class::NAME %>
+<% end %>
+
+<% disabled = true %>
+<%= render partial: 'form', locals: {disabled: disabled} %>
+
+

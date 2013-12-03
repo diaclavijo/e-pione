@@ -2,7 +2,7 @@
 
 class ConsultationResourcesController < ApplicationControllerSigned
   layout  "consultation_resources"
-  before_action :set_consultation, only: [:show, :create, :new, :new_or_edit, :update, :edit]
+  before_action :set_consultation, only: [:show, :create, :new, :new_or_edit, :update, :edit, :destroy]
 
 
   private

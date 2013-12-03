@@ -1,1 +1,0 @@
-json.extract! @test_minimental, :year, :station, :day_month, :day_week, :month, :country, :province, :city, :where, :flat, :objects, :attention, :memory, :pencil, :repeat, :orders, :eyes, :sentence, :draw, :created_at, :updated_at

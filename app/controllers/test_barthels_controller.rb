@@ -1,38 +1,6 @@
 class TestBarthelsController < TestsController
   before_action :set_test_barthel, only: [:show, :edit, :update, :destroy]
 
-  # GET /test_barthels/1
-  # GET /test_barthels/1.json
-  def show
-  end
-
-  # POST /test_barthels
-  # POST /test_barthels.json
-  def create
-    @test_barthel = @consultation.test_barthels.build test_barthel_params
-
-    respond_to do |format|
-      if @test_barthel.save
-        format.html { redirect_to [@consultation, :exploracion_funcional], notice: 'Test barthel was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @test_barthel }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @test_barthel.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-
-  # DELETE /test_barthels/1
-  # DELETE /test_barthels/1.json
-  def destroy
-    @test_barthel.destroy
-    respond_to do |format|
-      format.html { redirect_to test_barthels_url }
-      format.json { head :no_content }
-    end
-  end
-
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_test_barthel

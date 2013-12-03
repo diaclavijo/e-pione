@@ -1,3 +1,11 @@
+<!--URL consultations/1/no_cognitive_symptomatology -->
+<% breadcrumb :consultation_no_cognitive_symptomatology, @consultation %>
+<% content_for :top_title do %>
+    Sintomatología No Cognitiva <span class="text-muted"><%= @consultation.id %></span>
+<% end %>
+<% content_for :title do %>
+    Sintomatología No Cognitiva
+<% end %>
 
 <%= render 'form' %>
 

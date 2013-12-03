@@ -1,3 +1,5 @@
+#this is the index of tests. Common information about every test is stored here to be able to show all the tests for a consultation or a patient
+
 class Test < ActiveRecord::Base
 
   paginates_per 5

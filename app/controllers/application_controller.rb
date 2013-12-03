@@ -9,15 +9,12 @@ class ApplicationController < ActionController::Base
 
 
   class_attribute :resource_class, :resource_instance_name, :collection_name
-
+  helper_method :resource_class, :resource_instance_name,  :collection_name, :get_resource_ivar
 
 
   def initialize
     super
-
     initialize_resources_class_accessors!
-    @var = 'hello'
-
   end
 
   protected
@@ -34,15 +31,54 @@ class ApplicationController < ActionController::Base
   #
   def initialize_resources_class_accessors! #:nodoc:
 
-    begin
-      #Get the model class
-      class_name = self.controller_name.classify
-      self.resource_class = class_name.constantize
+
+     # First priority is the namespaced model, e.g. User::Group
+     self.resource_class ||= begin
+       namespaced_class = self.name.sub(/Controller/, '').singularize
+       namespaced_class.constantize
+     rescue NameError
+       nil
+     end
+
+
+
+     # Second priority is the top namespace model, e.g. EngineName::Article for EngineName::Admin::ArticlesController
+     self.resource_class ||= begin
+       namespaced_classes = self.name.sub(/Controller/, '').split('::')
+       namespaced_class = [namespaced_classes.first, namespaced_classes.last].join('::').singularize
+       namespaced_class.constantize
+     rescue NameError
+       nil
+     end
+
+
+
+     # Third priority the camelcased c, i.e. UserGroup
+     self.resource_class ||= begin
+       camelcased_class = self.name.sub(/Controller/, '').gsub('::', '').singularize
+       camelcased_class.constantize
+     rescue NameError
+       nil
+     end
+
+
+
+     # Otherwise use the Group class, or fail
+     self.resource_class ||= begin
+       class_name = self.controller_name.classify
+       class_name.constantize
+     rescue NameError => e
+       raise unless e.message.include?(class_name)
+       nil
+     end
+
+
+
       self.resource_instance_name = self.controller_name.singularize.to_sym #test_name
+
       self.collection_name =  self.controller_name.to_sym
-    rescue
-      nil
-    end
+
+
 
 
   end

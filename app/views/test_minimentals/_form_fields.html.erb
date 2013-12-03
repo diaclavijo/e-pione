@@ -1,0 +1,92 @@
+
+
+
+
+    <h2> Orientación </h2>
+
+  <div class="form-group">
+    <%= f.label :year %><br>
+    <%= f.select :year, Test::SUCCESS %>
+  </div>
+  <div class="form-group">
+    <%= f.label :station %><br>
+    <%= f.select :station, Test::SUCCESS %>
+  </div>
+  <div class="form-group">
+    <%= f.label :day_month %><br>
+    <%= f.select :day_month, Test::SUCCESS %>
+  </div>
+  <div class="form-group">
+    <%= f.label :day_week %><br>
+    <%= f.select :day_week, Test::SUCCESS %>
+  </div>
+  <div class="form-group">
+    <%= f.label :month %><br>
+    <%= f.select :month, Test::SUCCESS %>
+  </div>
+  <div class="form-group">
+    <%= f.label :country %><br>
+    <%= f.select :country, Test::SUCCESS %>
+  </div>
+  <div class="form-group">
+    <%= f.label :province %><br>
+    <%= f.select :province, Test::SUCCESS %>
+  </div>
+  <div class="form-group">
+    <%= f.label :city %><br>
+    <%= f.select :city, Test::SUCCESS %>
+  </div>
+  <div class="form-group">
+    <%= f.label :where %><br>
+    <%= f.select :where, Test::SUCCESS %>
+  </div>
+  <div class="form-group">
+    <%= f.label :flat %><br>
+    <%= f.select :flat, Test::SUCCESS %>
+  </div>
+
+    <h2> Fijación </h2>
+
+  <div class="form-group">
+    <%= f.label :objects %><br>
+    <%= f.select :objects, (0..3).to_a  %>
+  </div>
+
+    <h2> Atención y calculo </h2>
+
+  <div class="form-group">
+    <%= f.label :attention %><br>
+    <%= f.select :attention, (0..5).to_a  %>
+  </div>
+
+    <h2> Memoria </h2>  <br />
+  <div class="form-group">
+    <%= f.label :memory %><br>
+    <%= f.select :memory, (0..3).to_a  %>
+  </div>
+    <h2> Lenguaje y praxis constructiva</h2>
+  <div class="form-group">
+    <%= f.label :pencil %><br>
+    <%= f.select :pencil, (0..2).to_a  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :repeat %><br>
+    <%= f.select :repeat, Test::SUCCESS %>
+  </div>
+  <div class="form-group">
+    <%= f.label :orders %><br>
+    <%= f.select :orders, (0..3).to_a  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :eyes %><br>
+    <%= f.select :eyes, Test::SUCCESS %>
+  </div>
+  <div class="form-group">
+    <%= f.label :sentence %><br>
+    <%= f.select :sentence, Test::SUCCESS %>
+  </div>
+  <div class="form-group">
+    <%= f.label :draw %><br>
+    <%= f.select :draw, Test::SUCCESS %>
+  </div>
+

@@ -1,0 +1,12 @@
+
+<% breadcrumb :"new_consultation_#{resource_instance_name}", @consultation %>
+<% content_for :top_title do %>
+    <%= resource_class::NAME %>
+<% end %>
+<% content_for :title do %>
+    <%= resource_class::NAME %>
+<% end %>
+
+
+<%= render 'form' %>
+

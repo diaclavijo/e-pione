@@ -1,23 +1,6 @@
 class TestMecsController < TestsController
   before_action :set_test_mec, only: [:show, :edit, :update, :destroy]
 
-  # GET /test_mecs/1
-  # GET /test_mecs/1.json
-  def show
-  end
-
-
-
-
-  # DELETE /test_mecs/1
-  # DELETE /test_mecs/1.json
-  def destroy
-    @test_mec.destroy
-    respond_to do |format|
-      format.html { redirect_to test_mecs_url }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
