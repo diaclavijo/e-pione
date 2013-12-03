@@ -1,4 +1,11 @@
-<h1> Exploración Funcional </h1>
+<!--URL consultations/1/cognitive_symptomatology -->
+<% breadcrumb :consultation_exploracion_funcional, @consultation %>
+<% content_for :top_title do %>
+    Exploracion funcional <span class="text-muted"><%= @consultation.id %></span>
+<% end %>
+<% content_for :title do %>
+    Exploracion funcional
+<% end %>
 
 
 <%= render 'test_choice' %>

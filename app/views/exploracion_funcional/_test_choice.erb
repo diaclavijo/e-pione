@@ -22,7 +22,7 @@
         <span class="glyphicon glyphicon-book"></span>
         <p> </p>
       </div>
-      <a href="full_history.html"><button type="button" class="btn btn-default">Realizar Test Fast</button></a>
+      <%= link_to 'Realizar  Test Fast', new_consultation_test_fast_path(@consultation), class: 'btn btn-default'  %>
     </div>
 
     <div class="col-md-3">
@@ -30,7 +30,8 @@
         <span class="glyphicon glyphicon-book"></span>
         <p>
       </div>
-      <a href="history_kinds.html"><button type="button" class="btn btn-default">Realizar Test Katz  </button></a>
+
+      <%= link_to 'Realizar Test Katz', new_consultation_test_katz_path(@consultation), class: 'btn btn-default'  %>
     </div>
 
     <div class="col-md-3">
@@ -38,7 +39,7 @@
         <span class="glyphicon glyphicon-book"></span>
         <p>
       </div>
-      <a href="history_kinds.html"><button type="button" class="btn btn-default">Realizar Test Lawton-Brody</button></a>
+      <%= link_to 'Realizar Test Lawton-Brody', new_consultation_test_lawton_path(@consultation), class: 'btn btn-default'  %>
     </div>
 
   </div> <!--/container-->
