@@ -10,7 +10,9 @@ end
 
 Then(/^physician should see his name prefixed by Dr\.$/) do
  page.should have_content('Dr.')
- #current_physician.name
+ #@current_user = Physician.find_by_login("carmen@carmen.com") #TODO Probar con esto para intentar acceder a las variables del usuario y demás !!!!!!!!!
+
+  #current_physician.name
  # page.should have_content(@current_user.name) #No funciona sin warden. TODO
 end
 

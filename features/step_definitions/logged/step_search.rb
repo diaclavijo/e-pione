@@ -2,6 +2,7 @@ Given(/^Physician is logged and on Búsqueda de Pacientes site.$/) do
   login_with_user
   visit (patients_path)
   check_navbar
+  check_breadcrumb('Búsqueda de pacientes')
   check_back_link
 end
 
@@ -48,4 +49,15 @@ When(/^if there are (\d+) patients or more registered, there will be a paginator
   #if page.all('#table-patients tr').count.should <= arg
   #    page.should_not have_css('paginator')
   #end
+end
+When(/^physician click on "([^"]*)" button$/) do |arg|
+  click_link(arg) #Is a fucking link in the implementation
+end
+Then(/^he will visit a page to create a new page$/) do
+  current_path.should == new_patient_path
+  visit page.driver.request.env['HTTP_REFERER']
+end
+
+Then(/^physician should see a panel with essential data of maximum (\d+) patients that will display inside the panel, plus some links to get more data and the patient's history$/) do |arg|
+  check_panel(arg)
 end
