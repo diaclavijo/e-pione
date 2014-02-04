@@ -2,6 +2,14 @@ RailsSIAD::Application.routes.draw do
 
 
 
+
+
+
+
+
+
+  resources :prescripcion_farmacologicas
+
   resources :consultations, only: [] do
     get 'cognitive_symptomatology', to: 'cognitive_symptomatologies#new_or_edit', as: 'cognitive_symptomatology'
     post 'cognitive_symptomatology', to: 'cognitive_symptomatologies#create', as: nil
@@ -28,6 +36,10 @@ RailsSIAD::Application.routes.draw do
     resources :test_fasts, only: [:new, :create, :show, :destroy]
     resources :test_katzs, only: [:new, :create, :show, :destroy]
     resources :test_lawtons, only: [:new, :create, :show, :destroy]
+
+    resources :habitos, only: [:index, :create, :destroy]
+    resources :pathologies, only: [:index, :create, :destroy]
+    resources :pruebas, only: [:index, :create, :destroy]
 
     get 'neurological_examination', to: 'neurological_examinations#new_or_edit', as: 'neurological_examination'
     post 'neurological_examination', to: 'neurological_examinations#create', as: nil
