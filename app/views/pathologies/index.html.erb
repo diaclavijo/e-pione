@@ -1,0 +1,12 @@
+<!--URL consultations/1/pathologies -->
+<% breadcrumb :consultation_pathologies, @consultation %>
+<% content_for :top_title do %>
+    Patologías <span class="text-muted"><%= @consultation.id %></span>
+<% end %>
+<% content_for :title do %>
+    Patologías
+<% end %>
+
+<%= render 'form' %>
+
+<%= render partial: 'historico_pathologies', locals: {pathologies: @pathologies} %>

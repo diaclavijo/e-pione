@@ -1,0 +1,12 @@
+<!--URL consultations/1/pathologies -->
+<% breadcrumb :consultation_pruebas, @consultation %>
+<% content_for :top_title do %>
+    Pruebas complementarias <span class="text-muted"><%= @consultation.id %></span>
+<% end %>
+<% content_for :title do %>
+    Pruebas complementarias
+<% end %>
+
+<%= render 'form' %>
+
+<%= render partial: 'historico_pruebas', locals: {pruebas: @pruebas} %>

@@ -1,0 +1,25 @@
+<!--Jumbotron containing a table -->
+<div class="jumbotron">
+  <div class="row">
+
+
+    <h4>Histórico de Pruebas realizadas al paciente</h4>
+    <div class="table-responsive">         <!--/.responsive-table-->
+      <table class="table table-striped table-hover"  >
+        <tr>
+
+          <th>NHC</th>
+          <th>Consulta</th>
+          <th>Fecha</th>
+          <th>Analítica</th>
+          <th>Detalles</th>
+        </tr>
+
+        <tbody id="pruebas">
+        <%= render partial: 'prueba', collection: pruebas %>
+        </tbody>
+      </table>
+    </div> <!--/.responsive-table-->
+
+  </div><!-- /.row -->
+</div> <!--/jumbotron-->

@@ -1,0 +1,22 @@
+<%= form_for([@consultation, @prueba],
+            remote: true) do |f| %>
+  <% if @prueba.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prueba.errors.count, "error") %> prohibited this prueba from being saved:</h2>
+
+      <ul>
+      <% @prueba.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :prueba %><br>
+    <%= f.select :prueba, Prueba::PRUEBAS %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

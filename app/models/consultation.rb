@@ -30,6 +30,9 @@ class Consultation < ActiveRecord::Base
 
   has_one :physical_examination, dependent: :destroy
 
+  has_many :habitos, dependent: :destroy
+  has_many :pathologies, dependent: :destroy
+  has_many :pruebas, dependent: :destroy
 
 
 

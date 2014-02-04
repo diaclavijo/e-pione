@@ -1,0 +1,22 @@
+<%= form_for([@consultation, @pathology],
+            remote: true) do |f| %>
+  <% if @pathology.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pathology.errors.count, "error") %> prohibited this pathology from being saved:</h2>
+
+      <ul>
+      <% @pathology.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pathology %><br>
+    <%= f.select :pathology, Pathology::PATHOLOGIES %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
