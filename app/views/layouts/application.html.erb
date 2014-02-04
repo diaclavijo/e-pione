@@ -26,13 +26,11 @@
 
 
 <%= render 'shared/top_menu' %>
-
-<% flash.each do |key, value| %>
-    <div class="<%= flash_class(key) %>">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= value %>
-    </div>
+<div id="message">
+<% flash.each do |style, message| %>
+    <%= render partial: 'shared/message', locals: {style: style, message: message} %>
 <% end %>
+</div>
 
 <div class="container">
     <%= render 'shared/header' %>
