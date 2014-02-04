@@ -20,13 +20,15 @@ def check_navbar #check navbar_appearence and behaviour
     #check actual page is highlighted
     case current_path
       when root_path
-        path_string="Inicio"
+        find('.active').should have_content("Inicio")
       when patients_path
-        path_string="Búsqueda de pacientes"
+        find('.active').should have_content("Búsqueda de pacientes")
       when new_patient_path
-        path_string="Registrar nuevo paciente"
+        find('.active').should have_content("Registrar nuevo paciente")
+      else  #In other pages no link is active
+        page.should_not have_css('.active')
     end
-    find('.active').should have_content(path_string)
+
 
   end
 end

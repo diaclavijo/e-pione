@@ -1,5 +1,6 @@
 #V1 sin warden..
 def login_with_user
+
   visit "/"
   fill_in 'physician_email', :with => 'carmen@carmen.com'
   fill_in 'physician_password', :with => 'alzheimer'
