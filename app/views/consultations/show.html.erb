@@ -20,7 +20,7 @@
                                                       page: params[:page],
                                                       examinations: @consultation.examinations.page(params[:page]).order(created_at: :desc)} %>
 
-<!-- RESUMEN DE TEST REALIZADOS EN ESTA CONSULTA   -->
+<!-- RESUMEN DE TESTS REALIZADOS EN ESTA CONSULTA   -->
 
 <%= render partial: 'shared/tests_history_typed', locals: { consultation: @consultation ,
                                                       page: params[:page],
