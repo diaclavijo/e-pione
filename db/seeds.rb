@@ -11,125 +11,35 @@ Admin.create(email: 'admin@admin.com', password: 'alzheimer', password_confirmat
 puts 'Ends creating Admin user in Admin model '
 
 puts 'Creating Admin user in Admin: model'
-Physician.create(email: 'carmen@carmen.com', password: 'alzheimer', password_confirmation: 'alzheimer', name: 'Carmen Paz', surname: 'Suarez Araujo')
+Physician.create(email: 'carmen@carmen.com',
+                 password: 'alzheimer',
+                 password_confirmation: 'alzheimer',
+                 name: 'Carmen Paz',
+                 surname: 'Suarez Araujo')
+Physician.create(email: 'alguien@alguien.com',
+                 password: 'alzheimer',
+                 password_confirmation: 'alzheimer',
+                 name: 'Alguien',
+                 surname: 'Con Apellidos')
 puts 'Ends creating Admin user in Admin model '
 
 
 puts 'Creating patients example'
 
 Patient.create(
-    name: 'p_Manuel',
+    name: 'Soy del primer physician',
     surname: 'Abad Lopez',
-    NIF:4478199,
-    birth: Date.new(1945,2,3),
-    gender: 'male',
-    civil_status: 'Soltero',
-    city: 'Tunte',
-    state: 'Las Palmas',
-    country:'Spain'
-
+    birth: Date.new(1922,5,1),
+    physician_id: 1
 )
 
 Patient.create(
-    name: 'p_Victoria',
+    name: 'Soy del segundo physician',
     surname: 'Abaroa Bilbao',
     birth: Date.new(1922,5,1),
-    NIF:4478193,
-    gender: 'female',
-    civil_status: 'Divorciado',
-    city: 'Tunte',
-    state: 'Las Palmas',
-    country:'Spain'
-)
-Patient.create(
-    name: 'p_ROSA',
-    surname: 'ABIÁN CASUSO',
-    birth: Date.new(1922,5,1),
-    NIF:4478194,
-    gender: 'female',
-    civil_status: 'Casado',
-    city: 'Tunte',
-    state: 'Las Palmas',
-    country:'Spain'
+    physician_id: 2
 )
 
-Patient.create(
-    name: 'p_PEDRO',
-    surname: 'VIVANCO MARTINEZ',
-    birth: Date.new(1922,5,1),
-    NIF:4478195,
-    gender: 'male',
-    civil_status: 'Viudo',
-    city: 'Tunte',
-    state: 'Las Palmas',
-    country:'Spain'
-)
-
-
-Patient.create(
-    name: 'p_PEDRO',
-    surname: 'VIVANCO MARTINEZ',
-    birth: Date.new(1922,5,1),
-    NIF:44278191234125,
-    gender: 'male',
-    civil_status: 'Viudo',
-    city: 'Tunte',
-    state: 'Las Palmas',
-    country:'Spain'
-)
-
-
-Patient.create(
-    name: 'p_PEDRO',
-    surname: 'VIVANCO MARTINEZ',
-    birth: Date.new(1922,5,1),
-    NIF:447821915,
-    gender: 'male',
-    civil_status: 'Viudo',
-    city: 'Tunte',
-    state: 'Las Palmas',
-    country:'Spain'
-)
-
-
-Patient.create(
-    name: 'p_PEDRO',
-    surname: 'VIVANCO MARTINEZ',
-    birth: Date.new(1922,5,1),
-    NIF:447803419125,
-    gender: 'male',
-    civil_status: 'Viudo',
-    city: 'Tunte',
-    state: 'Las Palmas',
-    country:'Spain'
-)
-
-
-Patient.create(
-    name: 'p_PEDRO',
-    surname: 'VIVANCO MARTINEZ',
-    birth: Date.new(1922,5,1),
-    NIF:447823411915,
-    gender: 'male',
-    civil_status: 'Viudo',
-    city: 'Tunte',
-    state: 'Las Palmas',
-    country:'Spain'
-)
-
-
-
-Patient.create(
-    name: 'p_PEDRO',
-    surname: 'VIVANCO MARTINEZ',
-    birth: Date.new(1922,5,1),
-    NIF:42478212915,
-    gender: 'male',
-    civil_status: 'Viudo',
-    city: 'Tunte',
-    state: 'Las Palmas',
-    country:'Spain'
-)
 
 
 

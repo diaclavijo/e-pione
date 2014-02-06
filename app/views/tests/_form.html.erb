@@ -1,6 +1,8 @@
 <% disabled = false unless defined? disabled %>
 <%= form_for([@consultation,get_resource_ivar],
-             builder: ApplicationHelper::MyFormBuilder,            disabled: disabled, html: {class: 'form-horizontal'} ) do |f| %>
+             builder: ApplicationHelper::MyFormBuilder,
+             disabled: disabled,
+             html: {class: 'form-horizontal'} ) do |f| %>
 
 
   <%= render partial: 'form_fields', locals: {f: f} %>

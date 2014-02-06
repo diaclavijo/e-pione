@@ -30,32 +30,20 @@
             <th>Apellidos</th>
             <th>Nombre</th>
             <th>NHC</th>
-            <th>NIF</th>
             <th>F.NAC</th>
-            <th>Sexo</th>
             <th>Exitus</th>
             <th></th>
             <th></th>
           </tr>
           <% @patients.each do |patient| %>
               <tr>
-                <td><%= patient.surname %> </td>
-                <!-- Apellidos-->
-                <td><%= patient.name %> </td>
-                <!-- Nombre-->
-                <td><%= patient.id %> </td>
-                <!-- NHC-->
-                <td><%= patient.NIF %> </td>
-                <!-- NIF-->
-                <td><%= patient.birth %> </td>
-                <!-- Fecha Nacimiento-->
-                <td><%= patient.gender_text %> </td>
-                <!-- Sexo-->
-                <td><%= patient.exitus %> </td>
-                <!-- Exitus-->
+                <td><%= patient.surname %> </td> <!-- Apellidos-->
+                <td><%= patient.name %> </td> <!-- Nombre-->
+                <td><%= patient.id2 %> </td> <!-- NHC-->
+                <td><%= patient.birth %> </td> <!-- Fecha Nacimiento-->
+                <td><%= patient.exitus ? 'Si' : 'No' %> </td> <!-- Exitus-->
                 <td> <%= link_to 'Más datos', edit_patient_path(patient) %> </td>
-                <td><%= link_to 'Historia clínica', patient_consultations_path(patient.id)  %></td>
-                <!-- Historia-->
+                <td><%= link_to 'Historia clínica', patient_consultations_path(patient.id)  %></td> <!-- Historia-->
               </tr>
           <% end %>
 

@@ -7,9 +7,9 @@ class PatientsController < ApplicationControllerSigned
   # GET /patients.json
   def index
     if params[:search]
-      @patients = Patient.search(params[:search], params[:search_type]).page params[:page]
+      @patients = current_physician.patients.search(params[:search], params[:search_type]).page params[:page]
     else
-      @patients = Patient.page params[:page]
+      @patients = current_physician.patients.page params[:page]
     end
   end
 
@@ -30,8 +30,7 @@ class PatientsController < ApplicationControllerSigned
   # POST /patients
   # POST /patients.json
   def create
-    @patient = Patient.new(patient_params)
-
+    @patient = current_physician.patients.build patient_params
     respond_to do |format|
       if @patient.save
         flash[:success]="Paciente creado con éxito"
@@ -77,6 +76,6 @@ class PatientsController < ApplicationControllerSigned
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:surname, :name, :birth, :gender, :civil_status, :NIF, :passport, :public_insurance_number, :private_insurance_number, :exitus, :phone_house, :mobile_phone, :other_phone, :address, :city, :state, :country, :education, :occupation, :employment, :economic_situation, :institutionalized, :search)
+      params.require(:patient).permit(:surname, :name, :birth, :exitus, :education, :institutionalized, :id2)
     end
 end

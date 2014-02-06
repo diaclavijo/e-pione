@@ -1,4 +1,4 @@
-<%= form_for @patient , builder: ApplicationHelper::MyFormBuilder,  :html => { :class => 'form-horizontal' }   do |f| %>
+<%= form_for @patient,  :validate => true , builder: ApplicationHelper::MyFormBuilder,  :html => { :class => 'form-horizontal' }   do |f| %>
 
   <% if @patient.errors.any? %>
     <div id="error_explanation">
@@ -28,47 +28,13 @@
 
     <div class="form-group">
         <%= f.label :birth, 'Fecha de nacimiento (*)' %>
-        <%= f.date_select :birth, start_year: 1900, end_year:2014 %>     <!--TODO: Darle estilo a estos dropdowns -->
-    </div>
-
-    <div class="form-group">
-        <%= f.label :gender, 'Sexo (*)' %>
-        <%= f.select :gender, Patient::GENDERS,  { include_blank: 'Seleccionar...' }, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-        <%= f.label :civil_status, 'Estado civil (*)' %>
-        <%= f.select :civil_status, Patient::CIVIL_STATUSES , { include_blank: 'Seleccionar...' }, class:'form-control'%>
+        <%= f.date_select :birth, start_year: 1900 %>
     </div>
 
     <div class="col-md-4 col-md-offset-6">
         <hr class="hr_consult"></hr>  <!--Separator -->
     </div>
 
-    <div class="form-group">
-        <%= f.label :NIF, 'NIF (*)' %>
-        <%= f.text_field :NIF %>
-    </div>
-
-    <div class="form-group">
-        <%= f.label :passport, 'Pasaporte (Si es extranjero)' %>
-        <%= f.text_field :passport %>
-    </div>
-
-    <div class="form-group">
-        <%= f.label :public_insurance_number, 'Núm. Seg. Social'%>
-        <%= f.text_field :public_insurance_number%>
-    </div>
-
-    <div class="form-group">
-        <%= f.label :private_insurance_number, 'Tarjeta sanitaria' %>
-        <%= f.text_field :private_insurance_number %>
-    </div>
-
-    <div class="col-md-4 col-md-offset-6">
-        <hr class="hr_consult"></hr>  <!--Separator -->
-    </div>
-    <!--TODO: NHC y Fecha de creación..NHC can be interested to fill here if the real clinic_story_number is different from the id of the table-->
 
     <div class="form-group">
         <%= f.label :exitus, 'Exitus' %>
@@ -79,66 +45,21 @@
         </div>
     </div>
 
-    <div class="col-md-4 col-md-offset-6">
-        <hr class="hr_consult"></hr>  <!--Separator -->
-    </div>
     <div class="form-group">
-       <%= f.label :phone_house, 'Teléfono fijo' %>
-       <%= f.number_field :phone_house, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-        <%= f.label :mobile_phone, 'Teléfono móvil' %>
-        <%= f.number_field :mobile_phone, class: 'form-control', max: 999 %>
-    </div>
-
-    <div class="form-group">
-        <%= f.label :other_phone, 'Otro teléfono' %>
-        <%= f.number_field :other_phone, class:'form-control' %>
+      <%= f.label :id2, 'NHC' %>
+      <%= f.number_field :id2 %>
+      <p> TODO -  mensaje informativo que explique que es un identificador </p> <!-- TODO mensaje inforamtivo que explqiue es un campo para tener referencia -->
     </div>
 
     <div class="col-md-4 col-md-offset-6">
-        <hr class="hr_consult"></hr>  <!--Separator -->
-    </div>
-
-    <div class="form-group">
-        <%= f.label :address, 'Dirección' %>
-        <%= f.text_field :address %>
-    </div>
-    <div class="form-group">
-        <%= f.label :city,'Ciudad (*)' %>
-        <%= f.text_field :city %>
-    </div>
-
-    <div class="form-group">
-        <%= f.label :state, 'Provincia (*)' %>
-        <%= f.text_field :state, class:'form-control' %>
-    </div>
-
-    <div class="form-group">
-        <%= f.label :country, 'Pais (*)' %>
-        <%= f.text_field :country, class:'form-control' %>
-    </div>
-
-    <div class="col-md-4 col-md-offset-6">
-        <hr class="hr_consult"></hr>  <!--Separator -->
+      <hr class="hr_consult"></hr>  <!--Separator -->
     </div>
 
     <div class="form-group">
         <%= f.label :education, 'Escolaridad' %>
         <%= f.select :education, Patient::EDUCATIONS , { include_blank: 'Seleccionar...' }, class:'form-control'%>
     </div>
-    <div class="form-group">
-        <%= f.label :occupation, 'Profesión' %>
-        <%= f.select :occupation, Patient::OCCUPATIONS , { include_blank: 'Seleccionar...' }, class:'form-control'%>
-    </div>
-    <div class="form-group">
-      <%= f.label :employment, 'Situación laboral' %>
-      <%= f.select :employment, Patient::EMPLOYMENTS , { include_blank: 'Seleccionar...' }%>
-    </div>
-    <div class="form-group">
-      <%= f.label :economic_situation, 'Situación económica' %>
-      <%= f.select :economic_situation, Patient::ECONOMIC_SITUATIONS , { include_blank: 'Seleccionar...' }%>
-    </div>
+
     <div class="form-group">
       <%= f.label :institutionalized,'¿Institucionalizado?' %>
       <%= f.select :institutionalized, Patient::INSTITUTIONALIZEDS , { include_blank: 'Seleccionar...' }%>

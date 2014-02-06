@@ -1,15 +1,4 @@
 RailsSIAD::Application.routes.draw do
-
-
-
-
-
-
-
-
-
-  resources :prescripcion_farmacologicas
-
   resources :consultations, only: [] do
     get 'cognitive_symptomatology', to: 'cognitive_symptomatologies#new_or_edit', as: 'cognitive_symptomatology'
     post 'cognitive_symptomatology', to: 'cognitive_symptomatologies#create', as: nil
@@ -48,8 +37,6 @@ RailsSIAD::Application.routes.draw do
     get 'physical_examination', to: 'physical_examinations#new_or_edit', as: 'physical_examination'
     post 'physical_examination', to: 'physical_examinations#create', as: nil
     patch 'physical_examination', to: 'physical_examinations#update', as: nil
-
-
 
   end
 
