@@ -56,6 +56,20 @@ crumb :consultation_physical_examination do |consultation|
   parent :patient_consultation, consultation.patient, consultation
 end
 
+crumb :consultation_habitos do |consultation|
+  link 'Habitos', consultation_habitos_path(consultation)
+  parent :patient_consultation, consultation.patient, consultation
+end
+
+crumb :consultation_pathologies do |consultation|
+  link 'Patologías', consultation_pathologies_path(consultation)
+  parent :patient_consultation, consultation.patient, consultation
+end
+
+crumb :consultation_pruebas do |consultation|
+  link 'Pruebas', consultation_pruebas_path(consultation)
+  parent :patient_consultation, consultation.patient, consultation
+end
 
 # This finds all the tests defined in the folder tests, and from that it infers the breadcrumbs for all of them
 tests = Pathname.glob('app/models/tests/*').map{ |i| i.basename.to_s.gsub('.rb','') }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125174139) do
+ActiveRecord::Schema.define(version: 20131204191025) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -69,6 +69,16 @@ ActiveRecord::Schema.define(version: 20131125174139) do
   end
 
   add_index "examinations", ["consultation_id"], name: "index_examinations_on_consultation_id", using: :btree
+
+  create_table "habitos", force: true do |t|
+    t.integer  "habito"
+    t.string   "comentario"
+    t.integer  "consultation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "habitos", ["consultation_id"], name: "index_habitos_on_consultation_id", using: :btree
 
   create_table "neurological_examinations", force: true do |t|
     t.integer  "f1"
@@ -133,6 +143,15 @@ ActiveRecord::Schema.define(version: 20131125174139) do
   end
 
   add_index "no_cognitive_symptomatologies", ["consultation_id"], name: "index_no_cognitive_symptomatologies_on_consultation_id", using: :btree
+
+  create_table "pathologies", force: true do |t|
+    t.integer  "pathology"
+    t.integer  "consultation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pathologies", ["consultation_id"], name: "index_pathologies_on_consultation_id", using: :btree
 
   create_table "patients", force: true do |t|
     t.string   "surname"
@@ -211,6 +230,25 @@ ActiveRecord::Schema.define(version: 20131125174139) do
   add_index "physicians", ["email"], name: "index_physicians_on_email", unique: true, using: :btree
   add_index "physicians", ["reset_password_token"], name: "index_physicians_on_reset_password_token", unique: true, using: :btree
 
+  create_table "prescripcion_farmacologicas", force: true do |t|
+    t.integer  "tipo"
+    t.string   "prescripcion"
+    t.integer  "consultation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "prescripcion_farmacologicas", ["consultation_id"], name: "index_prescripcion_farmacologicas_on_consultation_id", using: :btree
+
+  create_table "pruebas", force: true do |t|
+    t.integer  "prueba"
+    t.integer  "consultation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pruebas", ["consultation_id"], name: "index_pruebas_on_consultation_id", using: :btree
+
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
     t.string   "username"
@@ -242,6 +280,15 @@ ActiveRecord::Schema.define(version: 20131125174139) do
 
   add_index "test_barthels", ["consultation_id"], name: "index_test_barthels_on_consultation_id", using: :btree
 
+  create_table "test_fasts", force: true do |t|
+    t.integer  "f1"
+    t.integer  "consultation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "test_fasts", ["consultation_id"], name: "index_test_fasts_on_consultation_id", using: :btree
+
   create_table "test_iqcodes", force: true do |t|
     t.integer  "first"
     t.integer  "second"
@@ -266,6 +313,31 @@ ActiveRecord::Schema.define(version: 20131125174139) do
   end
 
   add_index "test_iqcodes", ["consultation_id"], name: "index_test_iqcodes_on_consultation_id", using: :btree
+
+  create_table "test_katzs", force: true do |t|
+    t.integer  "f1"
+    t.integer  "consultation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "test_katzs", ["consultation_id"], name: "index_test_katzs_on_consultation_id", using: :btree
+
+  create_table "test_lawtons", force: true do |t|
+    t.integer  "f1"
+    t.integer  "f2"
+    t.integer  "f3"
+    t.integer  "f4"
+    t.integer  "f5"
+    t.integer  "f6"
+    t.integer  "f7"
+    t.integer  "f8"
+    t.integer  "consultation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "test_lawtons", ["consultation_id"], name: "index_test_lawtons_on_consultation_id", using: :btree
 
   create_table "test_mecs", force: true do |t|
     t.integer  "f1"

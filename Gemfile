@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use mysql as the database for Active Record
-gem 'mysql2'
+gem "mysql2",  ">= 0.2.12"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -65,6 +65,7 @@ group :test do
   gem 'capybara-webkit'  #needed to install qt4-dev-tools libqt4-dev libqt4-core libqt4-gui first
   gem 'selenium-webdriver'
   gem 'capybara-screenshot' #To implement screenshots when capybara fails
+  gem 'factory_girl_rails', "~> 4.0" #To create sessions, log with users, and so on
 end
 gem "launchy"
 #end by yarilo

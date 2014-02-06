@@ -1,92 +1,128 @@
-
-
-
-
+<!--TODO: Info de la derecha en Edevitalzh-->
+<div class="form-group">
+  <div class="col-md-6 col-md-offset-3">
     <h2> Orientación </h2>
-
+  </div>
+  <div class="col-md-6 col-md-offset-1">
+    <hr>
+  </div>
+</div>
   <div class="form-group">
-    <%= f.label :year %><br>
+    <%= f.label :year,'¿En qué año estamos?' %><br>
     <%= f.select :year, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :station %><br>
+    <%= f.label :station,'¿En qué estación del año estamos?' %><br>
     <%= f.select :station, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :day_month %><br>
+    <%= f.label :day_month, '¿Qué día del mes es hoy?' %><br>
     <%= f.select :day_month, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :day_week %><br>
+    <%= f.label :day_week, '¿Qué día de la semana es hoy?' %><br>
     <%= f.select :day_week, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :month %><br>
+    <%= f.label :month,'¿En qué mes del año estamos?' %><br>
     <%= f.select :month, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :country %><br>
+    <%= f.label :country,'¿En qué país estamos?' %><br>
     <%= f.select :country, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :province %><br>
+    <%= f.label :province,'¿En qué provincia estamos?' %><br>
     <%= f.select :province, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :city %><br>
+    <%= f.label :city,'¿En qué ciudad estamos?' %><br>
     <%= f.select :city, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :where %><br>
+    <%= f.label :where,'¿Dónde estamos en este momento?' %><br>
     <%= f.select :where, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :flat %><br>
+    <%= f.label :flat,'¿En que piso/planta estamos?' %><br>
     <%= f.select :flat, Test::SUCCESS %>
   </div>
 
-    <h2> Fijación </h2>
-
   <div class="form-group">
-    <%= f.label :objects %><br>
+      <div class="col-md-6 col-md-offset-3">
+        <h2> Fijación </h2>
+
+      </div>
+       <div class="col-md-6 col-md-offset-1">
+        <hr>
+      </div>
+  </div>
+
+    <div class="form-group">
+    <%= f.label :objects,'Nombra 3 objetos a intervalos de 1 segundo: Bicicleta,
+     cuchara, manzana.
+     Puntúe con 1 punto cada respuesta correcta y repita los nombres hasta que los aprenda.' %><br>
     <%= f.select :objects, (0..3).to_a  %>
   </div>
 
-    <h2> Atención y calculo </h2>
-
-  <div class="form-group">
-    <%= f.label :attention %><br>
+<div class="form-group">
+  <div class="col-md-6 col-md-offset-3">
+    <h2> Atención y cálculo </h2>
+  </div>
+  <div class="col-md-6 col-md-offset-1">
+    <hr>
+  </div>
+</div>
+    <div class="form-group">
+    <%= f.label :attention, '[Opción 1] Restar , a partir de 100, de 7 en 7. Parar después de 5 respuestas.[Opción 2] Deletrear al revés una palabra.' %>
     <%= f.select :attention, (0..5).to_a  %>
   </div>
 
-    <h2> Memoria </h2>  <br />
+<div class="form-group">
+  <div class="col-md-6 col-md-offset-3">
+    <h2> Memoria </h2>
+  </div>
+  <div class="col-md-6 col-md-offset-1">
+    <hr>
+  </div>
+</div>
+
   <div class="form-group">
-    <%= f.label :memory %><br>
+    <%= f.label :memory, 'Pregunte los nombres de los tres objetos: bicicleta, cuchara, manzana. Puntúe con 1 punto cada respuesta correcta.' %><br>
     <%= f.select :memory, (0..3).to_a  %>
   </div>
-    <h2> Lenguaje y praxis constructiva</h2>
+
+<div class="form-group">
+  <div class="col-md-6 col-md-offset-2">
+    <h2>Lenguaje y praxis constructiva </h2>
+  </div>
+  <div class="col-md-6 col-md-offset-1">
+    <hr>
+  </div>
+</div>
+
   <div class="form-group">
-    <%= f.label :pencil %><br>
+    <%= f.label :pencil,'Señale un Lápiz y un Reloj'%>
     <%= f.select :pencil, (0..2).to_a  %>
   </div>
   <div class="form-group">
-    <%= f.label :repeat %><br>
+    <%= f.label :repeat,'Haga que el paciente repita: "Ni si, ni no, ni peros".' %>
     <%= f.select :repeat, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :orders %><br>
+    <%= f.label :orders,'Haga que el paciente siga tres ordenes: "Coja este papel con la mano derecha, dóblelo por la mitad y déjelo en el suelo"' %>
     <%= f.select :orders, (0..3).to_a  %>
   </div>
   <div class="form-group">
-    <%= f.label :eyes %><br>
+    <%= f.label :eyes,'El paciente tiene que leer y hacer lo siguiente: "Cierre los ojos" ' %><br>
     <%= f.select :eyes, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :sentence %><br>
+    <%= f.label :sentence,'Haga que el paciente escriba una oración (sujeto, verbo y objeto). ' %><br>
     <%= f.select :sentence, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :draw %><br>
+    <%= f.label :draw,'Haga que el paciente copie el dibujo (2 Pentágonos en intersección).' %><br>
     <%= f.select :draw, Test::SUCCESS %>
   </div>
 
