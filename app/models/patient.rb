@@ -14,6 +14,7 @@ class Patient < ActiveRecord::Base
 
   validates :phone_house, :other_phone, :mobile_phone, length: {maximum: 9}
   validates :NIF, uniqueness: true
+  validates :passport, uniqueness: true
 
   # Configuration
   paginates_per 10

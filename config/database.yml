@@ -23,11 +23,12 @@ development:
 test: &test
   adapter: mysql2
   encoding: utf8
-  database: RailsSIAD_test
+  database: RailsSIAD_test_db
   pool: 5
   username: root
   password: 'alzheimer'
   socket: /var/run/mysqld/mysqld.sock
+
 
 production:
   adapter: mysql2

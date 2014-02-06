@@ -1,18 +1,6 @@
 <% disabled = false unless defined? disabled %>
 <%= form_for([@consultation,get_resource_ivar],
              builder: ApplicationHelper::MyFormBuilder,            disabled: disabled, html: {class: 'form-horizontal'} ) do |f| %>
-  <% if get_resource_ivar.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(get_resource_ivar.errors.count, "error") %> prohibited this test_mec from being saved:</h2>
-
-      <ul>
-      <% get_resource_ivar.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-        
-  <% end %>
 
 
   <%= render partial: 'form_fields', locals: {f: f} %>
@@ -20,8 +8,10 @@
   <% if disabled %>
         <td><%= link_to 'Eliminar', [@consultation, get_resource_ivar], method: :delete, data: { confirm: 'Estás seguro que quiere elimnar este test?' } %></td>
   <% else %>
-        <div class="actions">
-          <%= f.submit %>
+        <div class="form-group">
+            <div class="actions">
+              <%= f.submit %>
+            </div>
         </div>
 
   <% end %>

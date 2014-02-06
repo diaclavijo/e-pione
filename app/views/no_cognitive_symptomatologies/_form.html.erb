@@ -5,64 +5,56 @@
                  html: {class: 'form-horizontal', role: 'form'},
                  builder: ApplicationHelper::MyFormBuilder ,
                  url: consultation_no_cognitive_symptomatology_path(@consultation) ) do |f| %>
-        <% if @no_cognitive_symptomatology.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@no_cognitive_symptomatology.errors.count, "error") %> prohibited this no_cognitive_symptomatology from being saved:</h2>
 
-              <ul>
-                <% @no_cognitive_symptomatology.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-              </ul>
-            </div>
-        <% end %>
 
-        <div class="field">
-          <%= f.label :psychomotor %><br>
+        <div class="form-group">
+          <%= f.label :psychomotor %>
           <%= f.select :psychomotor, Examination::NOYESUNKNOWN %>
         </div>
-        <div class="field">
-          <%= f.label :lability %><br>
+        <div class="form-group">
+          <%= f.label :lability %>
           <%= f.select :lability, Examination::NOYESUNKNOWN %>
         </div>
-        <div class="field">
-          <%= f.label :euphoria %><br>
+        <div class="form-group">
+          <%= f.label :euphoria %>
           <%= f.select :euphoria, Examination::NOYESUNKNOWN %>
         </div>
-        <div class="field">
-          <%= f.label :apathy %><br>
+        <div class="form-group">
+          <%= f.label :apathy %>
           <%= f.select :apathy, Examination::NOYESUNKNOWN %>
         </div>
-        <div class="field">
-          <%= f.label :depression %><br>
+        <div class="form-group">
+          <%= f.label :depression %>
           <%= f.select :depression, Examination::NOYESUNKNOWN %>
         </div>
-        <div class="field">
-          <%= f.label :anxiety %><br>
+        <div class="form-group">
+          <%= f.label :anxiety %>
           <%= f.select :anxiety, Examination::NOYESUNKNOWN %>
         </div>
-        <div class="field">
-          <%= f.label :hallucinations %><br>
+        <div class="form-group">
+          <%= f.label :hallucinations %>
           <%= f.select :hallucinations, Examination::NOYESUNKNOWN %>
         </div>
-        <div class="field">
-          <%= f.label :delusions %><br>
+        <div class="form-group">
+          <%= f.label :delusions %>
           <%= f.select :delusions, Examination::NOYESUNKNOWN %>
         </div>
-        <div class="field">
-          <%= f.label :disinhibition %><br>
+        <div class="form-group">
+          <%= f.label :disinhibition %>
           <%= f.select :disinhibition, Examination::NOYESUNKNOWN %>
         </div>
-        <div class="field">
-          <%= f.label :motor %><br>
+        <div class="form-group">
+          <%= f.label :motor %>
           <%= f.select :motor, Examination::NOYESUNKNOWN %>
         </div>
-        <div class="field">
-          <%= f.label :sleep %><br>
+        <div class="form-group">
+          <%= f.label :sleep %>
           <%= f.select :sleep, Examination::NOYESUNKNOWN %>
         </div>
-        <div class="actions">
-          <%= f.submit %>
+        <div class="form-group">
+          <div class="actions">
+            <%= f.submit %>
+          </div>
         </div>
     <% end %>
   </div> <!--/jumbotron-->

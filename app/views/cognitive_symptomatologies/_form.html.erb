@@ -6,18 +6,6 @@
                  builder: ApplicationHelper::MyFormBuilder ,
                  url: consultation_cognitive_symptomatology_path(@consultation) ) do |f| %>
 
-        <% if @cognitive_symptomatology.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@cognitive_symptomatology.errors.count, "error") %> prohibited this cognitive_symptomatology
-                from being saved:</h2>
-
-              <ul>
-                <% @cognitive_symptomatology.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-              </ul>
-            </div>
-        <% end %>
 
         <div class='form-group'>
           <%= f.label :memory, 'Alteración de memoria (*)' %>
