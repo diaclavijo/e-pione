@@ -65,7 +65,6 @@ group :test do
   gem 'capybara-webkit'  #needed to install qt4-dev-tools libqt4-dev libqt4-core libqt4-gui first
   gem 'selenium-webdriver'
   gem 'capybara-screenshot' #To implement screenshots when capybara fails
-  gem 'factory_girl_rails', "~> 4.0" #To create sessions, log with users, and so on
 end
 gem "launchy"
 #end by yarilo
