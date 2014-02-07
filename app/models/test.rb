@@ -2,7 +2,7 @@
 
 class Test < ActiveRecord::Base
 
-  paginates_per 5
+  # paginates_per 5
   belongs_to :consultation
   belongs_to :test_data, polymorphic: true
   has_one :patient, through: :consultation
