@@ -1,0 +1,37 @@
+<!-- this expects a consultations set to render the consultations -->
+<div class="jumbotron" id="jumbotron-consultations">
+	<h4>Lista de consultas del paciente</h4>
+
+	<div class="table-responsive">
+		<table class="table table-striped table-hover">
+			<tr>
+
+				<th>NHC</th>
+				<th>Consulta</th>
+				<th>Fecha</th>
+				<th>Tipo</th>
+				<th>Facultativo</th>
+				<th>Detalles</th>
+			</tr>
+			<% consultations.each do |consultation| %>
+					<tr>
+						<td><%= consultation.patient_id %> </td>        <!-- NHC-->
+						<td><%= consultation.id %> </td>        <!-- Consulta-->
+						<td><%= consultation.date %>  </td>   <!-- Fecha-->
+						<td><%= consultation.activity_text %></td>    <!-- Tipo-->
+						<td><%= consultation.physician.full_name %></td> <!-- Facultativo-->
+						<td><%= link_to 'Ver historia consulta', [consultation.patient, consultation] %></td>
+						<!-- Historia-->
+					</tr>
+			<% end %>
+		</table>
+	</div>
+ <!--/.responsive-table-->
+
+
+</div>
+<!-- /container -->
+
+
+
+
