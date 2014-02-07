@@ -21,6 +21,11 @@ crumb :patient do |patient|
   parent :patients
 end
 
+crumb :patient_full_history do |patient|
+  link 'Historia completa del paciente', patient_full_history_path(patient)
+  parent :patient, patient
+end
+
 crumb :new_patient_consultation do |patient|
   link 'Nueva consulta'
   parent :patient, patient
