@@ -1,0 +1,16 @@
+<!--URL patients/1/historia-completa -->
+<% breadcrumb :patient_full_history, @patient %>
+<% content_for :top_title do %>
+    Historia de paciente <span class="text-muted"><%= @patient.name %></span>
+<% end %>
+<% content_for :title do %>
+    Historia completa
+<% end %>
+
+<%= render partial: 'shared/consultations_history',
+					 locals: { consultations: @patient.consultations } %>
+
+<%= render partial: 'shared/historico_habitos', locals: { habitos: @patient.habitos } %>
+
+
+

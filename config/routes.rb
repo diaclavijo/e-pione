@@ -39,14 +39,11 @@ RailsSIAD::Application.routes.draw do
     patch 'physical_examination', to: 'physical_examinations#update', as: nil
 
   end
-
-
-
   get 'diagnosis', to: 'diagnoses#diagnosis', as: 'diagnosis'
-
 
   resources :patients  do
     resources :consultations, only: [:create, :new, :index, :show, :edit, :update]
+    get 'full-history', to: 'history#index', as: 'full_history'
   end
 
   # the following solution was found in http://stackoverflow.com/questions/3791096/devise-logged-in-root-route-rails-3

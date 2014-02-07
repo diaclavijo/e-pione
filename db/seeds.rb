@@ -51,7 +51,7 @@ puts 'Creating consultaions example'
       physician_id: Physician.first.id,
       patient_id: Patient.first.id,
       activity: i % 3               ,
+      date: Time.now - i**i**i,
       description: 'otra descripción más del numero'+i.to_s
   )
-
 } if Consultation.all.empty?
