@@ -27,7 +27,7 @@ crumb :new_patient_consultation do |patient|
 end
 
 crumb :patient_consultation do |patient, consultation|
-  link ('Consulta '+consultation.id.to_s), patient_consultation_path(patient, consultation)
+  link ('Consulta '+consultation.date.to_s), patient_consultation_path(patient, consultation)
   parent :patient, patient
 end
 
