@@ -18,7 +18,6 @@ class HabitosController < ConsultationResourcesController
       if @habito.save
         format.js {}
       else
-        format.html { render action: 'new' }
         format.json { render json: @habito.errors, status: :unprocessable_entity }
 
       end
