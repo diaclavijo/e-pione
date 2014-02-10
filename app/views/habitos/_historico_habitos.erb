@@ -2,22 +2,19 @@
 <div class="jumbotron">
   <div class="row">
 
-
     <h4>Histórico de Hábitos del paciente</h4>
     <div class="table-responsive">         <!--/.responsive-table-->
       <table class="table table-striped table-hover"  >
         <tr>
-
           <th>NHC</th>
-          <th>Consulta</th>
-          <th>Fecha</th>
+          <th>Fecha de consulta</th>
           <th>Hábito</th>
           <th>Comentarios</th>
           <th>Detalles</th>
         </tr>
 
         <tbody id="habitos">
-        <%= render partial: 'shared/habito', collection: habitos %>
+        <%= render partial: 'habitos/habito', collection: habitos %>
         </tbody>
       </table>
     </div> <!--/.responsive-table-->

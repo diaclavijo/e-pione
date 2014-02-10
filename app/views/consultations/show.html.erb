@@ -10,21 +10,17 @@
     Protocolo clínico de consulta <span class="text-muted"> <%= @consultation.date %>   </span>
 <% end %>
 
-
-
 <%= render 'consultations/select'   %>
 
 <!-- RESUMEN DE SINTOMATOLOGÍAS EXPLORADAS EN ESTA CONSULTA  -->
 
-<%= render partial: 'shared/examinations_history', locals: { consultation: @consultation ,
-                                                      page: params[:page],
-                                                      examinations: @consultation.examinations.page(params[:page]).order(created_at: :desc)} %>
+<%= render partial: 'shared/examinations_history',
+					 locals: { examinations: @consultation.examinations.order(created_at: :desc) } %>
 
 <!-- RESUMEN DE TESTS REALIZADOS EN ESTA CONSULTA   -->
 
-<%= render partial: 'shared/tests_history_typed', locals: { consultation: @consultation ,
-                                                      page: params[:page],
-                                                      tests: @consultation.tests.page(params[:page]).order(created_at: :desc)} %>
+<%= render partial: 'shared/tests_history_typed',
+					 locals: { tests: @consultation.tests.order(created_at: :desc) } %>
 
 
 

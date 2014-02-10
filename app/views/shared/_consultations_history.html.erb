@@ -13,7 +13,7 @@
 			</tr>
 			<% consultations.each do |consultation| %>
 					<tr>
-						<td><%= consultation.patient.id2 || 'No' %> </td>        <!-- NHC-->
+						<td><%= consultation.patient.id2 || t('no-nhc') %> </td>        <!-- NHC-->
 						<td><%= consultation.date %>  </td>   <!-- Fecha de consulta-->
 						<td><%= consultation.activity_text %></td>    <!-- Tipo-->
 						<td><%= consultation.physician.full_name %></td> <!-- Facultativo-->

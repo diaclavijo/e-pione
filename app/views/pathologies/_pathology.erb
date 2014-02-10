@@ -1,10 +1,8 @@
 
-          <tr id="pathology<%=pathology.id%>" >
-            <td><%= pathology.patient.id %></td>       <!-- NHC -->
-            <td><%= pathology.consultation.id %></td>       <!-- Consulta -->
-            <td><%= pathology.consultation.created_at.to_date %></td>       <!-- Fecha -->
-            <td><%= pathology.pathology_text %></td>       <!-- Hábito -->
-            <td><%= pathology.cie %></td>       <!-- Comentarios-->
-            <td><%= link_to 'Eliminarla', [pathology.consultation,pathology], method: :delete, data: { confirm: 'Está seguro?' }, remote: true %></td>
-
-          </tr>
+<tr id="pathology<%=pathology.id%>" >
+	<td><%= pathology.patient.id2 || t('no-nhc') %></td>       <!-- NHC -->
+	<td><%= pathology.consultation.date %></td>       <!-- Fecha de Consulta -->
+	<td><%= pathology.pathology_text %></td>       <!-- Hábito -->
+	<td><%= pathology.cie %></td>       <!-- Comentarios-->
+	<td><%= link_to 'Eliminarla', [pathology.consultation,pathology], method: :delete, data: { confirm: 'Está seguro?' }, remote: true %></td>
+</tr>

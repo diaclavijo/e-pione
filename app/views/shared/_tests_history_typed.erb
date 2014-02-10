@@ -7,8 +7,7 @@
 			<% if tests.any? %>
 				<tr>
 					<th>NHC</th>
-					<th>Consulta</th>
-					<th>Fecha</th>
+					<th>Fecha de consulta</th>
 					<th>ID Test</th>
 					<th>Tipo Test</th>
 					<th>Score</th>
@@ -18,13 +17,12 @@
 
 				<% tests.each do |test| %>
 						<tr>
-							<td><%= test.patient.id %></td>       <!-- NHC -->
-							<td><%= test.consultation.id %></td>       <!-- Consulta -->
-							<td><%= test.consultation.created_at.to_date %></td>       <!-- Fecha -->
+							<td><%= test.patient.id2 || 'No' %></td>       <!-- NHC -->
+							<td><%= test.consultation.date %></td>       <!-- Consulta -->
 							<td><%= test.category_text %></td>       <!-- Tipo de Test -->
 							<td><%= test.test_data_type %></td>       <!-- Tipo de Test -->
 							<td><%= test.score%></td>       <!-- Score -->
-							<td><%= link_to 'Ver detalles' , [consultation, test.test_data]%> </td>       <!-- Detalles -->
+							<td><%= link_to 'Ver detalles' , [test.consultation, test.test_data]%> </td>       <!-- Detalles -->
 
 						</tr>
 				<% end %>
@@ -36,7 +34,5 @@
 
     </table>
   </div> <!--/.responsive-table-->
-
-  <%= paginate consultation.cognitive_tests.page(page) %>  <!-- TODO - This should be made with javascript to get better behavior   -->
 
 </div> <!--/jumbotron-->

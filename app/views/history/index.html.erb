@@ -10,7 +10,15 @@
 <%= render partial: 'shared/consultations_history',
 					 locals: { consultations: @patient.consultations } %>
 
-<%= render partial: 'shared/historico_habitos', locals: { habitos: @patient.habitos } %>
+<%= render partial: 'shared/tests_history_typed', locals: { tests: @patient.tests } %>
+
+<%= render partial: 'shared/examinations_history', locals: { examinations: @patient.examinations } %>
+
+<%= render partial: 'pathologies/historico_pathologies', locals: { pathologies: @patient.pathologies } %>
+
+<%= render partial: 'pruebas/historico_pruebas', locals: { pruebas: @patient.pruebas } %>
+
+<%= render partial: 'habitos/historico_habitos', locals: { habitos: @patient.habitos } %>
 
 
 

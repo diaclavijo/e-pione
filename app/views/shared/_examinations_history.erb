@@ -6,35 +6,25 @@
 			<% if examinations.any? %>
 				<tr>
 					<th>NHC</th>
-					<th>Consulta</th>
-					<th>Fecha</th>
+					<th>Fecha de consulta</th>
 					<th>Tipo exploración</th>
-					<th>Facultativo</th>
 					<th>Detalles</th>
 				</tr>
 
 				<% examinations.each do |examination| %>
 						<tr>
-							<td><%= examination.patient.id %></td>       <!-- NHC -->
-							<td><%= examination.consultation.id %></td>       <!-- Consulta -->
-							<td><%= examination.consultation.created_at.to_date %></td>       <!-- Fecha -->
+							<td><%= examination.patient.id2 || 'No' %></td>       <!-- NHC -->
+							<td><%= examination.consultation.date %></td>       <!-- Fecha de consulta -->
 							<td><%= examination.examination_data_type %></td>       <!-- Tipo de exploracion -->
-							<td><%= examination.physician.full_name %></td>       <!-- Facultativo -->
-							<td><%= link_to 'Ver detalles' , [consultation, examination.examination_data] %> </td>       <!-- Detalles -->
-
+							<td><%= link_to 'Ver detalles' , [examination.consultation, examination.examination_data] %> </td>       <!-- Detalles -->
 						</tr>
 				<% end %>
 			<% else %>
 				No se le ha realizado ninguna exploración a este paciente. Para realizarla seleccione la exploración en los iconos situados
 				encima de este mensaje. <!-- TODO revisa este mensaje y formato -->
 			<% end %>
-
     </table>
   </div> <!--/.responsive-table-->
-
-
-
-
 </div> <!--/jumbotron-->
 
    

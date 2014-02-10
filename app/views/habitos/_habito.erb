@@ -1,0 +1,9 @@
+
+<tr id="habito<%=habito.id%>" >
+	<td><%= habito.patient.id2 || t('no-nhc') %></td>            <!-- NHC -->
+	<td><%= habito.consultation.date %></td>       <!-- Fecha de Consulta -->
+	<td><%= habito.habito_text %></td>       <!-- Hábito -->
+	<td><%= habito.comentario %></td>       <!-- Comentarios-->
+	<td><%= link_to 'Eliminarlo', [habito.consultation,habito], method: :delete, data: { confirm: 'Está seguro?' }, remote: true %></td>
+
+</tr>

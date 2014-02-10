@@ -9,15 +9,14 @@
         <tr>
 
           <th>NHC</th>
-          <th>Consulta</th>
-          <th>Fecha</th>
+          <th>Fecha de consulta</th>
           <th>Patología</th>
           <th>CIE9</th>
           <th>Detalles</th>
         </tr>
 
         <tbody id="pathologies">
-        <%= render partial: 'pathology', collection: pathologies %>
+        <%= render partial: 'pathologies/pathology', collection: pathologies %>
         </tbody>
       </table>
     </div> <!--/.responsive-table-->

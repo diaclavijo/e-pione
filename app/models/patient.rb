@@ -3,6 +3,7 @@ class Patient < ActiveRecord::Base
   has_many :consultations
   belongs_to :physician
   has_many :tests, through: :consultations
+  has_many :examinations, through: :consultations
   has_many :habitos, through: :consultations
   has_many :pathologies, through: :consultations
   has_many :pruebas, through: :consultations
