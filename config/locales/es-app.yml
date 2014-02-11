@@ -1,0 +1,26 @@
+es:
+
+  no-nhc: 'X'
+
+  PhysicalExamination: 'Exploración física'
+  NeurologicalExamination: 'Exploración Neurológica'
+  NoCognitiveSymptomatology: 'Sintomatología No Cognitiva'
+  CognitiveSymptomatology: 'Sintomatología Cognitiva'
+
+  TestBarthel: 'Test Barthel'
+  TestMec: 'Test Mec'
+  TestFast: 'Test Fast'
+  TestIqcode: 'Test del Informador'
+  TestKatz: 'Test Katz'
+  TestLawton: 'Test Lawtons'
+  TestMec: 'Test Mec'
+  TestMinimental: 'Test minimental'
+  TestNpi: 'Test NPI'
+  TestPfeiffer: 'Test de Pfeiffer'
+  TestReloj: 'Test del reloj'
+  TestYesavage10: 'Test Yesavage 10'
+  TestYesavage15: 'Test Yesavage 15'
+  TestYesavage30: 'Test Yesavage 30'
+  TestYesavage4:  'Test Yesavage 4'
+
+

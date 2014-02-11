@@ -13,9 +13,9 @@
 
 				<% examinations.each do |examination| %>
 						<tr>
-							<td><%= examination.patient.id2 || 'No' %></td>       <!-- NHC -->
+							<td><%= examination.patient.id2 || t('no-nhc') %></td>       <!-- NHC -->
 							<td><%= examination.consultation.date %></td>       <!-- Fecha de consulta -->
-							<td><%= examination.examination_data_type %></td>       <!-- Tipo de exploracion -->
+							<td><%= t(examination.examination_data_type) %></td>       <!-- Tipo de exploracion -->
 							<td><%= link_to 'Ver detalles' , [examination.consultation, examination.examination_data] %> </td>       <!-- Detalles -->
 						</tr>
 				<% end %>

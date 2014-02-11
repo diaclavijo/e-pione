@@ -15,12 +15,12 @@
 <!-- RESUMEN DE SINTOMATOLOGÍAS EXPLORADAS EN ESTA CONSULTA  -->
 
 <%= render partial: 'shared/examinations_history',
-					 locals: { examinations: @consultation.examinations.order(created_at: :desc) } %>
+					 locals: { examinations: @patient.examinations.order(created_at: :desc) } %>
 
 <!-- RESUMEN DE TESTS REALIZADOS EN ESTA CONSULTA   -->
 
 <%= render partial: 'shared/tests_history_typed',
-					 locals: { tests: @consultation.tests.order(created_at: :desc) } %>
+					 locals: { tests: @patient.tests.order(created_at: :desc) } %>
 
 
 

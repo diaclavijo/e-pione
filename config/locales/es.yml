@@ -1,7 +1,4 @@
 es:
-
-  no-nhc: 'No'
-
   views:
     pagination:
       first: "&laquo;"
