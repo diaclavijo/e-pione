@@ -9,6 +9,6 @@ class TestYesavage4sController < TestsController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_yesavage4_params
-      params.require(:test_yesavage4).permit(:first, :second, :third, :forth, :consultation_id)
+      params.require(:test_yesavage4).permit(:f1, :f2, :f3, :f4, :consultation_id)
     end
 end

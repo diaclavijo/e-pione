@@ -8,44 +8,44 @@
   </div>
 </div>
   <div class="form-group">
-    <%= f.label :year,'¿En qué año estamos?' %><br>
-    <%= f.select :year, Test::SUCCESS %>
+    <%= f.label :f1,'¿En qué año estamos?' %><br>
+    <%= f.select :f1, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :station,'¿En qué estación del año estamos?' %><br>
-    <%= f.select :station, Test::SUCCESS %>
+    <%= f.label :f2,'¿En qué estación del año estamos?' %><br>
+    <%= f.select :f2, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :day_month, '¿Qué día del mes es hoy?' %><br>
-    <%= f.select :day_month, Test::SUCCESS %>
+    <%= f.label :f3, '¿Qué día del mes es hoy?' %><br>
+    <%= f.select :f3, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :day_week, '¿Qué día de la semana es hoy?' %><br>
-    <%= f.select :day_week, Test::SUCCESS %>
+    <%= f.label :f4, '¿Qué día de la semana es hoy?' %><br>
+    <%= f.select :f4, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :month,'¿En qué mes del año estamos?' %><br>
-    <%= f.select :month, Test::SUCCESS %>
+    <%= f.label :f5,'¿En qué mes del año estamos?' %><br>
+    <%= f.select :f5, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :country,'¿En qué país estamos?' %><br>
-    <%= f.select :country, Test::SUCCESS %>
+    <%= f.label :f6,'¿En qué país estamos?' %><br>
+    <%= f.select :f6, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :province,'¿En qué provincia estamos?' %><br>
-    <%= f.select :province, Test::SUCCESS %>
+    <%= f.label :f7,'¿En qué provincia estamos?' %><br>
+    <%= f.select :f7, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :city,'¿En qué ciudad estamos?' %><br>
-    <%= f.select :city, Test::SUCCESS %>
+    <%= f.label :f8,'¿En qué ciudad estamos?' %><br>
+    <%= f.select :f8, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :where,'¿Dónde estamos en este momento?' %><br>
-    <%= f.select :where, Test::SUCCESS %>
+    <%= f.label :f9,'¿Dónde estamos en este momento?' %><br>
+    <%= f.select :f9, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :flat,'¿En que piso/planta estamos?' %><br>
-    <%= f.select :flat, Test::SUCCESS %>
+    <%= f.label :f10,'¿En que piso/planta estamos?' %><br>
+    <%= f.select :f10, Test::SUCCESS %>
   </div>
 
   <div class="form-group">
@@ -59,10 +59,10 @@
   </div>
 
     <div class="form-group">
-    <%= f.label :objects,'Nombra 3 objetos a intervalos de 1 segundo: Bicicleta,
+    <%= f.label :f11,'Nombra 3 objetos a intervalos de 1 segundo: Bicicleta,
      cuchara, manzana.
      Puntúe con 1 punto cada respuesta correcta y repita los nombres hasta que los aprenda.' %><br>
-    <%= f.select :objects, (0..3).to_a  %>
+    <%= f.select :f11, (0..3).to_a  %>
   </div>
 
 <div class="form-group">
@@ -74,8 +74,8 @@
   </div>
 </div>
     <div class="form-group">
-    <%= f.label :attention, '[Opción 1] Restar , a partir de 100, de 7 en 7. Parar después de 5 respuestas.[Opción 2] Deletrear al revés una palabra.' %>
-    <%= f.select :attention, (0..5).to_a  %>
+    <%= f.label :f12, '[Opción 1] Restar , a partir de 100, de 7 en 7. Parar después de 5 respuestas.[Opción 2] Deletrear al revés una palabra.' %>
+    <%= f.select :f12, (0..5).to_a  %>
   </div>
 
 <div class="form-group">
@@ -88,8 +88,8 @@
 </div>
 
   <div class="form-group">
-    <%= f.label :memory, 'Pregunte los nombres de los tres objetos: bicicleta, cuchara, manzana. Puntúe con 1 punto cada respuesta correcta.' %><br>
-    <%= f.select :memory, (0..3).to_a  %>
+    <%= f.label :f13, 'Pregunte los nombres de los tres objetos: bicicleta, cuchara, manzana. Puntúe con 1 punto cada respuesta correcta.' %><br>
+    <%= f.select :f13, (0..3).to_a  %>
   </div>
 
 <div class="form-group">
@@ -102,27 +102,27 @@
 </div>
 
   <div class="form-group">
-    <%= f.label :pencil,'Señale un Lápiz y un Reloj'%>
-    <%= f.select :pencil, (0..2).to_a  %>
+    <%= f.label :f14,'Señale un Lápiz y un Reloj'%>
+    <%= f.select :f14, (0..2).to_a  %>
   </div>
   <div class="form-group">
-    <%= f.label :repeat,'Haga que el paciente repita: "Ni si, ni no, ni peros".' %>
-    <%= f.select :repeat, Test::SUCCESS %>
+    <%= f.label :f15,'Haga que el paciente repita: "Ni si, ni no, ni peros".' %>
+    <%= f.select :f15, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :orders,'Haga que el paciente siga tres ordenes: "Coja este papel con la mano derecha, dóblelo por la mitad y déjelo en el suelo"' %>
-    <%= f.select :orders, (0..3).to_a  %>
+    <%= f.label :f16,'Haga que el paciente siga tres ordenes: "Coja este papel con la mano derecha, dóblelo por la mitad y déjelo en el suelo"' %>
+    <%= f.select :f16, (0..3).to_a  %>
   </div>
   <div class="form-group">
-    <%= f.label :eyes,'El paciente tiene que leer y hacer lo siguiente: "Cierre los ojos" ' %><br>
-    <%= f.select :eyes, Test::SUCCESS %>
+    <%= f.label :f17,'El paciente tiene que leer y hacer lo siguiente: "Cierre los ojos" ' %><br>
+    <%= f.select :f17, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :sentence,'Haga que el paciente escriba una oración (sujeto, verbo y objeto). ' %><br>
-    <%= f.select :sentence, Test::SUCCESS %>
+    <%= f.label :f18,'Haga que el paciente escriba una oración (sujeto, verbo y objeto). ' %><br>
+    <%= f.select :f18, Test::SUCCESS %>
   </div>
   <div class="form-group">
-    <%= f.label :draw,'Haga que el paciente copie el dibujo (2 Pentágonos en intersección).' %><br>
-    <%= f.select :draw, Test::SUCCESS %>
+    <%= f.label :f19,'Haga que el paciente copie el dibujo (2 Pentágonos en intersección).' %><br>
+    <%= f.select :f19, Test::SUCCESS %>
   </div>
 

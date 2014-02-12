@@ -1,23 +1,23 @@
 class CreateTestIqcodes < ActiveRecord::Migration
   def change
     create_table :test_iqcodes do |t|
-      t.integer :first
-      t.integer :second
-      t.integer :third
-      t.integer :forth
-      t.integer :fifth
-      t.integer :sixth
-      t.integer :seventh
-      t.integer :eighth
-      t.integer :ninth
-      t.integer :tenth
-      t.integer :eleventh
-      t.integer :twelfth
-      t.integer :thirteenth
-      t.integer :fourteenth
-      t.integer :fifteenth
-      t.integer :sixteenth
-      t.integer :seventeenth
+      t.integer :f1
+      t.integer :f2
+      t.integer :f3
+      t.integer :f4
+      t.integer :f5
+      t.integer :f6
+      t.integer :f7
+      t.integer :f8
+      t.integer :f9
+      t.integer :f10
+      t.integer :f11
+      t.integer :f12
+      t.integer :f13
+      t.integer :f14
+      t.integer :f15
+      t.integer :f16
+      t.integer :f17
       t.belongs_to :consultation, index: true
 
       t.timestamps

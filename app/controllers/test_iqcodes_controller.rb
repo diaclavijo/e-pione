@@ -11,6 +11,6 @@ class TestIqcodesController < TestsController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_iqcode_params
-      params.require(:test_iqcode).permit(:first, :second, :third, :forth, :fifth, :sixth, :seventh, :eighth, :ninth, :tenth, :eleventh, :twelfth, :thirteenth, :fourteenth, :fifteenth, :sixteenth, :seventeenth, :consultation_id)
+      params.require(:test_iqcode).permit(:f1, :f2, :f3, :f4, :f5, :f6, :f7, :f8, :f9, :f10, :f11, :f12, :f13, :f14, :f15, :f16, :f17, :consultation_id)
     end
 end

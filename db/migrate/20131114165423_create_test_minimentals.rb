@@ -1,26 +1,25 @@
 class CreateTestMinimentals < ActiveRecord::Migration
   def change
     create_table :test_minimentals do |t|
-      t.integer :year
-      t.integer :station
-      t.integer :day_month
-      t.integer :day_week
-      t.integer :month
-      t.integer :country
-      t.integer :province
-      t.integer :city
-      t.integer :where
-      t.integer :flat
-      t.integer :objects
-      t.integer :attention
-      t.integer :memory
-      t.integer :pencil
-      t.integer :repeat
-      t.integer :orders
-      t.integer :eyes
-      t.integer :sentence
-      t.integer :draw
-
+      t.integer :f1
+      t.integer :f2
+      t.integer :f3
+      t.integer :f4
+      t.integer :f5
+      t.integer :f6
+      t.integer :f7
+      t.integer :f8
+      t.integer :f9
+      t.integer :f10
+      t.integer :f11
+      t.integer :f12
+      t.integer :f13
+      t.integer :f14
+      t.integer :f15
+      t.integer :f16
+      t.integer :f17
+      t.integer :f18
+      t.integer :f19
 
       t.belongs_to :consultation, index: true
 

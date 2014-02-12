@@ -1,10 +1,10 @@
 class CreateTestYesavage4s < ActiveRecord::Migration
   def change
     create_table :test_yesavage4s do |t|
-      t.integer :first
-      t.integer :second
-      t.integer :third
-      t.integer :forth
+      t.integer :f1
+      t.integer :f2
+      t.integer :f3
+      t.integer :f4
       t.belongs_to :consultation, index: true
 
       t.timestamps
