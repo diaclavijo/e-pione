@@ -3,26 +3,13 @@
 
   <div class="row front jumbotron">
 
+
     <div class="col-md-8">
+      <br><p></p>
+      <%= image_tag 'logo_prueba.png', class:'img-responsive img-rounded' %>
+    </div>    <!--/col-md-8-->
 
-      <div id="myCarousel" class="carousel slide" data-interval="50">
-        <div class="carousel-inner">
-          <div class="active item">
-            <%= image_tag 'login.jpg', class:'img-responsive img-rounded', alt: 'First slide' %>
-
-          </div>
-          <div class="item">
-            <%= image_tag 'neurons.jpg', class:'img-responsive img-rounded', alt: 'Second slide' %>
-          </div>
-          <div class="item">
-            <%= image_tag 'network.jpg', class:'img-responsive img-rounded', alt: 'Third slide' %>
-          </div>
-        </div>
-
-      </div> <!--/col-md-8-->
-    </div>
     <div class="col-md-4">
-      <h1> Bienvenido a Babel.</h1>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'})   do |f| %>
         <h2 class="form-signin-heading text-muted">Por favor, identifíquese</h2>
         <div> <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email' %></div>
@@ -42,13 +29,12 @@
 
     </div> <!--/col-md-4-->
 
+
   </div><!--/row-->
 
   <div class="row credits">
-    <%= image_tag 'logos.png', class:'img-responsive img-rounded' %>
+   <!--logos cremas aquí-->
   </div><!--/row-->
-
-
 </div> <!-- /container -->
 
 

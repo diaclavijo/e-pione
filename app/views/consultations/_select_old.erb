@@ -1,0 +1,106 @@
+<!--Jumbotron containing a link to every kind of consult -->
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="icon-wrapper">
+          <span class="glyphicon glyphicon-book"></span>
+          <p></p>
+        </div>
+        <%= link_to 'Sintomatología cognitiva', consultation_cognitive_symptomatology_path(@consultation), class: 'btn btn-default' %>
+      </div>
+
+      <div class="col-md-3">
+        <div class="icon-wrapper">
+          <span class="glyphicon glyphicon-book"></span>
+          <p></p>
+        </div>
+        <%= link_to 'Sintomatología no cognitiva', consultation_no_cognitive_symptomatology_path(@consultation), class: 'btn btn-default' %>
+      </div>
+
+      <div class="col-md-3">
+        <div class="icon-wrapper">
+          <span class="glyphicon glyphicon-book"></span>
+          <p></p>
+        </div>
+        <%= link_to 'Exploración Funcional', consultation_exploracion_funcional_path(@consultation), class: 'btn btn-default' %>
+      </div>
+
+      <div class="col-md-3">
+        <div class="icon-wrapper">
+          <span class="glyphicon glyphicon-book"></span>
+          <p></p>
+        </div>
+        <%= link_to 'Exploración Neurológica', consultation_neurological_examination_path(@consultation), class: 'btn btn-default' %>
+      </div>
+    </div>
+
+
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="icon-wrapper">
+          <span class="glyphicon glyphicon-book"></span>
+          <p></p>
+        </div>
+        <%= link_to 'Exploración Física y Cardiaca', consultation_physical_examination_path(@consultation), class: 'btn btn-default' %>
+      </div>
+
+      <div class="col-md-3">
+        <div class="icon-wrapper">
+          <span class="glyphicon glyphicon-book"></span>
+          <p></p>
+        </div>
+        <%= link_to 'Hábitos', consultation_habitos_path(@consultation), class: 'btn btn-default' %>
+      </div>
+
+      <div class="col-md-3">
+        <div class="icon-wrapper">
+          <span class="glyphicon glyphicon-book"></span>
+          <p></p>
+        </div>
+        <%= link_to 'Patologías Intercurrentes', consultation_pathologies_path(@consultation), class: 'btn btn-default' %>
+      </div>
+
+      <div class="col-md-3">
+        <div class="icon-wrapper">
+          <span class="glyphicon glyphicon-book"></span>
+          <p></p>
+        </div>
+        <%= link_to 'Pruebas complementarias', consultation_pruebas_path(@consultation), class: 'btn btn-default' %>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-3 col-md-offset-2">
+        <div class="icon-wrapper">
+          <span class="glyphicon glyphicon-book"></span>
+          <p></p>
+        </div>
+        <a href="consultation_farmacology.html"><button type="button" class="btn btn-default">Prescripción farmacológica</button></a>
+      </div>
+
+      <div class="col-md-3">
+        <div class="icon-wrapper">
+          <span class="glyphicon glyphicon-book"></span>
+          <p></p>
+        </div>
+        <a href="necessary_tests.html"><button type="button" class="btn btn-default btn-warning">Tests necesarios </button></a>
+      </div>
+
+      <div class="col-md-3">
+        <div class="icon-wrapper">
+          <span class="glyphicon glyphicon-book"></span>
+          <p></p>
+        </div>
+
+        <%= link_to 'Diagnóstico', diagnosis_path, class: 'btn btn-default'  %>
+      </div>
+
+    </div>
+
+  </div> <!--/container-->
+</div> <!--/Jumbotron-->

@@ -1,0 +1,54 @@
+
+<div class="container">
+
+  <div class="row front jumbotron">
+
+    <div class="col-md-8">
+
+      <div id="myCarousel" class="carousel slide" data-interval="50">
+        <div class="carousel-inner">
+          <div class="active item">
+            <%= image_tag 'login.jpg', class:'img-responsive img-rounded', alt: 'First slide' %>
+
+          </div>
+          <div class="item">
+            <%= image_tag 'neurons.jpg', class:'img-responsive img-rounded', alt: 'Second slide' %>
+          </div>
+          <div class="item">
+            <%= image_tag 'network.jpg', class:'img-responsive img-rounded', alt: 'Third slide' %>
+          </div>
+        </div>
+      </div> <!--/carousel-->
+    </div>    <!--/col-md-8-->
+    <div class="col-md-4">
+      <h1> Bienvenido a <span class="text-muted">e-pione </span></h1>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'})   do |f| %>
+          <h2 class="form-signin-heading text-muted">Por favor, identifíquese</h2>
+          <div> <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email' %></div>
+
+          <div><%= f.password_field :password, class: 'form-control', placeholder: 'contraseña' %></div>
+
+          <label class="checkbox">
+            <%= f.check_box :remember_me %> <small>Recordarme</small>
+          </label>
+
+          <div><%= f.submit "Acceder", class: 'btn btn-lg btn-primary btn-block' %></div>
+
+      <% end %>
+
+      <small><%= link_to '¿Problemas para acceder?', new_password_path(resource_name), class: 'text-muted' %> </small>  <!--- It was designed to get the small tag inside the a tag, it should be considered to be changed if it is necessary -->
+
+
+    </div> <!--/col-md-4-->
+
+  </div><!--/row-->
+
+  <div class="row credits">
+    <%= image_tag 'logos.png', class:'img-responsive img-rounded' %>
+  </div><!--/row-->
+
+
+</div> <!-- /container -->
+
+
+

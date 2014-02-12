@@ -5,7 +5,16 @@ body {
   padding-bottom: 40px;
   background-color: #fff;
 }
+#title-home{
+    color: #ffffff;
+}
+.text-muted{
+    color: #e4e4e4
+}
 
+.jumbotron {
+    background-color: #005a9f
+}
 .form-signin {
   max-width: 330px;
   padding: 15px;
