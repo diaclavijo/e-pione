@@ -1,46 +1,34 @@
 <h1 class="featurette-heading">Realización de tests <span class="text-muted"></span></h1>
 <!--TODO: Mirar bien este layout -->
 <div class="jumbotron">
-  <div class="container">
+  <div class="container container-centered">
 
-    <div class="col-md-3">
-      <div class="icon-wrapper">
-        <span class="glyphicon glyphicon-eye-open"></span>
-        <p></p>
-      </div>
-      <%= link_to 'Realizar test Yesavage 4', new_consultation_test_yesavage4_path(@consultation), class: 'btn btn-default' %>
+    <div class="row">
+
+      <div class="col-md-3">
+      <%= link_to '',  new_consultation_test_yesavage4_path(@consultation), class: 'fa fa-pencil-square-o fa-3x' %>
+      <h4><%= link_to 'Realizar test Yesavage 4',  new_consultation_test_yesavage4_path(@consultation) %></h4>
     </div>
 
     <div class="col-md-3">
-      <div class="icon-wrapper">
-        <span class="glyphicon glyphicon-book"></span>
-        <p> </p>
-      </div>
-      <%= link_to 'Realizar test Yesavage 10', new_consultation_test_yesavage10_path(@consultation), class: 'btn btn-default' %>
+        <%= link_to '',   new_consultation_test_yesavage10_path(@consultation), class: 'fa fa-pencil-square-o fa-3x' %>
+        <h4><%= link_to 'Realizar test Yesavage 10',  new_consultation_test_yesavage10_path(@consultation) %></h4>
     </div>
 
     <div class="col-md-3">
-      <div class="icon-wrapper">
-        <span class="glyphicon glyphicon-book"></span>
-        <p>
-      </div>
-      <%= link_to 'Realizar test Yesavage 15', new_consultation_test_yesavage15_path(@consultation), class: 'btn btn-default' %>
+      <%= link_to '',   new_consultation_test_yesavage15_path(@consultation), class: 'fa fa-pencil-square-o fa-3x' %>
+      <h4><%= link_to 'Realizar test Yesavage 15',  new_consultation_test_yesavage15_path(@consultation) %></h4>
     </div>
 
     <div class="col-md-3">
-      <div class="icon-wrapper">
-        <span class="glyphicon glyphicon-book"></span>
-        <p>
-      </div>
-      <%= link_to 'Realizar test Yesavage 30', new_consultation_test_yesavage30_path(@consultation), class: 'btn btn-default' %>
+      <%= link_to '',   new_consultation_test_yesavage30_path(@consultation), class: 'fa fa-pencil-square-o fa-3x' %>
+      <h4><%= link_to 'Realizar test Yesavage 30',  new_consultation_test_yesavage30_path(@consultation) %></h4>
     </div>
 
-    <div class="col-md-3 ">
-      <div class="icon-wrapper">
-        <span class="glyphicon glyphicon-book"></span>
-        <p>
-      </div>
-      <%= link_to 'Realizar Test NPI', new_consultation_test_npi_path(@consultation), class: 'btn btn-default' %>
+    </div>
+    <div class="col-md-4 col-md-offset-4 ">
+      <%= link_to '',   new_consultation_test_npi_path(@consultation), class: 'fa fa-pencil-square-o fa-3x' %>
+      <h4><%= link_to 'Realizar Test NPI', new_consultation_test_npi_path(@consultation) %></h4>
     </div>
 
   </div> <!--/container-->
