@@ -8,5 +8,5 @@ class TestMec < ActiveRecord::Base
   NAME = 'test MEC'
 
   include IsTest
-  include IsCognitiveSymptomatology
+
 end

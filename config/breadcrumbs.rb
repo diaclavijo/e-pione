@@ -36,45 +36,6 @@ crumb :patient_consultation do |patient, consultation|
   parent :patient, patient
 end
 
-crumb :consultation_cognitive_symptomatology do |consultation|
-  link 'Sintomatologia cognitiva', consultation_cognitive_symptomatology_path(consultation)
-  parent :patient_consultation, consultation.patient, consultation
-end
-
-crumb :consultation_no_cognitive_symptomatology do |consultation|
-  link 'Sintomatologia no cognitiva', consultation_no_cognitive_symptomatology_path(consultation)
-  parent :patient_consultation, consultation.patient, consultation
-end
-
-crumb :consultation_exploracion_funcional do |consultation|
-  link 'Exploracion funcional', consultation_exploracion_funcional_path(consultation)
-  parent :patient_consultation, consultation.patient, consultation
-end
-
-crumb :consultation_neurological_examination do |consultation|
-  link 'Exploracion neurológica', consultation_neurological_examination_path(consultation)
-parent :patient_consultation, consultation.patient, consultation
-end
-
-crumb :consultation_physical_examination do |consultation|
-  link 'Exploracion física', consultation_physical_examination_path(consultation)
-  parent :patient_consultation, consultation.patient, consultation
-end
-
-crumb :consultation_habitos do |consultation|
-  link 'Habitos', consultation_habitos_path(consultation)
-  parent :patient_consultation, consultation.patient, consultation
-end
-
-crumb :consultation_pathologies do |consultation|
-  link 'Patologías', consultation_pathologies_path(consultation)
-  parent :patient_consultation, consultation.patient, consultation
-end
-
-crumb :consultation_pruebas do |consultation|
-  link 'Pruebas', consultation_pruebas_path(consultation)
-  parent :patient_consultation, consultation.patient, consultation
-end
 
 # This finds all the tests defined in the folder tests, and from that it infers the breadcrumbs for all of them
 tests = Pathname.glob('app/models/tests/*').map{ |i| i.basename.to_s.gsub('.rb','') }
@@ -83,12 +44,12 @@ tests.each{|test_key|
 
   crumb :"new_consultation_#{test_key}" do |consultation|
     link 'Nuevo '+test_key.classify.constantize::NAME, send("new_consultation_#{test_key}_path", consultation)
-    parent test_key.classify.constantize::FATHER_BREADCRUMBS, consultation
+    parent 'TODO-DEFINEPARENT', consultation
   end
 
   crumb :"consultation_#{test_key}" do |consultation, test_var|
     link test_key, send("consultation_#{test_key}_path", consultation, test_var)
-    parent test_key.classify.constantize::FATHER_BREADCRUMBS, consultation
+    parent 'TODO-DEFINEPARENT', consultation
   end
 }
 

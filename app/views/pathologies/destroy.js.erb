@@ -1,6 +1,0 @@
-$('#pathology<%=@pathology.id%>').remove();
-$('#message').empty()
-$("<%= escape_javascript(
-                render partial: 'shared/message',
-                        locals:{style: :success, message: 'Patología correctamente eliminada' }
-                        ) %>").appendTo("#message");

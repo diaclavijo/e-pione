@@ -9,6 +9,5 @@ class TestMinimental < ActiveRecord::Base
   end
 
   include IsTest
-  include IsCognitiveSymptomatology
 
 end

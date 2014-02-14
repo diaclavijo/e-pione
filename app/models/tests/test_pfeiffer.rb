@@ -18,6 +18,5 @@ class TestPfeiffer < ActiveRecord::Base
   NAME = 'test de Pfeiffer'
 
   include IsTest
-  include IsCognitiveSymptomatology
 
 end

@@ -10,13 +10,10 @@ module IsTest
     before_create :store_in_test_index
     before_update :update_in_test_index
 
-
-
     private
 
     def store_in_test_index
-
-      self.create_test(category: self.class.name.constantize::CATEGORY, consultation_id: self.consultation_id, score: self.score ) # 0 is for sintomatología cognitiva
+      self.create_test(consultation_id: self.consultation_id, score: self.score ) # 0 is for sintomatología cognitiva
     end
 
     def update_in_test_index
