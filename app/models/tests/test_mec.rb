@@ -5,7 +5,7 @@ class TestMec < ActiveRecord::Base
     ( self.f1 + self.f2 + self.f3 + self.f4 + self.f5 + self.f6 + self.f7 + self.f8 + self.f9 + self.f10 + self.f11 + self.f12 + self.f13 )
   end
 
-  NAME='test MEC'
+  NAME = 'test MEC'
 
   include IsTest
   include IsCognitiveSymptomatology

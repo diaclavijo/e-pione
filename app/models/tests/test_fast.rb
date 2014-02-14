@@ -2,6 +2,8 @@ class TestFast < ActiveRecord::Base
 
   validates :f1, presence: true
 
+  validates :f1, inclusion: { in: 1..7 }
+
   NAME = 'Test de Fast'
 
   OPTIONS = { '1 - SIN DETERIORO COGNOSCITIVO'         => 1,
@@ -11,7 +13,6 @@ class TestFast < ActiveRecord::Base
               '5 - DÉFICIT COGNOSCITIVO GRAVE'        => 5,
               '6 - DÉFICIT COGNOSCITIVO MODERADAMENTE GRAVE'    => 6,
               '7 - DÉFICIT COGNOSCITIVO MUY GRAVE'        => 7   }
-
 
   def score
     ( self.f1 )

@@ -17,7 +17,7 @@
 						<tr>
 							<td><%= test.patient.id2 || t('no-nhc') %></td>       <!-- NHC -->
 							<td><%= t(test.test_data_type) %></td>       <!-- Tipo de Test -->
-							<td><%= test.score%></td>       <!-- Score -->
+							<td><%= test.score %></td>       <!-- Score -->
 							<td><%= link_to 'Ver detalles' , [consultation, test.test_data]%> </td>       <!-- Detalles -->
 						</tr>
       	<% end %>
