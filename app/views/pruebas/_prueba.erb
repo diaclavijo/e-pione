@@ -1,7 +1,0 @@
-
-<tr id="prueba<%=prueba.id%>" >
-	<td><%= prueba.patient.id2 || t('no-nhc') %></td>      <!-- NHC -->
-	<td><%= prueba.consultation.date %></td>       <!-- Fecha de consulta -->
-	<td><%= prueba.prueba_text %></td>       <!-- analítica -->
-	<td><%= link_to 'Eliminarla', [prueba.consultation,prueba], method: :delete, data: { confirm: 'Está seguro?' }, remote: true %></td>
-</tr>

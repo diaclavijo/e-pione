@@ -1,6 +1,0 @@
-$('#prueba<%=@prueba.id%>').remove();
-$('#message').empty()
-$("<%= escape_javascript(
-                render partial: 'shared/message',
-                        locals:{style: :success, message: 'Prueba correctamente eliminada' }
-                        ) %>").appendTo("#message");
