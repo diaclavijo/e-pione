@@ -8,15 +8,15 @@ class Patient < ActiveRecord::Base
   validates :name, :surname, :birth, presence: true
   validates :id2, uniqueness: true, allow_nil: true
   validates :id2, numericality: { only_integer: true }, allow_nil:  true
-  validates :education, inclusion: {in: 0..6}
-  validates :gender, inclusion: {in: 0..2}
+  validates :education, inclusion: {in: 0..6 }, allow_nil: true
+  validates :gender, inclusion: {in: 0..2 }, allow_nil: true
 
   # Configuration
   paginates_per 10
 
   #nilify_blanks  # for avoid storing empty strings in database , instead is null
   EDUCATIONS = { 'Desconocido' => 0, 'Analfabeto' => 1, 'Lee y escribe' => 2, 'Estudios mínimos' => 3 , 'Estudios Primarios' => 4 , 'Estudios Secundarios' => 5, 'Estudios Universitarios' => 6 }
-  GENDERS = { 'Hombre' => 0, 'Mujer' => 1, 'Desconocido' => 2 }
+  GENDERS = {'Desconocido' => 0, 'Hombre' => 1, 'Mujer' => 2  }
 
   def education_text
     EDUCATIONS.key self[:education]
