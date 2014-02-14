@@ -1,6 +1,6 @@
 es:
 
-  no-nhc: 'X'
+  no-nhc: '-'
 
   PhysicalExamination: 'Exploración física'
   NeurologicalExamination: 'Exploración Neurológica'

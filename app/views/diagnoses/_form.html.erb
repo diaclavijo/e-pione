@@ -1,8 +1,11 @@
-<%= form_for(@diagnosis) do |f| %>
+<%= form_for(@diagnosis,
+    builder: ApplicationHelper::MyFormBuilder,
+    :html => {:class =>'form-horizontal'}
+    ) do |f| %>
+
   <% if @diagnosis.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@diagnosis.errors.count, "error") %> prohibited this diagnosis from being saved:</h2>
-
+      <h2><%= pluralize(@diagnosis.errors.count, "error") %> impidieron que se realizara este diagnóstico</h2>
       <ul>
       <% @diagnosis.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,7 +14,17 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-group">
+      <%= f.label :activity,'Tipo atención' %><br>
+      <%= f.select :activity, Consultation::ACTIVITY, { include_blank: 'Seleccionar...' } %>
+    </div>
+    <div class="form-group">
+      <%= f.label :date,'Fecha consulta' %><br>
+      <%= f.date_select :date %>
+    </div>
+    <div class="form-group">
+        <div class="actions">
+            <%= f.submit %>
+        </div>
+    </div>
 <% end %>
