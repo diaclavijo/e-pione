@@ -15,7 +15,7 @@
 <%= render 'test_choice' %>
 
 <%= render partial: 'shared/tests_history',
-					 locals: @consultation.tests %>
+					 locals: { tests:  @consultation.tests } %>
 
 <!--TODO: Aquí debajo irían  un render que mostraría todo los test realizados en esa consulta-->
 <!-- RESUMEN DE TESTS REALIZADOS EN ESTA CONSULTA->
