@@ -7,8 +7,8 @@ class DiagnosesController < ApplicationControllerSigned
     testa = TestMinimental.first.score
     testb = Patient.first.id
 
-
-
     render inline: "hola #{testa} #{testb}  <br />" + %x(python pythonscript.py #{testa} #{testb} 2>&1)
   end
+
+
 end

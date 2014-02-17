@@ -1,0 +1,4 @@
+class HumanDiagnosis < Diagnosis
+
+
+end

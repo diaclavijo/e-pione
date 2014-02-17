@@ -4,9 +4,10 @@ RailsSIAD::Application.routes.draw do
     resources :test_relojs, only: [:new, :create, :show, :destroy]
     resources :test_faqs, only: [:new, :create, :show, :destroy]
     resources :needed_tests, only: [ :index ]
+    resource :diagnoses, only: [ :new, :create ]
   end
 
-  get 'diagnosis', to: 'diagnoses#diagnosis', as: 'diagnosis'
+
 
   resources :patients  do
     resources :consultations, only: [:create, :new, :index, :show, :edit, :update]
