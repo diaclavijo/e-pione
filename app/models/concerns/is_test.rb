@@ -10,6 +10,9 @@ module IsTest
     before_create :store_in_test_index
     before_update :update_in_test_index
 
+
+    REDIRECT_TO_AFTER_CREATION = :needed_tests
+
     private
 
     def store_in_test_index
