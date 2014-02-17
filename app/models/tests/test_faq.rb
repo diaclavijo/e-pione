@@ -11,6 +11,8 @@ class TestFaq < ActiveRecord::Base
       'Dependiente' => 5
   }
 
+  NAME = 'test FAQ'
+
   def score
     ( @@store_calc[self.f1] + @@store_calc[self.f2] + @@store_calc[self.f3] + @@store_calc[self.f4] + @@store_calc[self.f5] + @@store_calc[self.f6] + @@store_calc[self.f7] + @@store_calc[self.f8] + @@store_calc[self.f9] + @@store_calc[self.f10] )
   end
