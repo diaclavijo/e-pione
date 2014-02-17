@@ -4,6 +4,7 @@ RailsSIAD::Application.routes.draw do
     resources :test_mecs, only: [:new, :create, :show, :destroy]
     resources :test_pfeiffers, only: [:new, :create, :show, :destroy]
     resources :test_relojs, only: [:new, :create, :show, :destroy]
+    resources :test_faqs, only: [:new, :create, :show, :destroy]
   end
 
   get 'diagnosis', to: 'diagnoses#diagnosis', as: 'diagnosis'
