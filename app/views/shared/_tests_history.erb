@@ -8,22 +8,18 @@
 				<tr>
 					<th>NHC</th>
 					<th>Fecha de consulta</th>
-					<th>Categoria de Test</th>
 					<th>Test</th>
 					<th>Score</th>
 					<th>Detalles</th>
 				</tr>
 
-
 				<% tests.each do |test| %>
 						<tr>
 							<td><%= test.patient.id2 || t('no-nhc') %></td>       <!-- NHC -->
 							<td><%= test.consultation.date %></td>       <!-- Fecha de Consulta -->
-							<td><%= test.category_text %></td>       <!-- Categoría de Test -->
 							<td><%= t(test.test_data_type) %></td>       <!-- Test -->
 							<td><%= test.score%></td>       <!-- Score -->
 							<td><%= link_to 'Ver detalles' , [test.consultation, test.test_data]%> </td>       <!-- Detalles -->
-
 						</tr>
 				<% end %>
 

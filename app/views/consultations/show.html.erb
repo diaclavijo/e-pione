@@ -14,7 +14,7 @@
 
 <!-- RESUMEN DE TESTS REALIZADOS EN ESTA CONSULTA   -->
 
-<%= render partial: 'shared/tests_history_typed',
+<%= render partial: 'shared/tests_history',
 					 locals: { tests: @patient.tests.order(created_at: :desc) } %>
 
 
