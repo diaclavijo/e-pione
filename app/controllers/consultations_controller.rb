@@ -37,7 +37,7 @@ class ConsultationsController < ApplicationControllerSigned
 
     respond_to do |format|
       if @consultation.save
-        format.html { redirect_to [@patient,@consultation], notice: 'Consultation was successfully created.' }
+        format.html { redirect_to [@patient,@consultation], notice: 'Consulta creada con éxito' }
         format.json { render action: 'show', status: :created, location: @consultation }
       else
         format.html { render action: 'new' }

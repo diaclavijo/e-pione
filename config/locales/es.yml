@@ -72,11 +72,13 @@ es:
         phone_house: "Teléfono fijo"
         mobile_phone: "Teléfono móvil"
         other_phone:  "Otro teléfono"
+        id2: "NHC"
     errors:
       messages:
         blank: "ausente"
         taken: "en uso por otro paciente (¿quizás el paciente ya existe?)"
         too_long: "demasiado largo, debe tener 9 dígitos como máximo"
+        not_a_number: "debe ser un número"
 
   errors:
     messages:
