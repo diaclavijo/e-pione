@@ -1,8 +1,6 @@
 RailsSIAD::Application.routes.draw do
   resources :consultations, only: [] do
     resources :test_minimentals, only: [:new, :create, :show, :destroy]
-    resources :test_mecs, only: [:new, :create, :show, :destroy]
-    resources :test_pfeiffers, only: [:new, :create, :show, :destroy]
     resources :test_relojs, only: [:new, :create, :show, :destroy]
     resources :test_faqs, only: [:new, :create, :show, :destroy]
     resources :needed_tests, only: [ :index ]
