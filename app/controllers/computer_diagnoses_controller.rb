@@ -1,5 +1,9 @@
-class ComputerDiagnosisesController < ConsultationResourcesController
+class ComputerDiagnosesController < ConsultationResourcesController
 
+
+  def new
+    @computer_diagnosis = ComputerDiagnosis.new
+  end
 
   # GET /diagnoses
   # GET /diagnoses.json
@@ -19,7 +23,7 @@ class ComputerDiagnosisesController < ConsultationResourcesController
 
   private
     def computer_diagnosis_params
-      params.require(:computer_diagnosis).permit(:diagnosis, :probability)
+      params.require(:computer_diagnosis).permit(:computer_diagnosis, :probability)
     end
 
 end

@@ -1,4 +1,4 @@
-class HumanDiagnosisesController < ConsultationResourcesController
+class HumanDiagnosesController < ConsultationResourcesController
 
 
   def new
@@ -27,7 +27,7 @@ class HumanDiagnosisesController < ConsultationResourcesController
 
   private
     def computer_diagnosis_params
-      params.require(:computer_diagnosis).permit(:diagnosis, :probability)
+      params.require(:computer_diagnosis).permit(:computer_diagnosis, :probability)
     end
 
 end
