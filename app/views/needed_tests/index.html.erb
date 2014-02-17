@@ -1,6 +1,8 @@
 <!--URL patients/1/consultations/needed_tests-->
 
 <!-- TODO: Breadcrumb aquí  -->
+<% breadcrumb :consultation_needed_tests, @consultation %>
+
 <% content_for :top_title do %>
     Realizar tests para consulta <span class="text-muted"><%= @consultation.date %></span>
 <% end %>

@@ -36,6 +36,11 @@ crumb :patient_consultation do |patient, consultation|
   parent :patient, patient
 end
 
+crumb :consultation_needed_tests do |consultation|
+  link 'Test necesarios', consultation_needed_tests_path(consultation)
+  parent :patient_consultation, consultation.patient, consultation
+end
+
 
 # This finds all the tests defined in the folder tests, and from that it infers the breadcrumbs for all of them
 tests = Pathname.glob('app/models/tests/*').map{ |i| i.basename.to_s.gsub('.rb','') }
@@ -44,12 +49,12 @@ tests.each{|test_key|
 
   crumb :"new_consultation_#{test_key}" do |consultation|
     link 'Nuevo '+test_key.classify.constantize::NAME, send("new_consultation_#{test_key}_path", consultation)
-    parent 'TODO-DEFINEPARENT', consultation
+    parent :consultation_needed_tests, consultation
   end
 
   crumb :"consultation_#{test_key}" do |consultation, test_var|
     link test_key, send("consultation_#{test_key}_path", consultation, test_var)
-    parent 'TODO-DEFINEPARENT', consultation
+    parent :consultation_needed_tests, consultation
   end
 }
 
