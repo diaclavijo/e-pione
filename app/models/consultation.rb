@@ -5,9 +5,8 @@ class Consultation < ActiveRecord::Base
   has_many :tests, dependent: :destroy # super index for listing differente resources
 
   has_many :test_minimentals, dependent: :destroy
-  has_many :test_mecs, dependent: :destroy
-  has_many :test_pfeiffers, dependent: :destroy
   has_many :test_relojs, dependent: :destroy
+  has_many :test_faqs, dependent: :destroy
 
   validates :activity, presence: true # example for prohibiting it to be saved at least is presented the value
   validates :patient, presence: true
