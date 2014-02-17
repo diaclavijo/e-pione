@@ -4,6 +4,7 @@
     <div id="error_explanation">
         <div class="<%= flash_class(:error) %>">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <!--TODO: El mensaje dice "errore" en lugar de "error" cuando hay sólo un error-->
             <h3><%= pluralize(@patient.errors.count, "errore") %> impiden que este paciente sea creado</h3>
             <ul>
             <% @patient.errors.full_messages.each do |msg| %>
@@ -32,7 +33,7 @@
     </div>
 
 		<div class="form-group">
-			<%= f.label :gender, 'Sexo (*)' %>
+			<%= f.label :gender, 'Sexo' %>
 			<%= f.select :gender, Patient::GENDERS,  { include_blank: 'Seleccionar...' }, class: 'form-control' %>
 		</div>
 
@@ -40,21 +41,22 @@
         <hr class="hr_consult"></hr>  <!--Separator -->
     </div>
 
-
     <div class="form-group">
-        <%= f.label :exitus, 'Exitus' %>
-        <div class="col-md-4">
-            <div class="checkbox">
-                <%= f.check_box :exitus, type:'checkbox' %> Sí
-            </div>
-        </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :id2, 'NHC' %>
+      <%= f.label :id2, 'NHC ' %>
       <%= f.number_field :id2 %>
-      <p> TODO -  mensaje informativo que explique que es un identificador </p> <!-- TODO mensaje inforamtivo que explqiue es un campo para tener referencia -->
+      <div class="col-md-3 text-muted">Será el identificador del paciente</div>
+
     </div>
+
+    <div class="form-group">
+      <%= f.label :exitus, 'Exitus' %>
+      <div class="col-md-4">
+        <div class="checkbox">
+          <%= f.check_box :exitus, type:'checkbox' %> Sí
+        </div>
+      </div>
+    </div>
+
 
     <div class="col-md-4 col-md-offset-6">
       <hr class="hr_consult"></hr>  <!--Separator -->
