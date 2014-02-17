@@ -1,64 +1,23 @@
 <!--Jumbotron containing a link to every kind of consult -->
-<div class="jumbotron">
+<div class="jumbotron jumbotron-blank">
   <div class="container container-centered">
-    <div class="row">
-
-      <div class="col-md-3">
-        <%= link_to '', consultation_cognitive_symptomatology_path(@consultation), class: 'fa fa-folder-open fa-3x' %>
-        <h4><%= link_to 'Sintomatología cognitiva', consultation_cognitive_symptomatology_path(@consultation) %></h4>
-      </div>
-
-      <div class="col-md-3">
-        <%= link_to '',consultation_no_cognitive_symptomatology_path(@consultation), class: 'fa fa-folder-open fa-3x' %>
-        <h4><%= link_to 'Sintomatología no cognitiva', consultation_no_cognitive_symptomatology_path(@consultation) %></h4>
-      </div>
-
-      <div class="col-md-3">
-        <%= link_to '', consultation_exploracion_funcional_path(@consultation), class: 'fa fa-folder-open fa-3x' %>
-        <h4><%= link_to 'Exploración Funcional', consultation_exploracion_funcional_path(@consultation) %></h4>
-      </div>
-
-      <div class="col-md-3">
-        <%= link_to '', consultation_neurological_examination_path(@consultation), class: 'fa fa-folder-open fa-3x' %>
-        <h4><%= link_to 'Exploración Neurológica', consultation_neurological_examination_path(@consultation) %></h4>
-      </div>
-    </div>
 
 
     <div class="row">
 
-      <div class="col-md-3">
-        <%= link_to '', consultation_physical_examination_path(@consultation), class: 'fa fa-folder-open fa-3x' %>
-        <h4><%= link_to 'Exploración Física y Cardiaca', consultation_physical_examination_path(@consultation) %></h4>
+      <div class="col-md-6 ">
+        <%= link_to '', consultation_needed_tests_path(@consultation), class: 'fa fa-stethoscope fa-4x' %>
+        <h3><%= link_to 'Realizar tests', consultation_needed_tests_path(@consultation) %></h3>
+      </div>
+      <!-- TODO El link de arriba iría directamente a la vista needed_tests/new_or_edit.html -->
+
+
+      <div class="col-md-6">
+        <%= link_to '', consultation_needed_tests_path(@consultation), class: 'fa fa-check fa-4x' %>
+        <h3><%= link_to 'Solicitar Diagnóstico ', consultation_needed_tests_path(@consultation) %> </h3>
+         <!-- TODO El link de arriba iría directamente a la vista diagnoses/new.html -->
       </div>
 
-      <div class="col-md-3">
-        <%= link_to '', consultation_habitos_path(@consultation), class: 'fa fa-folder-open fa-3x' %>
-        <h4><%= link_to 'Hábitos', consultation_habitos_path(@consultation) %></h4>
-      </div>
-      <div class="col-md-3">
-        <%= link_to '', consultation_pathologies_path(@consultation), class: 'fa fa-folder-open fa-3x' %>
-        <h4><%= link_to 'Patologías intercurrentes', consultation_pathologies_path(@consultation) %></h4>
-      </div>
-
-      <div class="col-md-3">
-        <%= link_to '',  consultation_pruebas_path(@consultation), class: 'fa fa-folder-open fa-3x' %>
-        <h4><%= link_to 'Pruebas complementarias', consultation_pruebas_path(@consultation) %></h4>
-      </div>
-
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-4 col-md-offset-2">
-        <%= link_to '', consultation_pathologies_path(@consultation), class: 'fa fa-stethoscope fa-3x' %>
-        <h4><%= link_to 'Test necesarios', consultation_pathologies_path(@consultation) %></h4>
-      </div>
-
-      <div class="col-md-4">
-        <%= link_to '', consultation_pathologies_path(@consultation), class: 'fa fa-check fa-3x' %>
-        <h4><%= link_to 'Diagnóstico', consultation_pathologies_path(@consultation) %></h4>
-      </div>
 
     </div>
 

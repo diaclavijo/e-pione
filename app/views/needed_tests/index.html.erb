@@ -1,0 +1,16 @@
+<!--URL patients/1/consultations/needed_tests-->
+
+<!-- TODO: Breadcrumb aquí  -->
+<% content_for :top_title do %>
+    Realizar tests para consulta <span class="text-muted"><%= @consultation.date %></span>
+<% end %>
+<% content_for :title do %>
+    Realizar Tests
+<% end %>
+
+
+
+<%= render 'test_choice' %>
+
+<!--TODO: Aquí debajo irían  un render que mostraría todo los test realizados en esa consulta-->
+<!-- RESUMEN DE TESTS REALIZADOS EN ESTA CONSULTA->

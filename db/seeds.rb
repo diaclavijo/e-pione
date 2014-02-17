@@ -14,8 +14,8 @@ puts 'Creating Admin user in Admin: model'
 Physician.create(email: 'carmen@carmen.com',
                  password: 'alzheimer',
                  password_confirmation: 'alzheimer',
-                 name: 'Carmen Paz',
-                 surname: 'Suarez Araujo')
+                 name: 'Juan Rafael',
+                 surname: 'García')
 Physician.create(email: 'alguien@alguien.com',
                  password: 'alzheimer',
                  password_confirmation: 'alzheimer',

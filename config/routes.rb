@@ -5,6 +5,7 @@ RailsSIAD::Application.routes.draw do
     resources :test_pfeiffers, only: [:new, :create, :show, :destroy]
     resources :test_relojs, only: [:new, :create, :show, :destroy]
     resources :test_faqs, only: [:new, :create, :show, :destroy]
+    resources :needed_tests, only: [ :index ]
   end
 
   get 'diagnosis', to: 'diagnoses#diagnosis', as: 'diagnosis'

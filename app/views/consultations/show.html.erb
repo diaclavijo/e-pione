@@ -12,16 +12,12 @@
 
 <%= render 'consultations/select'   %>
 
-<!-- RESUMEN DE SINTOMATOLOGÍAS EXPLORADAS EN ESTA CONSULTA  -->
-
-<%= render partial: 'shared/examinations_history',
-					 locals: { examinations: @patient.examinations.order(created_at: :desc) } %>
-
 <!-- RESUMEN DE TESTS REALIZADOS EN ESTA CONSULTA   -->
 
 <%= render partial: 'shared/tests_history_typed',
 					 locals: { tests: @patient.tests.order(created_at: :desc) } %>
 
 
-
+<!-- TODO: ¿Poner otro tal que: observaciones-consultas -->
+<!-- TODO: Poner otro tal que: Resumen diagnósticos establecidos, o algo así, y quitar el anterior -->
 

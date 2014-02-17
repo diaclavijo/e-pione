@@ -1,0 +1,28 @@
+<h1 class="featurette-heading"><span class="text-muted"></span></h1>
+<!--TODO: Mirar bien este layout, automáticamente se crean dos filas si nos pasamos con las columnas (i.e 4x3 +3x1) -->
+<div class="jumbotron jumbotron-blank">
+  <div class="container container-centered">
+   <div class="row">
+
+     <!--TODO: Cambiar cada link de debajo por el de su correspondiente test (ahora apuntan a esta página)-->
+     <div class="col-md-4">
+       <%= link_to '',consultation_needed_tests_path(@consultation)  , class: 'fa fa-pencil-square-o fa-3x' %>
+       <h4><%= link_to 'Realizar test FAQ -TODO',  consultation_needed_tests_path(@consultation) %></h4>
+     </div>
+
+    <div class="col-md-4">
+      <%= link_to '', consultation_needed_tests_path(@consultation), class: 'fa fa-pencil-square-o fa-3x' %>
+      <h4><%= link_to 'Realizar Test Minimental',consultation_needed_tests_path(@consultation) %></h4>
+    </div>
+
+    <div class=" col-md-4">
+      <%= link_to '', consultation_needed_tests_path(@consultation), class: 'fa fa-pencil-square-o fa-3x' %>
+      <h4><%= link_to 'Realizar Test del Reloj', consultation_needed_tests_path(@consultation) %></h4>
+    </div>
+    <!--TODO Faltaría el de logical memory -->
+    </div>
+
+  </div> <!--/container-->
+</div> <!--/Jumbotron-->
+
+
