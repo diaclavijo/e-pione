@@ -1,30 +1,16 @@
-<%= form_for([@consultation, @computer_diagnosis],
-    builder: ApplicationHelper::MyFormBuilder,
-    :html => {:class =>'form-horizontal'}
-    ) do |f| %>
 
-  <% if @computer_diagnosis.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@computer_diagnosis.errors.count, "error") %> impidieron que se realizara este diagnóstico</h2>
-      <ul>
-      <% @computer_diagnosis.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <!--TODO: Poner el html directamente aquí, con las col-md y demás -->
+      <label>Resultado Test FAQ (*)</label>
+      <label>9000</label>
 
-    <div class="form-group">
-      <%= f.label :faq, 'Resultado Test FAQ (*)' %>
-      <%= f.text_field :faq %>
-      <a href="view_of_FAQ.htmkl">Realizar Test FAQ</a>
+      <a href="view_of_FAQ.htmkl">Realizar test</a>
     </div>
 
-    <div class="form-group">
-      <%= f.label :mmse, 'Resultado Test MMSE (*)' %>
-      <%= f.text_field :mmse %>
-      <a href="view_of_mmse.html">Realizar Test MMSE</a>
-    </div>
+  <div class="form-group">
+    <label>Resultado Test MMSE(*)</label>
+    <label>9000</label>
+    <a href="view_of_FAQ.html">Realizar test</a>
+  </div>
 
     <div class="form-group">
       <a href="view_of_mmse.html">Solicitar diagnóstico computacional</a>
@@ -36,4 +22,3 @@
             <%= f.submit %>
         </div>
     </div>
-<% end %>

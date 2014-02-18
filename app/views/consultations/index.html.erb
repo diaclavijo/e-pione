@@ -1,5 +1,4 @@
 <!--URL /patients/1/consultations -->
-<!-- TODO - Poner las imagenes -->
 <!-- TODO - comprobar que el orden de las consultas es correcto -->
 <!-- TODO - introducir fechas en el db seed  -->
 
@@ -15,7 +14,7 @@
 
 <% content_for :top_right do %>
     <h2 class="text-muted"> <%= @patient.full_name %></h2>
-    <h4>Número historia clínica: <span class="text-muted"> <%= @patient.id %> </span> </h4>
+    <h4>Número historia clínica: <span class="text-muted"> <%= @patient.id2 || 'Sin número' %> </span> </h4>
 <% end %>
 
 

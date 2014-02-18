@@ -28,7 +28,7 @@ module ApplicationHelper
       @template.content_tag(
         :div,
         super(method,options),
-        class: 'col-md-4'
+        class: 'col-md-1'
       )
     end
 
