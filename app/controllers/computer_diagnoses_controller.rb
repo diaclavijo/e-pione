@@ -2,13 +2,23 @@ class ComputerDiagnosesController < ConsultationResourcesController
 
 
   def new
-    @computer_diagnosis = ComputerDiagnosis.new
+
   end
 
   # GET /diagnoses
   # GET /diagnoses.json
   def create
-    @computer_diagnosis = @consultation.diagnosises.build computer_diagnosis_params
+
+    valid = @consultation.test_faqs.any?
+    valid = @consultation.test_minimentals.any?
+    def age(birthdate)
+      today = Date.today
+
+    end
+
+    if valid
+      @computer_diagnosis = @consultation.diagnosises.build
+    end
 
     respond_to do |format|
       if @computer_diagnosis.save
@@ -22,8 +32,6 @@ class ComputerDiagnosesController < ConsultationResourcesController
   end
 
   private
-    def computer_diagnosis_params
-      params.require(:computer_diagnosis).permit(:computer_diagnosis, :probability)
-    end
+
 
 end
