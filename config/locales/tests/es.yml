@@ -1,3 +1,4 @@
 es:
   tests:
-    created: 'El test ha sido creado satisfactoriamente'
+    created: 'Test creado correctamente'
+    deleted: 'Test eliminado correctamente'
