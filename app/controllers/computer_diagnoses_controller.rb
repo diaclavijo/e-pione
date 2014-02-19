@@ -2,20 +2,13 @@ class ComputerDiagnosesController < ConsultationResourcesController
 
 
   def new
-    @valid_faq = @consultation.test_faqs.any?
-    @valid_minimental = @consultation.test_minimentals.any?
-
+    validate_tests
   end
 
   # GET /diagnoses
   # GET /diagnoses.json
   def create
-
-    test_faq = @consultation.test_faqs.first
-    test_minimental = @consultation.test_minimentals.first
-    @faq_score = ( test_faq ? test_faq.score : nil )
-    @minimental_score = ( test_minimental ? test_minimental.score : nil )
-
+    validate_tests
 
     if @faq_score && @minimental_score
       age = age @consultation.patient.birth
@@ -25,11 +18,12 @@ class ComputerDiagnosesController < ConsultationResourcesController
     end
 
     respond_to do |format|
-      if @computer_diagnosis.save
+      if @faq_score && @minimental_score && @computer_diagnosis.save
         format.html { redirect_to [@consultation, :computer_diagnoses, :new], notice: 'Diagnóstico realizado con
 éxito' }
       else
-        format.html { render action: 'new', notice: 'Something went wrong' }
+        flash.now[:alert] = 'No ha realizado los tests necesarios'
+        format.html { render action: 'new'}
       end
     end
   end
@@ -45,5 +39,11 @@ class ComputerDiagnosesController < ConsultationResourcesController
       [0, 90.0]
     end
 
+    def validate_tests
+      test_faq = @consultation.test_faqs.first
+      test_minimental = @consultation.test_minimentals.first
+      @faq_score = ( test_faq ? test_faq.score : nil )
+      @minimental_score = ( test_minimental ? test_minimental.score : nil )
+    end
 
 end
