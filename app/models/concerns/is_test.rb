@@ -11,7 +11,7 @@ module IsTest
     before_update :update_in_test_index
 
 
-    REDIRECT_TO_AFTER_CREATION = :needed_tests
+    REDIRECT_TO_AFTER_CREATION = :additional_tests
 
     private
 

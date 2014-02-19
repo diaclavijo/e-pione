@@ -36,8 +36,8 @@ crumb :patient_consultation do |patient, consultation|
   parent :patient, patient
 end
 
-crumb :consultation_needed_tests do |consultation|
-  link 'Test adicionales', consultation_needed_tests_path(consultation)
+crumb :consultation_additional_tests do |consultation|
+  link 'Test adicionales', consultation_additional_tests_path(consultation)
   parent :patient_consultation, consultation.patient, consultation
 end
 
@@ -55,15 +55,24 @@ tests.each{|test_key|
 
   crumb :"new_consultation_#{test_key}" do |consultation|
     link 'Nuevo '+test_key.classify.constantize::NAME, send("new_consultation_#{test_key}_path", consultation)
-    parent :consultation_needed_tests, consultation
+    parent :patient_consultation, consultation.patient, consultation
   end
 
   crumb :"consultation_#{test_key}" do |consultation, test_var|
     link test_key, send("consultation_#{test_key}_path", consultation, test_var)
-    parent :consultation_needed_tests, consultation
+    parent :patient_consultation, consultation.patient, consultation
   end
 }
 
+crumb :new_consultation_test_reloj do |consultation|
+  link 'Nuevo Test del reloj', new_consultation_test_reloj_path(consultation)
+  parent :consultation_additional_tests, consultation
+end
+
+crumb :consultation_test_reloj do |consultation, test_var|
+  link 'Test del reloj', consultation_test_reloj_path(consultation, test_var)
+  parent :consultation_additional_tests, consultation
+end
 
 
 
