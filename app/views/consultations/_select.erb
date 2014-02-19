@@ -4,25 +4,39 @@
 
 
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <%= link_to '', new_consultation_test_faq_path(@consultation)  , class: 'fa fa-pencil-square-o fa-4x' %>
         <h4><%= link_to 'Realizar test FAQ',  new_consultation_test_faq_path(@consultation) %></h4>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <%= link_to '', new_consultation_test_minimental_path(@consultation), class: 'fa fa-pencil-square-o fa-4x' %>
         <h4><%= link_to 'Realizar Test Minimental', new_consultation_test_minimental_path(@consultation) %></h4>
       </div>
 
-      <div class="col-md-3 ">
-        <%= link_to '', consultation_needed_tests_path(@consultation), class: 'fa fa-stethoscope fa-4x' %>
-        <h4><%= link_to 'Tests adicionales', consultation_needed_tests_path(@consultation) %></h4>
+      <div class="col-md-4 ">
+        <%= link_to '', consultation_additional_tests_path(@consultation), class: 'fa fa-stethoscope fa-4x' %>
+        <h4><%= link_to 'Tests adicionales', consultation_additional_tests_path(@consultation) %></h4>
       </div>
 
-      <div class="col-md-3">
+    </div><!--/row-->
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <hr>
+      </div>
+    </div> <!--/row-->
+
+    <div class="row">
+      <br>
+      <div class="col-md-4 col-md-offset-2">
+        <%= link_to '', new_consultation_computer_diagnoses_path(@consultation), class: 'fa fa-gears fa-4x' %>
+        <h4><%= link_to 'Solicitar Diagnóstico computacional ', new_consultation_computer_diagnoses_path(@consultation) %> </h4>
+      </div>
+
+      <div class="col-md-4">
         <%= link_to '', new_consultation_computer_diagnoses_path(@consultation), class: 'fa fa-check fa-4x' %>
-        <h4><%= link_to 'Solicitar Diagnóstico ', new_consultation_computer_diagnoses_path(@consultation) %> </h4>
-        <!-- TODO El link de arriba iría directamente a la vista diagnoses/new.html -->
+        <h4><%= link_to 'Establecer diagnóstico  ', new_consultation_computer_diagnoses_path(@consultation) %> </h4>
       </div>
 
     </div>
