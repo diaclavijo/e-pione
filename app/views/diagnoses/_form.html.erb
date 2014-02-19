@@ -1,0 +1,82 @@
+<% content_for :top_title do %>
+    Diagnóstico facultativo <span class="text-muted"><%= @consultation.date %></span>
+<% end %>
+<% content_for :title do %>
+    Diagnóstico
+<% end %>
+
+<div class="jumbotron jumbotron-blank">
+  <div class="container container-centered">
+
+    <div class="row">
+      <div class="col-md-6">
+        <h2> Resultado diagnóstico computacional </h2>
+      </div>
+      <div class="col-md-6 alert alert-success">
+        <h3>
+          <!--TODO Sustituir lo de abajo por @diagnosis (sano o DCL) y @probability -->
+          <strong>
+            <%=  'Sano - 94 %'|| (link_to 'Realizar diagnóstico computacional ',  new_computer_diagnoses(@consultation) ) %>
+          </strong></h3> </div>
+    </div>
+
+
+    <br>
+    <div class="row">
+
+      <div class="col-md-4 col-md-offset-1">
+        <h2>Tests adicionales </h2>
+      </div>
+      <br>
+
+
+      <div class="col-md-4 col-md-offset-1  text-center">
+        <a class="fa fa-pencil-square-o fa-3x"></a>
+        <h4>Test del reloj</h4>
+      </div>
+
+      <div class="col-md-1 text-center">
+        <h4 class="text-muted">94</h4>
+      </div>
+
+    </div>
+
+
+
+  </div> <!--/container-->
+</div> <!--/jumbotron-->
+
+<div class="jumbotron">
+
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <div class="col-md-6 col-md-offset-4">
+        <h2> </h2>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-6 "><label>Establecer diagnóstico facultativo</label></div>
+      <div class="col-md-4">
+        <select class="form-control" id="test_minimental_f2" name="test_minimental[f2]"><option value="">Seleccionar...</option>
+          <option value="0">Sano</option>
+          <option value="1">DCL</option>
+          <option value="2">Alzheimer</option> </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-6"><label>Observaciones </label></div>
+      <div class="col-md-4"><textarea class="form-control" rows="3"></textarea></div>
+    </div>
+
+    <div class="form-group">
+      <div class="actions">
+        <div class="col-md-offset-4 col-md-10">
+          <button>Establecer diagnóstico</button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div> <!--Jumbotron->

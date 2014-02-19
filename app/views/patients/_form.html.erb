@@ -63,7 +63,7 @@
       <hr class="hr_consult"></hr>  <!--Separator -->
     </div>
 
-    <div class="form-group">
+    <div class="form-group"> <!--TODO: Adaptar escolaridad  sobre números 4-20 o poner que el fac. pueda introducir-->
         <%= f.label :education, 'Escolaridad' %>
         <%= f.select :education, Patient::EDUCATIONS , { include_blank: 'Seleccionar...' }%>
     </div>

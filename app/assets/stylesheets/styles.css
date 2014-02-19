@@ -158,6 +158,10 @@ text-decoration: none;
 .fa a:hover{
     text-align: center;
 }
+
+.no_blue_link a{
+             color:#7e7676
+}
 .fa{
    /*color:#002f53*/
 }
