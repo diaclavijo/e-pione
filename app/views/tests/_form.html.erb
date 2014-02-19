@@ -8,7 +8,15 @@
   <%= render partial: 'form_fields', locals: {f: f} %>
 
   <% if disabled %>
-        <td><%= link_to 'Eliminar', [@consultation, get_resource_ivar], method: :delete, data: { confirm: 'Estás seguro que quiere elimnar este test?' } %></td>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-4">
+                <%= link_to 'Eliminar Test', [@consultation, get_resource_ivar], method: :delete,
+                            data: { confirm: '¿Está seguro de que quiere eliminar este test?' },
+                            class: 'btn btn-info'
+                            %>
+            </div>
+         </div>
+
   <% else %>
         <div class="form-group">
             <div class="actions">
