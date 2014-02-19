@@ -59,6 +59,9 @@ es:
       patient: "paciente"
       physician: "Facultativo"
       consultation: "consulta"
+      test_reloj: "Test del reloj"
+      test_faq: "Test FAQ"
+
     attributes:
       patient:
         name: "Nombre"
@@ -73,6 +76,7 @@ es:
         mobile_phone: "Teléfono móvil"
         other_phone:  "Otro teléfono"
         id2: "NHC"
+
     errors:
       messages:
         blank: "ausente"
