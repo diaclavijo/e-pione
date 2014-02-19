@@ -37,8 +37,14 @@ crumb :patient_consultation do |patient, consultation|
 end
 
 crumb :consultation_needed_tests do |consultation|
-  link 'Test necesarios', consultation_needed_tests_path(consultation)
+  link 'Test adicionales', consultation_needed_tests_path(consultation)
   parent :patient_consultation, consultation.patient, consultation
+end
+
+crumb :consultation_computer_diagnoses do |consultation|
+  link 'Solicitar diagnóstico', consultation_computer_diagnoses_path(consultation)
+  parent :patient_consultation, consultation.patient, consultation   #Esta línea está copiada de arriba.
+                                                                     #No sé si está bien :D
 end
 
 
