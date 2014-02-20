@@ -10,11 +10,11 @@ class ComputerDiagnosesController < ConsultationResourcesController
   def create
     validate_tests
 
-    if @faq_score && @minimental_score
+    if @test_faq && @test_minimental
       age = age @consultation.patient.birth
       education = @consultation.patient.education
-      diagnosis, probability = baby_siad faq_score:        @faq_score,
-                                         minimental_score: @minimental_score,
+      diagnosis, probability = baby_siad faq_score:        @test_faq.score,
+                                         minimental_score: @test_minimental.score,
                                          age:              age,
                                          education:        education
       @computer_diagnosis = @consultation.computer_diagnoses.build( diagnosis: diagnosis,
@@ -56,12 +56,9 @@ class ComputerDiagnosesController < ConsultationResourcesController
       end
     end
 
-
     def validate_tests
-      test_faq = @consultation.test_faqs.first
-      test_minimental = @consultation.test_minimentals.first
-      @faq_score = ( test_faq ? test_faq.score : nil )
-      @minimental_score = ( test_minimental ? test_minimental.score : nil )
+      @test_faq = @consultation.test_faqs.first
+      @test_minimental = @consultation.test_minimentals.first
     end
 
 end
