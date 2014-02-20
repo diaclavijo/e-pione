@@ -10,7 +10,6 @@ class Consultation < ActiveRecord::Base
   has_many :diagnoses, dependent: :destroy
   has_many :human_diagnoses, dependent: :destroy
   has_many :computer_diagnoses, dependent: :destroy
-  has_many :human_diagnoses, dependent: :destroy
 
   validates :activity, presence: true # example for prohibiting it to be saved at least is presented the value
   validates :patient, presence: true

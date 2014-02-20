@@ -3,6 +3,7 @@ class Patient < ActiveRecord::Base
   has_many :consultations, dependent: :destroy
   belongs_to :physician
   has_many :tests, through: :consultations
+  has_many :diagnoses, through: :consultations
 
   # Validations
   validates :name, :surname, :birth, :education, presence: true

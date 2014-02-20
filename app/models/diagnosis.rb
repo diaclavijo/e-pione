@@ -9,8 +9,6 @@ class Diagnosis < ActiveRecord::Base
     INT_TO_DIAGNOSIS[self.diagnosis]
   end
 
-
-
   private
     INT_TO_DIAGNOSIS = {
        0 => 'Sano',

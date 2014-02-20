@@ -32,4 +32,8 @@ es:
       notice:
         diagnosis-saved: 'Diagnóstico realizado con éxito'
 
+  human_diagnosis:
+    notice:
+      created: 'Diagnóstico almacenado correctamente'
+
 

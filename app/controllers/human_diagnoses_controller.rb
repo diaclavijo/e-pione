@@ -8,12 +8,20 @@ class HumanDiagnosesController < ConsultationResourcesController
   # GET /diagnoses
   # GET /diagnoses.json
   def create
+    @human_diagnosis = @consultation.human_diagnoses.build human_diagnosis_params
 
+    respond_to do |format|
+      if @human_diagnosis.save
+        format.html { redirect_to [@consultation.patient, @consultation], notice: t('human_diagnosis.notice.created') }
+      else
+        format.html { render action: 'new' }
+      end
+    end
   end
 
   private
-    def computer_diagnosis_params
-      params.require(:human_diagnosis).permit(:human_diagnosis)
+    def human_diagnosis_params
+      params.require(:human_diagnosis).permit(:diagnosis)
     end
 
 end
