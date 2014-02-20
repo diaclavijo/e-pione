@@ -36,16 +36,7 @@ crumb :patient_consultation do |patient, consultation|
   parent :patient, patient
 end
 
-crumb :consultation_additional_tests do |consultation|
-  link 'Test adicionales', consultation_additional_tests_path(consultation)
-  parent :patient_consultation, consultation.patient, consultation
-end
 
-crumb :consultation_computer_diagnoses do |consultation|
-  link 'Solicitar diagnóstico', consultation_computer_diagnoses_path(consultation)
-  parent :patient_consultation, consultation.patient, consultation   #Esta línea está copiada de arriba.
-                                                                     #No sé si está bien :D
-end
 
 
 # This finds all the tests defined in the folder tests, and from that it infers the breadcrumbs for all of them
@@ -74,6 +65,20 @@ crumb :consultation_test_reloj do |consultation, test_var|
   parent :consultation_additional_tests, consultation
 end
 
+crumb :consultation_additional_tests do |consultation|
+  link 'Test adicionales', consultation_additional_tests_path(consultation)
+  parent :patient_consultation, consultation.patient, consultation
+end
+
+crumb :new_consultation_computer_diagnoses do |consultation|
+  link 'Solicitar diagnóstico', new_consultation_computer_diagnoses_path(consultation)
+  parent :patient_consultation, consultation.patient, consultation
+end
+
+crumb :new_consultation_human_diagnoses do |consultation|
+  link 'Establecer diagnóstico', new_consultation_human_diagnoses_path(consultation)
+  parent :patient_consultation, consultation.patient, consultation
+end
 
 
 # crumb :projects do

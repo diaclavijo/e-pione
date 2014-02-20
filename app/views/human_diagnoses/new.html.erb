@@ -1,0 +1,10 @@
+<% breadcrumb :new_consultation_human_diagnoses, @consultation %>
+
+<% content_for :top_title do %>
+    Diagnóstico <span class="text-muted"><%= @consultation.date %></span>
+<% end %>
+<% content_for :title do %>
+    Establecer diagnóstico
+<% end %>
+
+<%= render 'form' %>

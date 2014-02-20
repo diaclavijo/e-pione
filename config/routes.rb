@@ -5,6 +5,7 @@ RailsSIAD::Application.routes.draw do
     resources :test_faqs, only: [:new, :create, :show, :destroy]
     resources :additional_tests, only: [ :index ]
     resource :computer_diagnoses, only: [ :new, :create ]
+    resource :human_diagnoses, only: [ :new, :create ]
   end
 
 

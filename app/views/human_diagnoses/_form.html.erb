@@ -1,0 +1,28 @@
+<%= form_for([@consultation, @human_diagnosis],
+						 builder: ApplicationHelper::MyFormBuilder,
+						 html: {class: 'form-horizontal'} ) do |f| %>
+
+	<% if @human_diagnosis.errors.any? %> <!-- TODO defines the errors -->
+		<div id="error_explanation">
+			<div class="<%= flash_class(:error) %>">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<h3><%= pluralize(@human_diagnosis.errors.count, "errore") %> TODO - DEFINIR ERROR </h3>
+				<ul>
+					<% @human_diagnosis.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	<% end %>
+
+	<div class="form-group">
+		<%= f.label :diagnosis, 'Diagnóstico' %>
+		<%= f.select :diagnosis, HumanDiagnosis::DIAGNOSIS_OPTIONS %>
+	</div>
+	<div class="form-group">
+		<div class="actions">
+			<%= f.submit %>
+		</div>
+	</div>
+<% end %>
