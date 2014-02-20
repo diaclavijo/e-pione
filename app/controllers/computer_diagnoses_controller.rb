@@ -13,16 +13,23 @@ class ComputerDiagnosesController < ConsultationResourcesController
     if @faq_score && @minimental_score
       age = age @consultation.patient.birth
       education = @consultation.patient.education
-      diagnosis, probability = baby_siad @faq_score, @minimental_score, age, education
-      @computer_diagnosis = @consultation.computer_diagnoses.build diagnosis, probability
+      diagnosis, probability = baby_siad faq_score:        @faq_score,
+                                         minimental_score: @minimental_score,
+                                         age:              age,
+                                         education:        education
+      @computer_diagnosis = @consultation.computer_diagnoses.build( diagnosis: diagnosis,
+                                                                   probability: probability ) unless diagnosis.nil?
     end
 
     respond_to do |format|
-      if @faq_score && @minimental_score && @computer_diagnosis.save
-        format.html { redirect_to [@consultation, :computer_diagnoses, :new], notice: 'Diagnóstico realizado con
-éxito' }
+      if diagnosis.nil?
+        flash.now[:alert] = t('errors.computer_diagnosis.alert.fail')
+        format.html { render action: 'new'}
+      elsif @faq_score && @minimental_score && @computer_diagnosis.save
+        format.html { redirect_to [:new, @consultation, :computer_diagnoses],
+                                  notice: t('errors.computer_diagnosis.notice.diagnosis-saved') }
       else
-        flash.now[:alert] = 'No ha realizado los tests necesarios'
+        flash.now[:warning] = t('errors.computer_diagnosis.alert.need-tests')
         format.html { render action: 'new'}
       end
     end
@@ -34,10 +41,21 @@ class ComputerDiagnosesController < ConsultationResourcesController
       today = Date.today
       ( ( ( today - birthdate) / 365.25 ).to_f )
     end
-
-    def baby_siad ( faq_score, minimental_score, age, education )
-      [0, 90.0]
+    # This function is critical. Therefore keyword args are used
+    PYTHON_SCRIPT = 'deployment_ejemplo.py'
+    def baby_siad (faq_score: nil, minimental_score: nil, age: nil, education: nil )
+      return nil unless faq_score && minimental_score && age && education # all the args are mandatory
+      result = `python #{PYTHON_SCRIPT} age:#{age} educ:#{education} faq:#{faq_score} ldeltotal:#{minimental_score}`
+      output_reg = /(\d)\s+(\d+\.\d+)/
+      if output_reg.match result
+        diagnosis = $1.to_i
+        probability = $2.to_f
+        [ diagnosis, probability ]
+      else
+        nil
+      end
     end
+
 
     def validate_tests
       test_faq = @consultation.test_faqs.first

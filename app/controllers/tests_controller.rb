@@ -26,7 +26,7 @@ class TestsController < ConsultationResourcesController
 
     respond_to do |format|
       if get_resource_ivar.save
-        format.html { redirect_to [@consultation, resource_class::REDIRECT_TO_AFTER_CREATION], notice: t('tests.created') }
+        format.html { redirect_to [@consultation.patient, @consultation], notice: t('tests.created') }
       else
         format.html { render action: 'new' }
       end

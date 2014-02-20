@@ -23,26 +23,34 @@ Physician.create(email: 'alguien@alguien.com',
                  surname: 'Con Apellidos')
 puts 'Ends creating Admin user in Admin model '
 
-
 puts 'Creating patients example'
 
-Patient.create(
-    name: 'Soy del primer physician',
-    surname: 'Abad Lopez',
-    birth: Date.new(1922,5,1),
-    physician_id: 1
-)
+unless Patient.any? then
+  Patient.create(
+      name: 'Soy del primer physician',
+      surname: 'Abad Lopez',
+      birth: Date.new(1942,5,1),
+      education: 3,
+      physician_id: 1
 
-Patient.create(
-    name: 'Soy del segundo physician',
-    surname: 'Abaroa Bilbao',
-    birth: Date.new(1922,5,1),
-    physician_id: 2
-)
+  )
 
+  Patient.create(
+      name: 'Soy del segundo physician',
+      surname: 'Abaroa Bilbao',
+      birth: Date.new(1922, 5, 1),
+      education: 6,
+      physician_id: 2
+  )
 
-
-
+  Patient.create(
+      name: 'Alberto',
+      surname: 'Lopez Araujo',
+      birth: Date.new(1976, 5, 1),
+      education: 5,
+      physician_id: 2
+  )
+end
 
 puts 'Creating consultaions example'
 
@@ -53,5 +61,12 @@ puts 'Creating consultaions example'
       activity: i % 3               ,
       date: Time.now - i**i**i,
       description: 'otra descripción más del numero'+i.to_s
+  )
+  Consultation.create(
+      physician_id: 1,
+      patient_id: Patient.last.id,
+      activity: 1,
+      date: Date.today,
+      description: 'otra descripción más del numero'
   )
 } if Consultation.all.empty?

@@ -1,6 +1,6 @@
 class Patient < ActiveRecord::Base
 
-  has_many :consultations
+  has_many :consultations, dependent: :destroy
   belongs_to :physician
   has_many :tests, through: :consultations
 

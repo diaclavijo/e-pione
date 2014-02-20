@@ -22,9 +22,6 @@
 </head>
 <body>
 
-
-
-
 <%= render 'shared/top_menu' %>
 <div id="message">
 <% flash.each do |style, message| %>
@@ -34,10 +31,7 @@
 
 <div class="container">
     <%= render 'shared/header' %>
-
-
     <%= yield %>
-
 </div>
 
 
