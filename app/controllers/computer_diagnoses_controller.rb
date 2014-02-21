@@ -22,14 +22,20 @@ class ComputerDiagnosesController < ConsultationResourcesController
     end
 
     respond_to do |format|
-      if diagnosis.nil?
-        flash.now[:alert] = t('errors.computer_diagnosis.alert.fail')
-        format.html { render action: 'new'}
-      elsif @faq_score && @minimental_score && @computer_diagnosis.save
-        format.html { redirect_to [:new, @consultation, :computer_diagnoses],
-                                  notice: t('errors.computer_diagnosis.notice.diagnosis-saved') }
+      if @test_faq && @test_minimental  then
+        if diagnosis.nil?
+          flash.now[:alert] = t('errors.computer_diagnosis.alert.fail')
+          format.html { render action: 'new' }
+        elsif @computer_diagnosis.save
+          format.html { redirect_to [:new, @consultation, :computer_diagnoses],
+                                    notice: t('errors.computer_diagnosis.notice.diagnosis-saved') }
+        else
+          flash.now[:alert] = t('errors.computer_diagnosis.alert.failed-save')
+          format.html { render action: 'new'}
+        end
+
       else
-        flash.now[:warning] = t('errors.computer_diagnosis.alert.need-tests')
+        flash.now[:alert] = t('errors.computer_diagnosis.alert.need-tests')
         format.html { render action: 'new'}
       end
     end
