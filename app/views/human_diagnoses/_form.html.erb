@@ -17,12 +17,21 @@
 	<% end %>
 
 	<div class="form-group">
-		<%= f.label :diagnosis, 'Diagnóstico' %>
-		<%= f.select :diagnosis, HumanDiagnosis::DIAGNOSIS_OPTIONS %>
+      <%= f.label :diagnosis, 'Establecer' %>
+      <%= f.select :diagnosis, HumanDiagnosis::DIAGNOSIS_OPTIONS %>
 	</div>
+
+    <div class="form-group">
+      <%= f.label :observations, 'Observaciones' %>
+      <%= f.text_area :observations %>
+    </div>
+
 	<div class="form-group">
+      <div class="col-md-10">
 		<div class="actions">
 			<%= f.submit %>
 		</div>
+      </div>
 	</div>
+
 <% end %>

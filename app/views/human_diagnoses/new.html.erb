@@ -7,4 +7,81 @@
     Establecer diagnóstico
 <% end %>
 
-<%= render 'form' %>
+<div class="jumbotron jumbotron-blank">
+  <div class="container container-centered">
+
+    <div class="row">
+      <div class="col-md-6">
+        <h2> Resultado diagnóstico computacional </h2>
+      </div>
+      <div class="col-md-6 no_blue_link alert">
+            <% if @diagnosis then %>
+                  <% if @diagnosis.diagnosis == 0 %>    <!-- 0: Sano -->
+                        <h3 class="alert alert-success">
+                          <strong>
+                          <%= "#{@diagnosis.diagnosis_text} - #{@probability.probability}" %>
+                          </strong>
+                        </h3>
+                   <% elsif @diagnosis.diagnosis == 1 %>  <!-- 1: Sano -->
+                        <h3 class="alert alert-danger">
+                            <strong>
+                                <%= "#{@diagnosis.diagnosis_text} - #{@probability.probability}" %>
+                           </strong>
+                        </h3>
+                    <% end %>
+            <%    else   %>
+                <h3><strong><%= (link_to 'Realizar diagnóstico computacional ',  new_consultation_computer_diagnoses_path(@consultation), class: "alert alert-danger" )%></strong></h3>
+            <%  end %>
+
+           </div>
+    </div>
+
+
+    <br>
+    <!--separator-->
+    <div class="row">
+      <div class="col-md-6 col-md-offset-6 ">
+        <hr>
+      </div>
+    </div>
+    <!--/separator-->
+
+    <div class="row">
+
+      <div class="col-md-4 col-md-offset-1">
+        <h2>Resultado tests adicionales</h2>
+      </div>
+      <br>
+
+
+      <div class="col-md-4 col-md-offset-1  text-center">
+        <a class="fa fa-pencil-square-o fa-3x"></a>
+        <h4>Test del reloj</h4>
+      </div>
+
+      <div class="col-md-1 text-center">
+        <h4 class="text-muted">94</h4>
+      </div>
+
+    </div>
+
+    <!--separator-->
+    <div class="row">
+      <div class="col-md-6 col-md-offset-6 ">
+        <hr>
+      </div>
+    </div>
+    <!--/separator-->
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <h2>Diagnóstico facultativo</h2>
+        </div>
+    </div>
+    <br>
+
+    <%= render 'form' %>
+
+
+
+  </div> <!--/container-->
+</div> <!--/jumbotron-->
