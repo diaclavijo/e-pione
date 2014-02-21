@@ -54,6 +54,7 @@ es:
         create: "Crear %{model}"
         update: "Editar %{model}"
 
+
   activerecord:
     models:
       patient: "paciente"
@@ -61,6 +62,7 @@ es:
       consultation: "consulta"
       test_reloj: "Test del reloj"
       test_faq: "Test FAQ"
+      human_diagnosis: "diagnóstico"
 
     attributes:
       patient:
