@@ -14,10 +14,11 @@
 
 <!-- RESUMEN DE TESTS REALIZADOS EN ESTA CONSULTA   -->
 
+<!-- TODO: Poner aquí un render partial de los diagnósticos facultativos realizados en esta consulta-->
+<!-- TODO: Poner otro tal que: observaciones-consultas -->
+
 <%= render partial: 'shared/tests_history',
 					 locals: { tests: @patient.tests.order(created_at: :desc) } %>
 
 
-<!-- TODO: ¿Poner otro tal que: observaciones-consultas -->
-<!-- TODO: Poner otro tal que: Resumen diagnósticos establecidos, o algo así, y quitar el anterior -->
 
