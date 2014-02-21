@@ -17,7 +17,7 @@ class TestReloj < ActiveRecord::Base
   }
 
 
-  NAME = 'test del reloj'
+  NAME = 'Test del reloj'
 
   def score
     ( self.f1 + self.f2 + self.f3 + self.f4  )
