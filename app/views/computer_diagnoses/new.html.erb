@@ -20,8 +20,18 @@
       </div>
 
       <div class="col-md-6">
-        <h3 class="text-muted no_blue_link"><%= @faq_score || (link_to 'click para realizar test   ',
-                                                                       new_consultation_test_faq_path(@consultation),  class:"alert alert-danger" ) %></h3>
+        <h3 class="text-muted">
+          <% if @test_faq then %>
+              <%= @test_faq.score %>
+              <h4><%=(link_to "ver test", [@consultation, @test_faq] )%></h4>
+
+          <%    else   %>
+
+              <%= (link_to 'click para realizar test   ', new_consultation_test_faq_path(@consultation),
+                           class:"alert alert-danger" ) %>
+          <%  end %>
+
+        </h3>
       </div>
 
     </div> <!--/row -->
@@ -34,9 +44,19 @@
       </div>
 
       <div class="col-md-6">
-        <h3 class="text-muted  no_blue_link"><%=  @minimental_score || (link_to 'click para realizar test',
-                                                                                new_consultation_test_minimental_path(@consultation), class:"alert alert-danger") %>
+        <h3 class="text-muted">
+          <% if @test_minimental then %>
+              <%= @test_minimental.score %>
+              <h4> <%= link_to "ver test", [@consultation, @test_minimental] %></h4>
+          <%    else   %>
+
+              <%= (link_to 'click para realizar test   ',new_consultation_test_minimental_path(@consultation) ,
+                           class:"alert alert-danger" ) %>
+          <%  end %>
+
         </h3>
+
+
       </div>
 
     </div><!--/row -->
