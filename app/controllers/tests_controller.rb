@@ -41,7 +41,7 @@ class TestsController < ConsultationResourcesController
     get_resource_ivar.destroy
 
     respond_to do |format|
-      format.html { redirect_to [@consultation, resource_class::REDIRECT_TO_AFTER_CREATION], notice: t('tests.deleted')  }
+      format.html { redirect_to [@consultation.patient, @consultation], notice: t('tests.deleted')  }
     end
   end
 
