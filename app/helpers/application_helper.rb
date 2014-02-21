@@ -86,7 +86,7 @@ module ApplicationHelper
   end
   def flash_class(level)
     case level
-      when :notice then "alert alert-info alert-dismissable col-md-6 col-md-offset-3 lead text-center"
+      when :notice then "alert alert-success alert-dismissable col-md-6 col-md-offset-3 lead text-center"
       when :success then "alert alert-success alert-dismissable col-md-6 col-md-offset-3 lead text-center"
       when :error then "alert alert-warning alert-dismissable col-md-6 col-md-offset-3"
       when :alert then "alert alert-danger alert-dismissable col-md-6 col-md-offset-3 lead text-center"

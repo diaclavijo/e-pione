@@ -33,7 +33,7 @@ class PatientsController < ApplicationControllerSigned
     @patient = current_physician.patients.build patient_params
     respond_to do |format|
       if @patient.save
-        flash[:success]="Paciente creado con éxito"
+        flash[:notice]="Paciente creado con éxito"
         format.html { redirect_to patient_consultations_path(@patient.id) }
         format.json { render action: 'show', status: :created, location: @patient }
       else
@@ -48,7 +48,7 @@ class PatientsController < ApplicationControllerSigned
   def update
     respond_to do |format|
       if @patient.update(patient_params)
-        flash[:success]="Paciente actualizado con éxito"
+        flash[:notice]= "Paciente actualizado con éxito"
         format.html { redirect_to patients_path}
         format.json { head :no_content }
       else
