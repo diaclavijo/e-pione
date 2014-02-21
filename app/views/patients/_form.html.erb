@@ -5,12 +5,8 @@
     <div id="error_explanation">
         <div class="<%= flash_class(:error) %>">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          <!--TODO: El mensaje dice "errore" en lugar de "error" cuando hay sólo un error-->
-            <h3><%= pluralize(@patient.errors.count, "errore") %> impiden que este paciente sea creado</h3>
+            <h3>Por favor, rellene los campos marcados en rojo para continuar</h3>
             <ul>
-            <% @patient.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
             </ul>
         </div>
     </div>
