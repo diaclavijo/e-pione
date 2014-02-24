@@ -3,6 +3,7 @@ class HumanDiagnosesController < ConsultationResourcesController
 
   def new
     @human_diagnosis = @consultation.human_diagnoses.build
+    @computer_diagnosis = @consultation.computer_diagnoses.last
   end
 
   # GET /diagnoses
