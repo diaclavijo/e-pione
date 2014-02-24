@@ -33,10 +33,12 @@ es:
         administradores del sistema'
       notice:
         diagnosis-saved: 'Diagnóstico realizado con éxito'
+    human_diagnosis:
+      alert:
+        need-field: "Por favor, establezca el diagnóstico en el recuadro inferior"
 
-  human_diagnosis:
-    notice:
-      created: 'Diagnóstico almacenado correctamente'
+      notice:
+        created: 'Diagnóstico almacenado correctamente'
 
 
 

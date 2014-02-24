@@ -13,9 +13,11 @@ class HumanDiagnosesController < ConsultationResourcesController
 
     respond_to do |format|
       if @human_diagnosis.save
-        format.html { redirect_to [@consultation.patient, @consultation], notice: t('human_diagnosis.notice.created') }
+        format.html { redirect_to [@consultation.patient, @consultation], notice: t('errors.human_diagnosis.notice.created') }
       else
-        format.html { render action: 'new' }
+        flash.now[:alert] = t('errors.human_diagnosis.alert.need-field')
+        format.html { render action: 'new'}
+
       end
     end
   end
