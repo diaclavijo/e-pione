@@ -17,7 +17,6 @@ class TestsController < ConsultationResourcesController
 
   # POST /consultation/1/#{test_name}s
   def create
-    debugger
     redirection = session[:redirect_to] || [@consultation.patient, @consultation]
     set_resource_ivar(
         @consultation.send(

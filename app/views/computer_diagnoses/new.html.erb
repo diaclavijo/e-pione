@@ -28,9 +28,10 @@
           <%    else   %>
 
               <%= (link_to 'click para realizar test   ',
-													 new_consultation_test_faq_path(@consultation,
-																												  redirect_to: new_consultation_computer_diagnoses_path(@consultation)
-																																			),
+													 new_consultation_test_faq_path(
+															 @consultation,
+															 redirect_to: new_consultation_computer_diagnoses_path(@consultation)
+													 ),
                            class:"alert alert-danger" ) %>
           <%  end %>
 

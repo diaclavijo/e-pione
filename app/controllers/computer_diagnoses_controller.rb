@@ -3,7 +3,6 @@ class ComputerDiagnosesController < ConsultationResourcesController
 
   def new
     validate_tests
-    debugger
   end
 
   # GET /diagnoses
