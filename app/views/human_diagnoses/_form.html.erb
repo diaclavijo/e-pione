@@ -2,14 +2,11 @@
 						 builder: ApplicationHelper::MyFormBuilder,
 						 html: {class: 'form-horizontal'} ) do |f| %>
 
-	<% if @human_diagnosis.errors.any? %>
-		<div id="error_explanation">
-			<div class="<%= flash_class(:error) %>">
-				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-				<h3>Por favor, establezca el diagnóstico en el recuadro inferior </h3>
-			</div>
-		</div>
-	<% end %>
+    <!--
+    This form don't show an error message because it won't be appreciated
+    by the user here, so instead the controller will prompt and "alert" message
+    on any error
+    -->
 
 	<div class="form-group">
       <%= f.label :diagnosis, 'Establecer' %>
