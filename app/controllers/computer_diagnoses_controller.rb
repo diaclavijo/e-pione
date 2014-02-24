@@ -28,7 +28,7 @@ class ComputerDiagnosesController < ConsultationResourcesController
           flash.now[:alert] = t('errors.computer_diagnosis.alert.fail')
           format.html { render action: 'new' }
         elsif @computer_diagnosis.save
-          format.html { redirect_to [:new, @consultation, :computer_diagnoses],
+          format.html { redirect_to [:new, @consultation, :human_diagnoses],
                                     notice: t('errors.computer_diagnosis.notice.diagnosis-saved') }
         else
           flash.now[:alert] = t('errors.computer_diagnosis.alert.failed-save')
