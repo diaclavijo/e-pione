@@ -11,6 +11,7 @@ class HumanDiagnosesController < ConsultationResourcesController
   # GET /diagnoses.json
   def create
     validate_tests
+    @computer_diagnosis = @consultation.computer_diagnoses.last
     @human_diagnosis = @consultation.human_diagnoses.build human_diagnosis_params
 
     respond_to do |format|
