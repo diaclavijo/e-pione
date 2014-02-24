@@ -5,6 +5,7 @@ class TestsController < ConsultationResourcesController
 
   # GET /consultations/1/#{test_name}/new
   def new
+    session[:redirect_to] = params[:redirect_to]
     set_resource_ivar(
         @consultation.send(
             collection_name
@@ -16,7 +17,8 @@ class TestsController < ConsultationResourcesController
 
   # POST /consultation/1/#{test_name}s
   def create
-
+    debugger
+    redirection = session[:redirect_to] || [@consultation.patient, @consultation]
     set_resource_ivar(
         @consultation.send(
             collection_name
@@ -26,7 +28,8 @@ class TestsController < ConsultationResourcesController
 
     respond_to do |format|
       if get_resource_ivar.save
-        format.html { redirect_to [@consultation.patient, @consultation], notice: t('tests.created') }
+        session.delete(:redirect_to)
+        format.html { redirect_to redirection, notice: t('tests.created') }
       else
         format.html { render action: 'new' }
       end

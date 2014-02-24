@@ -27,7 +27,10 @@
 
           <%    else   %>
 
-              <%= (link_to 'click para realizar test   ', new_consultation_test_faq_path(@consultation),
+              <%= (link_to 'click para realizar test   ',
+													 new_consultation_test_faq_path(@consultation,
+																												  redirect_to: new_consultation_computer_diagnoses_path(@consultation)
+																																			),
                            class:"alert alert-danger" ) %>
           <%  end %>
 
@@ -50,7 +53,11 @@
               <h4> <%= link_to "ver test", [@consultation, @test_minimental] %></h4>
           <%    else   %>
 
-              <%= (link_to 'click para realizar test   ',new_consultation_test_minimental_path(@consultation) ,
+              <%= (link_to 'click para realizar test   ',
+													 new_consultation_test_minimental_path(
+															@consultation,
+													 		redirect_to: new_consultation_computer_diagnoses_path(@consultation)
+															),
                            class:"alert alert-danger" ) %>
           <%  end %>
 
