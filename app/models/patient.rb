@@ -17,7 +17,7 @@ class Patient < ActiveRecord::Base
   paginates_per 10
 
   #nilify_blanks  # for avoid storing empty strings in database , instead is null
-  EDUCATIONS = { 'Desconocido' => 0, 'Analfabeto' => 1, 'Lee y escribe' => 2, 'Estudios mínimos' => 3 , 'Estudios Primarios' => 4 , 'Estudios Secundarios' => 5, 'Estudios Universitarios' => 6 }
+  EDUCATIONS = { 'Desconocido' => 0, 'Analfabeto' => 1, 'Lee y escribe' => 2, 'Estudios mínimos' => 3 , 'Estudios Primarios' => 4 , 'Estudios Secundarios' => 5, 'Estudios Universitarios' => 6, 'Otro (introducir número de años)'=>7 }
   GENDERS = {'Desconocido' => 0, 'Hombre' => 1, 'Mujer' => 2  }
 
   def education_text

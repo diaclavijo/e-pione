@@ -12,8 +12,7 @@
     </div>
   <% end %>
    <!--TODO: Validación de campos hecha, pero sólo se comprueba la presencia o no del campo.
-   TODO: Checkbox está hecho de forma "manual" y embellecer fecha en application helper
-   -->
+    TODO: Checkbox está hecho de forma "manual" -->
     <div class="form-group">
         <%= f.label :name, 'Nombre (*)' %>
         <%= f.text_field :name %>
@@ -62,6 +61,11 @@
     <div class="form-group"> <!--TODO: Adaptar escolaridad  sobre números 4-20 o poner que el fac. pueda introducir-->
         <%= f.label :education, 'Escolaridad' %>
         <%= f.select :education, Patient::EDUCATIONS , { include_blank: 'Seleccionar...' }%>
+    </div>
+    <!--TODO: Sólo visible cuando el facultativo pulsa "Otro" en el select anterior-->
+    <div class="form-group text-right text-muted">
+      <%= f.label :education, 'Otro (introducir número de años)' %>
+      <%= f.number_field :id2 %>
     </div>
 
     <div class="form-group">
