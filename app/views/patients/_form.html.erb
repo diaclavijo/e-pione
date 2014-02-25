@@ -1,3 +1,5 @@
+
+
 <%= form_for @patient,  :validate => true , builder: ApplicationHelper::MyFormBuilder,
              :html => { :class => 'form-horizontal' }   do |f| %>
 
@@ -68,9 +70,27 @@
       <%= f.number_field :id2 %>
     </div>
 
-    <div class="form-group">
-        <div class="actions">
-          <%= f.submit %>
+    <% if request.path == new_patient_path %>
+        <div class="form-group">
+          <div class="actions">
+            <%= f.submit %>
+          </div>
         </div>
-    </div>
+    <% else %>
+
+        <div class="form-group">
+          <div class="actions">
+            <%= f.submit %>
+
+           <div class="col-md-2">
+              <%=  link_to 'Eliminar paciente', @patient, method: :delete,
+                           data: { confirm:
+                                           '¿Está seguro de que quiere eliminar este paciente? Esta operación es irreversible.'
+                           },
+                           class: 'btn btn-danger'
+              %>
+            </div>
+         </div>
+        </div>
+    <% end %>
 <% end %>
