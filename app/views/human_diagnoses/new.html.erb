@@ -15,7 +15,7 @@
         <h2> Resultado diagnóstico computacional </h2>
       </div>
       <div class="col-md-6 no_blue_link alert">
-            <% if @computer_diagnosis then %> <!--TODO: No funciona, corregir, sospecho que hay que actualizar el controlador >< -->
+            <% if @computer_diagnosis then %>
                   <% if @computer_diagnosis.diagnosis == 0 %>    <!-- 0: Sano -->
                         <h3 class="alert alert-success">
                           <strong>
@@ -53,7 +53,8 @@
       </div>
 
 
-
+      <!--TODO: Cambiar esto por un each que saque todos los tests adicionales y los vaya mostrando..y quizá
+                meterlo en una vista parcial  -->
       <div class="col-md-4 col-md-offset-1  text-center">
             <a class="fa fa-pencil-square-o fa-3x"></a>
         <h4>Test del reloj</h4>
@@ -66,7 +67,7 @@
               <h4> <%= link_to "ver test", [@consultation, @test_reloj] %></h4>
             </h3>
         <%    else   %>
-            <h4><%= link_to 'Realizar test',new_consultation_test_reloj_path(@consultation) %></h4>
+            <h4><%= link_to 'click para realizar test',new_consultation_test_reloj_path(@consultation) %></h4>
         <%  end %>
 
       </div>

@@ -1,0 +1,37 @@
+<!--Jumbotron containing a table -->
+<div class=" jumbotron   text-center" id="collapsable_jumbotron">
+
+  <a data-toggle="collapse" data-parent="#collapsable_jumbotron" href="#collapsable_diagnoses">
+    <i class="fa fa-list fa-2x"> </i><h3> Lista diagnósticos realizados</h3>
+  </a>
+  <div id="collapsable_diagnoses" class="collapse">
+
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <% if tests.any? %>
+            <tr>
+              <th>NHC</th>
+              <th>Fecha de consulta</th>
+              <th>Diagnóstico computacional</th>
+              <th>Diagnóstico facultativo</th>
+            </tr>
+
+            <% tests.each do |test| %> <!--TODO: Cambiar esto por diagnósticos -->
+                <tr>
+                  <td><%= test.patient.id2 || t('no-nhc') %></td>       <!-- NHC -->
+                  <td><%= test.consultation.date %></td>                <!-- Fecha de Consulta -->
+                  <td><%= t(test.test_data_type) %></td>                <!--TODO: Resultado diagnóstico computacional -->
+                  <td><%= test.score%></td>                             <!--TODO: Resultado diagnóstico facultativo -->
+                </tr>
+            <% end %>
+
+        <% else %>
+            <i>
+              No se le ha realizado ningun test a este paciente. Para realizar un test, haga clic en los iconos situados encima de este mensaje.
+            </i>
+        <% end %>
+
+      </table>
+    </div> <!--/.responsive-table-->
+  </div> <!--CollapseOne-->
+</div> <!--/jumbotron-->

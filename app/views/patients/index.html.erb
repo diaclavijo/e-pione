@@ -17,12 +17,12 @@
 <div class="container"> <!--Container to keep everything inside the page centered-->
 
 
-
   <!--Jumbotron containing two rows, one with one row (a table) and one with three columns (pagination, two buttons and an input field)-->
   <div class="jumbotron" id="jumbotron-patients">
     <div class="row">
 
       <h4>Últimos pacientes atendidos</h4>
+      <h5><i>Haga click en la historía clínica de un paciente para más detalles</i></h5>
 
       <div class="table-responsive">
         <table class="table table-striped table-hover" id="table-patients"> <!--Added id for testing purposes-->
@@ -89,7 +89,7 @@
   </div> <!--/jumbotron -->
 
 
-  <%= link_to '<<Volver', :back %>   <!-- TODO This is javascript, make this link to be html -->
+  <%= link_to '<<Volver',  :back %>   <!-- TODO This is javascript, make this link to be html -->
 
 </div> <!-- /container -->
 

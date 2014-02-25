@@ -10,7 +10,7 @@ $consultation_number=arg
 end
 When(/^every row will have "([^"]*)","([^"]*)","([^"]*)","([^"]*)","([^"]*)" and "([^"]*)"$/) do |arg1, arg2, arg3, arg4, arg5, arg6|
   panel_content=[arg1,arg2,arg3,arg4,arg4,arg5,arg6]
-  name_panel="#jumbotron-consultations"
+  name_panel="#collapsable_jumbotron" #Changed in view from jumbotron-consultations to this
   links=[['Ver historia consulta', patient_consultation_path(1,1)]]
   check_panel_generic(name_panel,panel_content,$consultation_number,links)
 end
