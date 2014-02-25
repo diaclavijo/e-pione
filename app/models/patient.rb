@@ -14,7 +14,7 @@ class Patient < ActiveRecord::Base
 
 
   # Configuration
-  paginates_per 10
+  paginates_per 5
 
   #nilify_blanks  # for avoid storing empty strings in database , instead is null
   EDUCATIONS = { 'Desconocido' => 0, 'Analfabeto' => 1, 'Lee y escribe' => 2, 'Estudios mínimos' => 3 , 'Estudios Primarios' => 4 , 'Estudios Secundarios' => 5, 'Estudios Universitarios' => 6, 'Otro (introducir número de años)'=>7 }
