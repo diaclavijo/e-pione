@@ -29,9 +29,12 @@
 
 			<% else %>
 				<i>
-                  No se le ha realizado ningun test a este paciente. Para realizar un test, haga clic en los iconos situados encima de este mensaje.
+                  No se le ha realizado ningun test a este paciente.
+                 <% if request.path != patient_full_history_path %>
+                    Para realizar un test, haga clic en los iconos situados encima de este mensaje
+                 <% end %>
                 </i>
-                  <!-- TODO - revisa este mensaje y formato -->
+
 			<% end %>
 
     </table>
