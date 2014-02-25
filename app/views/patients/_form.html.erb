@@ -68,6 +68,7 @@
     <div class="form-group text-right text-muted">
       <%= f.label :education, 'Otro (introducir número de años)' %>
       <%= f.number_field :id2 %>
+      <div class="col-md-2 text-left text-muted">Máx. 30 años</div>
     </div>
 
     <% if request.path == new_patient_path %>
