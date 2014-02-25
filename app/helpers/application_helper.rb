@@ -79,7 +79,7 @@ module ApplicationHelper
       @template.content_tag(
           :div,
           super(value, options),
-          class: 'col-md-offset-4 col-md-10'
+          class: 'col-md-offset-4 col-md-2'
           )
     end
 
