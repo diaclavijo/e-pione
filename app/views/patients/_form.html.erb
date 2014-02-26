@@ -60,7 +60,7 @@
 
 		<div id='patient_education_div'
 				 class="form-group text-right text-muted"
-				 style="display:<%= @patient.education_select == '-1'  ? 'inline' : 'none' %> ;" >
+				 style="display:<%= @patient.education_select == -1  ? 'inline' : 'none' %> ;" >
 
 			<%= f.label :education, 'Otro (introducir número de años)' %>
 			<%= f.number_field :education %>
