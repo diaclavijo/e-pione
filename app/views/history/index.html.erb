@@ -7,10 +7,12 @@
     Historia completa
 <% end %>
 
+<% full_history = true %>
 <%= render partial: 'shared/consultations_history',
-					 locals: { consultations: @patient.consultations } %>
+					 locals: { consultations: @patient.consultations, full_history: full_history} %>
 
-<%= render partial: 'shared/tests_history', locals: { tests: @patient.tests.order(created_at: :desc) } %>
+<%= render partial: 'shared/tests_history', locals: { tests: @patient.tests.order(created_at: :desc),
+full_history: full_history} %>
 
 
 
