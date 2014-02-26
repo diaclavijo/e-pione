@@ -34,7 +34,7 @@ class PatientsController < ApplicationControllerSigned
     @patient = current_physician.patients.build patient_params
     respond_to do |format|
       if @patient.save
-        flash[:notice]="Paciente creado con éxito"
+        flash[:notice]= t('errors.patient.notice.patient-saved')
         format.html { redirect_to patient_consultations_path(@patient.id) }
         format.json { render action: 'show', status: :created, location: @patient }
       else
@@ -49,7 +49,7 @@ class PatientsController < ApplicationControllerSigned
   def update
     respond_to do |format|
       if @patient.update(patient_params)
-        flash[:notice]= "Paciente actualizado con éxito"
+        flash[:notice]= t('errors.patient.notice.patient-updated')
         format.html { redirect_to patients_path}
         format.json { head :no_content }
       else
@@ -63,6 +63,7 @@ class PatientsController < ApplicationControllerSigned
   # DELETE /patients/1.json
   def destroy
     @patient.destroy
+    flash[:notice]= t('errors.patient.notice.patient-deleted')
     respond_to do |format|
       format.html { redirect_to patients_url }
       format.json { head :no_content }
