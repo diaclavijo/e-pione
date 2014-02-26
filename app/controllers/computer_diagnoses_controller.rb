@@ -3,15 +3,18 @@ class ComputerDiagnosesController < ConsultationResourcesController
 
   def new
     validate_tests
+    @patient = @consultation.patient
   end
 
   # GET /diagnoses
   # GET /diagnoses.json
   def create
     validate_tests
-
+    @patient = @consultation.patient
     if @test_faq && @test_minimental
       age = age @consultation.patient.birth
+
+
       education = @consultation.patient.education
       diagnosis, probability = baby_siad faq_score:        @test_faq.score,
                                          minimental_score: @test_minimental.score,

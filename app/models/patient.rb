@@ -12,7 +12,7 @@ class Patient < ActiveRecord::Base
   validates :name, :surname, :birth, :education, presence: true
   validates :id2, uniqueness: true, allow_nil: true
   validates :id2, numericality: { only_integer: true }, allow_nil:  true
-  validates :education, inclusion: {in: 0..30 }
+  validates :education, inclusion: {in: 0..20 }
   validates :gender, inclusion: {in: 0..2 }, allow_nil: true
 
 
@@ -36,13 +36,17 @@ class Patient < ActiveRecord::Base
   GENDERS = {'Desconocido' => 0, 'Hombre' => 1, 'Mujer' => 2  }
 
   def education_text
-    EDUCATIONS.key self[:education]
+    EDUCATIONS.key(self[:education]) || self[:education]
   end
 
   def gender_text
     GENDERS.key self[:gender]
   end
 
+  def age
+    today = Date.today
+    ( ( ( today - self.birth) / 365.25 ).to_f ).to_i
+  end
   # Methods
   def self.search(search, search_type)
     wildcard_search = "%#{search}%"
