@@ -1,3 +1,5 @@
+<% full_history = false unless defined? full_history %>
+
 <!--Jumbotron containing a table -->
 <div class=" jumbotron   text-center" id="collapsable_jumbotron">
 
@@ -30,9 +32,9 @@
 			<% else %>
 				<i>
                   No se le ha realizado ningun test a este paciente.
-                 <% if request.path != patient_full_history_path %>
+                  <% if not full_history %>
                     Para realizar un test, haga clic en los iconos situados encima de este mensaje
-                 <% end %>
+                  <% end %>
                 </i>
 
 			<% end %>
