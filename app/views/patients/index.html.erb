@@ -30,7 +30,6 @@
             <th>Nombre</th>
             <th>NHC</th>
             <th>F.NAC</th>
-            <th>Exitus</th>
             <th></th>
             <th></th>
           </tr>
@@ -40,7 +39,6 @@
                 <td><%= patient.name %> </td> <!-- Nombre-->
                 <td><%= patient.id2 %> </td> <!-- NHC-->
                 <td><%= patient.birth %> </td> <!-- Fecha Nacimiento-->
-                <td><%= patient.exitus ? 'Si' : 'No' %> </td> <!-- Exitus-->
                 <td> <%= link_to 'Más datos', edit_patient_path(patient) %> </td>
                 <td><%= link_to 'Historia clínica', patient_consultations_path(patient.id)  %></td> <!-- Historia-->
               </tr>
