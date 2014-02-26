@@ -20,7 +20,7 @@ class PatientsController < ApplicationControllerSigned
 
   # GET /patients/new
   def new
-    @patient = Patient.new
+    @patient = Patient.new(birth: '1950-01-01'.to_date)
   end
 
   # GET /patients/1/edit
