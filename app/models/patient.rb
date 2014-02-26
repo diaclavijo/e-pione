@@ -16,6 +16,11 @@ class Patient < ActiveRecord::Base
   validates :gender, inclusion: {in: 0..2 }, allow_nil: true
 
 
+  def education_select
+    return nil if self.education.nil?
+    EDUCATIONS.values.include?(self.education) ? self.education : -1
+  end
+
   # Configuration
   paginates_per 5
 

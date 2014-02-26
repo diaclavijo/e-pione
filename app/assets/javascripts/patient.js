@@ -1,8 +1,5 @@
-// why the (document).on('page:load', function() is necessary?
-//
-// http://stackoverflow.com/questions/17600093/rails-javascript-not-loading-after-clicking-through-link-to-helper
 
-$(document).on('page:load', function(){
+var abc = (function(){
     $('#patient_education_select').change(function() {
         var current_value = $(this).find('option:selected').val();
         if(current_value == "-1"){
@@ -14,3 +11,9 @@ $(document).on('page:load', function(){
         };
     });
 });
+
+// There is an error related to the turbolinks  
+$(document).ready(abc);
+$(document).on('page:load', abc);
+// More detailed explanation here
+// http://stackoverflow.com/questions/17600093/rails-javascript-not-loading-after-clicking-through-link-to-helper
