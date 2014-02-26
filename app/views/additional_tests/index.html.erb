@@ -1,6 +1,5 @@
 <!--URL patients/1/consultations/needed_tests-->
 
-<!-- TODO: Breadcrumb aquí  -->
 <% breadcrumb :consultation_additional_tests, @consultation %>
 
 <% content_for :top_title do %>
@@ -14,8 +13,8 @@
 
 <%= render 'test_choice' %>
 
+<!-- RESUMEN DE TESTS REALIZADOS EN ESTA CONSULTA->
+
 <%= render partial: 'shared/tests_history',
 					 locals: { tests:  @consultation.tests.order(created_at: :desc) } %>
 
-<!--TODO: Aquí debajo irían  un render que mostraría todo los test realizados en esa consulta-->
-<!-- RESUMEN DE TESTS REALIZADOS EN ESTA CONSULTA->
