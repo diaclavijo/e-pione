@@ -1,5 +1,6 @@
 <%= form_for @patient,  :validate => true , builder: ApplicationHelper::MyFormBuilder,
-             :html => { :class => 'form-horizontal' }   do |f| %>
+             :html => { :class => 'form-horizontal',
+						 					  id: 'form_id'}   do |f| %>
 
   <% if @patient.errors.any? %>
     <div id="error_explanation">
@@ -53,20 +54,22 @@
       </div>
     </div>
 
-
     <div class="col-md-4 col-md-offset-6">
       <hr class="hr_consult"></hr>  <!--Separator -->
     </div>
 
-    <div class="form-group"> <!--TODO: Adaptar escolaridad  sobre números 4-20 o poner que el fac. pueda introducir-->
-        <%= f.label :education, 'Escolaridad' %>
-        <%= f.select :education, Patient::EDUCATIONS , { include_blank: 'Seleccionar...' }%>
-    </div>
-    <!--TODO: Sólo visible cuando el facultativo pulsa "Otro" en el select anterior-->
-    <div class="form-group text-right text-muted">
-      <%= f.label :education, 'Otro (introducir número de años)' %>
-      <%= f.number_field :id2 %>
-    </div>
+		<div id='education' class="form-group">
+			<%= f.label :education_select, 'Escolaridad' %>
+			<%= f.select :education_select, Patient::EDUCATIONS , { include_blank: 'Seleccionar...' }%>
+		</div>
+
+		<div id='patient_education_div'
+				 class="form-group text-right text-muted"
+				 style="display:<%= @patient.education_select == '-1'  ? 'inline' : 'none' %> ;" >
+
+			<%= f.label :education, 'Otro (introducir número de años)' %>
+			<%= f.number_field :education %>
+		</div>
 
     <div class="form-group">
         <div class="actions">

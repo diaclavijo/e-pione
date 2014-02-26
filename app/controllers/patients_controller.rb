@@ -30,6 +30,7 @@ class PatientsController < ApplicationControllerSigned
   # POST /patients
   # POST /patients.json
   def create
+
     @patient = current_physician.patients.build patient_params
     respond_to do |format|
       if @patient.save
@@ -76,6 +77,13 @@ class PatientsController < ApplicationControllerSigned
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:surname, :name, :birth, :exitus, :education, :institutionalized, :id2)
+      params.require(:patient).permit(:surname,
+                                      :name,
+                                      :birth,
+                                      :exitus,
+                                      :education,
+                                      :institutionalized,
+                                      :id2,
+                                      :education_select)
     end
 end

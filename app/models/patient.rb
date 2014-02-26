@@ -5,11 +5,14 @@ class Patient < ActiveRecord::Base
   has_many :tests, through: :consultations
   has_many :diagnoses, through: :consultations
 
+  attr_accessor :education_select
+
   # Validations
+  validates :education_select, presence: true
   validates :name, :surname, :birth, :education, presence: true
   validates :id2, uniqueness: true, allow_nil: true
   validates :id2, numericality: { only_integer: true }, allow_nil:  true
-  validates :education, inclusion: {in: 0..6 }
+  validates :education, inclusion: {in: 0..30 }
   validates :gender, inclusion: {in: 0..2 }, allow_nil: true
 
 
@@ -17,7 +20,14 @@ class Patient < ActiveRecord::Base
   paginates_per 10
 
   #nilify_blanks  # for avoid storing empty strings in database , instead is null
-  EDUCATIONS = { 'Desconocido' => 0, 'Analfabeto' => 1, 'Lee y escribe' => 2, 'Estudios mínimos' => 3 , 'Estudios Primarios' => 4 , 'Estudios Secundarios' => 5, 'Estudios Universitarios' => 6, 'Otro (introducir número de años)'=>7 }
+  EDUCATIONS = {
+                 'Analfabeto             (0 años)'  => 0 ,
+                 'Estudios mínimos        (6 años)'  => 6 ,
+                 'Estudios Primarios      (10 años)' => 10 ,
+                 'Estudios Secundarios    (12 años)' => 12,
+                 'Estudios Universitarios (16 años)' => 16,
+                 'Otro (introducir número de años)'  => -1 }
+
   GENDERS = {'Desconocido' => 0, 'Hombre' => 1, 'Mujer' => 2  }
 
   def education_text
