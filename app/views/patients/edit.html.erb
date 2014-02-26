@@ -8,5 +8,6 @@
     Editar paciente <%= @patient.full_name %>
 <% end %>
 
-<%= render 'form' %>
+<% edit_view = true %>
+<%= render partial: 'form', locals: {edit_view: edit_view} %>
 

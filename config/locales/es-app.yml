@@ -40,5 +40,15 @@ es:
       notice:
         created: 'Diagnóstico almacenado correctamente'
 
+    patient:
+      alert:
+        fail: 'Ha ocurrido un problema con el sistema. Por favor contacte a los administradores'
+        need-tests: 'No ha realizado los tests necesarios'
+        failed-save: 'Ha ocurrido un error tratando de guardar su diagnóstico. Por favor contacte con los
+        administradores del sistema'
+      notice:
+        patient-saved: 'Paciente creado con éxito'
+        patient-updated: 'Paciente actualizado con éxito'
+        patient-deleted: 'Paciente eliminado correctamente'
 
 

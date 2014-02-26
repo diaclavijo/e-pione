@@ -1,3 +1,5 @@
+<% edit_view = false unless defined? edit_view %>
+
 <%= form_for @patient,  :validate => true , builder: ApplicationHelper::MyFormBuilder,
              :html => { :class => 'form-horizontal',
 						 					  id: 'form_id'}   do |f| %>
@@ -45,14 +47,7 @@
 
     </div>
 
-    <div class="form-group">
-      <%= f.label :exitus, 'Exitus' %>
-      <div class="col-md-4">
-        <div class="checkbox">
-          <%= f.check_box :exitus, type:'checkbox' %> Sí
-        </div>
-      </div>
-    </div>
+
 
     <div class="col-md-4 col-md-offset-6">
       <hr class="hr_consult"></hr>  <!--Separator -->
@@ -69,11 +64,25 @@
 
 			<%= f.label :education, 'Otro (introducir número de años)' %>
 			<%= f.number_field :education %>
-		</div>
+            <div class="col-md-2 text-muted text-left">Máx. 30 años</div>
+
+        </div>
 
     <div class="form-group">
         <div class="actions">
           <%= f.submit %>
         </div>
+
+    <% if edit_view %>
+        <div class="col-md-2">
+            <%=  link_to 'Eliminar paciente', @patient, method: :delete,
+                           data: { confirm:
+                                           '¿Está seguro de que quiere eliminar este paciente? Esta operación es irreversible.'
+                           },
+                           class: 'btn btn-danger'
+            %>
+        </div>
+    <% end %>
     </div>
+
 <% end %>
