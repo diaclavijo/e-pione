@@ -84,10 +84,9 @@
 
 
   </div> <!--/jumbotron -->
-
-
-  <%= link_to '<<Volver',  :back %>   <!-- TODO This is javascript, make this link to be html -->
-
+  <%link_type = "back" %>
+  <%= render partial: 'shared/links',
+             locals: { link_type: link_type } %>
 </div> <!-- /container -->
 
 

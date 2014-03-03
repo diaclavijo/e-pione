@@ -17,12 +17,17 @@
     <h4>Número historia clínica: <span class="text-muted"> <%= @patient.id2 || 'Sin número' %> </span> </h4>
 <% end %>
 
-
+<div class="container"> <!--To keep the back link well aligned-->
 <%= render 'consultations/first_menu' %>
-
 <%= render partial: 'shared/consultations_history',
 					 locals: { consultations: @patient.consultations } %>
+<div class="row">
+    <div class="col-md-1">
+        <%link_type = "back" %>
+        <%= render partial: 'shared/links',
+                   locals: { link_type: link_type } %>
+    </div>
+</div>
 
 
-
-
+</div>

@@ -11,3 +11,6 @@
 <% edit_view = true %>
 <%= render partial: 'form', locals: {edit_view: edit_view} %>
 
+<%link_type = "back" %>
+<%= render partial: 'shared/links',
+           locals: { link_type: link_type } %>

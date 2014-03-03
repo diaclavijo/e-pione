@@ -10,4 +10,6 @@
 
 <%= render 'form' %>
 
-<%= link_to '<<Volver', patients_path %>
+<%link_type = "back" %>
+<%= render partial: 'shared/links',
+           locals: { link_type: link_type } %>

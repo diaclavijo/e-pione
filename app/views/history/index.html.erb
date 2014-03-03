@@ -7,6 +7,7 @@
     Historia completa
 <% end %>
 
+<!--TODO: Poner diagnósticos aquí -->
 <% full_history = true %>
 <%= render partial: 'shared/consultations_history',
 					 locals: { consultations: @patient.consultations, full_history: full_history} %>
@@ -14,7 +15,9 @@
 <%= render partial: 'shared/tests_history', locals: { tests: @patient.tests.order(created_at: :desc),
 full_history: full_history} %>
 
-
+<%link_type = "back" %>
+<%= render partial: 'shared/links',
+           locals: { link_type: link_type } %>
 
 
 
