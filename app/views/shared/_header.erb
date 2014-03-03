@@ -5,9 +5,17 @@
     <div class="col-md-8">
       <%= yield :top_left %>
       <%= breadcrumbs style: :bootstrap %>
+
+      <div class="col-md-1">
+        <%link_type = "small-back" %>
+        <%= render partial: 'shared/links',
+                   locals: { link_type: link_type } %>
+      </div>
+
       <h1 class="featurette-heading">
         <%= yield :top_title %>
       </h1>
+
     </div>
 
     <div class="col-md-4">

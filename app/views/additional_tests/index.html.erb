@@ -14,16 +14,8 @@
 <%= render 'test_choice' %>
 
 <!-- RESUMEN DE TESTS REALIZADOS EN ESTA CONSULTA-->
-<div class="container"
 <%= render partial: 'shared/tests_history',
 					 locals: { tests:  @consultation.tests.order(created_at: :desc) } %>
-<div class="row">
-  <div class="col-md-1">
-    <%link_type = "back" %>
-    <%= render partial: 'shared/links',
-               locals: { link_type: link_type } %>
-  </div>
-</div>
 
 
-</div>
+
