@@ -78,6 +78,7 @@ es:
         mobile_phone: "Teléfono móvil"
         other_phone:  "Otro teléfono"
         id2: "NHC"
+        education: "Educación"
 
     errors:
       messages:
