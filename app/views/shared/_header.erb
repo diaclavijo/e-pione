@@ -6,12 +6,11 @@
       <%= yield :top_left %>
       <%= breadcrumbs style: :bootstrap %>
 
-      <div class="col-md-1">
-        <%link_type = "small-back" %>
-        <%= render partial: 'shared/links',
-                   locals: { link_type: link_type } %>
-      </div>
-
+      <% if request.path != root_path %>
+          <div class="col-md-1">
+            <%= (link_to '', :back, class:"fa fa-angle-double-left fa-2x") %>
+          </div>
+      <% end %>
       <h1 class="featurette-heading">
         <%= yield :top_title %>
       </h1>
