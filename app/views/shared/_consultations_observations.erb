@@ -1,0 +1,14 @@
+<!--Jumbotron containing a table -->
+
+  <h3 class="text-left">
+    Observaciones de la consulta
+  </h3>
+  <div class="well well-lg text-center">
+     <i class="h4">
+       <% if observations == "" %>
+                   (sin observaciones)
+       <% else %>
+           <%= observations %>
+     <% end %>
+       </i>
+  </div>
