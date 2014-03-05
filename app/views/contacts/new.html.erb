@@ -7,7 +7,7 @@
 <% content_for :top_title do %>
     Contactar
 <% end %>
-<form accept-charset="UTF-8" action="/patients" class="form-horizontal" id="form_id" method="post">
+<form accept-charset="UTF-8" action="MAILTO:error@gmail.com" class="form-horizontal" id="form_id" method="post">
 
 <div class="row text-center">
   <i class="h4">Para ponerse en contacto con los administradores del sistema ante cualquier consulta, por favor
@@ -46,7 +46,9 @@
 </div>
 
 <div class="actions">
-
+  <div class="col-md-offset-6 col-md-2">
+    <input class="btn btn-info" name="commit" type="submit" value="Enviar" />
+  </div>
 </div>
 </form>
 
