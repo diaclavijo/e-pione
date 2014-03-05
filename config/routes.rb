@@ -8,7 +8,7 @@ RailsSIAD::Application.routes.draw do
     resource :human_diagnoses, only: [ :new, :create ]
   end
 
-
+  resource :contacts, only: [:new]
 
   resources :patients  do
     resources :consultations, only: [:create, :new, :index, :show, :edit, :update]
