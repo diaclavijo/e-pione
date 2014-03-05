@@ -22,12 +22,16 @@
           <li class=<%= 'active' if current_page?(new_patient_path) %> >
             <%= link_to 'Registrar nuevo paciente', new_patient_path %>
           </li>
-             <!--TODO: Poner soporte técnico aquí? -->
+          <!--TODO: Cambiar el path aquí cuando la vista esté hecha-->
+          <li class=<%= 'active' if current_page?(new_patient_path) %> >
+            <%= link_to 'Contactar', new_patient_path %>
+          </li>
+
+          <!--TODO: Poner soporte técnico aquí? -->
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li> <%= button_to 'Desconectarse', destroy_physician_session_path, :method => :delete, class: 'btn btn-default navbar-btn' %> </li>
-          <!-- TODO - This is written with input. It should be written with button for better compatibility according to bootstrap documentation -->
         </ul>
       </div>
       <!--/.nav-collapse -->
