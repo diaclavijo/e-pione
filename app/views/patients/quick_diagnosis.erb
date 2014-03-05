@@ -1,0 +1,24 @@
+
+<% breadcrumb :patient, @patient%>
+
+<% content_for :title do %>
+Diagnóstico rápido
+<% end %>
+
+<% content_for :top_title do %>
+    Diagnóstico rápido
+<% end %>
+
+<div class="container container-centered">
+  <div class="alert-info">
+     ¿Es la primera vez que consulta a este paciente?
+    <div class="row">
+      <div class="col-md-4">
+        <%= link_to 'Sí', new_patients_path, class: 'btn btn-default' %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to 'No', patients_path, class: 'btn btn-default' %>
+      </div>
+    </div>
+  </div>
+</div>
