@@ -6,6 +6,9 @@ crumb :patients do
   link 'Búsqueda de pacientes', patients_path
 end
 
+crumb :contact do
+  link 'Contactar', new_contacts_path
+end
 crumb :new_patient do
   link 'Registrar nuevo paciente', new_patient_path
   parent :patients
