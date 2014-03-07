@@ -1,0 +1,102 @@
+<% breadcrumb :quick_diagnosis %>
+
+<% content_for :title do %>
+    Diagnóstico rápido
+<% end %>
+
+<% content_for :top_title do %>
+    Diagnóstico rápido
+<% end %>
+
+<div class="jumbotron jumbotron-blank">
+
+  <div class="container container-centered">
+    <form accept-charset="UTF-8" action="/patients" class="form-horizontal" id="form_id" method="post">
+
+      <div class="form-group">
+        <div class="col-md-1 col-md-offset-3"><a class="fa fa-pencil-square-o fa-3x"></a></div>
+        <div class="col-md-3">
+          <label for="patient_name">Puntuación FAQ</label>
+          <h4><a href="">(Realizar test)</a></h4>
+        </div>
+        <div class="col-md-1">
+          <input class="form-control" id="patient_name" name="patient[name]" type="text" /></div>
+
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-1 col-md-offset-3"><a class="fa fa-pencil-square-o fa-3x"></a></div>
+        <div class="col-md-3">
+          <label for="">Puntuación MMSE</label>
+          <h4> <a href="">(Realizar test)</a></h4>
+        </div>
+        <div class="col-md-1"><input class="form-control" id="patient_surname" name="patient[surname]" type="text" /></div>
+
+      </div>
+
+
+
+      <div class="form-group">
+        <div class="col-md-1 col-md-offset-3">
+          <a class="fa fa-calendar-o fa-3x"></a>
+        </div>
+        <div class="col-md-3">
+          <label for="">Edad </label>
+        </div>
+        <div class="col-md-1"><input class="form-control" id="patient_id2" name="patient[id2]" type="number" /></div>
+      </div>
+
+
+      <div id='education' class="form-group">
+        <div class="col-md-1 col-md-offset-3">
+          <a class="fa fa-font fa-3x"></a>
+        </div>
+        <div class="col-md-3">
+          <label for="patient_education_select">Alfabetización</label>
+        </div>
+        <div class="col-md-4"><select class="form-control" id="patient_education_select" name="patient[education_select]"><option value="">Seleccionar...</option>
+          <option value="0">Analfabeto             (0 años)</option>
+          <option value="6">Estudios mínimos        (6 años)</option>
+          <option value="10">Estudios Primarios      (10 años)</option>
+          <option value="12">Estudios Secundarios    (12 años)</option>
+          <option value="16">Estudios Universitarios (16 años)</option>
+          <option value="-1">Otro (introducir número de años)</option></select></div>
+      </div>
+
+      <div id='patient_education_div'
+           class="form-group text-right text-muted"
+           style="display:none ;" >
+
+        <div class="col-md-4 col-md-offset-3">
+          <label for="patient_education">Otro </label>
+        </div>
+        <div class="col-md-1"><input class="form-control" id="patient_education" name="patient[education]" type="number" /></div>
+        <div class="col-md-2 text-muted text-left">Máx. 20 años</div>
+
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-md-8 col-md-offset-2">
+          <hr>
+        </div>
+      </div> <!--/row-->
+
+
+      <div class="form-group">
+        <div class="actions">
+          <div class="col-md-4 col-md-offset-4">
+            <a class="fa fa-gears fa-3x"></a>
+            <h4><a href="">Solicitar diagnóstico computacional</a></h4>
+          </div>
+        </div>
+
+      </div>
+
+    </form>
+
+
+
+  </div> <!--/container-->
+</div> <!--/Jumbotron-->
+
