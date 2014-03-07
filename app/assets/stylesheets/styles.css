@@ -170,3 +170,7 @@ text-decoration: none;
    /*ackground-color:#eee;*/
 }
 
+.well{
+    background-color: #eeeeee;
+    border:#ffffff;
+}

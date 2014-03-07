@@ -1,12 +1,12 @@
 <!-- this expects a consultations set to render the consultations -->
 <div class="jumbotron text-center" id="collapsable_jumbotron">
-     <% if request.path == patient_full_history_path %>
+     <% if request.path == patient_full_history_path %> <!-- TODO: Cambiar por una variable-->
           <a data-toggle="collapse" data-parent="#collapsable_jumbotron" href="#collapsable_consultations">
             <i class="fa fa-list fa-2x"> </i><h3> Lista de consultas del paciente</h3>
           </a>
           <div id="collapsable_consultations" class="collapse">
      <% else  %>
-        <h4 class="text-left"> Lista de consultas del paciente</h4>
+        <h3 class="text-left"> Lista de consultas del paciente</h3>
       <% end %>
 
       <div class="table-responsive">
@@ -34,6 +34,8 @@
   </div> <!-- /collapsalbe_consultations -->
 </div>
 <!-- /container -->
+
+<!--TODO: Actualizar al estilo de tests y diagnóstico -->
 
 
 

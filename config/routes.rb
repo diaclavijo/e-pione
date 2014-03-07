@@ -8,6 +8,8 @@ RailsSIAD::Application.routes.draw do
     resource :human_diagnoses, only: [ :new, :create ]
   end
 
+  get 'quick_diagnosis', to: 'home#quick_diagnosis', as: 'quick_diagnosis'
+
   resource :contacts, only: [:new]
 
   resources :patients  do

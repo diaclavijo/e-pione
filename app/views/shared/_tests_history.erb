@@ -2,11 +2,15 @@
 
 <!--Jumbotron containing a table -->
 <div class=" jumbotron   text-center" id="collapsable_jumbotron">
-
+  <% if full_history %>
   <a data-toggle="collapse" data-parent="#collapsable_jumbotron" href="#collapsable_tests">
     <i class="fa fa-list fa-2x"> </i><h3> Lista tests realizados</h3>
   </a>
-  <div id="collapsable_tests" class="collapse">
+      <div id="collapsable_tests" class="collapse">
+  <% else %>
+      <h3 class="text-left"> Lista de tests  del paciente</h3>
+  <% end %>
+
 
   <div class="table-responsive">
     <table class="table table-striped table-hover">
