@@ -11,7 +11,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: RailsSIAD_development
+  database: e-pione_development
   pool: 5
   username: root
   password: alzheimer
@@ -23,7 +23,7 @@ development:
 test: &test
   adapter: mysql2
   encoding: utf8
-  database: RailsSIAD_test_db
+  database: e-pione_test_db
   pool: 5
   username: root
   password: 'alzheimer'
@@ -33,10 +33,10 @@ test: &test
 production:
   adapter: mysql2
   encoding: utf8
-  database: RailsSIAD_production
+  database: e-pione_production
   pool: 5
   username: root
-  password: 'alzheimer'
+  password: '17198T]r*E01@7Q'
   socket: /var/run/mysqld/mysqld.sock
 
 cucumber:
