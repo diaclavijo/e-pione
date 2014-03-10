@@ -14,8 +14,11 @@
 
 <!-- RESUMEN DE TESTS REALIZADOS EN ESTA CONSULTA   -->
 
-<!-- TODO: Poner otro tal que: observaciones-consultas -->
-<%= render partial:     'shared/consultations_observations',
-             locals: { observations: @consultation.description } %>
+
+<!-- TODO: Poner otro tal que: Diagnósticos -->
+<%= render partial: 'shared/diagnoses_history',
+           locals: { observations: @consultation.description, full_history:true } %>
+
+
 <%= render partial: 'shared/tests_history',
 					 locals: { tests: @patient.tests.order(created_at: :desc) } %>

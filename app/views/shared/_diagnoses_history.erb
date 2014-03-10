@@ -1,41 +1,55 @@
 <% full_history = false unless defined? full_history %>
 
 <!--Jumbotron containing a table -->
-<div class=" jumbotron   text-center" id="collapsable_jumbotron">
-
-  <a data-toggle="collapse" data-parent="#collapsable_jumbotron" href="#collapsable_diagnoses">
-    <i class="fa fa-list fa-2x"> </i><h3> Lista diagnósticos realizados</h3>
-  </a>
-  <div id="collapsable_diagnoses" class="collapse">
-
-    <div class="table-responsive">
-      <table class="table table-striped table-hover">
-        <% if tests.any? %>
-            <tr>
-              <th>NHC</th>
-              <th>Diagnóstico computacional</th>
-              <th>Diagnóstico facultativo</th>
-            </tr>
-
-            <% tests.each do |test| %>                                  <!--TODO: Cambiar esto por diagnósticos -->
-                <tr>
-                  <td><%= test.patient.id2 || t('no-nhc') %></td>               <!-- NHC -->
-                  <td><%= test.consultation.date %></td>                <!-- Fecha de Consulta -->
-                  <td><%= t(test.test_data_type) %></td>                <!--TODO: Resultado diagnóstico computacional -->
-                  <td><%= test.score%></td>                             <!--TODO: Resultado diagnóstico facultativo -->
-                </tr>
-            <% end %>
-
-        <% else %>
-            <i>
-              No se le ha realizado ningun diagnóstico a este paciente.
-              <% if not full_history %>
-                Para realizar un diagnóstico, haga clic en los iconos situados encima de este mensaje.
+    <div class=" jumbotron jumbotron-blank" id="collapsable_jumbotron">
+  <div class="row">
+    <hr>
+  </div>
+  <div class="row">
+          <% if @computer_diagnosis then %>
+              <% if @computer_diagnosis.diagnosis == 0 %>    <!-- 0: Sano -->
+                <div class="text-center alert alert-success">
+                    Diagnóstico computacional: <%= "#{@computer_diagnosis.diagnosis_text} - #{@computer_diagnosis.probability}" %>
+                </div>
+              <% elsif @computer_diagnoses.diagnosis == 1 %>  <!-- 1: Sano -->
+                <div class="text-center alert alert-danger">
+                  Diagnóstico computacional: <%= "#{@computer_diagnosis.diagnosis_text} - #{@computer_diagnosis.probability}" %>
+                </div>
               <% end %>
-            </i>
         <% end %>
+   </div>
+  <div class="row">
+    <% if @human_diagnosis then %>
+        <% if @human_diagnosis.diagnosis == 0 %>    <!-- 0: Sano -->
+            <div class="text-center alert alert-success">
+              Diagnóstico facultativo: <%= "#{@human_diagnosis.diagnosis_text} " %>
+            </div>
+        <% elsif @human_diagnosis.diagnosis == 1 %>  <!-- 1: Sano -->
+            <div class="text-center alert alert-danger">
+              Diagnóstico facultativo: <%= "#{@human_diagnosis.diagnosis_text}" %>
+            </div>
+        <% end %>
+    <% end %>
+   </div>
+  <div class="row">
+      <% if observations == "" %>
+        <blockquote class="text-left">
+          Observaciones de la consulta:  <i>(Sin observaciones)</i>
+        </blockquote>
+  <% else %>
+        <blockquote class="text-left">
+          Observaciones de la consulta:<i> <%= observations %></i>
+        </blockquote>
+      <% end %>
 
-      </table>
-    </div> <!--/.responsive-table-->
-  </div> <!--CollapseOne-->
+  </div>
+
+    <i>
+        <% if not full_history %>
+                Para realizar un diagnóstico, haga clic en los iconos situados encima de este mensaje.
+        <% end %>
+    </i>
+
+
+
 </div> <!--/jumbotron-->

@@ -14,7 +14,8 @@ class ConsultationsController < ApplicationControllerSigned
   def show
     @patient = Patient.find(params[:patient_id])
     @consultation = @patient.consultations.find params[:id]
-
+    @human_diagnosis = @consultation.human_diagnoses.last
+    @computer_diagnosis = @consultation.computer_diagnoses.last
   end
 
   # GET /consultations/new
