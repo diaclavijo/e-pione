@@ -1,4 +1,4 @@
-RailsSIAD::Application.routes.draw do
+Epione::Application.routes.draw do
   resources :consultations, only: [] do
     resources :test_minimentals, only: [:new, :create, :show, :destroy]
     resources :test_relojs, only: [:new, :create, :show, :destroy]
