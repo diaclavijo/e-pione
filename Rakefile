@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RailsSIAD::Application.load_tasks
+Epione::Application.load_tasks
