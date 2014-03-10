@@ -9,6 +9,7 @@ class Physician < ActiveRecord::Base
   has_many :consultations
   has_many :patients
   has_many :tests, through: :consultations
+	has_many :quick_diagnoses, dependent: :destroy
 
   def full_name
     self[:name] + ' ' + self[:surname]

@@ -1,4 +1,6 @@
 Epione::Application.routes.draw do
+  resources :quick_diagnoses
+
   resources :consultations, only: [] do
     resources :test_minimentals, only: [:new, :create, :show, :destroy]
     resources :test_relojs, only: [:new, :create, :show, :destroy]
@@ -8,7 +10,6 @@ Epione::Application.routes.draw do
     resource :human_diagnoses, only: [ :new, :create ]
   end
 
-  get 'quick_diagnosis', to: 'home#quick_diagnosis', as: 'quick_diagnosis'
 
   resource :contacts, only: [:new]
 
