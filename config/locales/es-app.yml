@@ -51,4 +51,8 @@ es:
         patient-updated: 'Paciente actualizado con éxito'
         patient-deleted: 'Paciente eliminado correctamente'
 
+    quick_diagnosis:
+      notice:
+        quick_diagnosis-saved: 'Diagnóstico computacional realizado con éxito'
+
 

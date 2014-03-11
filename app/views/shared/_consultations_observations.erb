@@ -1,9 +1,9 @@
 <!--Jumbotron containing a table -->
-
+<div class="jumbotron jumbotron-blank text-left">
   <h3 class="text-left">
     Observaciones de la consulta
   </h3>
-  <div class="well well-lg text-center">
+  <blockquote class="text-center">
      <i class="h4">
        <% if observations == "" %>
                    (sin observaciones)
@@ -11,4 +11,6 @@
            <%= observations %>
      <% end %>
        </i>
-  </div>
+  </blockquote>
+
+</div>
