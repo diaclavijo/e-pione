@@ -33,13 +33,14 @@ test: &test
 production:
   adapter: mysql2
   encoding: utf8
-  database: e-pione_production
   pool: 5
-  username: racer
-  password: '17198T]r*E01A7Q'
+  database: e-pione_production
   host: epione.cwmwruzeomph.us-east-1.rds.amazonaws.com
   port: 3306
-  timeout: 5000
+  username: racer
+  password: '17198T]r*EO1A7Q'
+  socket: /var/run/mysqld/mysqld.sock
+
 
 cucumber:
   <<: *test
