@@ -69,3 +69,7 @@ group :test do
 end
 gem "launchy"
 #end by yarilo
+
+group :production do
+	gem 'passenger'
+end
