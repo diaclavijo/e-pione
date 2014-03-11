@@ -1,0 +1,56 @@
+<% breadcrumb :contact %>
+
+<% content_for :title do %>
+    Contactar
+<% end %>
+
+<% content_for :top_title do %>
+    Contactar
+<% end %>
+<form accept-charset="UTF-8" action="MAILTO:error@gmail.com" class="form-horizontal" id="form_id" method="post">
+
+<div class="row text-center">
+  <i class="h4">Para ponerse en contacto con los administradores del sistema ante cualquier consulta, por favor
+    rellene el siguiente formulario
+  </i>
+</div>
+<br>
+<br>
+<div class="form-group">
+  <div class="col-md-4 col-md-offset-2">
+    <label for="patient_name">Motivo de contacto</label>
+  </div>
+  <div class="col-md-4">
+    <select class="form-control" id="contact_reason">
+        <option value="">Seleccionar...</option>
+        <option value="0">Error/Incidencia en la web</option>
+        <option value="1">Queja</option>
+        <option value="2">Sugerencia</option>
+        <option value="3">Otros</option>
+    </select>
+
+  </div>
+
+  <br>
+  <!--Select -->
+</div>
+
+<div class="form-group">
+    <div class="col-md-4 col-md-offset-2"><label for="consultation_description">Observaciones</label></div><br>
+    <div class="col-md-4 "><textarea class="form-control" id="consultation_description" name="consultation[description]">
+    </textarea></div>
+  </div>
+  <br>
+  <!-- Text area -->
+
+</div>
+
+<div class="actions">
+  <div class="col-md-offset-6 col-md-2">
+    <input class="btn btn-info" name="commit" type="submit" value="Enviar" />
+  </div>
+</div>
+</form>
+
+
+
