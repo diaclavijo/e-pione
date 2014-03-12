@@ -80,7 +80,7 @@ Epione::Application.configure do
 
   #Font-awesome work-around for Firefox ( http://www.jaynathan.org/2013/02/using-font-awesome-with-rails-asset-pipeline/ )
   config.assets.paths << Rails.root.join("app", "assets", "fonts")
-  config.assets.precompile += %w( .svg .eot .woff .ttf )
+  config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
   config.assets.precompile += ['not_logged_in.css', 'not_logged_in.js']
 end
