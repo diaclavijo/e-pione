@@ -1,6 +1,6 @@
 /* This CSS file is used for the front page when the user is not signed in  */
 
-body {
+.body-home {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #fff;
@@ -8,11 +8,11 @@ body {
 #title-home{
     color: #ffffff;
 }
-.text-muted{
+.text-muted-home{
     color: #e4e4e4
 }
 
-.jumbotron {
+.jumbotron-home {
     background-color: #005a9f
 }
 .form-signin {
@@ -50,12 +50,12 @@ body {
   border-top-right-radius: 0;
 }
 .front{
- 
+
   text-align: center;
 }
-.checkbox{
+.checkbox-home{
   padding-top: 0px;
   text-align: left;
-  line-height: 1.2 /*Controla el tema del checkbox*/ 
+  line-height: 1.2 /*Controla el tema del checkbox*/
 
 }

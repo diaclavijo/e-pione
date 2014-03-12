@@ -1,7 +1,7 @@
 
 <div class="container">
 
-  <div class="row front jumbotron">
+  <div class="row front jumbotron jumbotron-home">
 
 
     <div class="col-md-8">
@@ -11,12 +11,12 @@
 
     <div class="col-md-4">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'})   do |f| %>
-        <h2 class="form-signin-heading text-muted">Por favor, identifíquese</h2>
+        <h2 class="form-signin-heading text-muted-home">Por favor, identifíquese</h2>
         <div> <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email' %></div>
 
         <div><%= f.password_field :password, class: 'form-control', placeholder: 'contraseña' %></div>
 
-        <label class="checkbox">
+        <label class="checkbox checkbox-home">
           <%= f.check_box :remember_me %> <small>Recordarme</small>
         </label>
 
@@ -24,7 +24,7 @@
 
       <% end %>
 
-      <small><%= link_to '¿Problemas para acceder?', new_password_path(resource_name), class: 'text-muted' %> </small>  <!--- It was designed to get the small tag inside the a tag, it should be considered to be changed if it is necessary -->
+      <small><%= link_to '¿Problemas para acceder?', new_password_path(resource_name), class: 'text-muted-home' %> </small>  <!--- It was designed to get the small tag inside the a tag, it should be considered to be changed if it is necessary -->
 
 
     </div> <!--/col-md-4-->
