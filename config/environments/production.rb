@@ -77,4 +77,8 @@ Epione::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  #Font-awesome work-around for Firefox ( http://www.jaynathan.org/2013/02/using-font-awesome-with-rails-asset-pipeline/ )
+  config.assets.paths << Rails.root.join("app", "assets", "fonts")
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
 end
