@@ -5,11 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-unless Admin.any?
-	puts 'Creating Admin user in Admin: model'
-	admin = Admin.create(email: 'racer@racer.com', password: '17198T]r*EO1A7Q', password_confirmation: '17198T]r*EO1A7Q')
-	puts 'Error: there was a problem creating the admin user:' + admin.errors if admin.errors.any?
-	puts 'Ends creating Admin user in Admin model '
-end
+
+puts 'Creating The Ayoze physician'
+ayoze = Physician.create(email: 'ayoze@sanroque.com',
+												 password: 'alzheimer',
+												 password_confirmation: 'alzheimer',
+												 name: 'Ayoze',
+												 surname: 'González')
+puts 'ERROR: there was some problem writing the Ayoze user' if ayoze.errors.any?
+puts 'End creating Ayoze physician'
 
 
