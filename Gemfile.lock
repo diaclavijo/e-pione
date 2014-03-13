@@ -64,6 +64,7 @@ GEM
       cucumber (>= 1.2.0)
       nokogiri (>= 1.5.0)
       rails (>= 3.0.0)
+    daemon_controller (1.2.0)
     database_cleaner (1.2.0)
     debugger (1.6.5)
       columnize (>= 0.3.1)
@@ -121,6 +122,10 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
+    passenger (4.0.38)
+      daemon_controller (>= 1.2.0)
+      rack
+      rake (>= 0.8.1)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-pjax (0.7.0)
@@ -232,6 +237,7 @@ DEPENDENCIES
   launchy
   mysql2 (>= 0.2.12)
   nilify_blanks
+  passenger
   rails (= 4.0.0)
   rails_admin
   rspec-rails (>= 2.0.1)
