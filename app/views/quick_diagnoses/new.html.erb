@@ -21,10 +21,10 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h3> Por favor, rellene correctamente los campos marcados en rojo</h3>
                 <ul>
-                  <% if @quick_diagnosis.errors[:mmse_score].any? %>
+                  <% if @quick_diagnosis.errors[:score_mmse].any? %>
                       <h4><li>Puntuación de MMSE debe estar entre 0 y 30</li></h4>
                   <% end %>
-                  <% if @quick_diagnosis.errors[:faq_score].any? %>
+                  <% if @quick_diagnosis.errors[:score_faq].any? %>
                       <h4><li>Puntuación de FAQ debe estar entre 0 y 30</li></h4>
                   <% end %>
                 </ul>
@@ -35,11 +35,11 @@
       <div class="form-group">
         <div class="col-md-1 col-md-offset-3"><a class="fa fa-pencil-square-o fa-3x"></a></div>
         <div class="col-md-3">
-            <%= f.label :faq_score, 'Puntuación FAQ' %>
+            <%= f.label :score_faq, 'Puntuación FAQ' %>
           <h4><a href="">(Realizar test)</a></h4>
         </div>
         <div class="col-md-1">
-          <%= f.number_field :faq_score ,class: 'form-control' %>
+          <%= f.number_field :score_faq ,class: 'form-control input-sm' %>
         </div>
 
       </div>
@@ -47,11 +47,11 @@
       <div class="form-group">
         <div class="col-md-1 col-md-offset-3"><a class="fa fa-pencil-square-o fa-3x"></a></div>
         <div class="col-md-3">
-          <%= f.label :mmse_score, 'Puntuación MMSE'  %>
+          <%= f.label :score_mmse, 'Puntuación MMSE'  %>
           <h4> <a href="">(Realizar test)</a></h4>
         </div>
         <div class="col-md-1">
-          <%= f.number_field :mmse_score ,class: 'form-control' %>
+          <%= f.number_field :score_mmse ,class: 'form-control input-sm' %>
         </div>
       </div>
 
@@ -63,7 +63,7 @@
           <%= f.label :age, 'Edad' %>
         </div>
         <div class="col-md-1">
-          <%= f.number_field :age ,class: 'form-control' %>
+          <%= f.number_field :age ,class: 'form-control input-sm' %>
         </div>
       </div>
 
@@ -87,7 +87,7 @@
           <%= f.label :education, 'Otro' %>
         </div>
         <div class="col-md-1">
-          <%= f.number_field :education , class:'form-control' %>
+          <%= f.number_field :education , class:'form-control input-sm' %>
         </div>
         <div class="col-md-2 text-muted text-left">Máx. 20 años</div>
 
