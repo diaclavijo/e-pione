@@ -3,9 +3,9 @@ class CreateQuickDiagnoses < ActiveRecord::Migration
     create_table :quick_diagnoses do |t|
       t.integer :diagnosis
       t.float :probability
-      t.integer :score_faq
+      t.integer :faq_score
       t.integer :education
-      t.integer :score_mmse
+      t.integer :mmse_score
       t.float :age
 
 			t.belongs_to :physician, index: true

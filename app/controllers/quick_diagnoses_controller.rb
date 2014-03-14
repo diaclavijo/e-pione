@@ -1,5 +1,4 @@
 class QuickDiagnosesController < ApplicationController
-  before_action :set_quick_diagnosis, only: [:show, :edit, :update, :destroy]
 
   # GET /quick_diagnoses
   # GET /quick_diagnoses.json
@@ -18,13 +17,17 @@ class QuickDiagnosesController < ApplicationController
   def create
     @quick_diagnosis = QuickDiagnosis.new(quick_diagnosis_params)
 
+		#if @quick_diagnosis.valid?
+		#	siad faq_score:        @quick_diagnosis.faq_score,
+		#			 minimental_score: @quick_diagnosis.mmse_score,
+		#			 age:              @quick_diagnosis.age,
+		#			 education:        @quick_diagnosis.education
+		#
+		#end
+
     respond_to do |format|
       if @quick_diagnosis.save
-           if  0 == 0           #TODO Poner aquí algo tipo @quick_diagnosis.diagnosis
-            message_kind = :notice
-          elsif 1 == 0
-            message_kind = :alert
-          end
+          message_kind = @quick_diagnosis.sane? ?  :notice : :alert
           flash[message_kind]= "#{@quick_diagnosis.diagnosis_text} - #{@quick_diagnosis.probability} "
           format.html { redirect_to new_quick_diagnosis_path}
       else
@@ -35,18 +38,16 @@ class QuickDiagnosesController < ApplicationController
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_quick_diagnosis
-      @quick_diagnosis = QuickDiagnosis.find(params[:id])
-    end
+
+		include Siad
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quick_diagnosis_params
       params.require(:quick_diagnosis).permit(:diagnosis,
                                               :probability,
-                                              :score_faq,
+                                              :faq_score,
                                               :education,
-                                              :score_mmse,
+                                              :mmse_score,
                                               :age,
                                               :education_select)
     end
