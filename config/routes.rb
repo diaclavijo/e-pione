@@ -11,7 +11,7 @@ Epione::Application.routes.draw do
   end
 
 
-  resource :contacts, only: [:new]
+  resource :contacts, only: [:new, :create]
 
   resources :patients  do
     resources :consultations, only: [:create, :new, :index, :show, :edit, :update]

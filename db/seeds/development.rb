@@ -11,11 +11,11 @@ Admin.create(email: 'admin@admin.com', password: 'alzheimer', password_confirmat
 puts 'Ends creating Admin user in Admin model '
 
 puts 'Creating Admin user in Admin: model'
-Physician.create(email: 'ayoze@sanroque.com',
-                 password: 'alzheimer',
-                 password_confirmation: 'alzheimer',
-                 name: 'Ayoze',
-                 surname: 'González')
+Physician.create(email: 'prueba@prueba.com',
+                 password: 'cocodrilo',
+                 password_confirmation: 'cocodrilo',
+                 name: 'Prueba',
+                 surname: 'Prueba')
 Physician.create(email: 'alguien@alguien.com',
                  password: 'alzheimer',
                  password_confirmation: 'alzheimer',

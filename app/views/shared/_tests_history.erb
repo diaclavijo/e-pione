@@ -29,7 +29,8 @@
 							<td><%= test.consultation.date %></td>       <!-- Fecha de Consulta -->
 							<td><%= t(test.test_data_type) %></td>       <!-- Test -->
 							<td><%= test.score%></td>       <!-- Score -->
-							<td><%= link_to 'Ver detalles' , [test.consultation, test.test_data]%> </td>       <!-- Detalles -->
+							<td><%= test.test_data.f1 ? link_to('Ver detalles', [test.consultation, test.test_data]) : t('test.only-score')	%> </td>       <!-- Detalles -->
+
 						</tr>
 				<% end %>
 
