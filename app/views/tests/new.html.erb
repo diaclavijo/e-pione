@@ -4,14 +4,14 @@
 
     <div class="col-md-5"><%= resource_class::NAME %></div>
     <div class="col-md-6 col-md-offset-1">
-      <a href="#enter_score" id="" data-toggle="modal"><h4>(Click para introducir puntuación directamente)</h4></a>
+      <a href="#modalEnterScore" id="" data-toggle="modal"><h4>(Click para introducir puntuación directamente)</h4></a>
     </div>
     <!-- Small modal -->
 
 	<!--ATENCIÓN YARILO , CUANDO VEAS ESTO , -->
 	<!--TODO  HAY QUE PONER UN CONDICIONAL PARA QUE RENDERIZE SIEMPRE LA VENTANA D INTRODUZCA LA -->
 	<!--PUNTUACIÓN SI HA HABIDO UN ERROR -->
-    <div class="modal fade" id="enter_score" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="modalEnterScore" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
 
@@ -22,12 +22,11 @@
 
 					<%= form_for([@consultation,get_resource_ivar],
 											 disabled: disabled ) do |f| %>
-
-						<% if get_resource_ivar.errors.any? %>
-							<div id="error_explanation">
+						<% if get_resource_ivar.errors[:score].any? %>
+							<div id="error_explanation_modal">
 								<div class="<%= flash_class(:error) %>">
 									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-									<h3>Por favor, seleccione algún valor en los campos marcados en rojo para continuar </h3>
+									<h3>Valores permitidos: 0-30</h3>
 								</div>
 							</div>
 						<% end %>
