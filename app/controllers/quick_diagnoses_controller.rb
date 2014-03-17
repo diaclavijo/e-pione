@@ -18,11 +18,11 @@ class QuickDiagnosesController < ApplicationController
     @quick_diagnosis = QuickDiagnosis.new(quick_diagnosis_params)
 
 		if @quick_diagnosis.valid?
-			@quick_diagnosis.diagnosis, @quick_diagnosis.probability = siad faq_score:        @quick_diagnosis.faq_score,
-																		 mmse: @quick_diagnosis.mmse_score,
-																		 age:              @quick_diagnosis.age,
-																		 education:        @quick_diagnosis.education
-			siad_error = ( @quick_diagnosis.diagnosis && @quick_diagnosis.probability )
+			@quick_diagnosis.diagnosis, @quick_diagnosis.probability = siad faq_score:    @quick_diagnosis.faq_score,
+																																			 mmse: 				@quick_diagnosis.mmse_score,
+																																			 age:         @quick_diagnosis.age,
+																																			 education:   @quick_diagnosis.education
+			siad_error = true unless ( @quick_diagnosis.diagnosis && @quick_diagnosis.probability )
 
 		end
 

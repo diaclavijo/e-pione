@@ -6,7 +6,7 @@ module Siad
 			# This function is critical. Therefore keyword args are used
 
 			def siad (faq_score: nil, mmse: nil, age: nil, education: nil )
-				python_script = 'python3.3 /opt/binnac/SIAD/SIAD_deployed.py'
+				python_script = 'python3.3 /opt/SIAD/SIAD_deployed.py'
 				return nil unless faq_score && mmse && age && education # all the args are mandatory
 
 				result = `#{python_script} age:#{age} educ:#{education} faq:#{faq_score} mmse:#{mmse}`
