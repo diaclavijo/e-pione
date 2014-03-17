@@ -23,8 +23,9 @@
         <h3 class="text-muted">
           <% if @test_faq then %>
               <%= @test_faq.score %>
-              <h4><%=(link_to "ver test", [@consultation, @test_faq] )%></h4>
-
+              <% if @test_faq.f1 then%>
+                  <h4><%= link_to "ver test", [@consultation, @test_faq] %></h4>
+              <% end %>
           <%    else   %>
 
               <%= (link_to 'click para realizar test   ',
@@ -51,16 +52,17 @@
         <h3 class="text-muted">
           <% if @test_minimental then %>
               <%= @test_minimental.score %>
-              <h4> <%= link_to "ver test", [@consultation, @test_minimental] %></h4>
-          <%    else   %>
-
+              <% if @test_minimental.f1 then%>
+                 <h4><%= link_to "ver test", [@consultation, @test_minimental] %></h4>
+               <% end %>
+        <%    else   %>
               <%= (link_to 'click para realizar test   ',
 													 new_consultation_test_minimental_path(
 															@consultation,
 													 		redirect_to: new_consultation_computer_diagnoses_path(@consultation)
 															),
                            class:"alert alert-danger" ) %>
-          <%  end %>
+          <% end %>
 
         </h3>
 
