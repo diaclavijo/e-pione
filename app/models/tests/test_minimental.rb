@@ -4,7 +4,7 @@ class TestMinimental < ActiveRecord::Base
 	end
   NAME = 'Test minimental'
 
-
+	SUCCESS = { 'Error' => 0, 'Acierto' => 1 }
 
   include IsTest
 

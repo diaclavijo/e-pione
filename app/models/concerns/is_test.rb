@@ -14,7 +14,7 @@ module IsTest
 
     REDIRECT_TO_AFTER_CREATION = :additional_tests
 
-		SUCCESS = { 'Error' => 0, 'Acierto' => 1 }
+
 
 		YESNO = { 'Sí'         => 1,
 							'No'     => 0 }

@@ -14,7 +14,6 @@ class ComputerDiagnosesController < ConsultationResourcesController
     if @test_faq && @test_minimental
       age = age @consultation.patient.birth
 
-
       education = @consultation.patient.education
       diagnosis, probability = siad faq_score:        @test_faq.score,
                                          mmse: @test_minimental.score,
@@ -54,8 +53,8 @@ class ComputerDiagnosesController < ConsultationResourcesController
     include Siad
 
     def validate_tests
-      @test_faq = @consultation.test_faqs.first
-      @test_minimental = @consultation.test_minimentals.first
+      @test_faq = @consultation.test_faqs.last
+      @test_minimental = @consultation.test_minimentals.last
     end
 
 end
