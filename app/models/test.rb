@@ -10,11 +10,4 @@ class Test < ActiveRecord::Base
   has_one :patient, through: :consultation
   has_one :physician, through: :consultation
 
-
-
-  SUCCESS = { 'Error' => 0, 'Acierto' => 1}
-
-  YESNO = { 'Sí'         => 1,
-            'No'     => 0 }
-
 end

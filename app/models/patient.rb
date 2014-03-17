@@ -35,7 +35,8 @@ class Patient < ActiveRecord::Base
 
   GENDERS = {'Desconocido' => 0, 'Hombre' => 1, 'Mujer' => 2  }
 
-  def education_text
+  def education_text # TODO  When a patient with its gender is stored , it doesn't remember the gender when you
+		                 # enter to update him
     EDUCATIONS.key(self[:education]) || self[:education]
   end
 

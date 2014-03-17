@@ -16,8 +16,8 @@ class ComputerDiagnosesController < ConsultationResourcesController
 
 
       education = @consultation.patient.education
-      diagnosis, probability = baby_siad faq_score:        @test_faq.score,
-                                         minimental_score: @test_minimental.score,
+      diagnosis, probability = siad faq_score:        @test_faq.score,
+                                         mmse: @test_minimental.score,
                                          age:              age,
                                          education:        education
       @computer_diagnosis = @consultation.computer_diagnoses.build( diagnosis: diagnosis,
@@ -49,21 +49,9 @@ class ComputerDiagnosesController < ConsultationResourcesController
     def age ( birthdate )
       today = Date.today
       ( ( ( today - birthdate) / 365.25 ).to_f )
-    end
-    # This function is critical. Therefore keyword args are used
-    PYTHON_SCRIPT = '/home/diaclavijo/deployment_ejemplo.py'
-    def baby_siad (faq_score: nil, minimental_score: nil, age: nil, education: nil )
-      return nil unless faq_score && minimental_score && age && education # all the args are mandatory
-      result = `python #{PYTHON_SCRIPT} age:#{age} educ:#{education} faq:#{faq_score} ldeltotal:#{minimental_score}`
-      output_reg = /(\d)\s+(\d+\.\d+)/
-      if output_reg.match result
-        diagnosis = $1.to_i
-        probability = $2.to_f
-        [ diagnosis, probability ]
-      else
-        nil
-      end
-    end
+		end
+
+    include Siad
 
     def validate_tests
       @test_faq = @consultation.test_faqs.first

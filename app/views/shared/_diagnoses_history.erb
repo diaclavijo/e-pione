@@ -9,7 +9,7 @@
                 <div class="text-center alert alert-success">
                     Diagnóstico computacional: <%= "#{@computer_diagnosis.diagnosis_text} - #{@computer_diagnosis.probability}" %>
                 </div>
-              <% elsif @computer_diagnoses.diagnosis == 1 %>  <!-- 1: Sano -->
+              <% elsif @computer_diagnosis.diagnosis == 1 %>  <!-- 1: Sano -->
                 <div class="text-center alert alert-danger">
                   Diagnóstico computacional: <%= "#{@computer_diagnosis.diagnosis_text} - #{@computer_diagnosis.probability}" %>
                 </div>
