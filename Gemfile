@@ -71,5 +71,5 @@ gem "launchy"
 #end by yarilo
 
 group :production do
-	gem 'passenger'
+	gem 'passenger', require: false
 end

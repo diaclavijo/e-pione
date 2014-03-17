@@ -4,9 +4,9 @@ class QuickDiagnosis < ActiveRecord::Base
 
   # Validations
   validates :education_select, presence: true
-  validates :education, :age, :score_mmse, :score_faq, presence: true
+  validates :education, :age, :mmse_score, :faq_score, presence: true
   validates :education, inclusion: {in: 0..20 }
-  validates :score_mmse, :score_faq, inclusion: {in: 0..30 }
+  validates :mmse_score, :faq_score, inclusion: {in: 0..30 }
 
 
   def education_select
@@ -22,6 +22,14 @@ class QuickDiagnosis < ActiveRecord::Base
       'Estudios Secundarios    (12 años)' => 12,
       'Estudios Universitarios (16 años)' => 16,
       'Otro (introducir número de años)'  => -1 }
+
+	def sane?
+		diagnosis == 0
+	end
+
+	def mci?
+		diagnosis == 1
+	end
 
   def education_text
     EDUCATIONS.key(self[:education]) || self[:education]

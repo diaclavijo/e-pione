@@ -17,6 +17,7 @@
 //= require bootstrap
 //= require patient
 //= require quick_diagnosis
+//= require modal_score
 
 
 

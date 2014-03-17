@@ -1,5 +1,8 @@
 es:
 
+  test:
+    only-score: 'Solo puntuación'
+
   no-nhc: '-'
 
   PhysicalExamination: 'Exploración física'

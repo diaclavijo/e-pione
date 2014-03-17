@@ -15,4 +15,13 @@ ayoze = Physician.create(email: 'ayoze@sanroque.com',
 puts 'ERROR: there was some problem writing the Ayoze user' if ayoze.errors.any?
 puts 'End creating Ayoze physician'
 
+puts 'Creating The Cocodrilo physician'
+cocodrilo = Physician.create(email: 'prueba@prueba.com',
+												 password: 'cocodrilo',
+												 password_confirmation: 'cocodrilo',
+												 name: 'Cocodrilo',
+												 surname: 'Maravillo')
+puts 'ERROR: there was some problem writing the Cocodrilo user' if cocodrilo.errors.any?
+puts 'End creating cocodrilo physician'
+
 

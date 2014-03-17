@@ -51,7 +51,7 @@ class ComputerDiagnosesController < ConsultationResourcesController
       ( ( ( today - birthdate) / 365.25 ).to_f )
     end
     # This function is critical. Therefore keyword args are used
-    PYTHON_SCRIPT = 'deployment_ejemplo.py'
+    PYTHON_SCRIPT = '/home/diaclavijo/deployment_ejemplo.py'
     def baby_siad (faq_score: nil, minimental_score: nil, age: nil, education: nil )
       return nil unless faq_score && minimental_score && age && education # all the args are mandatory
       result = `python #{PYTHON_SCRIPT} age:#{age} educ:#{education} faq:#{faq_score} ldeltotal:#{minimental_score}`
