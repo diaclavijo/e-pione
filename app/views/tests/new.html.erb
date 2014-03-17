@@ -1,59 +1,5 @@
-<% disabled = false unless defined? disabled # this is used to show the test %>
 <% breadcrumb :"new_consultation_#{resource_instance_name}", @consultation %>
-<% content_for :top_title do %>
 
-    <div class="col-md-5"><%= resource_class::NAME %></div>
-    <div class="col-md-6 col-md-offset-1">
-      <a href="#modalEnterScore" id="" data-toggle="modal"><h4>(Click para introducir puntuación directamente)</h4></a>
-    </div>
-    <!-- Small modal -->
-
-	<!--ATENCIÓN YARILO , CUANDO VEAS ESTO , -->
-	<!--TODO  HAY QUE PONER UN CONDICIONAL PARA QUE RENDERIZE SIEMPRE LA VENTANA D INTRODUZCA LA -->
-	<!--PUNTUACIÓN SI HA HABIDO UN ERROR -->
-    <div class="modal fade" id="modalEnterScore" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-
-          <div class="modal-header text-center">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">Introduzca la puntuación del test</h3>
-          </div>
-
-					<%= form_for([@consultation,get_resource_ivar],
-											 disabled: disabled ) do |f| %>
-						<% if get_resource_ivar.errors[:score].any? %>
-							<div id="error_explanation_modal">
-								<div class="<%= flash_class(:error) %>">
-									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-									<h3>Valores permitidos: 0-30</h3>
-								</div>
-							</div>
-						<% end %>
-
-              <div class="modal-body">
-                <div class="col-md-offset-4 col-md-4">
-									<%= f.number_field :score, class: 'form-control' %>
-								</div>
-                <br>
-              </div>
-
-          <div class="modal-footer">
-            <div class="col-md-8">
-								<%= f.submit 'Enviar', class: 'btn btn-info' %>
-                <input type="submit" class="btn btn-default" value="Cerrar" data-dismiss="modal">
-            </div>
-          </div>
-
-					<% end %>
-        </div> <!--/modal-content-->
-      </div>  <!--/modal-dialog-->
-    </div> <!--/small-modal -->
-
-
-
-
-<% end %>
 <% content_for :title do %>
     <%= resource_class::NAME %>
 <% end %>
