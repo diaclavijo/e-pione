@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts 'Creating Admin user in Admin: model'
-Admin.create(email: 'admin@admin.com', password: 'alzheimer', password_confirmation: 'alzheimer')
-puts 'Ends creating Admin user in Admin model '
+Admin.create(email: 'almendro@almendro.com', password: 'alq4EDA2002', password_confirmation: 'alq4EDA2002')
+puts 'Ends creating Admin user in Admin model
 
 puts 'Creating Admin user in Admin: model'
 Physician.create(email: 'prueba@prueba.com',
