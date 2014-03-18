@@ -4,8 +4,8 @@ class ApplicationControllerSigned < ApplicationController
 
 
   #methods and code for inhered resources
-  class_attribute :resource_class, :resource_instance_name, :collection_name
-  helper_method :resource_class, :resource_instance_name,  :collection_name, :get_resource_ivar
+  class_attribute :resource_class, :resource_instance_name, :collection_name, :resource_name
+  helper_method :resource_class, :resource_instance_name,  :collection_name, :get_resource_ivar, :resource_name
 
 
 
@@ -68,7 +68,7 @@ class ApplicationControllerSigned < ApplicationController
     self.collection_name =  self.controller_name.to_sym
 
 
-
+		self.resource_name = resource_class.to_s
 
   end
 

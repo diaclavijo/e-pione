@@ -1,0 +1,9 @@
+<% breadcrumb :"new_#{resource_instance_name}" %>
+
+<% content_for :title do %>
+    <%= resource_class::NAME %>
+<% end %>
+
+
+<%= render 'form' %>
+

@@ -61,6 +61,14 @@ tests.each{|test_key|
   end
 }
 
+tests.each{|test_key|
+
+	crumb :"new_quick_#{test_key}" do |consultation|
+		link 'Nuevo '+test_key.classify.constantize::NAME
+		parent :quick_diagnosis
+	end
+}
+
 crumb :new_consultation_test_reloj do |consultation|
   link 'Nuevo Test del reloj', new_consultation_test_reloj_path(consultation)
   parent :consultation_additional_tests, consultation
@@ -85,6 +93,8 @@ crumb :new_consultation_human_diagnoses do |consultation|
   link 'Establecer diagnóstico', new_consultation_human_diagnoses_path(consultation)
   parent :patient_consultation, consultation.patient, consultation
 end
+
+
 
 
 # crumb :projects do

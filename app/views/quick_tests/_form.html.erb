@@ -1,4 +1,5 @@
 <% disabled = false unless defined? disabled %>
+<% url = send(:"#{resource_instance_name.to_s.underscore.pluralize}_path") %>
 <% content_for :top_title do %>
 
 	<div class="col-md-5"><%= resource_class::NAME %></div>
@@ -7,9 +8,6 @@
 	</div>
 	<!-- Small modal -->
 
-	<!--ATENCIÓN YARILO , CUANDO VEAS ESTO , -->
-	<!--TODO  HAY QUE PONER UN CONDICIONAL PARA QUE RENDERIZE SIEMPRE LA VENTANA D INTRODUZCA LA -->
-	<!--PUNTUACIÓN SI HA HABIDO UN ERROR -->
 	<div class="modal fade" id="modalEnterScore" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
@@ -19,8 +17,9 @@
 					<h3 class="modal-title">Introduzca la puntuación del test</h3>
 				</div>
 
-				<%= form_for([@consultation, get_resource_ivar] ,
-										 disabled: disabled ) do |f| %>
+				<%= form_for(get_resource_ivar ,
+										 disabled: disabled,
+										 url: url	) do |f| %>
 					<% if get_resource_ivar.errors[:score].any? %>
 						<div id="error_explanation_modal">
 							<div class="<%= flash_class(:error) %>">
@@ -54,10 +53,11 @@
 
 <% end %>
 
-<%= form_for([@consultation, get_resource_ivar] ,
+<%= form_for(get_resource_ivar ,
              builder: ApplicationHelper::MyFormBuilder,
              disabled: disabled,
-             html: {class: 'form-horizontal'} ) do |f| %>
+             html: {class: 'form-horizontal'},
+						 url: url ) do |f| %>
     <!--This error message only appears if the modal error message (while introducing the score directly) doesn't -->
     <% if get_resource_ivar.errors.any? && !get_resource_ivar.errors[:score].any? %>
 

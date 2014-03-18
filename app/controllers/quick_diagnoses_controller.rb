@@ -8,14 +8,14 @@ class QuickDiagnosesController < ApplicationController
 
   # GET /quick_diagnoses/new
   def new
-    @quick_diagnosis = QuickDiagnosis.new
+    @quick_diagnosis = current_physician.quick_diagnoses.build
   end
 
 
   # POST /quick_diagnoses
   # POST /quick_diagnoses.json
   def create
-    @quick_diagnosis = QuickDiagnosis.new(quick_diagnosis_params)
+    @quick_diagnosis = current_physician.quick_diagnoses.build quick_diagnosis_params
 
 		if @quick_diagnosis.valid?
 			@quick_diagnosis.diagnosis, @quick_diagnosis.probability = siad faq_score:    @quick_diagnosis.faq_score,
@@ -32,6 +32,8 @@ class QuickDiagnosesController < ApplicationController
 				format.html { redirect_to new_quick_diagnosis_path}
 			else
 				if @quick_diagnosis.save
+					session.delete(:minimental_score)
+					session.delete(:faq_score)
 					message_kind = @quick_diagnosis.sane? ?  :notice : :alert
 					flash[message_kind]= "#{@quick_diagnosis.diagnosis_text} - #{@quick_diagnosis.probability} "
 					format.html { redirect_to new_quick_diagnosis_path}
