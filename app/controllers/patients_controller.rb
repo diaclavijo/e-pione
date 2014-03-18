@@ -81,6 +81,7 @@ class PatientsController < ApplicationControllerSigned
       params.require(:patient).permit(:surname,
                                       :name,
                                       :birth,
+                                      :gender,
                                       :education,
                                       :institutionalized,
                                       :id2,
