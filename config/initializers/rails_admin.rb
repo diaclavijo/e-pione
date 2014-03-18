@@ -1,5 +1,7 @@
 # RailsAdmin config file. Generated on October 25, 2013 17:55
 # See github.com/sferik/rails_admin for more informations
+require 'i18n'
+I18n.default_locale = :en
 
 RailsAdmin.config do |config|
 
@@ -29,10 +31,10 @@ RailsAdmin.config do |config|
   # config.default_items_per_page = 20
 
   # Exclude specific models (keep the others):
-  # config.excluded_models = ['Admin']
+  config.excluded_models = ['Admin', 'TestFaq', 'TestMinimental']
 
   # Include specific models (exclude the others):
-  # config.included_models = ['Admin']
+  #config.included_models = ['Admin', 'Physician', 'QuickDiagnosesController']
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
@@ -52,6 +54,19 @@ RailsAdmin.config do |config|
   # Now you probably need to tour the wiki a bit: https://github.com/sferik/rails_admin/wiki
   # Anyway, here is how RailsAdmin saw your application's models when you ran the initializer:
 
+	#
+	config.actions do
+		# root actions
+		dashboard                     # mandatory
+		# collection actions
+		index                         # mandatory
+		export
+		history_index
+		# member actions
+		show
+		history_show
+		show_in_app
+	end
 
 
   ###  Admin  ###

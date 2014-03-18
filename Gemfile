@@ -7,7 +7,8 @@ gem 'rails', '4.0.0'
 gem "mysql2",  ">= 0.2.12"
 
 # Use SCSS for stylesheets
-#gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', "~> 4.0.2"
+
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -48,6 +49,7 @@ end
 # by lantius
 
 gem 'rails_admin'
+gem 'i18n'# for working rails_admin select language
 #gem 'cancan'   # for roles
 gem 'kaminari' # For pagination . There is an alternative that is call will_paginate
 gem 'nilify_blanks'       # for avoiding storing empty strings

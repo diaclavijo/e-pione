@@ -33,4 +33,11 @@ rafael = Physician.create(email: 'jgarrodgster@gmail.com',
 puts 'ERROR: there was some problem writing the Juan Rafael García user' if rafael.errors.any?
 puts 'End creating The Juan Rafael physician'
 
+puts 'Creating the admin user'
 
+puts 'Creating Admin user in Admin: model'
+Admin.create(email: 'almendro@almendro.com', password: 'alq4EDA2002', password_confirmation: 'alq4EDA2002')
+puts 'Ends creating Admin user in Admin model '
+
+puts 'ERROR: there was some problem writing the Admin User' if rafael.errors.any?
+puts 'End creating The Juan Rafael physician'
