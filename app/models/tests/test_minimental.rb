@@ -6,6 +6,8 @@ class TestMinimental < ActiveRecord::Base
 
 	SUCCESS = { 'Error' => 0, 'Acierto' => 1 }
 
+	REDIRECT_TO_AFTER_CREATION = :additional_tests
+
   include IsTest
 
 	private

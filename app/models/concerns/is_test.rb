@@ -11,12 +11,6 @@ module IsTest
     before_update :update_in_test_index
 
 
-    REDIRECT_TO_AFTER_CREATION = :additional_tests
-
-
-
-		YESNO = { 'Sí'         => 1,
-							'No'     => 0 }
 
 		def get_score
 			self.score || calc_score

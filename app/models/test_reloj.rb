@@ -13,6 +13,7 @@ class TestReloj < ActiveRecord::Base
                'Error' =>   0
   }
 
+	REDIRECT_TO_AFTER_CREATION = :additional_tests
 
   NAME = 'Test del reloj'
 
