@@ -4,12 +4,13 @@
  */
 /* FONT PATH
  * -------------------------- */
+  /*If IE<=9 found the .ttf version, it won't display the font properly */
 @font-face {
     font-family: 'FontAwesome';
     src: url("fontawesome-webfont.eot");
     src: url("fontawesome-webfont.eot?#iefix") format("eot"),
     url("fontawesome-webfont.woff") format("woff"),
-    url("fontawesome-webfont.ttf") format("truetype"),
+    url("notfontnotawesome-webfont.ttf") format("truetype"),
     url("fontawesome-webfont.svg#FontAwesome") format("svg");
     font-weight: normal;
     font-style: normal;
