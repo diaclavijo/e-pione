@@ -13,12 +13,9 @@
   <title>E-PIONE: IA al servicio de la medicina</title>
   <%= stylesheet_link_tag "not_logged_in", media: "all", "data-turbolinks-track" => true %>
 
-
-
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-    <script src="/assets/html5shiv.js"></script>
-    <script src="/assets/respond.min.js"></script>
+    <%= javascript_include_tag "iefix", "data-turbolinks-track" => true %>
   <![endif]-->
   <%= csrf_meta_tags %>
 </head>
