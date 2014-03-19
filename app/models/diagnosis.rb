@@ -12,6 +12,6 @@ class Diagnosis < ActiveRecord::Base
   private
     INT_TO_DIAGNOSIS = {
        0 => 'Sano',
-       1 => 'DCL'
+       1 => 'Deterioro Cognitivo'
     }
 end
