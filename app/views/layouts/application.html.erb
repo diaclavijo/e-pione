@@ -10,14 +10,14 @@
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
   <%= csrf_meta_tags %>
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-      <script src="/assets/html5shiv.js"></script>
-      <script src="/assets/respond.min.js"></script>
-  <![endif]-->
 
 
 </head>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<%= javascript_include_tag 'html5shiv' %>
+<%= javascript_include_tag 'respond' %>
+<![endif]-->
 <body>
 
 <%= render 'shared/top_menu' %>
