@@ -12,9 +12,9 @@
 <div class="jumbotron jumbotron-blank">
   <div class="container container-centered">
 
-    <% message_kind = @quick_diagnosis.sane? ?  "alert-success" : "alert-danger" %>
+    <% message_kind = @computer_diagnosis.sane? ?  "alert-success" : "alert-danger" %>
     <div class= "alert <%= message_kind %> alert-dismissable lead text-center" >
-      <h3><%="#{@quick_diagnosis.diagnosis_text} - #{@quick_diagnosis.probability}"%></h3>
+      <h3><%="#{@computer_diagnosis.diagnosis_text} - #{@computer_diagnosis.probability}"%></h3>
     </div>
 
     <!--TODO: Falta el tema del form for aquí y sustituir los link to de abajo por submit -->
