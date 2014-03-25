@@ -11,20 +11,21 @@
 <div class="jumbotron jumbotron-blank">
   <div class="container container-centered">
 
-<%= form_for @quick_diagnosis,  :validate => true ,
+<%= form_for @computer_diagnosis,
+						 :url => quick_diagnoses_path,
              :html => { :class => 'form-horizontal',
                         id: 'form_id'}   do |f| %>
 
-        <% if @quick_diagnosis.errors.any? %>
+        <% if @computer_diagnosis.errors.any? %>
             <div id="error_explanation">
               <div class="<%= flash_class(:error) %>">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h3> Por favor, rellene correctamente los campos marcados en rojo</h3>
                 <ul>
-                  <% if @quick_diagnosis.errors[:mmse_score].any? %>
+                  <% if @computer_diagnosis.errors[:mmse_score].any? %>
                       <h4><li>Puntuación de MMSE debe estar entre 0 y 30</li></h4>
                   <% end %>
-                  <% if @quick_diagnosis.errors[:faq_score].any? %>
+                  <% if @computer_diagnosis.errors[:faq_score].any? %>
                       <h4><li>Puntuación de FAQ debe estar entre 0 y 30</li></h4>
                   <% end %>
                 </ul>
@@ -75,19 +76,24 @@
           <%= f.label :education_select, 'Escolaridad' %>
         </div>
         <div class="col-md-4">
-          <%= f.select :education_select, Patient::EDUCATIONS , { include_blank: 'Seleccionar...' } , class:'form-control'%>
+          <%= f.select :education_select,
+											 Patient::EDUCATIONS ,
+											 { include_blank: 'Seleccionar...' } ,
+											 class:'form-control',
+											 id: 'patient_education_select'
+					%>
         </div>
       </div>
 
-      <div id='quick_diagnosis_education_div'
+      <div id='patient_education_div'
            class="form-group text-right text-muted"
-           style="display:<%= @quick_diagnosis.education_select == -1  ? 'inline' : 'none' %> ;" >
+           style="display:<%= @computer_diagnosis.education_select == -1  ? 'inline' : 'none' %> ;" >
 
         <div class="col-md-4 col-md-offset-3">
           <%= f.label :education, 'Otro' %>
         </div>
         <div class="col-md-1">
-          <%= f.number_field :education , class:'form-control input-sm' %>
+          <%= f.number_field :education , class:'form-control input-sm', id: 'patient_education' %>
         </div>
         <div class="col-md-2 text-muted text-left">Máx. 20 años</div>
 

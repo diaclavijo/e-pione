@@ -70,7 +70,7 @@ tests.each{|test_key|
 
 	crumb :"new_quick_#{test_key}" do |consultation|
 		link 'Nuevo '+test_key.classify.constantize::NAME
-		parent :quick_diagnosis
+		parent :computer_diagnosis
 	end
 }
 

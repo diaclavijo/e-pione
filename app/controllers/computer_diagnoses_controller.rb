@@ -15,12 +15,20 @@ class ComputerDiagnosesController < ConsultationResourcesController
       age = age @consultation.patient.birth
 
       education = @consultation.patient.education
+
       diagnosis, probability = siad faq_score:        @test_faq.score,
                                          mmse: @test_minimental.score,
                                          age:              age,
                                          education:        education
-      @computer_diagnosis = @consultation.computer_diagnoses.build( diagnosis: diagnosis,
-                                                                   probability: probability ) unless diagnosis.nil?
+      @computer_diagnosis = @consultation.computer_diagnoses.build(
+															diagnosis:   diagnosis,
+													    probability: probability,
+														 	faq_score:   @test_faq.score,
+														 	mmse_score:  @test_minimental.score,
+														 	education:   education,
+														 	age:         age,
+															physician_id: current_physician.id
+														) unless diagnosis.nil?
     end
 
     respond_to do |format|

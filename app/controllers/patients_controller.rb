@@ -30,7 +30,7 @@ class PatientsController < ApplicationControllerSigned
   # POST /patients
   # POST /patients.json
   def create
-
+		debugger
     @patient = current_physician.patients.build patient_params
     respond_to do |format|
       if @patient.save

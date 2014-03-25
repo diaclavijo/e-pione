@@ -42,6 +42,6 @@ class QuickDiagnosis < ActiveRecord::Base
   private
   INT_TO_DIAGNOSIS = {
       0 => 'Sano',
-      1 => 'Deterioro Cognitivo'
+      1 => 'DCL'
   }
 end
