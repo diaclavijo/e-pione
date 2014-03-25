@@ -11,9 +11,7 @@
 
 <div class="jumbotron jumbotron-blank">
   <div class="container container-centered">
-    <% feedback = true %>
-    <%= render partial: 'shared/result_diagnosis',
-               locals: { quick_diagnosis_view: feedback }
-    %>
+    <%= render 'shared/result_diagnosis'%>
+    <%= render 'shared/correct_diagnosis' %>
   </div>
 </div>

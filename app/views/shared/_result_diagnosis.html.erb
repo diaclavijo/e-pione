@@ -1,27 +1,5 @@
-<% feedback = false unless defined? feedback %>
-
 <% message_kind = @computer_diagnosis.sane? ?  "alert-success" : "alert-danger" %>
 <div class= "alert <%= message_kind %> alert-dismissable lead text-center" >
   <h3><%="#{@computer_diagnosis.diagnosis_text} - #{@computer_diagnosis.probability}"%></h3>
 </div>
 
-<!--TODO: Falta el tema del form for aquí y sustituir los link to de abajo por submit -->
-<% if feedback %>
-    <blockquote>
-  <div class="row">
-    <h3 class="text-muted">¿Esta de acuerdo con este diagnóstico?</h3>
-  </div>
-<br>
-  <div class="row">
-    <div class="col-md-2 col-md-offset-3">
-      <%= link_to 'Sí', new_quick_diagnosis_path, class: 'btn btn-info btn-block' %>
-    </div>
-    <div class="col-md-2">
-      <%= link_to 'No', new_quick_diagnosis_path, class: 'btn btn-default btn-block' %>
-    </div>
-    <div class= "col-md-2" >
-      <%= link_to 'Indeterminado', new_quick_diagnosis_path, class: 'btn btn-default btn-grey btn-block' %>
-    </div>
-  </div>
-</blockquote>
-<% end %>
