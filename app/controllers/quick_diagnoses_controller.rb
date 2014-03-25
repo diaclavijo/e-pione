@@ -29,10 +29,9 @@ class QuickDiagnosesController < ApplicationController
 				if @computer_diagnosis.save
 					session.delete(:minimental_score)
 					session.delete(:faq_score)
-					message_kind = @computer_diagnosis.sane? ?  :notice : :alert
-					flash[message_kind]= "#{@computer_diagnosis.diagnosis_text} - #{@computer_diagnosis.probability} "
-					format.html { redirect_to new_quick_diagnosis_path}
-				else
+          format.html { render action:'show'}
+
+        else
 					format.html { render action: 'new' }
 				end
 			end
