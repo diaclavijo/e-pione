@@ -1,0 +1,19 @@
+<% breadcrumb :new_consultation_computer_diagnoses, @consultation %> <!--TODO: Cambiar breadcrumb-->
+
+
+<% content_for :top_title do %>
+    Resultado diagnóstico computacional consulta <span class="text-muted"><%= @consultation.date %></span>
+<% end %>
+<% content_for :title do %>
+    Nuevo diagnóstico
+<% end %>
+
+
+<div class="jumbotron jumbotron-blank">
+  <div class="container container-centered">
+    <% feedback = true %>
+    <%= render partial: 'shared/result_diagnosis',
+               locals: { quick_diagnosis_view: feedback }
+    %>
+  </div>
+</div>

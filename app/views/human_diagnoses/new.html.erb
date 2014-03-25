@@ -15,26 +15,15 @@
       <div class="col-md-6">
         <h2> Resultado diagnóstico computacional </h2>
       </div>
-      <div class="col-md-6 no_blue_link alert">
+      <div class="col-md-6 alert">
             <% if @computer_diagnosis then %>
-                  <% if @computer_diagnosis.diagnosis == 0 %>    <!-- 0: Sano -->
-                        <h3 class="alert alert-success">
-                          <strong>
-                          <%= "#{@computer_diagnosis.diagnosis_text} - #{@computer_diagnosis.probability}" %>
-                          </strong>
-                        </h3>
-                   <% elsif @computer_diagnosis.diagnosis == 1 %>  <!-- 1: Sano -->
-                        <h3 class="alert alert-danger">
-                            <strong>
-                                <%= "#{@computer_diagnosis.diagnosis_text} - #{@computer_diagnosis.probability}" %>
-                           </strong>
-                        </h3>
-                    <% end %>
+            <%= render 'shared/result_diagnosis' %>
             <%    else   %>
-                <h3><strong><%= (link_to 'Realizar diagnóstico computacional ',  new_consultation_computer_diagnoses_path(@consultation), class: "alert alert-danger" )%></strong></h3>
+                <h3 class="no-blue-link"><strong><%= (link_to 'Realizar diagnóstico computacional ',  new_consultation_computer_diagnoses_path(@consultation), class: "alert alert-danger" )%></strong></h3>
             <%  end %>
 
-           </div>
+
+       </div>
     </div>
 
 
