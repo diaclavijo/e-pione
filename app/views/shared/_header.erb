@@ -6,11 +6,12 @@
       <%= yield :top_left %>
       <%= breadcrumbs style: :bootstrap %>
 
-      <% if request.path != root_path %>
-          <div class="col-md-1">
-            <%= (link_to '', :back, class:"fa fa-angle-double-left fa-2x") %>
-          </div>
+      <% parent_breadcrumb do |link| %>
+        <div class="col-md-1">
+          <%= link_to '', link.url , class:"fa fa-angle-double-left fa-2x" %>
+        </div>
       <% end %>
+
       <h1 class="featurette-heading">
         <%= yield :top_title %>
       </h1>

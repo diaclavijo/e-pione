@@ -20,7 +20,7 @@ Epione::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = true
+  config.serve_static_assets = false
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -83,4 +83,6 @@ Epione::Application.configure do
   config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
   config.assets.precompile += ['not_logged_in.css', 'not_logged_in.js']
+  config.assets.precompile += ['html5shiv.js', 'respond.min.js','iefix.js']
+
 end

@@ -4,6 +4,7 @@
  */
 /* FONT PATH
  * -------------------------- */
+  /*If IE<=9 found the .ttf version, it won't display the font properly */
 @font-face {
     font-family: 'FontAwesome';
     src: url("fontawesome-webfont.eot");

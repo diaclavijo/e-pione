@@ -16,6 +16,9 @@
           <li class=<%= 'active' if current_page?(root_path) %>>
             <%= link_to 'Inicio', root_path %>
           </li>
+          <li class=<%= 'active' if current_page?(new_quick_diagnosis_path) %>>
+            <%= link_to 'Diagnóstico rápido', new_quick_diagnosis_path %>
+          </li>
           <li class=<%= 'active' if current_page?(patients_path) %>>
             <%= link_to 'Búsqueda de pacientes', patients_path %>
           </li>

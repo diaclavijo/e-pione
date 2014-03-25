@@ -12,6 +12,11 @@ end
 crumb :quick_diagnosis do
   link 'Diagnóstico Rápido', new_quick_diagnosis_path
 end
+
+crumb :show_quick_diagnoses do
+  link 'Resultado diagnóstico', new_quick_diagnosis_path #TODO: Aquí debería ir show_algo, pero no me rula
+  parent :quick_diagnosis
+end
 crumb :new_patient do
   link 'Registrar nuevo paciente', new_patient_path
   parent :patients
