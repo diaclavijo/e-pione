@@ -1,5 +1,5 @@
 Epione::Application.routes.draw do
-  resources :quick_diagnoses, only: [:new, :create]
+  resources :quick_diagnoses, only: [:new, :create, :show]
 	resources :quick_test_faqs, only: [:new, :create]
 	resources :quick_test_minimentals, only: [:new, :create]
 
