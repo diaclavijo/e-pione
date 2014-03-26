@@ -192,3 +192,9 @@ text-decoration: none;
 .btn-grey{
     background-color: #eeeeee;
 }
+
+.button_font_awesome {
+    background-color:transparent;
+    border:none;
+}
+
