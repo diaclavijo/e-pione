@@ -95,7 +95,7 @@ crumb :new_consultation_computer_diagnosis do |consultation|
 end
 
 crumb :correct_consultation_computer_diagnosis do |consultation, diagnosis|
-	link 'TODO - CORRECTO diagnóstico', correct_consultation_computer_diagnosis_path(consultation, diagnosis)
+	link 'Resultado diagnóstico', correct_consultation_computer_diagnosis_path(consultation, diagnosis)
 	parent :new_consultation_computer_diagnosis, consultation
 end
 
