@@ -110,7 +110,11 @@
       <div class="form-group">
         <div class="actions">
           <div class="col-md-4 col-md-offset-4">
-            <a class="fa fa-gears fa-3x"><%= f.submit "", class:"button_link" %></a>
+            <!--We don't use a helper here because we want to make the input look like a font-awesome icon-->
+            <!-- To change the style of the submit, it has to be a button, not an input -->
+            <button type="submit" class="button_font_awesome">
+                <a class="fa fa-gears fa-3x"></a>
+            </button>
             <h4><%= f.submit "Solicitar diagnóstico computacional", class:"button_link" %> </h4>
           </div>
         </div>
