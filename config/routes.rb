@@ -1,17 +1,23 @@
 Epione::Application.routes.draw do
-  resources :quick_diagnoses, only: [:new, :create, :show]
+
+	resources :quick_diagnoses, only: [:new, :create, :update]
+	get '/quick_diagnoses/:id/correct', to: 'quick_diagnoses#correct', as: 'correct_quick_diagnosis'
+
 	resources :quick_test_faqs, only: [:new, :create]
 	resources :quick_test_minimentals, only: [:new, :create]
+
 
   resources :consultations, only: [] do
     resources :test_minimentals, only: [:new, :create, :show, :destroy]
     resources :test_relojs, only: [:new, :create, :show, :destroy]
     resources :test_faqs, only: [:new, :create, :show, :destroy]
     resources :additional_tests, only: [ :index ]
-    resource :computer_diagnoses, only: [ :new, :create ]
-    resource :human_diagnoses, only: [ :new, :create ]
+    resources :computer_diagnoses, only: [ :new, :create, :update ]
+    resources :human_diagnoses, only: [ :new, :create ]
   end
-
+	get '/consultations/:consultation_id/computer_diagnoses/:id/correct',
+			to: 'computer_diagnoses#correct',
+			as: 'correct_consultation_computer_diagnosis'
 
   resource :contacts, only: [:new, :create]
 
@@ -34,7 +40,7 @@ Epione::Application.routes.draw do
 
   devise_for :admins  # This line has to be above mount RailsAdmin::Engine , if not , it makes an endless loop.
 
-  mount RailsAdmin::Engine => '/administrator', :as => 'rails_admin'
+  #mount RailsAdmin::Engine => '/administrator', :as => 'rails_admin'
 
 
 

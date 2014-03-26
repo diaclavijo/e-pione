@@ -1,4 +1,4 @@
-<% breadcrumb :new_consultation_computer_diagnoses, @consultation %>
+<% breadcrumb :new_consultation_computer_diagnosis, @consultation %>
 
 
 <% content_for :top_title do %>
@@ -31,7 +31,7 @@
               <%= (link_to 'click para realizar test   ',
 													 new_consultation_test_faq_path(
 															 @consultation,
-															 redirect_to: new_consultation_computer_diagnoses_path(@consultation)
+															 redirect_to: new_consultation_computer_diagnosis_path(@consultation)
 													 ),
                            class:"alert alert-danger" ) %>
           <%  end %>
@@ -59,7 +59,7 @@
               <%= (link_to 'click para realizar test   ',
 													 new_consultation_test_minimental_path(
 															@consultation,
-													 		redirect_to: new_consultation_computer_diagnoses_path(@consultation)
+													 		redirect_to: new_consultation_computer_diagnosis_path(@consultation)
 															),
                            class:"alert alert-danger" ) %>
           <% end %>

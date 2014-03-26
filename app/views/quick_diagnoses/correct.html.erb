@@ -1,4 +1,4 @@
-<% breadcrumb :quick_diagnosis_correct %>
+<% breadcrumb :correct_quick_diagnosis %>
 
 <% content_for :title do %>
     Diagnóstico rápido
@@ -12,6 +12,8 @@
 <div class="jumbotron jumbotron-blank">
   <div class="container container-centered">
     <%= render 'shared/result_diagnosis'%>
-    <%= render 'shared/correct_diagnosis' %>
-     </div>
+    <%= render partial: 'shared/correct_diagnosis',
+							 locals: {url: @url}
+		%>
+	</div>
 </div>

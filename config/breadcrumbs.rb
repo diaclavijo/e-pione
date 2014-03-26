@@ -13,8 +13,8 @@ crumb :quick_diagnosis do
   link 'Diagnóstico Rápido', new_quick_diagnosis_path
 end
 
-crumb :quick_diagnosis_correct do
-  link 'Resultado diagnóstico', new_quick_diagnosis_path #TODO: Aquí debería ir show_algo, pero no me rula
+crumb :correct_quick_diagnosis do
+  link 'Resultado diagnóstico', new_quick_diagnosis_path
   parent :quick_diagnosis
 end
 crumb :new_patient do
@@ -70,7 +70,7 @@ tests.each{|test_key|
 
 	crumb :"new_quick_#{test_key}" do |consultation|
 		link 'Nuevo '+test_key.classify.constantize::NAME
-		parent :computer_diagnosis
+		parent :quick_diagnosis
 	end
 }
 
@@ -89,13 +89,19 @@ crumb :consultation_additional_tests do |consultation|
   parent :patient_consultation, consultation.patient, consultation
 end
 
-crumb :new_consultation_computer_diagnoses do |consultation|
-  link 'Solicitar diagnóstico', new_consultation_computer_diagnoses_path(consultation)
+crumb :new_consultation_computer_diagnosis do |consultation|
+  link 'Solicitar diagnóstico', new_consultation_computer_diagnosis_path(consultation)
   parent :patient_consultation, consultation.patient, consultation
 end
 
-crumb :new_consultation_human_diagnoses do |consultation|
-  link 'Establecer diagnóstico', new_consultation_human_diagnoses_path(consultation)
+crumb :correct_consultation_computer_diagnosis do |consultation, diagnosis|
+	link 'TODO - CORRECTO diagnóstico', correct_consultation_computer_diagnosis_path(consultation, diagnosis)
+	parent :new_consultation_computer_diagnosis, consultation
+end
+
+
+crumb :new_consultation_human_diagnosis do |consultation|
+  link 'Establecer diagnóstico', new_consultation_human_diagnosis_path(consultation)
   parent :patient_consultation, consultation.patient, consultation
 end
 

@@ -2,12 +2,12 @@
 
 class ConsultationResourcesController < ApplicationControllerSigned
   layout  "consultation_resources"
-  before_action :set_consultation, only: [:show, :create, :new, :new_or_edit, :update, :edit, :destroy, :index]
+  before_action :set_consultation, only: [:show, :create, :new, :update, :edit, :destroy, :index, :correct]
 
 
   private
 
     def set_consultation
-      @consultation = Consultation.find(params[:consultation_id])
+      @consultation = current_physician.consultations.find(params[:consultation_id])
     end
 end

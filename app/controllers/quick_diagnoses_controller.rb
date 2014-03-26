@@ -29,7 +29,7 @@ class QuickDiagnosesController < ApplicationController
 				if @computer_diagnosis.save
 					session.delete(:minimental_score)
 					session.delete(:faq_score)
-          format.html { render action:'show'}
+          format.html { redirect_to correct_quick_diagnosis_path(@computer_diagnosis)	}
 
         else
 					format.html { render action: 'new' }
@@ -38,7 +38,23 @@ class QuickDiagnosesController < ApplicationController
 
 
     end
-  end
+	end
+
+	def correct
+		@computer_diagnosis = current_physician.computer_diagnoses.find(params[:id])
+		@url = quick_diagnosis_path @computer_diagnosis
+	end
+
+	def update
+		@computer_diagnosis = current_physician.computer_diagnoses.find(params[:id])
+		respond_to do |format|
+			if @computer_diagnosis.update(diagnosis_correct_params)
+				format.html { redirect_to new_quick_diagnosis_path}
+			else
+				format.html { render action: 'correct' }
+			end
+		end
+	end
 
 
   private
@@ -51,6 +67,11 @@ class QuickDiagnosesController < ApplicationController
                                               :education,
                                               :mmse_score,
                                               :age,
-                                              :education_select)
-    end
+                                              :education_select,
+																							:correct)
+		end
+
+		def diagnosis_correct_params
+			params.require(:computer_diagnosis).permit(:correct)
+		end
 end
