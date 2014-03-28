@@ -19,7 +19,7 @@
             <% if @computer_diagnosis then %>
             <%= render 'shared/result_diagnosis' %>
             <%    else   %>
-                <h3 class="no-blue-link"><strong><%= (link_to 'Realizar diagnóstico computacional ',  new_consultation_computer_diagnoses_path(@consultation), class: "alert alert-danger" )%></strong></h3>
+                <h3 class="no-blue-link"><strong><%= (link_to 'Realizar diagnóstico computacional ',  new_consultation_computer_diagnosis_path(@consultation), class: "alert alert-danger" )%></strong></h3>
             <%  end %>
 
 
