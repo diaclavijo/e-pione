@@ -29,6 +29,16 @@ test: &test
   password: 'alzheimer'
   socket: /var/run/mysqld/mysqld.sock
 
+staging:
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  database: e-pione_staging
+  host: epione.cwmwruzeomph.us-east-1.rds.amazonaws.com
+  port: 3306
+  username: racer
+  password: '17198T]r*EO1A7Q'
+  socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: mysql2
