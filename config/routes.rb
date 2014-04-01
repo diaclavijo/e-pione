@@ -6,6 +6,8 @@ Epione::Application.routes.draw do
 	resources :quick_test_faqs, only: [:new, :create]
 	resources :quick_test_minimentals, only: [:new, :create]
 
+	resource :contacts, only: [:new, :create]
+
   # the following solution was found in http://stackoverflow.com/questions/3791096/devise-logged-in-root-route-rails-3
   authenticated :physician do
     root :to => "quick_diagnoses#new"

@@ -6,7 +6,6 @@ class Diagnosis < ActiveRecord::Base
 
 	validates :physician, presence: true
 
-  belongs_to :consultation
 	belongs_to :physician
 
   def diagnosis_text

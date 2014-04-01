@@ -31,10 +31,10 @@ RailsAdmin.config do |config|
   # config.default_items_per_page = 20
 
   # Exclude specific models (keep the others):
-  config.excluded_models = ['Admin', 'TestFaq', 'TestMinimental']
+  #config.excluded_models = ['Admin', 'TestFaq', 'TestMinimental']
 
   # Include specific models (exclude the others):
-  #config.included_models = ['Admin', 'Physician', 'QuickDiagnosesController']
+  config.included_models = ['Admin', 'Physician', 'Diagnosis']
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]

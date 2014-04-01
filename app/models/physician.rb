@@ -6,9 +6,6 @@ class Physician < ActiveRecord::Base
 
   validates :name, :surname, presence: true
 
-  has_many :consultations
-  has_many :patients
-  has_many :tests, through: :consultations
 	has_many :computer_diagnoses, dependent: :destroy
 
   def full_name

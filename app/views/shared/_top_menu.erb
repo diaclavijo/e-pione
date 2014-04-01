@@ -19,12 +19,6 @@
           <li class=<%= 'active' if current_page?(new_quick_diagnosis_path) %>>
             <%= link_to 'Diagnóstico rápido', new_quick_diagnosis_path %>
           </li>
-          <li class=<%= 'active' if current_page?(patients_path) %>>
-            <%= link_to 'Búsqueda de pacientes', patients_path %>
-          </li>
-          <li class=<%= 'active' if current_page?(new_patient_path) %> >
-            <%= link_to 'Registrar nuevo paciente', new_patient_path %>
-          </li>
           <!--TODO: Cambiar el path aquí cuando la vista esté hecha-->
           <li class=<%= 'active' if current_page?(new_contacts_path) %> >
             <%= link_to 'Contactar', new_contacts_path %>
