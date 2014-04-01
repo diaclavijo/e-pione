@@ -18,7 +18,11 @@ Epione::Application.routes.draw do
     end
   end
 
-  devise_for :physicians, controllers: {:sessions => "physicians/sessions"}
+	devise_for :physicians, :skip => [:registrations]
+	as :physician do
+		get 'physicians/edit' => 'devise/registrations#edit', :as => 'edit_physician_registration'
+		put 'physicians' => 'devise/registrations#update', :as => 'physician_registration'
+	end
 
   devise_for :admins  # This line has to be above mount RailsAdmin::Engine , if not , it makes an endless loop.
 
