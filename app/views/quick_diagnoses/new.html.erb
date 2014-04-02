@@ -1,4 +1,4 @@
-<% breadcrumb :quick_diagnosis %>
+<% breadcrumb :root %>
 
 <% content_for :title do %>
     Diagnóstico rápido
@@ -34,9 +34,9 @@
         <% end %>
 
       <div class="form-group">
-        <div class="col-md-1 col-md-offset-3"><a class="fa fa-pencil-square-o fa-3x"></a></div>
+        <div class="col-md-1 col-md-offset-3"><%= link_to '', new_quick_test_faq_path, class:"icon-check icon-3x" %></div>
         <div class="col-md-3">
-            <%= f.label :faq_score, 'Puntuación FAQ' %>
+           <%= f.label :faq_score, 'Puntuación FAQ'%>
           <h4><%= link_to '(Realizar test)', new_quick_test_faq_path %></h4>
         </div>
         <div class="col-md-1">
@@ -46,7 +46,7 @@
       </div>
 
       <div class="form-group">
-        <div class="col-md-1 col-md-offset-3"><a class="fa fa-pencil-square-o fa-3x"></a></div>
+        <div class="col-md-1 col-md-offset-3"><%= link_to '', new_quick_test_minimental_path, class:"icon-check icon-3x" %></div>
         <div class="col-md-3">
 					<%= f.label :mmse_score, 'Puntuación MMSE'  %>
 					<h4><%= link_to '(Realizar test)', new_quick_test_minimental_path %></h4>
@@ -58,7 +58,7 @@
 
       <div class="form-group">
         <div class="col-md-1 col-md-offset-3">
-          <a class="fa fa-calendar-o fa-3x"></a>
+          <a class="icon-calendar-empty icon-3x"></a>
         </div>
         <div class="col-md-3">
           <%= f.label :age, 'Edad' %>
@@ -70,7 +70,7 @@
 
       <div id='education' class="form-group">
         <div class="col-md-1 col-md-offset-3">
-          <a class="fa fa-font fa-3x"></a>
+          <a class="icon-font icon-3x"></a>
         </div>
         <div class="col-md-3">
           <%= f.label :education_select, 'Escolaridad' %>
@@ -113,7 +113,7 @@
             <!--We don't use a helper here because we want to make the input look like a font-awesome icon-->
             <!-- To change the style of the submit, it has to be a button, not an input -->
             <button type="submit" class="button_font_awesome">
-                <a class="fa fa-gears fa-3x"></a>
+                <a class="icon-gears icon-3x"></a>
             </button>
             <h4><%= f.submit "Solicitar diagnóstico computacional", class:"button_link" %> </h4>
           </div>
