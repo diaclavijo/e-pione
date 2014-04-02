@@ -19,4 +19,5 @@ rerun.txt
 pickle-email-*.html
 .project
 /db/schema.rb
+/config/database.yml
 

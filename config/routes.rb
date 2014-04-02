@@ -8,6 +8,7 @@ Epione::Application.routes.draw do
 
 	resource :contacts, only: [:new, :create]
 
+	get 'support/', to: 'home#support', as: 'support'
   # the following solution was found in http://stackoverflow.com/questions/3791096/devise-logged-in-root-route-rails-3
   authenticated :physician do
     root :to => "quick_diagnoses#new"
