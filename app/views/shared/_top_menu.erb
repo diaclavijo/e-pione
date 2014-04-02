@@ -13,19 +13,13 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class=<%= 'active' if current_page?(root_path) %>>
-            <%= link_to 'Inicio', root_path %>
-          </li>
+
           <li class=<%= 'active' if current_page?(new_quick_diagnosis_path) %>>
             <%= link_to 'Diagnóstico rápido', new_quick_diagnosis_path %>
           </li>
-          <!--TODO: Cambiar el path aquí cuando la vista esté hecha-->
           <li class=<%= 'active' if current_page?(new_contacts_path) %> >
             <%= link_to 'Contactar', new_contacts_path %>
           </li>
-
-          <!--TODO: Poner soporte técnico aquí? -->
-					<li > 	<%= link_to "Change your password", edit_physician_registration_path %></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">

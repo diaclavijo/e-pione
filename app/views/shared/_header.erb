@@ -7,9 +7,11 @@
       <%= breadcrumbs style: :bootstrap %>
 
       <% parent_breadcrumb do |link| %>
-        <div class="col-md-1">
-          <%= link_to '', link.url , class:"fa fa-angle-double-left fa-2x" %>
+          <% if request.path !=  new_quick_diagnosis_path %>
+          <div class="col-md-1">
+          <%= link_to '', link.url , class:"icon-double-angle-left icon-2x" %>
         </div>
+        <% end %>
       <% end %>
 
       <h1 class="featurette-heading">
