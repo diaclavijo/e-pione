@@ -21,7 +21,7 @@ Epione::Application.routes.draw do
     end
   end
 
-	devise_for :physicians, :skip => [:registrations]
+	devise_for :physicians, :skip => [:registrations] # this lines and the below disable registration and allow only edit profile refer: http://stackoverflow.com/questions/6734323/how-do-i-remove-the-devise-route-to-sign-up
 	as :physician do
 		get 'physicians/edit' => 'devise/registrations#edit', :as => 'edit_physician_registration'
 		put 'physicians' => 'devise/registrations#update', :as => 'physician_registration'

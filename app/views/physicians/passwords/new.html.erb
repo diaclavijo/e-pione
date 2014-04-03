@@ -1,14 +1,12 @@
+<h2>Forgot your password?</h2>
 
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
 
+  <div><%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %></div>
 
-<div class="container">
-  <h2 class="text-center">¿Problemas para acceder?</h2>
-  <h3 class="text-center">Contáctenos en la siguiente dirección o teléfono  y le atenderemos rápidamente</h3>
-  <hr>
+  <div><%= f.submit "Send me reset password instructions" %></div>
+<% end %>
 
-
-
-      <a href="mailto: soporte@e-pione.com"><h3 class="text-center text-primary"> soporte@e-pione.com</h3></a>
-
-
-</div>
+<%= render "physicians/shared/links" %>

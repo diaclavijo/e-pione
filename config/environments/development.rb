@@ -14,7 +14,16 @@ Epione::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address => 'smtp.1und1.de',
+      :domain => '1und1.de',
+      :port => 587,
+      :authentication => :login,
+      :user_name => 'soporte@e-pione.com',
+      :password => 'xj38f1k.b',
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -32,13 +41,3 @@ Epione::Application.configure do
 
 end
 
-ActionMailer::Base.delivery_method = :smtp
-
-ActionMailer::Base.server_settings = {
-    :address => 'smtp1.und1.de',
-    :port => 587,
-    :domain => "tutorialspoint.com",
-    :authentication => :login,
-    :user_name => 'soporte@e-pione.com',
-    :password => 'xj38f1k.b',
-}

@@ -8,7 +8,7 @@
 
 puts 'Creating Admin user in Admin: model'
 Admin.create(email: 'almendro@almendro.com', password: 'alq4EDA2002', password_confirmation: 'alq4EDA2002')
-puts 'Ends creating Admin user in Admin model
+puts 'Ends creating Admin user in Admin model'
 
 puts 'Creating Admin user in Admin: model'
 Physician.create(email: 'prueba@prueba.com',
@@ -21,6 +21,16 @@ Physician.create(email: 'alguien@alguien.com',
                  password_confirmation: 'alzheimer',
                  name: 'Alguien',
                  surname: 'Con Apellidos')
+Physician.create(email: 'hanfrivogar-2@yahoo.es',
+                 password: 'alzheimer',
+                 password_confirmation: 'alzheimer',
+                 name: 'Hanfri',
+                 surname: 'Vogar')
+Physician.create(email: 'yeray.alvarez.romero@gmail.com',
+                 password: 'alzheimer',
+                 password_confirmation: 'alzheimer',
+                 name: 'Yeray',
+                 surname: 'Álvarez Romero')
 puts 'Ends creating Admin user in Admin model '
 
 puts 'Creating patients example'
