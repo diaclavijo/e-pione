@@ -43,20 +43,20 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+ gem 'debugger', group: [:development, :test]
 
 
 # by lantius
 
+gem 'awesome_print',  group: [:development, :test] # great printing for debugging
 gem 'rails_admin'
 gem 'i18n'# for working rails_admin select language
-#gem 'cancan'   # for roles
 gem 'kaminari' # For pagination . There is an alternative that is call will_paginate
 gem 'nilify_blanks'       # for avoiding storing empty strings
-gem 'debugger'
 gem 'gretel' # for breadcrumbs
 gem 'devise'
-gem 'awesome_print' # great printing for debugging
+gem 'mail_form'
+
 #end by lantius
 
 #by yarilo

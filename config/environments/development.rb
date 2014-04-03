@@ -30,5 +30,15 @@ Epione::Application.configure do
   # This is supposed to be for the Rails_Admin Gem
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-
 end
+
+ActionMailer::Base.delivery_method = :smtp
+
+ActionMailer::Base.server_settings = {
+    :address => 'smtp1.und1.de',
+    :port => 587,
+    :domain => "tutorialspoint.com",
+    :authentication => :login,
+    :user_name => 'soporte@e-pione.com',
+    :password => 'xj38f1k.b',
+}
