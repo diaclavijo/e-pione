@@ -1,5 +1,7 @@
 Epione::Application.routes.draw do
 
+  get 'testing', to: 'home#testing'
+
 	resources :quick_diagnoses, only: [:new, :create, :update]
 	get '/quick_diagnoses/:id/correct', to: 'quick_diagnoses#correct', as: 'correct_quick_diagnosis'
 

@@ -235,6 +235,7 @@ DEPENDENCIES
   debugger
   devise
   gretel
+  haml
   i18n
   jbuilder (~> 1.2)
   jquery-rails

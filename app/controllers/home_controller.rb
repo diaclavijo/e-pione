@@ -5,6 +5,10 @@ class HomeController < ApplicationController
 
   end
 
+  def testing
+    render 'physicians/mailer/reset_password_instructions'
+  end
+
   def quick_diagnosis
 
   end
