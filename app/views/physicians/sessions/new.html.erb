@@ -1,58 +1,63 @@
+    <section class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row front jumbotron jumbotron-home">
+                    <div class="col-md-8">
+                    <br><p></p>
+                    <%= image_tag 'logo_epione.png', class:'img-responsive img-rounded' %>
+                </div>    <!--/col-md-8-->
+                    <div class="col-md-4">
+                        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'})   do |f| %>
+                            <h2 class="form-signin-heading text-muted-home">Por favor, identifíquese</h2>
+                            <div> <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email' %></div>
+                            <div><%= f.password_field :password, class: 'form-control', placeholder: 'contraseña' %></div>
+                            <label class="checkbox checkbox-home">
+                              <%= f.check_box :remember_me %> <small>Recordarme</small>
+                            </label>
+                            <div><%= f.submit "Acceder", class: 'btn btn-lg btn-primary btn-block' %></div>
+                      <% end %>
+                      <small><%= link_to '¿Problemas para acceder?', support_path , class: 'text-muted-home' %> </small>  <!--- It was designed to get the small tag inside the a tag, it should be considered to be changed if it is necessary -->
+                      <br />
+                      <small><%= link_to '¿Olvido su contraseña?', new_physician_password_path , class: 'text-muted-home' %> </small>
+                    </div> <!--/col-md-4-->
+                </div><!--/row-->
 
-<div class="container">
+                <div class="page-scroll">
+                    <a href="#about" class="btn btn-circle">
+                      <i class="icon-double-angle-down animated"></i>
 
-  <div class="row front jumbotron jumbotron-home">
-
-
-    <div class="col-md-8">
-      <br><p></p>
-      <%= image_tag 'logo_epione.png', class:'img-responsive img-rounded' %>
-    </div>    <!--/col-md-8-->
-
-    <div class="col-md-4">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'})   do |f| %>
-        <h2 class="form-signin-heading text-muted-home">Por favor, identifíquese</h2>
-        <div> <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email' %></div>
-
-        <div><%= f.password_field :password, class: 'form-control', placeholder: 'contraseña' %></div>
-
-        <label class="checkbox checkbox-home">
-          <%= f.check_box :remember_me %> <small>Recordarme</small>
-        </label>
-
-        <div><%= f.submit "Acceder", class: 'btn btn-lg btn-primary btn-block' %></div>
-
-      <% end %>
-
-      <small><%= link_to '¿Problemas para acceder?', support_path , class: 'text-muted-home' %> </small>  <!--- It was designed to get the small tag inside the a tag, it should be considered to be changed if it is necessary -->
-      <br />
-      <small><%= link_to '¿Olvido su contraseña?', new_physician_password_path , class: 'text-muted-home' %> </small>
-
-    </div> <!--/col-md-4-->
+                    </a>
+                </div>
+            </div> <!-- /container -->
+        </div><!-- /intro-body-->
+    </section>
 
 
-  </div><!--/row-->
-
-  <div class="row credits">
-   <!--logos cremas aquí-->
-    <div class="col-md-1 col-md-offset-2"><h4>Colaboran:</h4></div>
-    <div class="col-md-3 col-md-offset-1">
-          <h4> Dr. Juan Rafael García</h4>
-      <h5>Jefe del servicio de neurología del Hospital Universitario Insular de G.C.</h5>
-    </div>
-    <div class="col-md-3">
-      <a href="http://www.hospitalessanroque.com/">
-
-      </a>
+  <section id="about" class="container content-section text-center">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>E-PIONE: El futuro de la blabla</h2>
+        <p>Lo masimo</p>
       </div>
-   <!-- <div class="col-md-1 "><h4>Engineered by</h4></div>
-    <div class="col-md-2">
-      <a href="http://www.binnac.com/">
-        <%= image_tag 'logobinnac.png', class:'img-responsive img-rounded' %>
-      </a>
-    </div>-->
-  </div><!--/row-->
-</div> <!-- /container -->
+    </div>
 
+    <div class="row">
+      <div class="page-scroll">
+        <a href="#colaborate" class="btn btn-circle btn-no-border">
+          <i class="icon-double-angle-down animated"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+    <section id="colaborate" class="container content-section text-center">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h2>Colabora con nosotros</h2>
+          <p>Fleje peñita guapa colaborando</p>
+        </div>
+      </div>
+    </section>
 
 

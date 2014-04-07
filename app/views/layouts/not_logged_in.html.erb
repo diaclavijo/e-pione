@@ -19,7 +19,8 @@
   <![endif]-->
   <%= csrf_meta_tags %>
 </head>
-<body class="body-home">
+
+<body class="body-home" id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
   <% if flash[:alert] %>
     <div class="alert alert-warning alert-dismissable col-md-6 col-md-offset-3 lead text-center">
@@ -28,6 +29,34 @@
     </div>
 <% end %>
 
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand" href="#page-top">
+        <i class="fa fa-play-circle"></i> e-pione
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+        <li class="hidden">
+          <a href="#page-top"></a>
+        </li>
+        <li class="page-scroll">
+          <a href="#about">Acerca de</a>
+        </li>
+        <li class="page-scroll">
+          <a href="#colaborate">Colaborar</a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
 
 <%= yield %>
 

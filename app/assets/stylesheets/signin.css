@@ -1,7 +1,7 @@
 /* This CSS file is used for the front page when the user is not signed in  */
 
 .body-home {
-  padding-top: 40px;
+  padding-top: 60px;
   padding-bottom: 40px;
   background-color: #fff;
 }
@@ -13,7 +13,7 @@
 }
 
 .jumbotron-home {
-    background-color: #005a9f
+    background-color: #005a9f;
 }
 .form-signin {
   max-width: 330px;
@@ -59,3 +59,4 @@
   line-height: 1.2 /*Controla el tema del checkbox*/
 
 }
+
