@@ -85,4 +85,8 @@ Epione::Application.configure do
   config.assets.precompile += ['not_logged_in.css', 'not_logged_in.js']
   config.assets.precompile += ['html5shiv.js', 'respond.min.js','iefix.js']
 
+
+  # Config for GoogleAnalytics
+  config.middleware.use Rack::GoogleAnalytics, :tracker => 'UA-49781156-2'
 end
+
