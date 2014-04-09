@@ -4,8 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-
   <meta name="author" content="">
+  <% unless Rails.env.production? %>
+    <meta name="robots" content="nofollow" />
+  <% end %>
+
   <%= favicon_link_tag 'favicon.ico' %>
 
 

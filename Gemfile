@@ -75,3 +75,7 @@ gem "launchy"
 group :production do
 	gem 'passenger', require: false
 end
+
+group :production, :staging do
+  gem 'rack-google-analytics', require: true
+end
