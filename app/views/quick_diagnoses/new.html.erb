@@ -40,7 +40,7 @@
           <h4><%= link_to '(Realizar test)', new_quick_test_faq_path %></h4>
         </div>
         <div class="col-md-1">
-          <%= f.number_field :faq_score, value: session[:faq_score], class: 'form-control input-sm' %>
+          <%= f.number_field :faq_score, value: session[:faq_score], class: 'form-control input-sm', tabindex:'1' %>
         </div>
 
       </div>
@@ -52,7 +52,7 @@
 					<h4><%= link_to '(Realizar test)', new_quick_test_minimental_path %></h4>
         </div>
         <div class="col-md-1">
-          <%= f.number_field :mmse_score, value: session[:minimental_score], class: 'form-control input-sm' %>
+          <%= f.number_field :mmse_score, value: session[:minimental_score], class: 'form-control input-sm', tabindex:'2' %>
         </div>
       </div>
 
@@ -64,7 +64,7 @@
           <%= f.label :age, 'Edad' %>
         </div>
         <div class="col-md-1">
-          <%= f.number_field :age ,class: 'form-control input-sm' %>
+          <%= f.number_field :age ,class: 'form-control input-sm', tabindex:'3' %>
         </div>
       </div>
 
@@ -80,7 +80,8 @@
 											 educations ,
 											 { include_blank: 'Seleccionar...' } ,
 											 class:'form-control',
-											 id: 'patient_education_select'
+											 id: 'patient_education_select',
+                                             tabindex:'4'
 					%>
         </div>
       </div>
