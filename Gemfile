@@ -71,7 +71,7 @@ group :test do
 end
 gem "launchy"
 #end by yarilo
-
+#fasf
 group :production do
 	gem 'passenger', require: false
 end
