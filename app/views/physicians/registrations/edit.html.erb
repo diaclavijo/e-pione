@@ -7,8 +7,14 @@
 <% end %>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),
              builder: ApplicationHelper::MyFormBuilder ,:html => { :method => :put, class:'form-horizontal' }) do |f| %>
-  <%= devise_error_messages! %>
-
+  <% if resource.errors.any? %>
+        <div class='alert alert-warning alert-dismissable col-md-6 col-md-offset-3'>
+        <button aria-hidden='true' class='close' data-dismiss='alert' type='button'>×</button>
+        <ul class='list-unstyled'>
+          <li class='h4'>Introduzca su contraseña actual para modificar los cambios</li>
+        </ul>
+        </div>
+    <% end %>
 	<div class="form-group">
         <%= f.label :name, 'Nombre' %>
 		<%= f.text_field :name %>
