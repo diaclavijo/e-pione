@@ -23,13 +23,8 @@
         <div><%= f.submit "Acceder", class: 'btn btn-lg btn-primary btn-block' %></div>
 
       <% end %>
-
-      <small><%= link_to '¿Problemas para acceder?', support_path , class: 'text-muted-home' %> </small>  <!--- It was designed to get the small tag inside the a tag, it should be considered to be changed if it is necessary -->
-      <br />
-      <small><%= link_to '¿Olvido su contraseña?', new_physician_password_path , class: 'text-muted-home' %> </small>
-
+      <small><%= link_to '¿Olvido su contraseña?', new_physician_password_path , class: 'text-muted-home' %> </small> <!--- It was designed to get the small tag inside the a tag, it should be considered to be changed if it is necessary -->
     </div> <!--/col-md-4-->
-
 
   </div><!--/row-->
 
@@ -45,12 +40,11 @@
 
       </a>
       </div>
-   <!-- <div class="col-md-1 "><h4>Engineered by</h4></div>
-    <div class="col-md-2">
-      <a href="http://www.binnac.com/">
-        <%= image_tag 'logobinnac.png', class:'img-responsive img-rounded' %>
-      </a>
-    </div>-->
+   <div class="col-md-2 ">
+     <small>
+       <h5><%= link_to 'Contacta con nosotros', support_path , class: '' %> </h5></small>
+   </div>
+
   </div><!--/row-->
 </div> <!-- /container -->
 
