@@ -70,15 +70,33 @@ RailsAdmin.config do |config|
 
   config.model 'Diagnosis' do
     list do
-      field :id
-      field :diagnosis
-      field :probability
-      field :physician
-      field :faq_score
-      field :mmse_score
-      field :education
-      field :age
-      field :correct
+      field :id do
+        column_width 10
+      end
+      field :diagnosis do
+        column_width 10
+      end
+      field :probability do
+        column_width 10
+      end
+      field :physician do
+        column_width 10
+      end
+      field :faq_score do
+        column_width 10
+      end
+      field :mmse_score do
+        column_width 10
+      end
+      field :education do
+        column_width 10
+      end
+      field :age do
+        column_width 10
+      end
+      field :correct do
+        column_width 10
+      end
 
     end
   end
@@ -122,7 +140,7 @@ RailsAdmin.config do |config|
 
   #     list do
   #       # filters [:id, :name]  # Array of field names which filters should be shown by default in the table header
-  #       # items_per_page 100    # Override default_items_per_page
+  #       # items_per_page 10    # Override default_items_per_page
   #       # sort_by :id           # Sort column (default is primary key)
   #       # sort_reverse true     # Sort direction (default is true for primary key, last created first)
   #     end
