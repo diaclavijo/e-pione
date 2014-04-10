@@ -32,6 +32,16 @@ cocodrilo = Physician.create(email: 'prueba@prueba.com',
 puts 'ERROR: there was some problem writing the Cocodrilo user' if cocodrilo.errors.any?
 puts 'End creating cocodrilo physician'
 
+puts 'Creating The yarilo physician'
+cocodrilo = Physician.create(email: 'error500.dos@gmail.com',
+                             password: 'cocodrilo',
+                             password_confirmation: 'cocodrilo',
+                             name: 'Yarilo',
+                             surname: 'Villanueva Hernández')
+puts 'ERROR: there was some problem writing the Yarilo user' if cocodrilo.errors.any?
+puts 'End creating Yarilo physician'
+
+
 puts 'Creating Maria physician'
 maria = Physician.create(email: 'perezvieitez@negrin.com',
                              password: 'alzheimer',
