@@ -50,7 +50,6 @@ end
 
 gem 'awesome_print',  group: [:development, :test] # great printing for debugging
 gem 'rails_admin'
-gem 'i18n'# for working rails_admin select language
 gem 'kaminari' # For pagination . There is an alternative that is call will_paginate
 gem 'nilify_blanks'       # for avoiding storing empty strings
 gem 'gretel' # for breadcrumbs

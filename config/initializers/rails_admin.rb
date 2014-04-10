@@ -1,7 +1,6 @@
 # RailsAdmin config file. Generated on October 25, 2013 17:55
 # See github.com/sferik/rails_admin for more informations
-require 'i18n'
-I18n.default_locale = :en
+
 
 RailsAdmin.config do |config|
 
@@ -69,6 +68,20 @@ RailsAdmin.config do |config|
 	end
 
 
+  config.model 'Diagnosis' do
+    list do
+      field :id
+      field :diagnosis
+      field :probability
+      field :physician
+      field :faq_score
+      field :mmse_score
+      field :education
+      field :age
+      field :correct
+
+    end
+  end
   ###  Admin  ###
 
   # config.model 'Admin' do
