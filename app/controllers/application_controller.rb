@@ -8,8 +8,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def layout_by_resource
-    if devise_controller? && resource_name == :physician   &&
-        ( action_name == 'new' || action_name == 'create' )
+    if  devise_controller? && resource_name == :physician   &&
+        (
+          ( action_name == 'new' || action_name == 'create' ) ||
+          ( params['reset_password_token'] )
+        )
       "not_logged_in"
     else
       "application"
