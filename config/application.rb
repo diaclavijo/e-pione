@@ -23,5 +23,10 @@ module Epione
     config.autoload_paths +=  Dir[Rails.root.join('app', 'models', '**', '{**}')]   # this is done to load subfolder in models
     config.autoload_paths += %W(#{config.root}/lib)
 
+    #Devise configuration
+    config.to_prepare do
+      Devise::PasswordsController.layout 'not_logged_in'
+    end
+
   end
 end

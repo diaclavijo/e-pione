@@ -15,6 +15,14 @@ ayoze = Physician.create(email: 'ayoze@sanroque.com',
 puts 'ERROR: there was some problem writing the Ayoze user' if ayoze.errors.any?
 puts 'End creating Ayoze physician'
 
+puts 'Creating Phsicians '
+Physician.create(email: 'david@diazclavijo.com',
+                 password: 'alzheimer',
+                 password_confirmation: 'alzheimer',
+                 name: 'David',
+                 surname: 'Díaz Clavijo')
+puts 'Ends creating Physicians '
+
 puts 'Creating The Cocodrilo physician'
 cocodrilo = Physician.create(email: 'prueba@prueba.com',
 												 password: 'cocodrilo',
@@ -23,6 +31,16 @@ cocodrilo = Physician.create(email: 'prueba@prueba.com',
 												 surname: 'Maravillo')
 puts 'ERROR: there was some problem writing the Cocodrilo user' if cocodrilo.errors.any?
 puts 'End creating cocodrilo physician'
+
+puts 'Creating The yarilo physician'
+cocodrilo = Physician.create(email: 'error500.dos@gmail.com',
+                             password: 'cocodrilo',
+                             password_confirmation: 'cocodrilo',
+                             name: 'Yarilo',
+                             surname: 'Villanueva Hernández')
+puts 'ERROR: there was some problem writing the Yarilo user' if cocodrilo.errors.any?
+puts 'End creating Yarilo physician'
+
 
 puts 'Creating Maria physician'
 maria = Physician.create(email: 'perezvieitez@negrin.com',
