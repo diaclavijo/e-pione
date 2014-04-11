@@ -10,6 +10,11 @@ class QuickDiagnosesController < ApplicationController
   # POST /quick_diagnoses
   # POST /quick_diagnoses.json
   def create
+    # In case the Physician has introduced the mmse_score directly through the interface, is necessary to update score in the session
+    session[:minimental_score] = params[:computer_diagnosis][:mmse_score]
+    session[:faq_score] = params[:computer_diagnosis][:faq_score]
+
+
     @computer_diagnosis = current_physician.computer_diagnoses.build quick_diagnosis_params
 
 		if @computer_diagnosis.valid_siad_exec?
