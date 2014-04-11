@@ -1,4 +1,4 @@
-class QuickDiagnosesController < ApplicationController
+class QuickDiagnosesController < ApplicationControllerSigned
 
 
   # GET /quick_diagnoses/new
