@@ -96,6 +96,9 @@ RailsAdmin.config do |config|
       end
       field :correct do
         column_width 10
+        pretty_value do
+          bindings[:view].correct value
+        end
       end
 
       field :created_at do
