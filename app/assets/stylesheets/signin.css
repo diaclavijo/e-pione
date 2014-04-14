@@ -1,8 +1,6 @@
 /* This CSS file is used for the front page when the user is not signed in  */
 
 .body-home {
-  padding-top: 60px;
-  padding-bottom: 40px;
   background-color: #fff;
 }
 #title-home{
@@ -15,6 +13,8 @@
 .jumbotron-home {
     background-color: #005a9f;
     padding: 0px;
+    padding-top: 50px;
+    color:#fff
 }
 .form-signin {
   max-width: 330px;
@@ -61,3 +61,29 @@
 
 }
 
+.about-section {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 0px 0;
+    text-align: center;
+    /*color: @light;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid #005a9f;
+    border-radius: 35px;
+    color: #005a9f;
+    background: transparent;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+}
