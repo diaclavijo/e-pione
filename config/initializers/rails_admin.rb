@@ -71,13 +71,13 @@ RailsAdmin.config do |config|
   config.model 'Diagnosis' do
     list do
       field :id do
-        column_width 10
+        column_width 1
       end
       field :diagnosis do
-        column_width 10
+        column_width 1
       end
       field :probability do
-        column_width 10
+        column_width 1
       end
       field :physician do
         column_width 10
@@ -96,6 +96,10 @@ RailsAdmin.config do |config|
       end
       field :correct do
         column_width 10
+      end
+
+      field :created_at do
+        column_width 100
       end
 
     end
