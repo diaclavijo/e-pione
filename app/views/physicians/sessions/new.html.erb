@@ -5,10 +5,7 @@
                   <div class="row">
                     <div class="col-md-8">
                         <br><%= image_tag 'logo_epione.png', class:'img-responsive img-rounded' %>
-                      <br>
-                      <h4>Diagnóstico preciso sólo introduciendo la edad,
-                      el nivel educativo y los resultados de los tests FAQ y MMSE de su paciente.
-                      </h4>
+
                     </div>    <!--/col-md-8-->
 
                     <div class="col-md-4">
@@ -21,7 +18,7 @@
 
                             <%= f.submit "Acceder", class: 'btn btn-lg btn-primary btn-block' %>
                              <div class="page-scroll">
-                                <%= link_to "Quiero probarlo", '#colaborate' ,class: 'btn btn-lg btn-primary btn-block' %>
+                                <%= link_to "Quiero probarlo", '#colaborate' ,class: 'btn btn-lg btn-primary btn-block btn-try' %>
                              </div>
 
                         <% end %>
@@ -31,50 +28,62 @@
 
                 </div><!--/jumbotron-->
               <div class="row">
-                  <div class="col-md-2 col-md-offset-10">
-                  <!--  <small><h5><%= link_to 'Contacta con nosotros', support_path , class: '' %></h5></small></-->
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="page-scroll">
-                    <div class="col-md-6">
-                      <div class="">
-                        <a href="#about"><h4>SABER MÁS</h4></a>
-                        <a href="#about"><i class="icon-double-angle-down animated icon-3x"></i></a>
+                    <div class="col-md-3">
+                      <div class="page-scroll">
+                          <a href="#about" class=""><h4>SABER MÁS</h4></a>
+                      </div>
+                      <div class="page-scroll">
+                        <a href="#about" class="btn btn-circle">
+                          <i class="icon-double-angle-down animated"></i>
+                        </a>
                       </div>
                     </div>
-                  <div/>
-                  <div class="page-scroll">
-                      <div class="col-md-6">
-                        <a href="#colaborate"><h4>COLABORAR</h4></a>
-                        <a href="#about"><i class="icon-double-angle-down animated icon-3x"></i></a>
+
+                    <div class="col-md-6">
+                      <h3> Diagnóstico preciso con la edad, FAQ, MMSE y escolarización del paciente
+                      </h3>
+                    </div>
+
+                    <div class="col-md-3">
+                      <div class="page-scroll">
+                        <a href="#colaborate" class=""><h4>COLABORAR</h4></a>
                       </div>
-                  <div/>
-              </div><!--/row-->
+                      <div class="page-scroll">
+                        <a href="#colaborate" class="btn btn-circle">
+                          <i class="icon-double-angle-down animated"></i>
+                        </a>
+                      </div>
+                    </div>
+              </div>
+
+              </div>
+              </div>
+
+                </div>
+
 
             </div> <!-- /container -->
         </div><!-- /intro-body-->
     </section>
 
 
-  <section id="about" class="container content-section text-left">
+  <section id="about" class="container content-section about-section">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
-              <h2 class="text-center">E-PIONE: Cribado inteligente</h2>
+              <h2 class="text-center">E-PIONE: CRIBADO INTELIGENTE</h2>
       </div>
     </div>
     <p></p>
-    <div class = "row">
+    <div class = "row well-class well-class">
       <div class="col-md-2 col-md-offset-1"><a class="icon-zoom-in icon-5x"></a></div>
       <div class="col-md-8">
-       <h4>e-pione es un Sistema Inteligente de Ayuda al Diagnóstico (SIAD)del deterioro cognitivo (DC)
+       <h4>e-pione es un Sistema Inteligente de Ayuda al Diagnóstico (SIAD) del deterioro cognitivo (DC)
        </h4>
       </div>
     </div>
 
 
-    <p></p>
-    <div class = "row">
+    <div class = "row well-class">
       <div class="col-md-2 col-md-offset-1"><a class="icon-gears icon-5x"></a></div>
       <div class="col-md-8">
         <h4>
@@ -83,8 +92,7 @@
         </h4>
       </div>
     </div>
-    <p></p>
-    <div class = "row">
+    <div class = "row well-class">
       <div class="col-md-2 col-md-offset-1"><a class="icon-check icon-5x"></a></div>
       <div class="col-md-8">
         <h4>
@@ -92,18 +100,16 @@
         </h4>
       </div>
     </div>
-    <p></p>
-    <div class = "row">
+    <div class = "row well-class">
       <div class="col-md-2 col-md-offset-1"><a class="icon-group icon-5x"></a></div>
       <div class="col-md-8">
         <h4>
           Los resultados han sido obtenidos y validados sobre una base de datos de más de 1300 pacientes.
-          Más info sobre la validación, aquí
+          Más info sobre la validación, aquí.
         </h4>
       </div>
     </div>
-    <p></p>
-    <div class = "row">
+    <div class = "row well-class">
       <div class="col-md-2 col-md-offset-1"><a class="icon-time icon-5x"></a></div>
       <div class="col-md-8">
         <h4>
@@ -113,10 +119,9 @@
         </h4>
       </div>
     </div>
-
     <div class="row text-center">
       <div class="page-scroll">
-        <a href="#colaborate" class="btn btn-circle btn-no-border">
+        <a href="#colaborate" class="btn btn-circle">
           <i class="icon-double-angle-down animated"></i>
         </a>
       </div>
@@ -180,6 +185,13 @@
         </div>
      </div>
 
+
     </section>
+    <div id="footer">
+      <div class="container">
+        <small><p class="text-muted">Creado por BINNAC</p></small>
+        <small><p class="text-muted"></p></small>
+      </div>
+    </div>
 
 

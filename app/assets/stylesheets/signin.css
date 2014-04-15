@@ -74,16 +74,77 @@
     -o-background-size: cover;
 }
 
-.circle {
-    width: 70px;
-    height: 70px;
+.circle{
+    width: 140px;
+    height: 140px;
     margin-top: 15px;
-    padding: 7px 16px;
+    padding: 30px 30px;
     border: 2px solid #005a9f;
-    border-radius: 35px;
+    border-radius: 120px;
     color: #005a9f;
     background: transparent;
     -webkit-transition: background 0.3s ease-in-out;
     -moz-transition: background 0.3s ease-in-out;
     transition: background 0.3s ease-in-out;
+}
+
+
+
+
+h2{
+    color:#002948;
+    pading:0px
+    margin: 0 0 0px;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+h3{
+    color: #00476f;
+    pading:0px
+    margin: 0 0 0px;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+
+.btn-try{
+    background-color: #004b89;
+    color:#fff
+
+}
+
+.well-class {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #fff;
+
+}
+
+.well-class:hover{
+    background-color: #d1e3ff;
+
+}
+
+.btn-no-border {
+    border: 0px solid #ffffff;
+}
+
+a:focus {
+    outline: none; /*IE6 and IE7 do not support this property*/
+}
+
+.btn-no-padding{
+    padding: 0px;
+}
+
+#footer {
+    position: absolute;
+    padding:0px;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #d1e3ff;
 }
