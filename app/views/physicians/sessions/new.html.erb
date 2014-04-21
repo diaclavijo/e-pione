@@ -5,7 +5,6 @@
                   <div class="row">
                     <div class="col-md-8">
                         <br><%= image_tag 'logo_epione.png', class:'img-responsive img-rounded' %>
-
                     </div>    <!--/col-md-8-->
 
                     <div class="col-md-4">
@@ -17,9 +16,7 @@
                                 <%= f.check_box :remember_me %> <small>Recordarme</small> </label>
 
                             <%= f.submit "Acceder", class: 'btn btn-lg btn-primary btn-block' %>
-                             <div class="page-scroll">
-                                <%= link_to "Quiero probarlo", '#colaborate' ,class: 'btn btn-lg btn-primary btn-block btn-try' %>
-                             </div>
+
 
                         <% end %>
                       <small><%= link_to '¿Olvidó su contraseña?', new_physician_password_path , class: 'text-muted-home' %> </small>
@@ -27,10 +24,12 @@
                   </div>
 
                 </div><!--/jumbotron-->
-              <div class="row">
-                    <div class="col-md-3">
+              <div class="row subtitle">
+                    <div class="col-md-6 col-md-offset-3">
+                      <h3 class=""> Diagnóstico preciso con la edad, FAQ, MMSE y escolarización del paciente</h3>
+                      <br>
                       <div class="page-scroll">
-                          <a href="#about" class=""><h4>SABER MÁS</h4></a>
+                        <a href="#about" class=""><h4>DESCUBRA MÁS</h4></a>
                       </div>
                       <div class="page-scroll">
                         <a href="#about" class="btn btn-circle">
@@ -39,21 +38,8 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
-                      <h3> Diagnóstico preciso con la edad, FAQ, MMSE y escolarización del paciente
-                      </h3>
-                    </div>
 
-                    <div class="col-md-3">
-                      <div class="page-scroll">
-                        <a href="#colaborate" class=""><h4>COLABORAR</h4></a>
-                      </div>
-                      <div class="page-scroll">
-                        <a href="#colaborate" class="btn btn-circle">
-                          <i class="icon-double-angle-down animated"></i>
-                        </a>
-                      </div>
-                    </div>
+
               </div>
 
               </div>
@@ -69,14 +55,14 @@
 
   <section id="about" class="container content-section about-section">
     <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
+      <div class="col-md-8 col-md-offset-2">
               <h2 class="text-center">E-PIONE: CRIBADO INTELIGENTE</h2>
       </div>
     </div>
     <p></p>
     <div class = "row well-class well-class">
-      <div class="col-md-2 col-md-offset-1"><a class="icon-zoom-in icon-5x"></a></div>
-      <div class="col-md-8">
+      <div class="col-lg-2 col-lg-offset-1"><a class="icon-zoom-in icon-4x"></a></div>
+      <div class="col-lg-8">
        <h4>e-pione es un Sistema Inteligente de Ayuda al Diagnóstico (SIAD) del deterioro cognitivo (DC)
        </h4>
       </div>
@@ -84,8 +70,8 @@
 
 
     <div class = "row well-class">
-      <div class="col-md-2 col-md-offset-1"><a class="icon-gears icon-5x"></a></div>
-      <div class="col-md-8">
+      <div class="col-lg-2 col-lg-offset-1"><a class="icon-gears icon-4x"></a></div>
+      <div class="col-lg-8">
         <h4>
           Construido a partir de las últimas técnicas de minería de  datos, aprendizaje automático y
           sistemas expertos, obtiene más de un 80 % de precisión totalmente balanceada
@@ -93,16 +79,16 @@
       </div>
     </div>
     <div class = "row well-class">
-      <div class="col-md-2 col-md-offset-1"><a class="icon-check icon-5x"></a></div>
-      <div class="col-md-8">
+      <div class="col-lg-2 col-lg-offset-1"><a class="icon-check icon-4x"></a></div>
+      <div class="col-lg-8">
         <h4>
           Tan sólo es necesario el resultado del test FAQ, el MMSE, la edad y escolarización del paciente
         </h4>
       </div>
     </div>
     <div class = "row well-class">
-      <div class="col-md-2 col-md-offset-1"><a class="icon-group icon-5x"></a></div>
-      <div class="col-md-8">
+      <div class="col-lg-2 col-lg-offset-1"><a class="icon-group icon-4x"></a></div>
+      <div class="col-lg-8">
         <h4>
           Los resultados han sido obtenidos y validados sobre una base de datos de más de 1300 pacientes.
           Más info sobre la validación, aquí.
@@ -110,8 +96,8 @@
       </div>
     </div>
     <div class = "row well-class">
-      <div class="col-md-2 col-md-offset-1"><a class="icon-time icon-5x"></a></div>
-      <div class="col-md-8">
+      <div class="col-lg-2 col-lg-offset-1"><a class="icon-time icon-4x"></a></div>
+      <div class="col-lg-8">
         <h4>
           Porque sabemos que el tiempo del médico no tiene precio,
           obtener la opinión de un comité de expertos de forma instantánea
@@ -119,7 +105,7 @@
         </h4>
       </div>
     </div>
-    <div class="row text-center">
+    <div class="row row-last text-center">
       <div class="page-scroll">
         <a href="#colaborate" class="btn btn-circle">
           <i class="icon-double-angle-down animated"></i>
@@ -145,6 +131,7 @@
 
           <dt>Dr. Cristobal Carnero</dt>
           <dd>Jefe de Neurología Hospital de Granada</dd>
+          <dd>Creador Fototestº</dd>
 
           <dt>Dra. María Pérez Vieitez </dt>
           <dd>Especialista en Demencia, Doctora de Neurología Hospital Doctor Negrín</dd>
@@ -187,10 +174,15 @@
 
 
     </section>
+    <!--Aquí en height 768px hay que hacer scroll-->
     <div id="footer">
       <div class="container">
-        <small><p class="text-muted">Creado por BINNAC</p></small>
-        <small><p class="text-muted"></p></small>
+            <hr>
+        <div class="row">
+          <div class="col-md-1 text-muted">BINNAC &copy</div>
+          <div class="col-md-2 text-muted">Términos de privacidad</div>
+          <div class="col-md-1 text-muted">Contacto</div>
+        </div>
       </div>
     </div>
 

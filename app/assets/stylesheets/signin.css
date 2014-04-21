@@ -10,12 +10,7 @@
     color: #e4e4e4
 }
 
-.jumbotron-home {
-    background-color: #005a9f;
-    padding: 0px;
-    padding-top: 50px;
-    color:#fff
-}
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -146,5 +141,58 @@ a:focus {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
-    background-color: #d1e3ff;
+    color: #005a9f;
+    background:transparent;
+}
+
+/*media breakpoints for 15" laptops and beyond */
+@media (max-height: 768px){
+    .about-section{
+        width: 80%;
+    }
+    .well-class {
+        min-height: 20px;
+        padding: 7px;
+        margin-bottom: 4px;
+        background-color: #fff;
+    }
+    .jumbotron-home{
+        margin-top: 80px;
+    }
+}
+
+.jumbotron-home {
+    background-color: #005a9f;
+    padding: 30px;
+    color:#fff
+}
+
+@media (max-height: 768px){
+    .about-section{
+        width: 80%;
+    }
+    .well-class {
+        min-height: 20px;
+        padding: 7px;
+        margin-bottom: 4px;
+        background-color: #fff;
+    }
+    .jumbotron-home{
+        margin-top: 80px;
+        margin-bottom: 0px;
+    }
+
+}
+
+@media (min-height: 769px){
+
+}
+
+
+.subtitle{
+    color:#fff
+}
+
+hr{
+    background-color: #000000;
 }
