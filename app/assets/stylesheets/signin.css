@@ -88,16 +88,12 @@
 
 h2{
     color:#002948;
-    pading:0px
-    margin: 0 0 0px;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     letter-spacing: 1px;
 }
 h3{
-    color: #00476f;
-    pading:0px
-    margin: 0 0 0px;
+    color: #002948;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     letter-spacing: 1px;
@@ -105,7 +101,7 @@ h3{
 
 
 .btn-try{
-    background-color: #004b89;
+    background-color: #191445;
     color:#fff
 
 }
@@ -145,6 +141,11 @@ a:focus {
     background:transparent;
 }
 
+.jumbotron-home {
+    background-color: #005a9f;
+    padding: 7px; /*30 px without btn-try */
+    color:#fff
+}
 /*media breakpoints for 15" laptops and beyond */
 @media (max-height: 768px){
     .about-section{
@@ -157,28 +158,7 @@ a:focus {
         background-color: #fff;
     }
     .jumbotron-home{
-        margin-top: 80px;
-    }
-}
-
-.jumbotron-home {
-    background-color: #005a9f;
-    padding: 30px;
-    color:#fff
-}
-
-@media (max-height: 768px){
-    .about-section{
-        width: 80%;
-    }
-    .well-class {
-        min-height: 20px;
-        padding: 7px;
-        margin-bottom: 4px;
-        background-color: #fff;
-    }
-    .jumbotron-home{
-        margin-top: 80px;
+        margin-top: 75px;  /* 80 px without btn-try */
         margin-bottom: 0px;
     }
 

@@ -22,21 +22,15 @@
 
 <body class="body-home" id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
-  <% if flash[:alert] %>
-    <div class="alert alert-warning alert-dismissable col-md-6 col-md-offset-3 lead text-center">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= flash[:alert] %>
-    </div>
-<% end %>
-
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+
   <div class="container">
     <div class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
         <i class="fa fa-bars"></i>
       </button>
       <a class="navbar-brand" href="#page-top">
-        <i class="fa fa-play-circle"></i> e-pione
+        <i class="fa fa-play-circle"></i> .e-pione
       </a>
     </div>
 
@@ -48,15 +42,23 @@
           <a href="#page-top"></a>
         </li>
         <li class="page-scroll">
-          <a href="#about">Saber más</a>
+          <a href="#about">ACERCA DE</a>
         </li>
         <li class="page-scroll">
-          <a href="#colaborate">Colaborar</a>
+          <a href="#colaborate">COLABORAR</a>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
+    <% if flash[:alert] %> <!--Esto se ve con el culamen -->
+        <div class="alert alert-warning alert-dismissable col-md-6 col-md-offset-3 lead text-center">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= flash[:alert] %>
+        </div>
+    <%end%>
   </div><!-- /.container -->
+
 </nav>
+
 
 <%= yield %>
 
