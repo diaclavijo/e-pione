@@ -7,7 +7,7 @@ crumb :patients do
 end
 
 crumb :contact do
-  link 'Contactar', new_contacts_path
+  link 'Contactar', new_support_path
 end
 
 crumb :correct_quick_diagnosis do

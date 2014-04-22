@@ -1,18 +1,15 @@
 Epione::Application.routes.draw do
 
-  get 'testing', to: 'home#testing'
-
 	resources :quick_diagnoses, only: [:new, :create, :update]
 	get '/quick_diagnoses/:id/correct', to: 'quick_diagnoses#correct', as: 'correct_quick_diagnosis'
 
 	resources :quick_test_faqs, only: [:new, :create]
 	resources :quick_test_minimentals, only: [:new, :create]
 
-	resource :contacts, only: [:new, :create]
-	resources :emailform, only: [:new, :create]
+  resource :support, only: [:new]
 
+	resource :contact_form, only: [:create]
 
-	get 'support/', to: 'home#support', as: 'support'
   # the following solution was found in http://stackoverflow.com/questions/3791096/devise-logged-in-root-route-rails-3
   authenticated :physician do
     root :to => "quick_diagnoses#new"
