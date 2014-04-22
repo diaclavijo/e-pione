@@ -1,4 +1,6 @@
-class Contact < MailForm::Base
+class ContactForm < MailForm::Base
+  include MailForm::Delivery
+
 	attribute :name,      :validate => true
 	attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
 	attribute :message
@@ -7,7 +9,7 @@ class Contact < MailForm::Base
 	# in ActionMailer accepts.
 	def headers
 		{
-				:subject => "My Contact Form",
+				:subject => "E-PIONE: Solicitud de prueba",
 				:to => "david@diazclavijo.com",
 				:from => %("#{name}" <#{email}>)
 		}
