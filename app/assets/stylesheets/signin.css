@@ -176,3 +176,12 @@ a:focus {
 hr{
     background-color: #000000;
 }
+
+.well-contact {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #00689e;
+    color: #eeeeee;
+
+}

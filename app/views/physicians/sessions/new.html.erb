@@ -124,55 +124,66 @@
       <br>
       <p></p>
      <div class="row">
-      <div class="col-md-5 col-md-offset-1">
-          <p>Ya colaboran con e-pione</p>
+       <div class="col-md-5 col-md-offset-1">
+         <div class="well well-contact">
 
-        <dl class="text-left dl-horizontal">
-          <dt>Dr. Juan Rafael García </dt>
-          <dd>Jefe de Neurología Hospital Insular de Gran Canaria</dd>
+           <form  class="form-horizontal text-right" role="form">
+             <div class="form-group">
+               <div class="col-md-4 col-md-offset-1"><label>Nombre (*)</label></div>
+               <div class="col-md-4"><input placeholder="Nombre " type="text" value="" class="form-control" /> </div>
+             </div>
+             <div class="form-group">
+               <div class="col-md-4 col-md-offset-1"><label>Institución/Entidad</label></div>
+               <div class="col-md-4"><input placeholder="Institución/Entidad " type="text" value="" class="form-control" /> </div>
+             </div>
+             <div class="form-group">
+               <div class="col-md-4 col-md-offset-1"><label>Correo electrónico (*)</label></div>
+               <div class="col-md-4"><input placeholder="Correo" type="text" value="" class="form-control" /> </div>
+             </div>
+             <div class="form-group">
+               <div class="col-md-4 col-md-offset-1"><label>Observaciones</label></div>
+               <div class="col-md-6"><textarea class="form-control" rows="2"></textarea> </div>
+             </div>
+             <div class="form-group">
+               <div class="col-md-5 col-md-offset-5"><input type="submit"
+                                                            class="btn btn-lg btn-primary btn-block"
+                                                            value="Solicita una prueba"></div>
+             </div>
+           </form>
+         </div>
+       </div>
+      <div class="col-md-5">
+        <div class="well">
+            <p>Equipo consultivo</p>
+          <dl class="text-left dl-horizontal">
+            <dt>Dr. Cristobal Carnero</dt>
+            <dd>Jefe de Neurología Hospital de Granada</dd>
+            <dd>Creador Fototest y asesor del servicio</dd>
+          </dl>
+        </div>
+        <hr>
+        <div class="well">
+          <p>Colaboradores</p>
+          <dl class="text-left dl-horizontal">
+            <dt>Dr. Juan Rafael García </dt>
+            <dd>Jefe de Neurología Hospital Insular de Gran Canaria</dd>
 
-          <dt>Dr. Cristobal Carnero</dt>
-          <dd>Jefe de Neurología Hospital de Granada</dd>
-          <dd>Creador Fototest y asesor del servicio</dd>
 
-          <dt>Dra. María Pérez Vieitez </dt>
-          <dd>Especialista en Demencia, Doctora de Neurología Hospital Doctor Negrín</dd>
-          <dt>Gokuh</dt><dd>Super Saiyan</dd>
-          <br>
-          <dt>Clínica San Roque</dt>
+            <dt>Dra. María Pérez Vieitez </dt>
+            <dd>Especialista en Demencia, Doctora de Neurología Hospital Doctor Negrín</dd>
+            <br>
+            <dt>Clínica San Roque</dt>
             <dd><%= image_tag 'logosanroque.png', class:'img-responsive img-rounded' %> </dd>
-          <br>
-          <dt>Perpetuo Socorro</dt>
+            <br>
+            <dt>Perpetuo Socorro</dt>
             <dd><%= image_tag 'perpetuosocorro.png', class:'img-responsive img-rounded' %> </dd>
-        </dl>
+          </dl>
+        </div>
+
       </div>
 
-        <div class="col-md-5">
-          <p>Solicitar una prueba</p>
-          <form  class="form-horizontal text-right" role="form">
-           <div class="form-group">
-             <div class="col-md-4 col-md-offset-1"><label>Nombre (*)</label></div>
-             <div class="col-md-4"><input placeholder="Nombre " type="text" value="" class="form-control" /> </div>
-           </div>
-            <div class="form-group">
-              <div class="col-md-4 col-md-offset-1"><label>Institución/Entidad</label></div>
-              <div class="col-md-4"><input placeholder="Nombre " type="text" value="" class="form-control" /> </div>
-            </div>
-            <div class="form-group">
-              <div class="col-md-4 col-md-offset-1"><label>Correo electrónico (*)</label></div>
-              <div class="col-md-4"><input placeholder="Correo" type="text" value="" class="form-control" /> </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-4 col-md-offset-1"><label>Observaciones</label></div>
-                <div class="col-md-6"><textarea class="form-control" rows="2"></textarea> </div>
-          </div>
-            <div class="form-group">
-              <div class="col-md-4 col-md-offset-5"><input type="submit" class="btn btn-default btn-info"></div>
-          </div>
 
-          </form>
-        </div>
-     </div>
+   </div> <!--/row>
 
 
     </section>
