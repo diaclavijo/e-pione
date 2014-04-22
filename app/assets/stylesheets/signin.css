@@ -128,17 +128,18 @@ a:focus {
 }
 
 .btn-no-padding{
-    padding: 0px;
+    padding: 0;
 }
 
 #footer {
-    position: absolute;
-    padding:0px;
+    position: relative;
+    bottom:0px;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 60px;
-    color: #005a9f;
-    background:transparent;
+    height:50px;
+    margin-bottom: 0;
+    color: #ffffff;
+    background-color:#005a9f ;
 }
 
 .jumbotron-home {
@@ -161,13 +162,15 @@ a:focus {
         margin-top: 75px;  /* 80 px without btn-try */
         margin-bottom: 0px;
     }
+    #footer {
+        position: relative;
+        bottom:0px;
+    }
 
 }
 
 @media (min-height: 769px){
-    .colaborate-section {
-            margin-bottom: 0;
-    }
+
 }
 
 
@@ -182,7 +185,7 @@ hr{
 .well-contact {
     min-height: 20px;
     padding: 19px;
-    margin-top: 30px;
+    margin-top: 0;
     margin-bottom: 0;
     background-color: #00689e;
     color: #eeeeee;
