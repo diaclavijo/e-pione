@@ -165,7 +165,9 @@ a:focus {
 }
 
 @media (min-height: 769px){
-
+    .colaborate-section {
+            margin-bottom: 0;
+    }
 }
 
 
@@ -180,7 +182,8 @@ hr{
 .well-contact {
     min-height: 20px;
     padding: 19px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 0;
     background-color: #00689e;
     color: #eeeeee;
 
