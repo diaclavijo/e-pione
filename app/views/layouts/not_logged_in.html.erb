@@ -21,7 +21,7 @@
 </head>
 
 <body class="body-home" id="page-top" data-spy="scroll" data-target=".navbar-custom">
-
+<% if request.path != info_path %>
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 
   <div class="container">
@@ -42,6 +42,9 @@
           <a href="#page-top"></a>
         </li>
         <li class="page-scroll">
+          <a href="#about">INICIAR SESIÓN</a>
+        </li>
+        <li class="page-scroll">
           <a href="#about">ACERCA DE</a>
         </li>
         <li class="page-scroll">
@@ -58,11 +61,10 @@
   </div><!-- /.container -->
 
 </nav>
-
+<%end %>
 
 <%= yield %>
 
 </body>
-
-  <%= javascript_include_tag "not_logged_in", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "not_logged_in", "data-turbolinks-track" => true %>
 </html>

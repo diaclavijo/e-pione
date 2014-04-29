@@ -2,31 +2,24 @@
     <section class="intro">
         <div class="intro-body">
             <div class="container">
-                <div class=" front jumbotron jumbotron-home">
                   <div class="row">
-                    <div class="col-md-8">
-                        <br><br><%= image_tag 'logo_epione.png', class:'img-responsive img-rounded' %>
-                    </div>    <!--/col-md-8-->
+                    <div class="col-md-8 col-md-offset-2">
+                    <!--Carousel -->
+                      <br>
+                      <ul class="bxslider">
+                        <li><%= image_tag 'logo_epione_large.png', class:'img-responsive img-rounded' %></li>
+                        <li><%= image_tag 'screen1.png', class:'img-responsive img-rounded' %></li>
+                        <li><%= image_tag 'screen5.png', class:'img-responsive img-rounded' %></li>
 
-                    <div class="col-md-4">
-                        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'})   do |f| %>
-                            <h2 class="form-signin-heading text-muted-home">Identifíquese</h2>                            <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email' %>
-                            <%= f.password_field :password, class: 'form-control', placeholder: 'contraseña' %>
+                      </ul>
+                    <!--/Carousel -->
+                      <br>
+                      <div class="page-scroll">
+                        <%= link_to "Solicitar una prueba", '#colaborate' ,class: 'btn btn-lg btn-primary btn-try' %>
+                      </div>
+                    </div>
+                  </div><!--/roww-->
 
-                            <label class="checkbox checkbox-home">
-                                <%= f.check_box :remember_me %> <small>Recordarme</small> </label>
-
-                            <%= f.submit "Acceder", class: 'btn btn-lg btn-primary btn-block' %>
-                          <div class="page-scroll">
-                            <%= link_to "Solicitar prueba", '#colaborate' ,class: 'btn btn-lg btn-primary btn-block btn-try' %>
-                          </div>
-
-                        <% end %>
-                      <small><%= link_to '¿Olvidó su contraseña?', new_physician_password_path , class: 'text-muted-home' %> </small>
-                    </div> <!--/col-md-4-->
-                  </div>
-
-                </div><!--/jumbotron-->
               <div class="row subtitle">
                     <div class="col-md-8 col-md-offset-2">
                       <h3 class=""> Diagnóstico preciso con la puntuación del FAQ y del MMSE, la edad y la educación del paciente</h3>
@@ -93,7 +86,9 @@
       <div class="col-lg-8">
         <h4>
           Los resultados han sido obtenidos y validados sobre una base de datos de más de 1300 pacientes.
-          Más info sobre la validación, aquí.
+          Más información sobre la validación
+          <%= link_to "aquí", info_path %>
+
         </h4>
       </div>
     </div>

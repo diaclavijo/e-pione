@@ -14,6 +14,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-easing.min
+//= require jquery.bxslider
+//= require bxslider_start
 //= require scrolling.js
 //= require turbolinks
 //= require bootstrap

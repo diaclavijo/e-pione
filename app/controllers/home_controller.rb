@@ -12,4 +12,8 @@ class HomeController < ApplicationController
   def quick_diagnosis
 
   end
+
+  def info
+
+  end
 end
