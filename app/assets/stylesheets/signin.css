@@ -180,6 +180,10 @@ a:focus {
         color: #005a9f;
         background-color:#ffffff ;
     }
+
+    .footer a{
+        color:#005a9f;
+    }
     .jumbotron-home {
         margin-top: 100px; /*30 px without btn-try */
     }
@@ -213,9 +217,25 @@ hr{
     color: #ffffff;
     background-color:#005a9f ;
 }
+@media (min-width: 1023px){
+    .footer_init {   /*FIXME: Se ve mal si heigth <768, controlar */
+        position: relative;
+        bottom:0;
+        width: 100%;
+        /* Set the fixed height of the footer here */
+        height:50px;
+        margin-bottom: 0;
+        color: #ffffff;
+        background-color:#005a9f ;
+    }
+}
 
 .alert{
     z-index:5000;
     margin-bottom: 0;
 
+}
+
+.blue_link{
+    background-color:#005a9f ;
 }

@@ -17,5 +17,5 @@
 //= require jquery.bxslider
 //= require bxslider_start
 //= require scrolling.js
-//= require turbolinks
 //= require bootstrap
+//WE ERASE THE TURBOLINKS JS BECAUSE PROVOKE ERRORS with the other plugins(easing and bxslider)

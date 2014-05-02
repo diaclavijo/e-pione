@@ -16,7 +16,6 @@ function slider(){
 }
 
 $(document).ready(slider);
-$( window ).unload(function() {slider();});
 
 /*Esta puta mierda:
  http://stackoverflow.com/questions/2638292/after-travelling-back-in-firefox-history-javascript-wont-run
