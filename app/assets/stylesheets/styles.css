@@ -32,6 +32,7 @@ body {
 .navbar-inverse {
     background-color: #005a9f;
     border-color: #005a9f;
+
 }
 .navbar-inverse .navbar-brand {
     color: #eeeeee;
@@ -166,4 +167,3 @@ text-decoration: none;
     background-color:transparent;
     border:none;
 }
-

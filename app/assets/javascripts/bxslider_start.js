@@ -2,8 +2,8 @@
  * Created by yarilo on 29/04/14.
  */
 
-$(document).ready(function(){
 
+function slider(){
     $('.bxslider').bxSlider({
         auto: true,
         speed:1500,
@@ -12,4 +12,16 @@ $(document).ready(function(){
 
         // Creo que tendría que poner useCSS: false para que funcione en IE
     });
-});
+
+}
+
+$(document).ready(slider);
+$( window ).unload(function() {slider();});
+
+/*Esta puta mierda:
+ http://stackoverflow.com/questions/2638292/after-travelling-back-in-firefox-history-javascript-wont-run
+ */
+/*
+ */
+
+

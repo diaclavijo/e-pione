@@ -19,4 +19,3 @@
 //= require scrolling.js
 //= require turbolinks
 //= require bootstrap
-//= require carousel

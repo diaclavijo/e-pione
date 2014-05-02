@@ -149,8 +149,8 @@ a:focus {
         background-color: #fff;
     }
     .jumbotron-home{
-        margin-top: 75px;  /* 80 px without btn-try */
-        margin-bottom: 0px;
+        margin-top: 100px;  /* 80 px without btn-try */
+        margin-bottom: 0;
     }
     #footer {
         position: relative;
@@ -163,8 +163,26 @@ a:focus {
     }
 }
 
+.footer{
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height:50px;
+    margin-bottom: 0;
+    color: #ffffff;
+    background-color:#005a9f ;
+}
 @media (min-height: 769px){
-
+    .footer{
+        width: 100%;
+        /* Set the fixed height of the footer here */
+        height:50px;
+        margin-bottom: 0;
+        color: #005a9f;
+        background-color:#ffffff ;
+    }
+    .jumbotron-home {
+        margin-top: 100px; /*30 px without btn-try */
+    }
 }
 
 
@@ -185,13 +203,19 @@ hr{
     color: #eeeeee;
 
 }
-#footer {
-    position: relative;
-    bottom:0px;
+.footer_init {   /*FIXME: Se ve mal si heigth <768, controlar */
+    position: absolute;
+    bottom:0;
     width: 100%;
     /* Set the fixed height of the footer here */
     height:50px;
     margin-bottom: 0;
     color: #ffffff;
     background-color:#005a9f ;
+}
+
+.alert{
+    z-index:5000;
+    margin-bottom: 0;
+
 }

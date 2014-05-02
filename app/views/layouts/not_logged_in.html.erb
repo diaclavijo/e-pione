@@ -21,7 +21,8 @@
 </head>
 
 <body class="body-home" id="page-top" data-spy="scroll" data-target=".navbar-custom">
-<% if request.path != info_path %>
+
+<% if request.path == root_path %>
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 
   <div class="container">
@@ -42,26 +43,21 @@
           <a href="#page-top"></a>
         </li>
         <li class="page-scroll">
-          <a href="#about">INICIAR SESIÓN</a>
+          <%= link_to 'INICIAR SESIÓN', inicio_path %>
         </li>
         <li class="page-scroll">
           <a href="#about">ACERCA DE</a>
         </li>
         <li class="page-scroll">
-          <a href="#colaborate">COLABORAR</a>
+        <a href="#colaborate">COLABORAR</a>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
-    <% if flash[:alert] %> <!--Esto se ve con el culamen -->
-        <div class="alert alert-warning alert-dismissable col-md-6 col-md-offset-3 lead text-center">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          <%= flash[:alert] %>
-        </div>
-    <%end%>
+
   </div><!-- /.container -->
 
 </nav>
-<%end %>
+<% end %>
 
 <%= yield %>
 
