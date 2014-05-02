@@ -1,4 +1,4 @@
-#TODO: Eliminar este archivo, se mantiene aquí sólo por ser descriptivo de como debería ser el navbar
+#Este archivo se mantiene aquí sólo por ser descriptivo de como debería ser el navbar
 
 #Feature: Navbar with several links
 
@@ -8,8 +8,8 @@
 #    Then physician should see a navbar in the top of the site
 
 #  Scenario:Navbar content
-#    Then navbar should have link to search patients
-#    And navbar should have link to register patient
+#    Then navbar should have link to make a quick diagnosis
+#    And navbar should have link to contact
 #    And navbar should have link to other
 #    And navbar should have button to sign out
 
