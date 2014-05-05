@@ -13,14 +13,4 @@ def select_dropdowns (dropdowns)
   end
 end
 
-#  usar page.page.select('valor', :from => 'dropdown_id')
-# def check_dropdown (list)
-#  page.should have_content(arg1)
 
-#  dropdown_elements=all() #TODO, sería algo así
-
-#  arg2.each do |element|
-    #check that element is in dropdown_elements
- #   dropdown_elements.include?(element)
- # end
-#end

@@ -218,16 +218,6 @@ hr{
     background-color:#005a9f ;
 }
 @media (min-width: 1023px){
-    .footer_init {   /*FIXME: Se ve mal si heigth <768, controlar */
-        position: relative;
-        bottom:0;
-        width: 100%;
-        /* Set the fixed height of the footer here */
-        height:50px;
-        margin-bottom: 0;
-        color: #ffffff;
-        background-color:#005a9f ;
-    }
 }
 
 .alert{

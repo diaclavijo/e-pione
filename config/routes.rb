@@ -10,17 +10,23 @@ Epione::Application.routes.draw do
 
 	resource :contact_form, only: [:create]
 
+
   # the following solution was found in http://stackoverflow.com/questions/3791096/devise-logged-in-root-route-rails-3
   authenticated :physician do
     root :to => "quick_diagnoses#new"
   end
   unauthenticated :physician do
     devise_scope :physician do
-      get "/" => "devise/sessions#new"
+      get "/" => "home#index"
+      get "inicio" => "devise/sessions#new"
     end
   end
+  get 'info' => 'home#info'
+  get 'privacidad' => 'home#privacy'
 
-	devise_for :physicians, :skip => [:registrations] # this lines and the below disable registration and allow only edit profile refer: http://stackoverflow.com/questions/6734323/how-do-i-remove-the-devise-route-to-sign-up
+
+
+  devise_for :physicians, :skip => [:registrations] # this lines and the below disable registration and allow only edit profile refer: http://stackoverflow.com/questions/6734323/how-do-i-remove-the-devise-route-to-sign-up
 	as :physician do
 		get 'physicians/edit' => 'devise/registrations#edit', :as => 'edit_physician_registration'
 		put 'physicians' => 'devise/registrations#update', :as => 'physician_registration'
