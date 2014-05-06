@@ -1,5 +1,6 @@
 /* This CSS file is used for the front page when the user is not signed in  */
 
+
 .body-home {
   background-color: #fff;
 }
@@ -137,6 +138,58 @@ a:focus {
     padding: 7px; /*30 px without btn-try */
     color:#fff
 }
+
+
+
+#wrap
+{
+    min-height: 100%;
+}
+
+#main
+{
+    overflow:auto;
+    padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+
+.footer{
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height:50px;
+    margin-bottom: 0;
+    color: #ffffff;
+    background-color:#005a9f ;
+}
+.footer_init {
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height:55px;
+    margin-bottom: 0;
+    color: #ffffff;
+    background-color:#005a9f ;
+}
+
+@media (max-height: 468px){
+    .footer_init {
+        position: relative;
+        bottom:0;
+        width: 100%;
+        /* Set the fixed height of the footer here */
+        height:60px;
+        margin-bottom: 0;
+        color: #ffffff;
+        background-color:#005a9f ;
+    }
+    .footer{
+        /* Set the fixed height of the footer here */
+        height:60px;
+        margin-bottom: 0;
+        color: #ffffff;
+        background-color:#005a9f ;
+    }
+}
 /*media breakpoints for 15" laptops and beyond */
 @media (max-height: 768px){
     .about-section{
@@ -152,25 +205,13 @@ a:focus {
         margin-top: 100px;  /* 80 px without btn-try */
         margin-bottom: 0;
     }
-    #footer {
-        position: relative;
-        bottom:0px;
-    }
-
     .go-up-scroll{
         display: none;  /*PUEDE QUE ESTO SE VEA MAL EN PANTALLAS NO MUY GRANDES */
 
     }
 }
 
-.footer{
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height:50px;
-    margin-bottom: 0;
-    color: #ffffff;
-    background-color:#005a9f ;
-}
+
 @media (min-height: 769px){
     .footer{
         width: 100%;
@@ -207,16 +248,7 @@ hr{
     color: #eeeeee;
 
 }
-.footer_init {   /*FIXME: Se ve mal si heigth <768, controlar */
-    position: absolute;
-    bottom:0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height:50px;
-    margin-bottom: 0;
-    color: #ffffff;
-    background-color:#005a9f ;
-}
+
 @media (min-width: 1023px){
 }
 
