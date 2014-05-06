@@ -84,7 +84,7 @@ a:focus {
 .navbar-toggle {
   padding: 4px 6px;
   font-size: 16px;
-  color: #005a9f;
+  color: #fff;
 }
 .navbar-toggle:focus,
 .navbar-toggle:active {
