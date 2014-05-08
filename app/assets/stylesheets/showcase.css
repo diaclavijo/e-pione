@@ -122,8 +122,7 @@ a:focus {
   background-size: cover;
   -o-background-size: cover;
 }
-.intro a {
-}
+
 .intro-body {
   display: table-cell;
   vertical-align: middle;
@@ -145,6 +144,29 @@ a:focus {
   .intro-text {
     font-size: 25px;
   }
+}
+
+/*Fixes for carousel to make it responsive in mobile devices*/
+@media (max-width:338px){
+    .intro {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0px 0;
+        text-align: center;
+        /*color: @light;*/
+        color: #ffffff;
+        background-color: #ffffff;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+
+    .intro-body {
+        display: block;
+        vertical-align: middle;
+    }
 }
 .btn-circle {
   width: 70px;

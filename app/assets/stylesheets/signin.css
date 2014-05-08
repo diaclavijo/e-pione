@@ -247,8 +247,7 @@ hr{
 
 }
 
-@media (min-width: 1023px){
-}
+
 
 .alert{
     z-index:5000;
@@ -263,3 +262,7 @@ hr{
 .bxslider{
 padding-top: 10px;
 }
+
+
+
+
