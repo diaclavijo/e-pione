@@ -11,7 +11,7 @@ function slider(){
         pager:false,
         controls: true,
         slideWidth:800,
-        useCSS:false
+        useCSS:false //Compatibility for IE7+
 
         // Creo que tendría que poner useCSS: false para que funcione en IE
     });
