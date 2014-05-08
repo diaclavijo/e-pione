@@ -153,6 +153,8 @@ a:focus {
 }
 
 .footer{
+    position: relative;
+    bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
     height:50px;
@@ -189,6 +191,13 @@ a:focus {
         color: #ffffff;
         background-color:#005a9f ;
     }
+}
+
+@media (max-width: 1024px){
+    .footer{
+       display: none; /*Quick fix, this footer is still present in in sessions/new*/
+    }
+
 }
 /*media breakpoints for 15" laptops and beyond */
 @media (max-height: 768px){

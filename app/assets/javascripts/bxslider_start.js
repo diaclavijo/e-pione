@@ -8,7 +8,8 @@ function slider(){
         auto: true,
         speed:1500,
         pause: 5000,
-        pager:false
+        pager:false,
+        controls: true
 
         // Creo que tendría que poner useCSS: false para que funcione en IE
     });
