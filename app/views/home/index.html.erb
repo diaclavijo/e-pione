@@ -3,10 +3,9 @@
   <div class="intro-body">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
           <!--Carousel -->
-          <br>
-          <br>
+
           <ul class="bxslider">
             <li><%= image_tag 'logo_epione_large.png', class:'img-responsive img-rounded' %></li>
             <li><%= image_tag 'screen1.png', class:'img-responsive img-rounded' %></li>
@@ -18,8 +17,9 @@
           <div class="page-scroll">
             <%= link_to "Solicitar una prueba", '#colaborate' ,class: 'btn btn-lg btn-primary btn-try' %>
           </div>
-        </div>
-      </div><!--/roww-->
+
+        </div>  <!--/col -->
+      </div><!--/row-->
 
       <div class="row subtitle">
         <div class="col-md-8 col-md-offset-2">
@@ -175,13 +175,3 @@
 
 </section>
 
-<!--Aquí hay que hacer scroll para verlo.. >768-->
-
-
-  <div class="footer">
-    <div class="container">
-    <div class="col-md-2 col-md-offset-6">BINNAC &copy</div>
-    <div class="col-md-2 "><%= link_to 'Términos de privacidad', privacidad_path , class: 'text-muted-home' %></div>
-    <div class="col-md-1"><%= link_to 'Contacto', 'mailto:soporte@e-pione.com' , class: 'text-muted-home' %></div>
-  </div>
-</div>

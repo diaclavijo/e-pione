@@ -222,18 +222,7 @@ a:focus {
 
 
 @media (min-height: 769px){
-    .footer{
-        width: 100%;
-        /* Set the fixed height of the footer here */
-        height:50px;
-        margin-bottom: 0;
-        color: #005a9f;
-        background-color:#ffffff ;
-    }
 
-    .footer a{
-        color:#005a9f;
-    }
     .jumbotron-home {
         margin-top: 100px; /*30 px without btn-try */
     }
@@ -269,4 +258,8 @@ hr{
 
 .blue_link{
     background-color:#005a9f ;
+}
+
+.bxslider{
+padding-top: 10px;
 }
