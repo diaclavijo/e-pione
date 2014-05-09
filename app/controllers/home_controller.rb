@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   layout "not_logged_in"
   def index
-
+    @contact_form = ContactForm.new(params[:contact_form])
   end
 
   def testing

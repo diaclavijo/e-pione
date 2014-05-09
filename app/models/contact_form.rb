@@ -1,8 +1,7 @@
 class ContactForm < MailForm::Base
-  include MailForm::Delivery
-
 	attribute :name,      :validate => true
 	attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
+  attribute :institution
 	attribute :message
 
 	# Declare the e-mail headers. It accepts anything the mail method
@@ -10,7 +9,7 @@ class ContactForm < MailForm::Base
 	def headers
 		{
 				:subject => "E-PIONE: Solicitud de prueba",
-				:to => "david@diazclavijo.com",
+				:to => "support@e-pione.com",
 				:from => %("#{name}" <#{email}>)
 		}
 	end

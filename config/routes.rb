@@ -8,7 +8,7 @@ Epione::Application.routes.draw do
 
   resource :support, only: [:new]
 
-	resource :contact_form, only: [:create]
+	resource :contact_forms, only: [:create]
 
 
   # the following solution was found in http://stackoverflow.com/questions/3791096/devise-logged-in-root-route-rails-3

@@ -1,0 +1,71 @@
+<div id='contact_form' class="col-md-5">
+  <div class="well well-lg well-contact">
+    <%= form_for(
+            @contact_form,
+            remote: true
+        ) do |f| %>
+      <% if @contact_form.errors.any? %>
+        <div class="alert alert-warning alert-dismissable col-md-6 col-md-offset-3 lead text-center">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          Rellene los campos por favor
+        </div>
+      <% end %>
+
+      <% if @failed_send %>
+        <p> Hubo un error tratando de enviar el email, por favor envie la solicitud a support@e-pione.com </p>
+      <% end %>
+
+      <div class="form-group">
+        <div class="col-md-4 col-md-offset-1">
+          <%= f.label :name, 'Nombre (*)' %>
+        </div>
+        <div class="col-md-4">
+          <%= f.text_field :name, { class: 'form-control', placeholder: 'Nombre' } %>
+        </div>
+      </div>
+      <div class="form-group">
+        <!--<div class="col-md-4 col-md-offset-1"><label>Institución/Entidad</label></div>-->
+        <div class="col-md-4 col-md-offset-1">
+          <%= f.label :institution, 'Institución/Entidad' %>
+        </div>
+        <div class="col-md-4">
+          <!--<input placeholder="Institución/Entidad " type="text" value="" class="form-control" />-->
+          <%= f.text_field :institution, { class: 'form-control', placeholder: 'Institución/Entidad' } %>
+        </div>
+      </div>
+      <div class="form-group">
+        <!--<div class="col-md-4 col-md-offset-1"><label>Correo electrónico (*)</label></div>-->
+        <div class="col-md-4 col-md-offset-1">
+          <%= f.label :email, 'Correo electrónico (*)' %>
+        </div>
+        <div class="col-md-4">
+          <!--<input placeholder="Correo" type="text" value="" class="form-control" />-->
+          <%= f.text_field :email, { class: 'form-control', placeholder: 'Correo' } %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-4 col-md-offset-1">
+          <%= f.label :message, 'Observaciones' %>
+          <!--<label>Observaciones</label>-->
+        </div>
+        <div class="col-md-6">
+          <%= f.text_field :message, { class: 'form-control', placeholder: 'Correo', rows: '2' } %>
+          <!--<textarea class="form-control" rows="2"></textarea>-->
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-5 col-md-offset-5">
+          <%= f.submit 'Solicita una prueba', class: 'btn btn-lg btn-primary btn-block' %>
+          <!--<input type="submit"-->
+          <!--class="btn btn-lg btn-primary btn-block"-->
+          <!--value="Solicita una prueba">-->
+        </div>
+      </div>
+    <% end %>
+  </div><!--/well-->
+  <h5 class="text-muted">Al enviar este formulario está de acuerdo con los
+    <%= link_to 'Términos de privacidad', privacidad_path , class: 'text-muted' %></h5>
+</div>
+
+
+
