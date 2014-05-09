@@ -11,6 +11,8 @@
  * It is documented on Rails Documentation at the 2.4 in http://guides.rubyonrails.org/asset_pipeline.html
  *
  *= require bootstrap
- *= require signin
  *= require font-awesome
+ *= require showcase
+ *= require signin
+ *= require jquery.bxslider
  */

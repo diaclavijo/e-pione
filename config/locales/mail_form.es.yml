@@ -1,0 +1,15 @@
+
+es:
+  mail_form:
+    success: 'Su solicitud ha sido enviada correctamente. Antes de dos días nos pondremos en contacto con usted.'
+    models:
+      contact_form: "Your site contact form"
+    attributes:
+      contact_form:
+        email: "E-mail"
+        telephone: "Telephone number"
+        message: "Sent message"
+    request:
+      title: "Technical information about the user"
+      remote_ip: "IP Address"
+      user_agent: "Browser"

@@ -1,11 +1,9 @@
 #V1 sin warden..
 def login_with_user
-
   visit "/"
-  fill_in 'physician_email', :with => 'carmen@carmen.com'
-  fill_in 'physician_password', :with => 'alzheimer'
+  fill_in 'physician_email', :with => 'prueba@prueba.com'
+  fill_in 'physician_password', :with => 'cocodrilo'
   click_button 'Acceder'
-  #    @current_user = User.find_by_login(username) TODO Probar con esto para intentar acceder a las variables del usuario y demás !!!!!!!!!
 end
 
 #v2 con warden

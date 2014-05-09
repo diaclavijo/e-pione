@@ -32,6 +32,7 @@ body {
 .navbar-inverse {
     background-color: #005a9f;
     border-color: #005a9f;
+
 }
 .navbar-inverse .navbar-brand {
     color: #eeeeee;
@@ -113,28 +114,6 @@ margin-left: 120px;
 
 
 }
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
-}
-
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
-
-.icon-wrapper{
-  margin-left: 50px;
-
-}
-
-
-
 
 .field_with_errors input {
     padding: 3px 2px;
@@ -145,7 +124,6 @@ margin-left: 120px;
     padding: 3px 2px;
     border: 2px solid red;
 }
-
 
 /* Center align the text within the three columns below the carousel */
 .container-centered{
@@ -162,14 +140,6 @@ text-decoration: none;
 .no_blue_link a{
     color:#000
 }
-.fa{
-   /*color:#002f53*/
-}
-
-.btn-default{
-   /*ackground-color:#eee;*/
-}
-
 .well{
     background-color: #eeeeee;
     border:#ffffff;
@@ -197,4 +167,3 @@ text-decoration: none;
     background-color:transparent;
     border:none;
 }
-

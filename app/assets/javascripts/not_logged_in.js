@@ -13,6 +13,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery-easing.min
+//= require jquery.bxslider
+//= require bxslider_start
+//= require scrolling.js
 //= require bootstrap
-//= require carousel
+//WE ERASE THE TURBOLINKS JS BECAUSE PROVOKE ERRORS with the other plugins(easing and bxslider)
