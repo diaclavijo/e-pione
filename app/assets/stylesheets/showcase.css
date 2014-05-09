@@ -147,7 +147,7 @@ a:focus {
 }
 
 /*Fixes for carousel to make it responsive in mobile devices*/
-@media (max-width:338px){
+@media (max-width:438px){
     .intro {
         display: block;
         width: 100%;

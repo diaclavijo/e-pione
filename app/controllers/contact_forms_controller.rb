@@ -9,7 +9,7 @@ class ContactFormsController < ApplicationController
           logger.fatal('Failed to send email through contact form')
           @failed_send = true
         end
-        flash[:notice] = 'Your work was awesome! A unicorn is born!'
+        flash[:notice] = 'Solicitud enviada correctamente. Nos pondremos en contacto con vd. lo antes posible.'
         format.js { render :js => "window.location = #{root_path.to_json}" }
 
       else

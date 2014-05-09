@@ -1,60 +1,60 @@
 <div id='contact_form' class="col-md-5">
-  <div class="well well-lg well-contact">
     <%= form_for(
             @contact_form,
-            remote: true
+            remote: true,
+            html:{class:'form-horizontal'}
+
         ) do |f| %>
       <% if @contact_form.errors.any? %>
         <div class="alert alert-warning alert-dismissable col-md-6 col-md-offset-3 lead text-center">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          Rellene los campos por favor
+          Por favor, rellene los campos (*)
         </div>
       <% end %>
-
       <% if @failed_send %>
-        <p> Hubo un error tratando de enviar el email, por favor envie la solicitud a support@e-pione.com </p>
+          <div class="alert alert-danger alert-dismissable col-md-6 col-md-offset-3 lead text-center">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            Hubo un error tratando de enviar el email, por favor envie la solicitud a support@e-pione.com
+          </div>
       <% end %>
+      <div class="well well-lg well-contact">
+
+
 
       <div class="form-group">
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-md-5 col-md-offset-1">
           <%= f.label :name, 'Nombre (*)' %>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-5">
           <%= f.text_field :name, { class: 'form-control', placeholder: 'Nombre' } %>
         </div>
       </div>
       <div class="form-group">
-        <!--<div class="col-md-4 col-md-offset-1"><label>Institución/Entidad</label></div>-->
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-md-5 col-md-offset-1">
           <%= f.label :institution, 'Institución/Entidad' %>
         </div>
-        <div class="col-md-4">
-          <!--<input placeholder="Institución/Entidad " type="text" value="" class="form-control" />-->
+        <div class="col-md-5">
           <%= f.text_field :institution, { class: 'form-control', placeholder: 'Institución/Entidad' } %>
         </div>
       </div>
       <div class="form-group">
-        <!--<div class="col-md-4 col-md-offset-1"><label>Correo electrónico (*)</label></div>-->
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-md-5 col-md-offset-1">
           <%= f.label :email, 'Correo electrónico (*)' %>
         </div>
-        <div class="col-md-4">
-          <!--<input placeholder="Correo" type="text" value="" class="form-control" />-->
+        <div class="col-md-5">
           <%= f.text_field :email, { class: 'form-control', placeholder: 'Correo' } %>
         </div>
       </div>
       <div class="form-group">
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-md-5 col-md-offset-1">
           <%= f.label :message, 'Observaciones' %>
-          <!--<label>Observaciones</label>-->
         </div>
         <div class="col-md-6">
-          <%= f.text_field :message, { class: 'form-control', placeholder: 'Correo', rows: '2' } %>
-          <!--<textarea class="form-control" rows="2"></textarea>-->
+          <%= f.text_area :message, { class: 'form-control', placeholder: '', rows: '2' } %>
         </div>
       </div>
       <div class="form-group">
-        <div class="col-md-5 col-md-offset-5">
+        <div class="col-md-5 col-md-offset-6">
           <%= f.submit 'Solicita una prueba', class: 'btn btn-lg btn-primary btn-block' %>
           <!--<input type="submit"-->
           <!--class="btn btn-lg btn-primary btn-block"-->

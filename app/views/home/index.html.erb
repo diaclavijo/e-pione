@@ -2,6 +2,13 @@
 <section class="intro">
   <div class="intro-body">
     <div class="container container-top">
+      <% if flash[:notice] %>
+          <br>
+          <div class="alert alert-success alert-dismissable col-md-6 col-md-offset-3 lead text-center">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <%= flash[:notice] %>
+          </div>
+      <%end%>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <!--Carousel -->
@@ -47,7 +54,7 @@
     </div>
   </div>
   <p></p>
-  <div class = "row well-class well-class">
+  <div class = "row well-class text-left">
     <div class="col-lg-2 col-lg-offset-1"><a class="icon-zoom-in icon-4x"></a></div>
     <div class="col-lg-8">
       <h4>e-pione es un Sistema Inteligente de Ayuda al Diagnóstico (SIAD) del deterioro cognitivo (DC)
@@ -56,7 +63,7 @@
   </div>
 
 
-  <div class = "row well-class">
+  <div class = "row well-class text-left">
     <div class="col-lg-2 col-lg-offset-1"><a class="icon-gears icon-4x"></a></div>
     <div class="col-lg-8">
       <h4>
@@ -65,7 +72,7 @@
       </h4>
     </div>
   </div>
-  <div class = "row well-class">
+  <div class = "row well-class text-left">
     <div class="col-lg-2 col-lg-offset-1"><a class="icon-check icon-4x"></a></div>
     <div class="col-lg-8">
       <h4>
@@ -73,7 +80,7 @@
       </h4>
     </div>
   </div>
-  <div class = "row well-class">
+  <div class = "row well-class text-left">
     <div class="col-lg-2 col-lg-offset-1"><a class="icon-group icon-4x"></a></div>
     <div class="col-lg-8">
       <h4>
@@ -84,13 +91,13 @@
       </h4>
     </div>
   </div>
-  <div class = "row well-class">
+  <div class = "row well-class  text-left">
     <div class="col-lg-2 col-lg-offset-1"><a class="icon-time icon-4x"></a></div>
     <div class="col-lg-8">
       <h4>
-        Porque sabemos que el tiempo del médico no tiene precio,
-        obtener la opinión de un comité de expertos de forma instantánea
-        en tu consulta tampoco
+        Tomar decisiones rápidamente no es suficiente cuando la salud está en juego.
+        Por eso, la opinión de un comité de expertos (SIAD) de forma instantánea en tu consulta es
+        un valor añadido en la calidad de tus diagnósticos
       </h4>
     </div>
   </div>
@@ -131,12 +138,10 @@
         <br>
         <dt>Clínica San Roque</dt>
         <dd><%= image_tag 'logosanroque.png', class:'img-responsive img-rounded' %> </dd>
-        <br>
-        <dt>Perpetuo Socorro</dt>
-        <dd><%= image_tag 'perpetuosocorro.png', class:'img-responsive img-rounded' %> </dd>
+
       </dl>
     </div>
-   <%= render partial: 'contact_forms/form', locals: { contact_form: ContactForm.new } %>
+        <%= render partial: 'contact_forms/form', locals: { contact_form: ContactForm.new } %>
   </div> <!--/row-->
   <div class="row text-center">
     <div class="page-scroll go-up-scroll">
