@@ -33,15 +33,26 @@
             </div>
         <% end %>
 
+      <div class="form-group">
+        <div class="col-md-1 col-md-offset-3"><%= link_to '', new_quick_test_faq_path, class:"icon-check icon-3x" %></div>
+        <div class="col-md-3">
+           <%= f.label :faq_score, 'Puntuación FAQ'%>
+          <h4><%= link_to '(Realizar test)', new_quick_test_faq_path %></h4>
+        </div>
+        <div class="col-md-1">
+          <%= f.number_field :faq_score, value: session[:faq_score], class: 'form-control input-sm', tabindex:'1' %>
+        </div>
+
+      </div>
 
       <div class="form-group">
         <div class="col-md-1 col-md-offset-3"><%= link_to '', new_quick_test_minimental_path, class:"icon-check icon-3x" %></div>
         <div class="col-md-3">
-					<%= f.label :mmse_score, 'Puntuación Fototest'  %>
+					<%= f.label :mmse_score, 'Puntuación MMSE'  %>
 					<h4><%= link_to '(Realizar test)', new_quick_test_minimental_path %></h4>
         </div>
         <div class="col-md-1">
-          <%= f.number_field :mmse_score, value: session[:minimental_score], class: 'form-control input-sm' %>
+          <%= f.number_field :mmse_score, value: session[:minimental_score], class: 'form-control input-sm', tabindex:'2' %>
         </div>
       </div>
 
@@ -53,23 +64,24 @@
           <%= f.label :age, 'Edad' %>
         </div>
         <div class="col-md-1">
-          <%= f.number_field :age ,class: 'form-control input-sm' %>
+          <%= f.number_field :age ,class: 'form-control input-sm', tabindex:'3' %>
         </div>
       </div>
 
       <div id='education' class="form-group">
         <div class="col-md-1 col-md-offset-3">
-          <a class="icon-user icon-3x"></a>
+          <a class="icon-font icon-3x"></a>
         </div>
         <div class="col-md-3">
-          <%= f.label :education_select, 'Género' %>
+          <%= f.label :education_select, 'Escolaridad' %>
         </div>
         <div class="col-md-4">
           <%= f.select :education_select,
 											 educations ,
 											 { include_blank: 'Seleccionar...' } ,
 											 class:'form-control',
-											 id: 'patient_education_select'
+											 id: 'patient_education_select',
+                                             tabindex:'4'
 					%>
         </div>
       </div>
