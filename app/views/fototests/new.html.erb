@@ -507,27 +507,11 @@
   //]]>
 </script>
 
-<script type="text/javascript">
-  //<![CDATA[
-  var _gaq = _gaq || [];    // código de Google Analytics
-  var pluginUrl =
-      '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
-  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
-  _gaq.push(['_setAccount', 'UA-2277787-1']);
-  _gaq.push(['_trackPageview']);
-  _gaq.push(['_trackPageLoadTime']);
-  (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-  //]]>
-</script>
-
 
 <div class="ContLAncho">
   <div class="OCntL">
     <p class="centrar lamina">
       <%= image_tag 'fototest.jpg', alt: 'Lámina del Fototest', size: '900x638', usemap: '#Map2' %>
-       <img src="Fototest.jpg" alt="L&aacute;mina del Fototest" width="900" height="638" usemap="#Map2" />
-    <!--<p class="centrar lamina"><img src="Fototest.jpg" alt="L&aacute;mina del Fototest" width="900" height="638" usemap="#Map2" />-->
       <map id="Map2">
         <area shape="rect" coords="75,141,278,266" href="javascript:void(0)" alt="cartas" onclick="SumaAciertoCartas('denom');" />
         <area shape="rect" coords="310,120,629,291" href="javascript:void(0)" alt="coche" onclick="SumaAciertoCoche('denom');" />
@@ -538,9 +522,10 @@
       </map>
     </p>
     <p class="centrar">
-      <input type="button" name="ayuda" id="ayuda" value="Ayuda / Instrucciones" onclick="parent.location='http://www.hipocampo.org/Fototest-instrucciones.asp'" /> <button id="toggle">Pulse para ocultar o reponer la lámina</button>
+      <input type="button" name="ayuda" id="ayuda" value="Ayuda / Instrucciones" onclick="void(0)" /> <button id="toggle">Pulse para ocultar o reponer la lámina</button>
     </p>
-    <form id="form1" method="post" action="Fototest-resultados.asp">
+    <form id="form1" method="post" action=".">
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
       <div class="centrar">
         <table width="90%" border="1" summary="Formulario del test de las fotos. En &eacute;l se introducen autom&aacute;ticamente los resultados de las distintas fases de la administraci&oacute;n del test.">
           <caption>Fototest - El Test de las Fotos</caption>
@@ -629,7 +614,7 @@
           <label for="Edad">Edad del sujeto:
             <input name="Edad" type="text" id="Edad" value="Edad" size="4" maxlength="4"  onfocus="clearText(this)" /></label>
           <label for="Fecha">Fecha:
-            <input name="Fecha" type="text" id="Fecha" value="14/05/2014" size="10" maxlength="10"  onfocus="clearText(this)" /></label>
+            <input name="Fecha" type="text" id="Fecha" value=<%= Date.today %> size="10" maxlength="10"  onfocus="clearText(this)" /></label>
           <input type="hidden" name="CadenaFototest" id="CadenaFototest" />
         </p>
       </div>
@@ -638,10 +623,7 @@
         <input type="submit" name="Enviar" id="Enviar" value="Enviar datos" onclick='hombres2str();mujeres2str();document.forms["form1"]["CadenaFototest"].value=cartas1+""+coche1+""+pera1+""+trompeta1+""+zapatos1+""+cuchara1+""+cartas2+""+coche2+""+pera2+""+trompeta2+""+zapatos2+""+cuchara2+""+cartas3+""+coche3+""+pera3+""+trompeta3+""+zapatos3+""+cuchara3+""+totalHombres+""+totalMujeres' />
       </p>
     </form>
-    <p class="Neg">Referencia bibliogr&aacute;fica para citar esta p&aacute;gina:</p>
-    <div class="color TxtL"><cite>De la Vega Cotarelo, R y Carnero Pardo, C. <em>Fototest Online</em> [en l&iacute;nea]. Circunvalaci&oacute;n del Hipocampo, diciembre 2013 [Consulta: 14 mayo 2014]. Disponible en: http://www.hipocampo.org/Fototest-enlinea.asp.</cite></div>
-    <p class="TextR"><a href="#">Ir al comienzo</a></p>
-    <p class="FatTab"><a href="bibliografia.asp">Bibliograf&iacute;a</a></p>
+
   </div>
 </div>
 
