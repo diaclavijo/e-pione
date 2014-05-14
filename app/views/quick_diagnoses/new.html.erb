@@ -23,13 +23,13 @@
                 <h3> Por favor, rellene correctamente los campos marcados en rojo</h3>
                 <ul>
                   <% if @computer_diagnosis.errors[:mmse_score].any? %>
-                      <h4><li>Puntuación de MMSE debe estar entre 0 y 30</li></h4>
+                      <li><h4>Puntuación de MMSE debe estar entre 0 y 30</h4></li>
                   <% end %>
                   <% if @computer_diagnosis.errors[:faq_score].any? %>
-                      <h4><li>Puntuación de FAQ debe estar entre 0 y 30</li></h4>
+                      <li><h4>Puntuación de FAQ debe estar entre 0 y 30</h4></li>
                   <% end %>
                   <% if @computer_diagnosis.errors[:age].any? %>
-                      <h4><li>El sistema trabaja únicamente con edades mayores de 62 años</li></h4>
+                      <li><h4>El sistema trabaja únicamente con edades mayores de 62 años</h4></li>
                   <% end %>
                 </ul>
               </div>
