@@ -85,4 +85,20 @@ Epione::Application.configure do
   config.assets.precompile += ['not_logged_in.css', 'not_logged_in.js']
   config.assets.precompile += ['html5shiv.js', 'respond.min.js','iefix.js']
 
+
+  # Config for GoogleAnalytics
+  config.middleware.use Rack::GoogleAnalytics, :tracker => 'UA-49781156-2'
+
+  #Email configuration
+  config.action_mailer.default_url_options = { :host => 'http://staging.e-pione.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address => 'smtp.1und1.de',
+      :domain => '1und1.de',
+      :port => 587,
+      :authentication => :login,
+      :user_name => 'soporte@e-pione.com',
+      :password => 'xj38f1k.b',
+  }
 end
+

@@ -13,6 +13,30 @@ module ApplicationHelper
 
     end
 
+    def password_field(method, options = {})
+
+      options[:class] ='form-control'
+      @template.content_tag(
+          :div,
+          super(method,options),
+          class: 'col-md-3'
+      )
+
+    end
+
+    def email_field(method, options = {})
+
+      options[:class] ='form-control'
+      @template.content_tag(
+          :div,
+          super(method,options),
+          class: 'col-md-3'
+      )
+
+    end
+
+
+
     def text_area(method, options = {})
       options[:class] ='form-control'
       @template.content_tag(
@@ -60,7 +84,7 @@ module ApplicationHelper
       @template.content_tag(
           :div,
           super(method, text, options, &block),
-          class: 'col-md-6'
+          class: 'col-md-4 col-md-offset-2'
       )
     end
 
@@ -79,7 +103,7 @@ module ApplicationHelper
       @template.content_tag(
           :div,
           super(value, options),
-          class: 'col-md-offset-4 col-md-2'
+          class: 'col-md-offset-6 col-md-2'
           )
     end
 

@@ -130,6 +130,9 @@ GEM
       rake (>= 0.8.1)
     polyglot (0.3.4)
     rack (1.5.2)
+    rack-google-analytics (1.0.0)
+      actionpack
+      activesupport
     rack-pjax (0.7.0)
       nokogiri (~> 1.5)
       rack (~> 1.3)
@@ -234,7 +237,6 @@ DEPENDENCIES
   devise
   gretel
   haml
-  i18n
   jbuilder (~> 1.2)
   jquery-rails
   kaminari
@@ -243,6 +245,7 @@ DEPENDENCIES
   mysql2 (>= 0.2.12)
   nilify_blanks
   passenger
+  rack-google-analytics
   rails (= 4.0.0)
   rails_admin
   rspec-rails (>= 2.0.1)

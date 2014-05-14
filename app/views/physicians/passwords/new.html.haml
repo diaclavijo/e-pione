@@ -1,0 +1,26 @@
+.container.text-center.container-password
+  %h2 ¿Olvidó su contraseña?
+  %h3 Introduzca su e-mail y le enviaremos instrucciones para recuperarla
+  %hr/
+  %br/
+  = form_for(resource, as: resource_name, url: password_path(resource_name), |
+    html: { method: :post , :class => 'form-horizontal'}) do |f|             |
+    - if resource.errors.any?
+      #error_explanation
+        %div{class: flash_class(:error)}
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
+          %ul.list-unstyled
+            - if resource.errors[:email].any?
+              %li.h4 Email ausente o inexistente
+    .form-group
+      .col-md-2.col-md-offset-4
+        = f.label :email
+      .col-md-3
+        = f.email_field :email, autofocus: true , class:'form-control'
+    .form-group
+      %br/
+      .col-md-offset-5.col-md-4
+        = f.submit "Enviar instrucciones" , class:"btn btn-default btn-info"
+.row
+  .col-md-2.col-md-offset-1
+    = render "physicians/shared/links"

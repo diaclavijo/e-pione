@@ -1,7 +1,6 @@
 # RailsAdmin config file. Generated on October 25, 2013 17:55
 # See github.com/sferik/rails_admin for more informations
-require 'i18n'
-I18n.default_locale = :en
+
 
 RailsAdmin.config do |config|
 
@@ -69,6 +68,45 @@ RailsAdmin.config do |config|
 	end
 
 
+  config.model 'Diagnosis' do
+    list do
+      field :id do
+        column_width 1
+      end
+      field :diagnosis do
+        column_width 1
+      end
+      field :probability do
+        column_width 1
+      end
+      field :physician do
+        column_width 10
+      end
+      field :faq_score do
+        column_width 10
+      end
+      field :mmse_score do
+        column_width 10
+      end
+      field :education do
+        column_width 10
+      end
+      field :age do
+        column_width 10
+      end
+      field :correct do
+        column_width 10
+        pretty_value do
+          bindings[:view].correct value
+        end
+      end
+
+      field :created_at do
+        column_width 100
+      end
+
+    end
+  end
   ###  Admin  ###
 
   # config.model 'Admin' do
@@ -109,7 +147,7 @@ RailsAdmin.config do |config|
 
   #     list do
   #       # filters [:id, :name]  # Array of field names which filters should be shown by default in the table header
-  #       # items_per_page 100    # Override default_items_per_page
+  #       # items_per_page 10    # Override default_items_per_page
   #       # sort_by :id           # Sort column (default is primary key)
   #       # sort_reverse true     # Sort direction (default is true for primary key, last created first)
   #     end
