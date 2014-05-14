@@ -9,7 +9,7 @@ function slider(){
         speed:1500,
         pause: 5000,
         pager:false,
-        controls: true,
+        controls: false,
         slideWidth:800,
         useCSS:false //Compatibility for IE7+
 
