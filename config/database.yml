@@ -32,12 +32,13 @@ test: &test
 production:
   adapter: mysql2
   encoding: utf8
-  database: e-pione_production_db
+  database: e-pione_production
   pool: 5
-  host: 127.0.0.1
-  username: root
-  password: 'alzheimer'
-  socket: /var/run/mysqld/mysqld.sock
+  host: e-pione.cwmwruzeomph.us-east-1.rds.amazonaws.com
+  port: 3306
+  username: racer
+  password: '?*4zwpmY93CmgtB'
+  timeout: 5000
 
 staging:
   adapter: mysql2
