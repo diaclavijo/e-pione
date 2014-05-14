@@ -41,14 +41,15 @@
         <li class="hidden">
           <a href="#page-top"></a>
         </li>
-        <li class="page-scroll">
-          <%= link_to 'INICIAR SESIÓN', inicio_path %>
-        </li>
+
         <li class="page-scroll">
           <a href="<%= request.path=="/"? "#about" : "/#about" %>">ACERCA DE</a>
         </li>
         <li class="page-scroll">
           <a href="<%= request.path=="/"? "#colaborate" : "/#colaborate" %>">COLABORAR</a>
+        </li>
+        <li class="page-scroll">
+          <%= link_to 'INICIAR SESIÓN', inicio_path %>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
