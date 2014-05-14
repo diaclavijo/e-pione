@@ -132,6 +132,8 @@ a:focus {
 
 
 .jumbotron-home {
+    margin-top: 100px;  /* 80 px without btn-try */
+    margin-bottom: 0;
     background-color: #005a9f;
     padding: 7px; /*30 px without btn-try */
     color:#fff
@@ -208,10 +210,7 @@ a:focus {
         margin-bottom: 4px;
         background-color: #fff;
     }
-    .jumbotron-home{
-        margin-top: 100px;  /* 80 px without btn-try */
-        margin-bottom: 0;
-    }
+
     .go-up-scroll{
         display: none;  /*PUEDE QUE ESTO SE VEA MAL EN PANTALLAS NO MUY GRANDES */
 
@@ -221,9 +220,6 @@ a:focus {
 
 @media (min-height: 769px){
 
-    .jumbotron-home {
-        margin-top: 100px; /*30 px without btn-try */
-    }
 }
 
 
