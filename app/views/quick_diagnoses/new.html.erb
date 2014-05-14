@@ -28,6 +28,9 @@
                   <% if @computer_diagnosis.errors[:faq_score].any? %>
                       <h4><li>Puntuación de FAQ debe estar entre 0 y 30</li></h4>
                   <% end %>
+                  <% if @computer_diagnosis.errors[:age].any? %>
+                      <h4><li>El sistema trabaja únicamente con edades mayores de 62 años</li></h4>
+                  <% end %>
                 </ul>
               </div>
             </div>
