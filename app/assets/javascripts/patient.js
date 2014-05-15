@@ -12,7 +12,7 @@ var abc = (function(){
     });
 });
 
-// There is an error related to the turbolinks  
+// There is an error related to the turbolinks
 $(document).ready(abc);
 $(document).on('page:load', abc);
 // More detailed explanation here

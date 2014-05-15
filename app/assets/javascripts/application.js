@@ -17,6 +17,7 @@
 //= require bootstrap
 //= require patient
 //= require modal_score
+//= require fototest
 
 
 

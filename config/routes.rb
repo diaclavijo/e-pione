@@ -11,7 +11,7 @@ Epione::Application.routes.draw do
 	resource :contacts, only: [:new, :create]
 	resources :emailform, only: [:new, :create]
 
-  resource :fototests, only: [:new, :create]
+  resources :fototests, only: [:new, :create]
 
 
 	get 'support/', to: 'home#support', as: 'support'

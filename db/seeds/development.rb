@@ -36,6 +36,19 @@ Physician.create(email: 'david@diazclavijo.com',
                  password_confirmation: 'alzheimer',
                  name: 'David',
                  surname: 'Díaz Clavijo')
+
+Physician.create(email: 'david@diazclavijo.com',
+                 password: 'alzheimer',
+                 password_confirmation: 'alzheimer',
+                 name: 'David',
+                 surname: 'Díaz Clavijo')
+
+Physician.create(email: 'milohu@live.com', password: 'pino', password_confirmation: 'pino', name: 'Milohu', surname: 'Milohu')
+Physician.create(email: 'alejandrocarlos@gmail.com', password: 'pino', password_confirmation: 'pino', name: 'Alejandro', surname: 'Carlos')
+Physician.create(email: '
+naguilar@grupoicot.es', password: 'pino', password_confirmation: 'pino', name: 'David', surname: 'Díaz Clavijo')
+Physician.create(email: 'david@diazclavijo.com', password: 'pino', password_confirmation: 'pino', name: 'David', surname: 'Díaz Clavijo')
+
 puts 'Ends creating Physicians '
 
 puts 'Creating patients example'

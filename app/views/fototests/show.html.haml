@@ -10,9 +10,9 @@
       %p
         %span.Neg
           Edad:
-          %span.rojo= @edad
-          Fecha:
-          %span.rojo= @fecha
+          %span.rojo= @fototest.edad
+          Educacion:
+          %span.rojo= @fototest.education
     %table{border: '1', summary: 'Formulario del Fototest: resultados obtenidos', width: '90%'}
       %caption.FatH2 Fototest - Test de las Fotos
       %tr.FatH3
@@ -92,5 +92,5 @@
         %span.rojo 0.87
         para deterioro cognitivo.
     .centrar
-      %input{onclick: "parent.location='#{new_fototests_path}'", type: 'button', value: 'Nuevo test'}/
+      %input{onclick: "parent.location='#{new_fototest_path}'", type: 'button', value: 'Nuevo test'}/
       %input{onclick: 'window.print()', type: 'button', value: 'Imprimir'}/
