@@ -1,7 +1,8 @@
 .ContLAncho{style: 'min-height: 2000px;'}
   .OCntL
-    %p.centrar.lamina
-      = image_tag 'fototest.jpg', alt: 'Lámina del Fototest', size: '900x638', usemap: '#Map2'
+    %p.lamina
+      = image_tag 'fototest.jpg', alt: 'Lámina del Fototest', size: '900x638', usemap: '#Map2',
+      class:'img-responsive center-block'
       %map#Map2
         %area{alt: 'cartas', coords: '75,141,278,266', href: 'javascript:void(0)', onclick: "SumaAciertoCartas('denom');", shape: 'rect'}/
         %area{alt: 'coche', coords: '310,120,629,291', href: 'javascript:void(0)', onclick: "SumaAciertoCoche('denom');", shape: 'rect'}/
@@ -9,123 +10,127 @@
         %area{alt: 'trompeta', coords: '71,373,316,452', href: 'javascript:void(0)', onclick: "SumaAciertoTrompeta('denom');", shape: 'rect'}/
         %area{alt: 'zapatos', coords: '352,331,542,506', href: 'javascript:void(0)', onclick: "SumaAciertoZapatos('denom');", shape: 'rect'}/
         %area{alt: 'cuchara', coords: '600,384,819,444', href: 'javascript:void(0)', onclick: "SumaAciertoCuchara('denom');", shape: 'rect'}/
-    %p.centrar
-      %input#ayuda{name: 'ayuda', onclick: 'void(0)', type: 'button', value: 'Ayuda / Instrucciones'}/
-      %button#toggle Pulse para ocultar o reponer la lámina
+    %p
+      .row
+        .col-md-2.col-md-offset-4
+          %input#ayuda.btn.btn-info{name: 'ayuda', onclick: 'void(0)', type: 'button', value: 'Ayuda / Instrucciones'}/
+        .col-md-2
+          %button#toggle.btn.btn-primary Pulse para ocultar o reponer la lámina
     = form_for @fototest, html: {id: 'form1'}, url: fototests_path do |f|
       .centrar
-        %table{border: '1', summary: 'Formulario del test de las fotos. En él se introducen automá…ltados de las distintas fases de la administración del test.', width: '90%'}
-          %caption Fototest - El Test de las Fotos
-          %thead
-            %tr
-              %th
-                %span.Neg Categoría
-              %th Fotos
-              %th.centrar Denominación
-              %th.centrar Recuerdo Libre
-              %th.centrar Recuerdo Facilitado
-              %th.centrar
-                %label{for: 'iniciaHombres', style: @fototest.errors[:total_hombres_set].any? ? 'border: 5px groove #ff0000;' : '' }
-                %input#iniciaHombres{name: 'radio', onclick: 'temporizador = 0;clearTimeout(countdown);', type: 'radio', value: 'hombres'}/
-                Fluidez Hombres
-              %th.centrar
-                %label{for: 'iniciaMujeres', style: @fototest.errors[:total_mujeres_set].any? ? 'border: 5px groove #ff0000;' : '' }
-                  %input#iniciaMujeres{name: 'radio', onclick: 'temporizador = 0;clearTimeout(countdown);', type: 'radio', value: 'mujeres'}/
-                  Fluidez Mujeres
-          %tfoot
-            %tr
-              %td.Neg{colspan: '6'} Total Test de las Fotos (Den + RL + RF + FH + FM)
-              %td#Resultado.centrar 0
-          %tbody
-            %tr
-              %td.Neg Juego
-              %td.Neg Cartas
-              %td.centrar
-                %input#carta1{name: 'carta1', onclick: "SumaAciertoCartas('denom');", type: 'button', value: ''}/
-                %span#ca1 0
-              %td.centrar
-                %input#carta2{name: 'carta2', onclick: "SumaAciertoCartas('libre');", type: 'button', value: ''}/
-                %span#ca2 0
-              %td.centrar
-                %input#carta3{name: 'carta3', onclick: "SumaAciertoCartas('facil');", type: 'button', value: ''}/
-                %span#ca3 0
-              %td.centrar{rowspan: '5'}
-                %input#hombresInc{name: 'hombresInc', onclick: 'sonHombres = 1;sonMujeres = 0;countdown_init();incHombres();', type: 'button', value: '+'}/
-                %input#hombresDec{name: 'hombresDec', onclick: 'sonHombres = 1;sonMujeres = 0;decHombres()', type: 'button', value: '-'}/
-              %td.centrar{rowspan: '5'}
-                %input#mujeresInc{name: 'mujeresInc', onclick: 'sonMujeres = 1;sonHombres = 0;countdown_init();incMujeres();', type: 'button', value: '+'}/
-                %input#mujeresDec{name: 'mujeresDec', onclick: 'sonMujeres = 1;sonHombres = 0;decMujeres()', type: 'button', value: '-'}/
-            %tr
-              %td.Neg Vehculo
-              %td.Neg Coche
-              %td.centrar
-                %input#coch1{name: 'coch1', onclick: "SumaAciertoCoche('denom');", type: 'button', value: ''}/
-                %span#co1 0
-              %td.centrar
-                %input#coch2{name: 'coch2', onclick: "SumaAciertoCoche('libre');", type: 'button', value: ''}/
-                %span#co2 0
-              %td.centrar
-                %input#coch3{name: 'coch3', onclick: "SumaAciertoCoche('facil');", type: 'button', value: ''}/
-                %span#co3 0
-            %tr
-              %td.Neg Fruta
-              %td.Neg Pera
-              %td.centrar
-                %input#per1{name: 'per1', onclick: "SumaAciertoPera('denom');", type: 'button', value: ''}/
-                %span#pe1 0
-              %td.centrar
-                %input#per2{name: 'per2', onclick: "SumaAciertoPera('libre');", type: 'button', value: ''}/
-                %span#pe2 0
-              %td.centrar
-                %input#per3{name: 'per3', onclick: "SumaAciertoPera('facil');", type: 'button', value: ''}/
-                %span#pe3 0
-            %tr
-              %td.Neg Inst. Musical
-              %td.Neg Trompeta
-              %td.centrar
-                %input#trompet1{name: 'trompet1', onclick: "SumaAciertoTrompeta('denom');", type: 'button', value: ''}/
-                %span#tr1 0
-              %td.centrar
-                %input#trompet2{name: 'trompet2', onclick: "SumaAciertoTrompeta('libre');", type: 'button', value: ''}/
-                %span#tr2 0
-              %td.centrar
-                %input#trompet3{name: 'trompet3', onclick: "SumaAciertoTrompeta('facil');", type: 'button', value: ''}/
-                %span#tr3 0
-            %tr
-              %td.Neg Prenda Vestir
-              %td.Neg Zapatos
-              %td.centrar
-                %input#zapato1{name: 'zapato1', onclick: "SumaAciertoZapatos('denom');", type: 'button', value: ''}/
-                %span#za1 0
-              %td.centrar
-                %input#zapato2{name: 'zapato2', onclick: "SumaAciertoZapatos('libre');", type: 'button', value: ''}/
-                %span#za2 0
-              %td.centrar
-                %input#zapato3{name: 'zapato3', onclick: "SumaAciertoZapatos('facil');", type: 'button', value: ''}/
-                %span#za3 0
-            %tr
-              %td.Neg Cubierto
-              %td.Neg Cuchara
-              %td.centrar
-                %input#cuchar1{name: 'cuchar1', onclick: "SumaAciertoCuchara('denom');", type: 'button', value: ''}/
-                %span#cu1 0
-              %td.centrar
-                %input#cuchar2{name: 'cuchar2', onclick: "SumaAciertoCuchara('libre');", type: 'button', value: ''}/
-                %span#cu2 0
-              %td.centrar
-                %input#cuchar3{name: 'cuchar3', onclick: "SumaAciertoCuchara('facil');", type: 'button', value: ''}/
-                %span#cu3 0
-              %td.centrar{colspan: '2'}
-                .FatH1.IL Tiempo restante:
-                #countdown_text.FatH1.IL 30
-                .FatH1.IL s
-            %tr
-              %td.Neg{colspan: '2'} Subtotales
-              %td#totalDenom.centrar 0
-              %td#totalLibre.centrar 0
-              %td#totalFacil.centrar 0
-              %td#totalHombres.centrar 0
-              %td#totalMujeres.centrar 0
+        .table-responsive
+          %table.table.table-condensed.table-bordered{border: '0 ', summary: 'Formulario del test de las fotos. En él se introducen automá…ltados de las distintas fases de la administración del test.', width: '90%'}
+            %caption Fototest - El Test de las Fotos
+            %thead
+              %tr.active
+                %th
+                  %span.Neg Categoría
+                %th Fotos
+                %th.centrar Denominación
+                %th.centrar Recuerdo Libre
+                %th.centrar Recuerdo Facilitado
+                %th.centrar
+                  %label{for: 'iniciaHombres', style: @fototest.errors[:total_hombres_set].any? ? 'border: 5px groove #ff0000;' : '' }
+                  %input#iniciaHombres{name: 'radio', onclick: 'temporizador = 0;clearTimeout(countdown);', type: 'radio', value: 'hombres'}/
+                  Fluidez Hombres
+                %th.centrar
+                  %label{for: 'iniciaMujeres', style: @fototest.errors[:total_mujeres_set].any? ? 'border: 5px groove #ff0000;' : '' }
+                    %input#iniciaMujeres{name: 'radio', onclick: 'temporizador = 0;clearTimeout(countdown);', type: 'radio', value: 'mujeres'}/
+                    Fluidez Mujeres
+            %tfoot
+              %tr
+                %td.Neg{colspan: '6'} Total Test de las Fotos (Den + RL + RF + FH + FM)
+                %td#Resultado.centrar 0
+            %tbody
+              %tr
+                %td.Neg Juego
+                %td.Neg Cartas
+                %td.centrar
+                  %input#carta1{name: 'carta1', onclick: "SumaAciertoCartas('denom');", type: 'button', value: '+'}/
+                  %span#ca1 0
+                %td.centrar
+                  %input#carta2{name: 'carta2', onclick: "SumaAciertoCartas('libre');", type: 'button', value: '+'}/
+                  %span#ca2 0
+                %td.centrar
+                  %input#carta3{name: 'carta3', onclick: "SumaAciertoCartas('facil');", type: 'button', value: '+'}/
+                  %span#ca3 0
+                %td.centrar{rowspan: '5'}
+                  %input#hombresInc{name: 'hombresInc', onclick: 'sonHombres = 1;sonMujeres = 0;countdown_init();incHombres();', type: 'button', value: '+'}/
+                  %input#hombresDec{name: 'hombresDec', onclick: 'sonHombres = 1;sonMujeres = 0;decHombres()', type: 'button', value: '-'}/
+                %td.centrar{rowspan: '5'}
+                  %input#mujeresInc{name: 'mujeresInc', onclick: 'sonMujeres = 1;sonHombres = 0;countdown_init();incMujeres();', type: 'button', value: '+'}/
+                  %input#mujeresDec{name: 'mujeresDec', onclick: 'sonMujeres = 1;sonHombres = 0;decMujeres()', type: 'button', value: '-'}/
+              %tr
+                %td.Neg Vehculo
+                %td.Neg Coche
+                %td.centrar
+                  %input#coch1{name: 'coch1', onclick: "SumaAciertoCoche('denom');", type: 'button', value: '+'}/
+                  %span#co1 0
+                %td.centrar
+                  %input#coch2{name: 'coch2', onclick: "SumaAciertoCoche('libre');", type: 'button', value: '+'}/
+                  %span#co2 0
+                %td.centrar
+                  %input#coch3{name: 'coch3', onclick: "SumaAciertoCoche('facil');", type: 'button', value: '+'}/
+                  %span#co3 0
+              %tr
+                %td.Neg Fruta
+                %td.Neg Pera
+                %td.centrar
+                  %input#per1{name: 'per1', onclick: "SumaAciertoPera('denom');", type: 'button', value: '+'}/
+                  %span#pe1 0
+                %td.centrar
+                  %input#per2{name: 'per2', onclick: "SumaAciertoPera('libre');", type: 'button', value: '+'}/
+                  %span#pe2 0
+                %td.centrar
+                  %input#per3{name: 'per3', onclick: "SumaAciertoPera('facil');", type: 'button', value: '+'}/
+                  %span#pe3 0
+              %tr
+                %td.Neg Inst. Musical
+                %td.Neg Trompeta
+                %td.centrar
+                  %input#trompet1{name: 'trompet1', onclick: "SumaAciertoTrompeta('denom');", type: 'button', value: '+'}/
+                  %span#tr1 0
+                %td.centrar
+                  %input#trompet2{name: 'trompet2', onclick: "SumaAciertoTrompeta('libre');", type: 'button', value: '+'}/
+                  %span#tr2 0
+                %td.centrar
+                  %input#trompet3{name: 'trompet3', onclick: "SumaAciertoTrompeta('facil');", type: 'button', value: '+'}/
+                  %span#tr3 0
+              %tr
+                %td.Neg Prenda Vestir
+                %td.Neg Zapatos
+                %td.centrar
+                  %input#zapato1{name: 'zapato1', onclick: "SumaAciertoZapatos('denom');", type: 'button', value: '+'}/
+                  %span#za1 0
+                %td.centrar
+                  %input#zapato2{name: 'zapato2', onclick: "SumaAciertoZapatos('libre');", type: 'button', value: '+'}/
+                  %span#za2 0
+                %td.centrar
+                  %input#zapato3{name: 'zapato3', onclick: "SumaAciertoZapatos('facil');", type: 'button', value: '+'}/
+                  %span#za3 0
+              %tr
+                %td.Neg Cubierto
+                %td.Neg Cuchara
+                %td.centrar
+                  %input#cuchar1{name: 'cuchar1', onclick: "SumaAciertoCuchara('denom');", type: 'button', value: '+'}/
+                  %span#cu1 0
+                %td.centrar
+                  %input#cuchar2{name: 'cuchar2', onclick: "SumaAciertoCuchara('libre');", type: 'button', value: '+'}/
+                  %span#cu2 0
+                %td.centrar
+                  %input#cuchar3{name: 'cuchar3', onclick: "SumaAciertoCuchara('facil');", type: 'button', value: '+'}/
+                  %span#cu3 0
+                %td.centrar{colspan: '2'}
+                  .FatH1.IL Tiempo restante:
+                  #countdown_text.FatH1.IL 30
+                  .FatH1.IL s
+              %tr
+                %td.Neg{colspan: '2'} Subtotales
+                %td#totalDenom.centrar 0
+                %td#totalLibre.centrar 0
+                %td#totalFacil.centrar 0
+                %td#totalHombres.centrar 0
+                %td#totalMujeres.centrar 0
         %p
           %label{for: 'Edad'}
             Edad del sujeto:
@@ -153,5 +158,5 @@
         = f.hidden_field :total_mujeres_set
         %br/
         %p.centrar
-          %input#Reset{name: 'Reset', onclick: "cartas1 = coche1 = pera1 = trompeta1 = zapatos1 = cuchara1 = cartas2 = coche2 = pera2 = trompeta2 = zapatos2 = cuchara2 = cartas3 = coche3 = pera3 = trompeta3 = zapatos3 = cuchara3 = totalDenom = totalLibre = totalFacil = totalHombres = totalMujeres = puntos = temporizador = countdown_number = sonHombres = sonMujeres = 0; fase = 'ninguna'; clearTimeout(countdown);", type: 'reset', value: 'Nuevo test'}/
-          %input#Enviar{name: 'Enviar', onclick: 'hombres2str();mujeres2str();document.forms["form1"]["fototest[cadena]"].value=cartas1+""+coche1+""+pera1+""+trompeta1+""+zapatos1+""+cuchara1+""+cartas2+""+coche2+""+pera2+""+trompeta2+""+zapatos2+""+cuchara2+""+cartas3+""+coche3+""+pera3+""+trompeta3+""+zapatos3+""+cuchara3+""+totalHombres+""+totalMujeres', type: 'submit', value: 'Enviar datos'}/
+          %input.btn.btn-info#Reset{name: 'Reset', onclick: "cartas1 = coche1 = pera1 = trompeta1 = zapatos1 = cuchara1 = cartas2 = coche2 = pera2 = trompeta2 = zapatos2 = cuchara2 = cartas3 = coche3 = pera3 = trompeta3 = zapatos3 = cuchara3 = totalDenom = totalLibre = totalFacil = totalHombres = totalMujeres = puntos = temporizador = countdown_number = sonHombres = sonMujeres = 0; fase = 'ninguna'; clearTimeout(countdown);", type: 'reset', value: 'Nuevo test'}/
+          %input.btn.btn-primary#Enviar{name: 'Enviar', onclick: 'hombres2str();mujeres2str();document.forms["form1"]["fototest[cadena]"].value=cartas1+""+coche1+""+pera1+""+trompeta1+""+zapatos1+""+cuchara1+""+cartas2+""+coche2+""+pera2+""+trompeta2+""+zapatos2+""+cuchara2+""+cartas3+""+coche3+""+pera3+""+trompeta3+""+zapatos3+""+cuchara3+""+totalHombres+""+totalMujeres', type: 'submit', value: 'Enviar datos'}/
