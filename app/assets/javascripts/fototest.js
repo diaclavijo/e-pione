@@ -474,3 +474,27 @@ function clearText(thefield){                  // limpia el campo de fecha o de 
   if (thefield.defaultValue == thefield.value)
     thefield.value = ""
 }
+
+function send_form(){
+  $('#fototest_cartas1').val(cartas1);
+  $('#fototest_cartas2').val(cartas2);
+  $('#fototest_cartas3').val(cartas3);
+  $('#fototest_coche1').val(coche1);
+  $('#fototest_coche2').val(coche2);
+  $('#fototest_coche3').val(coche3);
+  $('#fototest_pera1').val(pera1);
+  $('#fototest_pera2').val(pera2);
+  $('#fototest_pera3').val(pera3);
+  $('#fototest_trompeta1').val(trompeta1);
+  $('#fototest_trompeta2').val(trompeta2);
+  $('#fototest_trompeta3').val(trompeta3);
+  $('#fototest_zapatos1').val(zapatos1);
+  $('#fototest_zapatos2').val(zapatos2);
+  $('#fototest_zapatos3').val(zapatos3);
+  $('#fototest_cuchara1').val(cuchara1);
+  $('#fototest_cuchara2').val(cuchara2);
+  $('#fototest_cuchara3').val(cuchara3);
+  $('#fototest_total_hombres').val(totalHombres);
+  $('#fototest_total_mujeres').val(totalMujeres);
+
+}

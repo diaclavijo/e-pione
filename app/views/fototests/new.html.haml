@@ -134,7 +134,7 @@
         %p
           %label{for: 'Edad'}
             Edad del sujeto:
-            = f.number_field :edad
+            = f.number_field :age
           %br/
         %br/
         #education
@@ -153,10 +153,27 @@
           .col-md-1
             = f.number_field :education , class:'form-control input-sm', id: 'patient_education'
           .col-md-2.text-muted.text-left Máx. 20 años
-        = f.hidden_field :cadena
-        = f.hidden_field :total_hombres_set
-        = f.hidden_field :total_mujeres_set
+        = f.hidden_field :cartas1
+        = f.hidden_field :cartas2
+        = f.hidden_field :cartas3
+        = f.hidden_field :coche1
+        = f.hidden_field :coche2
+        = f.hidden_field :coche3
+        = f.hidden_field :pera1
+        = f.hidden_field :pera2
+        = f.hidden_field :pera3
+        = f.hidden_field :trompeta1
+        = f.hidden_field :trompeta2
+        = f.hidden_field :trompeta3
+        = f.hidden_field :zapatos1
+        = f.hidden_field :zapatos2
+        = f.hidden_field :zapatos3
+        = f.hidden_field :cuchara1
+        = f.hidden_field :cuchara2
+        = f.hidden_field :cuchara3
+        = f.hidden_field :total_hombres
+        = f.hidden_field :total_mujeres
         %br/
         %p.centrar
           %input.btn.btn-info#Reset{name: 'Reset', onclick: "cartas1 = coche1 = pera1 = trompeta1 = zapatos1 = cuchara1 = cartas2 = coche2 = pera2 = trompeta2 = zapatos2 = cuchara2 = cartas3 = coche3 = pera3 = trompeta3 = zapatos3 = cuchara3 = totalDenom = totalLibre = totalFacil = totalHombres = totalMujeres = puntos = temporizador = countdown_number = sonHombres = sonMujeres = 0; fase = 'ninguna'; clearTimeout(countdown);", type: 'reset', value: 'Nuevo test'}/
-          %input.btn.btn-primary#Enviar{name: 'Enviar', onclick: 'hombres2str();mujeres2str();document.forms["form1"]["fototest[cadena]"].value=cartas1+""+coche1+""+pera1+""+trompeta1+""+zapatos1+""+cuchara1+""+cartas2+""+coche2+""+pera2+""+trompeta2+""+zapatos2+""+cuchara2+""+cartas3+""+coche3+""+pera3+""+trompeta3+""+zapatos3+""+cuchara3+""+totalHombres+""+totalMujeres', type: 'submit', value: 'Enviar datos'}/
+          %input.btn.btn-primary#Enviar{name: 'Enviar', onclick: 'send_form();', type: 'submit', value: 'Enviar datos'}/

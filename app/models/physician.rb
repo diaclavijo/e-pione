@@ -7,6 +7,7 @@ class Physician < ActiveRecord::Base
   validates :name, :surname, presence: true
 
 	has_many :computer_diagnoses, dependent: :nullify
+  has_many :fototests, dependent: :nullify
 
   def full_name
     self[:name] + ' ' + self[:surname]
