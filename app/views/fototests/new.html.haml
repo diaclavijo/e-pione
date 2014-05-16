@@ -121,9 +121,9 @@
                   %input#cuchar3{name: 'cuchar3', onclick: "SumaAciertoCuchara('facil');", type: 'button', value: '+'}/
                   %span#cu3 0
                 %td.centrar{colspan: '2'}
-                  .FatH1.IL Tiempo restante:
-                  #countdown_text.FatH1.IL 30
-                  .FatH1.IL s
+                  .FatH1.IL.h4 Tiempo restante:
+                  #countdown_text.FatH1.IL.h4 30
+                  .FatH1.IL.h4 s
               %tr
                 %td.Neg{colspan: '2'} Subtotales
                 %td#totalDenom.centrar 0
@@ -131,28 +131,31 @@
                 %td#totalFacil.centrar 0
                 %td#totalHombres.centrar 0
                 %td#totalMujeres.centrar 0
-        %p
-          %label{for: 'Edad'}
-            Edad del sujeto:
-            = f.number_field :age
+        .row
+          %p
+            .col-md-2
+              %label{for: 'Edad'}
+                Edad del sujeto:
+                = f.number_field :age ,class:'form-control'
+              %br/
           %br/
-        %br/
-        #education
-          .col-md-3
-            = f.label :education_select, 'Escolaridad'
-          .col-md-4
-            = f.select :education_select,           |
-              educations ,                          |
-              { include_blank: 'Seleccionar...' } , |
-              class:'form-control',                 |
-              id: 'patient_education_select'        |
-        %br/
-        #patient_education_div{style: 'display: ' + (@fototest.education_select == -1 ? 'inline' : 'none') }
-          .col-md-4.col-md-offset-3
-            = f.label :education, 'Otro'
-          .col-md-1
-            = f.number_field :education , class:'form-control input-sm', id: 'patient_education'
-          .col-md-2.text-muted.text-left Máx. 20 años
+          .col-md-6
+            #education
+              .col-md-3
+                = f.label :education_select, 'Escolaridad'
+              .col-md-4
+                = f.select :education_select,           |
+                  educations ,                          |
+                  { include_blank: 'Seleccionar...' } , |
+                  class:'form-control',                 |
+                  id: 'patient_education_select'        |
+            %br/
+            #patient_education_div{style: 'display: ' + (@fototest.education_select == -1 ? 'inline' : 'none') }
+              .col-md-4.col-md-offset-3
+                = f.label :education, 'Otro'
+              .col-md-2
+                = f.number_field :education , class:'form-control input-sm', id: 'patient_education'
+              .col-md-2.text-muted.text-left Máx. 20 años
         = f.hidden_field :cartas1
         = f.hidden_field :cartas2
         = f.hidden_field :cartas3
@@ -174,6 +177,9 @@
         = f.hidden_field :total_hombres
         = f.hidden_field :total_mujeres
         %br/
-        %p.centrar
-          %input.btn.btn-info#Reset{name: 'Reset', onclick: "cartas1 = coche1 = pera1 = trompeta1 = zapatos1 = cuchara1 = cartas2 = coche2 = pera2 = trompeta2 = zapatos2 = cuchara2 = cartas3 = coche3 = pera3 = trompeta3 = zapatos3 = cuchara3 = totalDenom = totalLibre = totalFacil = totalHombres = totalMujeres = puntos = temporizador = countdown_number = sonHombres = sonMujeres = 0; fase = 'ninguna'; clearTimeout(countdown);", type: 'reset', value: 'Nuevo test'}/
-          %input.btn.btn-primary#Enviar{name: 'Enviar', onclick: 'send_form();', type: 'submit', value: 'Enviar datos'}/
+        %hr
+        %p
+          .row
+            .col-md-2.col-md-offset-5
+              %input.btn.btn-primary.btn-block#Enviar{name: 'Enviar', onclick: 'send_form();', type: 'submit', value: 'Enviar datos'}/
+              %input.btn.btn-info.btn-block#Reset{name: 'Reset', onclick: "cartas1 = coche1 = pera1 = trompeta1 = zapatos1 = cuchara1 = cartas2 = coche2 = pera2 = trompeta2 = zapatos2 = cuchara2 = cartas3 = coche3 = pera3 = trompeta3 = zapatos3 = cuchara3 = totalDenom = totalLibre = totalFacil = totalHombres = totalMujeres = puntos = temporizador = countdown_number = sonHombres = sonMujeres = 0; fase = 'ninguna'; clearTimeout(countdown);", type: 'reset', value: 'Nuevo test'}/
