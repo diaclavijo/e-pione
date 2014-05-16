@@ -10,7 +10,7 @@
       %p
         %span.Neg
           Edad:
-          %span.rojo= @fototest.edad
+          %span.rojo= @fototest.age
           Educacion:
           %span.rojo= @fototest.education
     %table{border: '1', summary: 'Formulario del Fototest: resultados obtenidos', width: '90%'}
@@ -66,8 +66,8 @@
         %td.centrar= @fototest.total1
         %td.centrar= @fototest.total2
         %td.centrar= @fototest.total3
-        %td.centrar= @fototest.totalHombres
-        %td.centrar= @fototest.totalMujeres
+        %td.centrar= @fototest.total_hombres
+        %td.centrar= @fototest.total_mujeres
       %tr
         %td.Neg{colspan: '6'} Total Test de las Fotos (Den + RL + RF + FH + FM)
         %td.centrar= @fototest.total

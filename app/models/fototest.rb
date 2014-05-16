@@ -32,7 +32,7 @@ class Fototest < ActiveRecord::Base
   end
 
   def total
-    total1 + total2 + total3 + totalHombres + totalMujeres
+    total1 + total2 + total3 + total_hombres + total_mujeres
   end
 
 

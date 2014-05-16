@@ -7,7 +7,9 @@ class FototestsController < ApplicationControllerSigned
   def create
     @fototest = current_physician.fototests.new fototest_params
     if @fototest.valid_siad_exec?
-      @fototest.diagnosis, @fototest.probability = fototest_siad fototest_params
+      siad_params = fototest_params.to_hash.symbolize_keys
+      siad_params.delete :education_select
+      @fototest.diagnosis, @fototest.probability = fototest_siad siad_params
       siad_error = true unless ( @fototest.diagnosis && @fototest.probability )
     end
     respond_to do |format|
