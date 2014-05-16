@@ -32,7 +32,7 @@ class FototestsController < ApplicationControllerSigned
         cartas3: nil, coche3: nil, pera3: nil, trompeta3: nil, zapatos3: nil, cuchara3: nil,
         total_hombres: nil, total_mujeres: nil
     )
-      python_script = 'python3.4 /opt/fototest/fototest.py'
+      python_script = 'python3 /opt/fototest/fototest.py'
       return nil unless age && education && # all the args are mandatory
           cartas1 && coche1 && pera1 && trompeta1 && zapatos1 && cuchara1 &&
           cartas2 && coche2 && pera2 && trompeta2 && zapatos2 && cuchara2 &&
