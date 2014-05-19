@@ -28,7 +28,7 @@ class CreateFototest < ActiveRecord::Migration
       t.integer :total_hombres
       t.integer :total_mujeres
 
-      t.timestamp
+      t.timestamps
     end
   end
 end

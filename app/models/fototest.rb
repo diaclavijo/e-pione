@@ -35,8 +35,6 @@ class Fototest < ActiveRecord::Base
     total1 + total2 + total3 + total_hombres + total_mujeres
   end
 
-
-
   # Code duplicated, consider refactoring
   def valid_siad_exec?
     self.siad_params_validation = true
@@ -45,5 +43,7 @@ class Fototest < ActiveRecord::Base
     aux
   end
 
-
+  def sane?
+    diagnosis == 0
+  end
 end

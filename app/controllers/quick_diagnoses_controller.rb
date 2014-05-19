@@ -3,6 +3,7 @@ class QuickDiagnosesController < ApplicationControllerSigned
 
   # GET /quick_diagnoses/new
   def new
+    redirect_to new_fototest_path if current_physician.default_test == 'fototest'
     @computer_diagnosis = current_physician.computer_diagnoses.build
   end
 

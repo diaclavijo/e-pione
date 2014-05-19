@@ -33,7 +33,7 @@ RailsAdmin.config do |config|
   #config.excluded_models = ['Admin', 'TestFaq', 'TestMinimental']
 
   # Include specific models (exclude the others):
-  config.included_models = ['Admin', 'Physician', 'Diagnosis']
+  config.included_models = ['Admin', 'Physician', 'Diagnosis', 'Fototest']
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
@@ -101,6 +101,97 @@ RailsAdmin.config do |config|
         end
       end
 
+      field :created_at do
+        column_width 100
+      end
+
+    end
+  end
+
+  config.model 'Fototest' do
+    list do
+      field :id do
+        column_width 1
+      end
+      field :diagnosis do
+        column_width 1
+      end
+      field :probability do
+        column_width 1
+      end
+      field :physician do
+        column_width 10
+      end
+      field :age do
+        column_width 10
+      end
+      field :correct do
+        column_width 10
+
+      end
+      field :education do
+        column_width 10
+      end
+      field :cartas1 do
+        column_width 10
+      end
+      field :coche1 do
+        column_width 10
+      end
+      field :pera1 do
+        column_width 10
+      end
+      field :trompeta1 do
+        column_width 10
+      end
+      field :zapatos1 do
+        column_width 10
+      end
+      field :cuchara1 do
+        column_width 10
+      end
+      field :cartas2 do
+        column_width 10
+      end
+      field :coche2 do
+        column_width 10
+      end
+      field :pera2 do
+        column_width 10
+      end
+      field :trompeta2 do
+        column_width 10
+      end
+      field :zapatos2 do
+        column_width 10
+      end
+      field :cuchara2 do
+        column_width 10
+      end
+      field :cartas3 do
+        column_width 10
+      end
+      field :coche3 do
+        column_width 10
+      end
+      field :pera3 do
+        column_width 10
+      end
+      field :trompeta3 do
+        column_width 10
+      end
+      field :zapatos3 do
+        column_width 10
+      end
+      field :cuchara3 do
+        column_width 10
+      end
+      field :total_hombres do
+        column_width 10
+      end
+      field :total_mujeres do
+        column_width 10
+      end
       field :created_at do
         column_width 100
       end

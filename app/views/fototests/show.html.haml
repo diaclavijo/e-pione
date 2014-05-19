@@ -71,26 +71,7 @@
       %tr
         %td.Neg{colspan: '6'} Total Test de las Fotos (Den + RL + RF + FH + FM)
         %td.centrar= @fototest.total
-    %p
-      %span.Neg
-        Este resultado corresponde a un percentil
-        %span.rojo 5
-        y a una puntuación Z de
-        = succeed '.' do
-          %span.rojo -4,05
-    %p
-      %span.Neg
-        Una puntuación como esta o inferior tiene un cociente de probabilidad positivo de
-        %span.rojo
-          %span.FatH2 ∞
-        para demencia y
-        %span.rojo
-          %span.FatH2 ∞
-        para deterioro cognitivo, y un cociente de probabilidad negativo de
-        %span.rojo 0.78
-        para demencia y
-        %span.rojo 0.87
-        para deterioro cognitivo.
+    %p El paciente tiene una probabilidad de padecer deterioro cognitivo de #{@fototest.probability} y una probabilidad de padecer demencia de #{@fototest.probability}
     .centrar
       %input{onclick: "parent.location='#{new_fototest_path}'", type: 'button', value: 'Nuevo test'}/
       %input{onclick: 'window.print()', type: 'button', value: 'Imprimir'}/
