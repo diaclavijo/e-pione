@@ -2,76 +2,84 @@
   .OCntL
     .NoSubSp
       %p
-        %span.Neg> Nombre:
-        _________________________________________________
-      %p
-        %span.Neg> Número de Historia:
-        _______
-      %p
-        %span.Neg
-          Edad:
-          %span.rojo= @fototest.age
-          Educacion:
-          %span.rojo= @fototest.education
-    %table{border: '1', summary: 'Formulario del Fototest: resultados obtenidos', width: '90%'}
-      %caption.FatH2 Fototest - Test de las Fotos
-      %tr.FatH3
-        %td.Neg{width: '15ex'} Categoría
-        %td.Neg{width: '10ex'} Fotos
-        %td.Neg.centrar{width: '7ex'} Den
-        %td.Neg.centrar{width: '7ex'} RL
-        %td.Neg.centrar{width: '7ex'} RF
-        %td.Neg.centrar{width: '50ex'} Fluidez hombres (FH)
-        %td.Neg.centrar{width: '50ex'} Fluidez mujeres (FM)
-      %tr
-        %td.Neg Juego
-        %td.Neg Cartas
-        %td.centrar= @fototest.cartas1
-        %td.centrar= @fototest.cartas2
-        %td.centrar= @fototest.cartas3
-        %td.centrar{rowspan: '6'}  
-        %td.centrar{rowspan: '6'}  
-      %tr
-        %td.Neg Vehículo
-        %td.Neg Coche
-        %td.centrar= @fototest.coche1
-        %td.centrar= @fototest.coche2
-        %td.centrar= @fototest.coche3
-      %tr
-        %td.Neg Fruta
-        %td.Neg Pera
-        %td.centrar= @fototest.pera1
-        %td.centrar= @fototest.pera2
-        %td.centrar= @fototest.pera3
-      %tr
-        %td.Neg Inst. Musical
-        %td.Neg Trompeta
-        %td.centrar= @fototest.trompeta1
-        %td.centrar= @fototest.trompeta2
-        %td.centrar= @fototest.trompeta3
-      %tr
-        %td.Neg Prenda vestir
-        %td.Neg Zapatos
-        %td.centrar= @fototest.zapatos1
-        %td.centrar= @fototest.zapatos2
-        %td.centrar= @fototest.zapatos3
-      %tr
-        %td.Neg Cubierto
-        %td.Neg Cuchara
-        %td.centrar= @fototest.cuchara1
-        %td.centrar= @fototest.cuchara2
-        %td.centrar= @fototest.cuchara3
-      %tr
-        %td.Neg{colspan: '2'} Subtotales
-        %td.centrar= @fototest.total1
-        %td.centrar= @fototest.total2
-        %td.centrar= @fototest.total3
-        %td.centrar= @fototest.total_hombres
-        %td.centrar= @fototest.total_mujeres
-      %tr
-        %td.Neg{colspan: '6'} Total Test de las Fotos (Den + RL + RF + FH + FM)
-        %td.centrar= @fototest.total
-    %p El paciente tiene una probabilidad de padecer deterioro cognitivo de #{@fototest.probability} y una probabilidad de padecer demencia de #{@fototest.probability}
-    .centrar
-      %input{onclick: "parent.location='#{new_fototest_path}'", type: 'button', value: 'Nuevo test'}/
-      %input{onclick: 'window.print()', type: 'button', value: 'Imprimir'}/
+        .row
+          .col-md-1
+            Edad:
+            %span
+              %strong
+                = @fototest.age
+          .col-md-2
+            Educacion:
+            %span
+              %strong
+                = @fototest.education
+    .table-responsive
+      %table.table.table-condensed.table-bordered{border: '0', summary: 'Formulario del Fototest: resultados obtenidos', width: '90%'}
+        %caption.h4 Fototest - Test de las Fotos:Resultados
+        %thead
+          %tr.active
+            %th{width: '15ex'} Categoría
+            %th{width: '10ex'} Fotos
+            %th{width: '7ex'} Den
+            %th{width: '7ex'} RL
+            %th{width: '7ex'} RF
+            %th{width: '50ex'} Fluidez hombres (FH)
+            %th{width: '50ex'} Fluidez mujeres (FM)
+        %tbody
+          %tr
+            %td Juego
+            %td Cartas
+            %td= @fototest.cartas1
+            %td= @fototest.cartas2
+            %td= @fototest.cartas3
+            %td{rowspan: '6'}
+            %td{rowspan: '6'}
+          %tr
+            %td Vehículo
+            %td Coche
+            %td= @fototest.coche1
+            %td= @fototest.coche2
+            %td= @fototest.coche3
+          %tr
+            %td Fruta
+            %td Pera
+            %td= @fototest.pera1
+            %td= @fototest.pera2
+            %td= @fototest.pera3
+          %tr
+            %td Inst. Musical
+            %td Trompeta
+            %td= @fototest.trompeta1
+            %td= @fototest.trompeta2
+            %td= @fototest.trompeta3
+          %tr
+            %td Prenda vestir
+            %td Zapatos
+            %td= @fototest.zapatos1
+            %td= @fototest.zapatos2
+            %td= @fototest.zapatos3
+          %tr
+            %td Cubierto
+            %td Cuchara
+            %td= @fototest.cuchara1
+            %td= @fototest.cuchara2
+            %td= @fototest.cuchara3
+          %tr
+            %td{colspan: '2'} Subtotales
+            %td= @fototest.total1
+            %td= @fototest.total2
+            %td= @fototest.total3
+            %td= @fototest.total_hombres
+            %td= @fototest.total_mujeres
+          %tr
+            %td.h4.text-right{colspan: '6'} Total Test de las Fotos(Den + RL + RF + FH + FM)
+            %td.h4= @fototest.total
+      - message_kind_ft = @fototest.sane? ?  "alert-success" : "alert-danger"
+      %p{class: "alert #{message_kind_ft} alert-dismissable lead text-center"}
+        Paciente sano con probabilidad #{@fototest.probability}
+      %hr
+      .row
+        .col-md-2.col-md-offset-4
+          %input.btn.btn-info.btn-block{onclick: "parent.location='#{new_fototest_path}'", type: 'button', value: 'Nuevo test'}/
+        .col-md-2
+          %input.btn.btn-warning.btn-block{onclick: 'window.print()', type: 'button', value: 'Imprimir'}/
