@@ -39,19 +39,19 @@
           %tfoot
             %tr
               %td.h4.text-right{colspan: '6'} Total Test de las Fotos (Den + RL + RF + FH + FM)
-              %td#Resultado.centrar 0
+              %td.h4#Resultado 0
           %tbody
             %tr
               %td Juego
               %td Cartas
               %td
-                %input#carta1{name: 'carta1', onclick: "SumaAciertoCartas('denom');", type: 'button', value: '+'}/
+                %input#carta1{name: 'carta1', onclick: "SumaAciertoCartas('denom');", type: 'button', value: '±'}/
                 %span#ca1 0
               %td
-                %input#carta2{name: 'carta2', onclick: "SumaAciertoCartas('libre');", type: 'button', value: '+'}/
+                %input#carta2{name: 'carta2', onclick: "SumaAciertoCartas('libre');", type: 'button', value: '±'}/
                 %span#ca2 0
               %td
-                %input#carta3{name: 'carta3', onclick: "SumaAciertoCartas('facil');", type: 'button', value: '+'}/
+                %input#carta3{name: 'carta3', onclick: "SumaAciertoCartas('facil');", type: 'button', value: '±'}/
                 %span#ca3 0
               %td{rowspan: '5'}
                 %input#hombresInc{name: 'hombresInc', onclick: 'sonHombres = 1;sonMujeres = 0;countdown_init();incHombres();', type: 'button', value: '+'}/
@@ -63,61 +63,61 @@
               %td Vehículo
               %td Coche
               %td
-                %input#coch1{name: 'coch1', onclick: "SumaAciertoCoche('denom');", type: 'button', value: '+'}/
+                %input#coch1{name: 'coch1', onclick: "SumaAciertoCoche('denom');", type: 'button', value: '±'}/
                 %span#co1 0
               %td
-                %input#coch2{name: 'coch2', onclick: "SumaAciertoCoche('libre');", type: 'button', value: '+'}/
+                %input#coch2{name: 'coch2', onclick: "SumaAciertoCoche('libre');", type: 'button', value: '±'}/
                 %span#co2 0
               %td
-                %input#coch3{name: 'coch3', onclick: "SumaAciertoCoche('facil');", type: 'button', value: '+'}/
+                %input#coch3{name: 'coch3', onclick: "SumaAciertoCoche('facil');", type: 'button', value: '±'}/
                 %span#co3 0
             %tr
               %td Fruta
               %td Pera
               %td
-                %input#per1{name: 'per1', onclick: "SumaAciertoPera('denom');", type: 'button', value: '+'}/
+                %input#per1{name: 'per1', onclick: "SumaAciertoPera('denom');", type: 'button', value: '±'}/
                 %span#pe1 0
               %td
-                %input#per2{name: 'per2', onclick: "SumaAciertoPera('libre');", type: 'button', value: '+'}/
+                %input#per2{name: 'per2', onclick: "SumaAciertoPera('libre');", type: 'button', value: '±'}/
                 %span#pe2 0
               %td
-                %input#per3{name: 'per3', onclick: "SumaAciertoPera('facil');", type: 'button', value: '+'}/
+                %input#per3{name: 'per3', onclick: "SumaAciertoPera('facil');", type: 'button', value: '±'}/
                 %span#pe3 0
             %tr
               %td Inst. Musical
               %td Trompeta
               %td
-                %input#trompet1{name: 'trompet1', onclick: "SumaAciertoTrompeta('denom');", type: 'button', value: '+'}/
+                %input#trompet1{name: 'trompet1', onclick: "SumaAciertoTrompeta('denom');", type: 'button', value: '±'}/
                 %span#tr1 0
               %td
-                %input#trompet2{name: 'trompet2', onclick: "SumaAciertoTrompeta('libre');", type: 'button', value: '+'}/
+                %input#trompet2{name: 'trompet2', onclick: "SumaAciertoTrompeta('libre');", type: 'button', value: '±'}/
                 %span#tr2 0
               %td
-                %input#trompet3{name: 'trompet3', onclick: "SumaAciertoTrompeta('facil');", type: 'button', value: '+'}/
+                %input#trompet3{name: 'trompet3', onclick: "SumaAciertoTrompeta('facil');", type: 'button', value: '±'}/
                 %span#tr3 0
             %tr
               %td Prenda Vestir
               %td Zapatos
               %td
-                %input#zapato1{name: 'zapato1', onclick: "SumaAciertoZapatos('denom');", type: 'button', value: '+'}/
+                %input#zapato1{name: 'zapato1', onclick: "SumaAciertoZapatos('denom');", type: 'button', value: '±'}/
                 %span#za1 0
               %td
-                %input#zapato2{name: 'zapato2', onclick: "SumaAciertoZapatos('libre');", type: 'button', value: '+'}/
+                %input#zapato2{name: 'zapato2', onclick: "SumaAciertoZapatos('libre');", type: 'button', value: '±'}/
                 %span#za2 0
               %td
-                %input#zapato3{name: 'zapato3', onclick: "SumaAciertoZapatos('facil');", type: 'button', value: '+'}/
+                %input#zapato3{name: 'zapato3', onclick: "SumaAciertoZapatos('facil');", type: 'button', value: '±'}/
                 %span#za3 0
             %tr
               %td Cubierto
               %td Cuchara
               %td
-                %input#cuchar1{name: 'cuchar1', onclick: "SumaAciertoCuchara('denom');", type: 'button', value: '+'}/
+                %input#cuchar1{name: 'cuchar1', onclick: "SumaAciertoCuchara('denom');", type: 'button', value: '±'}/
                 %span#cu1 0
               %td
-                %input#cuchar2{name: 'cuchar2', onclick: "SumaAciertoCuchara('libre');", type: 'button', value: '+'}/
+                %input#cuchar2{name: 'cuchar2', onclick: "SumaAciertoCuchara('libre');", type: 'button', value: '±'}/
                 %span#cu2 0
               %td
-                %input#cuchar3{name: 'cuchar3', onclick: "SumaAciertoCuchara('facil');", type: 'button', value: '+'}/
+                %input#cuchar3{name: 'cuchar3', onclick: "SumaAciertoCuchara('facil');", type: 'button', value: '±'}/
                 %span#cu3 0
               %td.text-center{colspan: '2'}
                 %span.h4 Tiempo restante:

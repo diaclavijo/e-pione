@@ -26,6 +26,10 @@ class FototestsController < ApplicationControllerSigned
     end
   end
 
+  def help
+
+  end
+
   private
     def fototest_siad (
         age: nil, education: nil,

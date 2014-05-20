@@ -15,7 +15,7 @@
                 = @fototest.education
     .table-responsive
       %table.table.table-condensed.table-bordered{border: '0', summary: 'Formulario del Fototest: resultados obtenidos', width: '90%'}
-        %caption.h4 Fototest - Test de las Fotos:Resultados
+        %caption.h4 Fototest - Test de las Fotos: Resultados
         %thead
           %tr.active
             %th{width: '15ex'} Categoría
@@ -77,9 +77,10 @@
       - message_kind_ft = @fototest.sane? ?  "alert-success" : "alert-danger"
       %p{class: "alert #{message_kind_ft} alert-dismissable lead text-center"}
         Paciente sano con probabilidad #{@fototest.probability}
+        / /TODO: Aquí pondríamos algo rollo #{@fototest.diagnosis_text}
       %hr
       .row
         .col-md-2.col-md-offset-4
           %input.btn.btn-info.btn-block{onclick: "parent.location='#{new_fototest_path}'", type: 'button', value: 'Nuevo test'}/
         .col-md-2
-          %input.btn.btn-warning.btn-block{onclick: 'window.print()', type: 'button', value: 'Imprimir'}/
+          %input.btn.btn-default.btn-block{onclick: 'window.print()', type: 'button', value: 'Imprimir'}/

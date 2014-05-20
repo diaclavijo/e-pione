@@ -1,0 +1,189 @@
+%h1.text-center
+  %a#x
+  e-pione: instrucciones
+.piecentrado
+.ContLAncho
+  .OCntL
+    %div
+      %p.h3 Controles de manejo de la aplicación:
+      %ul
+        %li
+          El botón
+          %input.btn.btn-info{value:'Ayuda / Instrucciones'}
+          que hay bajo la lámina conduce a esta página informativa.
+          %p
+        %li
+          El botón
+          %input.btn.btn-primary{value:'Pulse para ocultar o reponer la lámina'}
+          que hay bajo la misma hace exactamente eso: la oculta si está visible, o la repone si estaba oculta.
+        %li
+          Las fotos de la propia lámina pueden ser utilizadas como método alternativo para asignar o corregir puntos en la fase de
+          = succeed "," do
+            %b «Denominación»
+            vea más abajo el apartado
+            %b «Denominación»
+          dentro de las
+          = succeed "." do
+            %b «Fases de la aplicación del test»
+        %li
+          Cada botón
+          %kbd ±
+          funciona como un conmutador: si lo pulsa añade un punto a la foto correspondiente, y si pulsa de nuevo ese mismo botón se resta el punto antes concedido.
+        %li
+          Junto a las cabeceras
+          %b «Fluidez Hombres»
+          y
+          %b «Fluidez Mujeres»
+          hay sendos selectores del tipo «botón de radio». Hay que marcar el de la tarea que se vaya a realizar en ese momento (nombres de hombres o nombres de mujeres).
+        %li
+          Los botones con el signo
+          %kbd +
+          y el signo
+          %kbd -
+          suman o restan puntos a cada categoría de nombres:
+          %b «Fluidez Hombres»
+          o
+          = succeed "." do
+            %b «Fluidez Mujeres»
+          Cuando se pulsa por primera vez el botón con el signo
+          %kbd +
+          en cada una de esas dos categorías, se pone en marcha un contador que llega a cero al cabo de 30 segundos, tras los que ya no será posible sumar más puntos en esa categoría. Use el botón del signo
+          %kbd -
+          para corregir la adición incorrecta de un punto en la categoría en curso.
+      %p.h3 Fases de la aplicación del test (no cambie el orden establecido a continuación):
+    %ol
+      %li
+        %h4
+          Denominación (Den).
+          %p
+          %p
+            Puede elegir entre dos modos de puntuar:
+        %ol{type:"A"}
+          %li
+            %span
+              %b
+                Modo directo sobre la propia lámina:
+            %p
+              Enséñele al sujeto la lámina con las fotos y pídale que las nombre; vaya pulsando usted sobre cada foto cuyo nombre acierte el sujeto, una sola vez por cada acierto.  Se asigna
+              1 punto
+              por cada respuesta correcta. Si la pulsó usted por error, corrija pulsando de nuevo la misma foto y se eliminará ese punto asignado. En caso de fallo del sujeto o ausencia de respuesta, indíquele el nombre correcto y no pulse sobre esa foto para no puntuarle nada en ese ítem.
+              %p
+                Una vez concluya esta tarea, retire la lámina apartándola de la vista del sujeto. Puede pulsar para ello el botón
+                %input.btn.btn-primary{value:'Pulse para ocultar o reponer la lámina'}
+                que hay bajo la misma.
+          %li
+            %span
+              %b
+                Modo indirecto sobre la tabla:
+            %p
+              Enséñele al sujeto la lámina con las fotos y pídale que las nombre; pulse el botón
+              %kbd ±
+              de la foto nombrada en la fila correspondiente de la columna «
+              %span.Neg> Denominación
+              », una vez por cada acierto. Se asigna
+              %span.Neg 1 punto
+              por cada respuesta correcta. Si lo asignó usted por error, corrija pulsando de nuevo el mismo botón
+              %kbd ±
+              caso de fallo del sujeto o ausencia de respuesta, indíquele el nombre correcto y no le puntúe nada en ese ítem.
+              %p
+                Una vez concluya esta tarea, retire la lámina apartándola de la vista del sujeto.
+                Puede pulsar para ello el botón
+                %input.btn.btn-primary{value:'Pulse para ocultar o reponer la lámina'}
+                que hay bajo la misma.
+      %li
+        %h4
+          Fluidez Verbal («Fluidez Hombres» / «Fluidez Mujeres»)
+        %ol{type:"A"}
+          %li
+            Active el selector del tipo «botón de radio» correspondiente
+            = succeed "." do
+              %span.Neg al sexo contrario al del sujeto
+          %li
+            Diga al sujeto «quiero que me diga todos los nombres de hombres/mujeres (el sexo contrario al del sujeto) que recuerde».  No dé ejemplos. Se conceden 30 segundos (no lo interrumpa hasta que termine el contador), empezando a contarse el tiempo cuando usted  pulse el botón
+            %kbd +
+            en la columna correspondiente al sexo seleccionado al decir el sujeto el primer nombre válido. Siga pulsando usted una vez el botón con el signo
+            %kbd +
+            por cada nombre válido que diga el sujeto. Se asigna
+            %span.Neg 1 punto
+            por cada nombre correcto. No puntúe los nombres equivalentes a otros ya dichos (Mari–María, Pepe–José, Dolores–Lola, etc.). Si pulsa por error el botón del signo
+            = succeed "," do
+              %kbd +
+            %kbd -
+            antes de que el contador de tiempo se ponga a cero.
+          %li
+            Active el selector del tipo «botón de radio» correspondiente
+            = succeed "." do
+              %span.Neg al mismo sexo del sujeto
+          %li
+            Diga al sujeto «quiero que me diga todos los nombres de hombres/mujeres (el mismo sexo del sujeto) que recuerde». No dé ejemplos. Se conceden 30 segundos (no lo interrumpa hasta que termine el contador), empezando a contarse el tiempo cuando usted  pulse el botón
+            %kbd +
+            en la columna correspondiente al sexo seleccionado al decir el sujeto el primer nombre válido. Pulse usted una vez el botón con el signo
+            %kbd +
+            por cada nombre válido que diga el sujeto. Se asigna
+            %span.Neg 1 punto
+            por cada nombre correcto. No puntúe los nombres equivalentes a otros ya dichos (Mari–María, Pepe–José, etc.). Si pulsa por error el botón del signo
+            = succeed "," do
+              %kbd +
+              antes de que el contador de tiempo se ponga a cero, corrija pulsando el botón con el
+              signo
+              %kbd -
+              antes de que el contador de tiempo se ponga a cero.
+      %li
+        %span.h4 Recuerdo:
+        %ol{type:"A"}
+          %li
+            %span.Neg Recuerdo Libre (RL):
+            En esta fase no se pueden proporcionar ayudas ni pistas de ningún tipo al sujeto. Dígale, por ejemplo: «¿recuerda qué fotos había en la lámina que le enseñé antes?», y dele un máximo de 20 segundos para que nombre todos los ítems que recuerde espontáneamente. Pulse el botón
+            %kbd ±
+            de la foto nombrada en la fila correspondiente de la columna
+            = succeed "," do
+              %span.Neg «Recuerdo Libre»
+            %span.Neg 2 puntos
+            por cada respuesta correcta. Si los asignó usted por error, corrija pulsando de nuevo el mismo botón
+            = succeed "." do
+              %kbd ±
+          %li
+            %span.Neg Recuerdo Facilitado (RF):
+            Solo para las imágenes que el sujeto no haya acertado dentro de los 20 segundos de
+            = succeed "." do
+              %span.Neg Recuerdo Libre
+            %span.Neg categoría
+            de las imágenes que NO haya recordado espontáneamente en la fase de
+            = succeed "," do
+              %span.Neg Recuerdo Libre
+            %kbd ±
+            de la foto nombrada en la fila correspondiente de la columna
+            = succeed "," do
+              %span.Neg «Recuerdo Facilitado»
+            %span.Neg 1 punto
+            por cada respuesta correcta. Si lo asignó por error, corrija pulsando de nuevo el mismo botón
+            = succeed "." do
+              %kbd ±
+      %li
+        %span.h4 Enviar los datos para su proceso:
+        %p
+          Pulse el botón
+          %input.btn.btn-primary{value:'Enviar datos'}
+          que hay bajo la tabla. Le aparecerá a continuación una nueva página lista para ser imprimida
+          con el diagnóstico sugerido y la probabilidad asocicada al mismo.
+          Para imprimir la página de resultados solo tiene que pulsar el botón
+          %input.btn.btn-default{value:'Imprimir'}
+          que hay bajo los resultados, y seguir las instrucciones que le aparezcan a continuación en su pantalla.
+      %li
+        %span.h4 Nuevo test:
+        %p
+        Si desea llevar a cabo un nuevo test, pulse sobre el botón
+        %input.btn.btn-info{value:'Nuevo test'}
+        que aparece bajo los resultados, o pulse «Atrás» en su navegador.
+    %p.h4 Otros datos a cumplimentar:
+    %ul
+      %li
+        Edad del paciente: no es obligatoria, pero si no la cumplimenta el programa no podrá calcular los valores estadísticos:
+        = succeed "," do
+          %span.Neg Percentil
+        %span.Neg Z
+        , y cocientes de probabilidad.
+      %li Fecha: no es obligatoria, pero es aconsejable para poder apreciar el curso evolutivo del sujeto en sucesivas evaluaciones.
+      .row
+        .col-md-2.col-md-offset-4
+          %input.btn.btn-default{onclick: "parent.location='http://www.hipocampo.org/Fototest-enlinea.asp'", type: "button", value: "Volver al test"}/
