@@ -12,7 +12,7 @@ Epione::Application.routes.draw do
 	resources :emailform, only: [:new, :create]
 
   resources :fototests, only: [:new, :create]
-  get 'fototests/help' => 'fototests#help'
+  get 'fototests/help', to: 'fototests#help', as: 'help_fototest'
 
 	get 'support/', to: 'home#support', as: 'support'
   # the following solution was found in http://stackoverflow.com/questions/3791096/devise-logged-in-root-route-rails-3

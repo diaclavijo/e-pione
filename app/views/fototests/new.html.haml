@@ -13,7 +13,8 @@
     %p
       .row
         .col-md-2.col-md-offset-4
-          %input#ayuda.btn.btn-info{name: 'ayuda', onclick: 'void(0)', type: 'button', value: 'Ayuda / Instrucciones'}/
+          %input#ayuda.btn.btn-info{name: 'ayuda',type: 'button',
+           onclick:"parent.location='#{help_fototest_path}'",value: 'Ayuda / Instrucciones'}/
         .col-md-2
           %button#toggle.btn.btn-primary Pulse para ocultar o reponer la lámina
     = form_for @fototest, html: {id: 'form1'}, url: fototests_path do |f|

@@ -96,15 +96,14 @@
         %ol{type:"A"}
           %li
             Active el selector del tipo «botón de radio» correspondiente
-            = succeed "." do
-              %span.Neg al sexo contrario al del sujeto
+            %b al sexo contrario al del sujeto
           %li
             Diga al sujeto «quiero que me diga todos los nombres de hombres/mujeres (el sexo contrario al del sujeto) que recuerde».  No dé ejemplos. Se conceden 30 segundos (no lo interrumpa hasta que termine el contador), empezando a contarse el tiempo cuando usted  pulse el botón
             %kbd +
             en la columna correspondiente al sexo seleccionado al decir el sujeto el primer nombre válido. Siga pulsando usted una vez el botón con el signo
             %kbd +
             por cada nombre válido que diga el sujeto. Se asigna
-            %span.Neg 1 punto
+            %b 1 punto
             por cada nombre correcto. No puntúe los nombres equivalentes a otros ya dichos (Mari–María, Pepe–José, Dolores–Lola, etc.). Si pulsa por error el botón del signo
             = succeed "," do
               %kbd +
@@ -112,15 +111,14 @@
             antes de que el contador de tiempo se ponga a cero.
           %li
             Active el selector del tipo «botón de radio» correspondiente
-            = succeed "." do
-              %span.Neg al mismo sexo del sujeto
+            %b al mismo sexo del sujeto
           %li
             Diga al sujeto «quiero que me diga todos los nombres de hombres/mujeres (el mismo sexo del sujeto) que recuerde». No dé ejemplos. Se conceden 30 segundos (no lo interrumpa hasta que termine el contador), empezando a contarse el tiempo cuando usted  pulse el botón
             %kbd +
             en la columna correspondiente al sexo seleccionado al decir el sujeto el primer nombre válido. Pulse usted una vez el botón con el signo
             %kbd +
             por cada nombre válido que diga el sujeto. Se asigna
-            %span.Neg 1 punto
+            %b 1 punto
             por cada nombre correcto. No puntúe los nombres equivalentes a otros ya dichos (Mari–María, Pepe–José, etc.). Si pulsa por error el botón del signo
             = succeed "," do
               %kbd +
@@ -132,33 +130,36 @@
         %span.h4 Recuerdo:
         %ol{type:"A"}
           %li
-            %span.Neg Recuerdo Libre (RL):
-            En esta fase no se pueden proporcionar ayudas ni pistas de ningún tipo al sujeto. Dígale, por ejemplo: «¿recuerda qué fotos había en la lámina que le enseñé antes?», y dele un máximo de 20 segundos para que nombre todos los ítems que recuerde espontáneamente. Pulse el botón
-            %kbd ±
-            de la foto nombrada en la fila correspondiente de la columna
-            = succeed "," do
-              %span.Neg «Recuerdo Libre»
-            %span.Neg 2 puntos
-            por cada respuesta correcta. Si los asignó usted por error, corrija pulsando de nuevo el mismo botón
-            = succeed "." do
+            %b Recuerdo Libre (RL):
+            %p
+              En esta fase no se pueden proporcionar ayudas ni pistas de ningún tipo al sujeto. Dígale, por ejemplo: «¿recuerda qué fotos había en la lámina que le enseñé antes?», y dele un máximo de 20 segundos para que nombre todos los ítems que recuerde espontáneamente. Pulse el botón
               %kbd ±
+              de la foto nombrada en la fila correspondiente de la columna
+              = succeed "," do
+                %b «Recuerdo Libre»
+              %b 2 puntos
+              por cada respuesta correcta. Si los asignó usted por error, corrija pulsando de nuevo el mismo botón
+              = succeed "." do
+                %kbd ±
           %li
-            %span.Neg Recuerdo Facilitado (RF):
-            Solo para las imágenes que el sujeto no haya acertado dentro de los 20 segundos de
-            = succeed "." do
-              %span.Neg Recuerdo Libre
-            %span.Neg categoría
-            de las imágenes que NO haya recordado espontáneamente en la fase de
-            = succeed "," do
-              %span.Neg Recuerdo Libre
-            %kbd ±
-            de la foto nombrada en la fila correspondiente de la columna
-            = succeed "," do
-              %span.Neg «Recuerdo Facilitado»
-            %span.Neg 1 punto
-            por cada respuesta correcta. Si lo asignó por error, corrija pulsando de nuevo el mismo botón
-            = succeed "." do
+            %b Recuerdo Facilitado (RF):
+            %p
+              Solo para las imágenes que el sujeto no haya acertado dentro de los 20 segundos de
+              %b Recuerdo Libre.
+              Ofrecerle como pista y ayuda la
+              %b categoría
+              de las imágenes que NO haya recordado espontáneamente en la fase de
+              %b Recuerdo Libre
+              , diciéndole por ejemplo: «También había una fruta, ¿la recuerda?»
+              Pulse el botón de la foto
               %kbd ±
+              nombrada en la fila correspondiente de la columna
+              %b «Recuerdo Facilitado».
+              Se asigna
+              %b 1 punto
+              por cada respuesta correcta. Si lo asignó por error, corrija pulsando de nuevo el mismo botón
+              = succeed "." do
+                %kbd ±
       %li
         %span.h4 Enviar los datos para su proceso:
         %p
@@ -178,12 +179,8 @@
     %p.h4 Otros datos a cumplimentar:
     %ul
       %li
-        Edad del paciente: no es obligatoria, pero si no la cumplimenta el programa no podrá calcular los valores estadísticos:
-        = succeed "," do
-          %span.Neg Percentil
-        %span.Neg Z
-        , y cocientes de probabilidad.
-      %li Fecha: no es obligatoria, pero es aconsejable para poder apreciar el curso evolutivo del sujeto en sucesivas evaluaciones.
+        Edad del paciente:
+      %li Escolaridad
       .row
         .col-md-2.col-md-offset-4
-          %input.btn.btn-default{onclick: "parent.location='http://www.hipocampo.org/Fototest-enlinea.asp'", type: "button", value: "Volver al test"}/
+          %input.btn.btn-default{onclick: "window.history.back()", type: "button", value: "Volver al test"}/
