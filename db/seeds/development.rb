@@ -42,6 +42,7 @@ Physician.create(email: 'david@diazclavijo.com',
                  password_confirmation: 'alzheimer',
                  name: 'David',
                  surname: 'Díaz Clavijo')
+Physician.create(email: 'ccarnerop@gmail.com', password: 'fototest', password_confirmation: 'fototest', name: 'Cristóbal', surname: 'Carnero')
 Physician.create(email: 'fototest@fototest.com', password: 'cocodrilo', password_confirmation: 'cocodrilo', name: 'Fototest', surname: 'Fototest', default_test: 'fototest')
 Physician.create(email: 'milohu@live.com', password: 'pino', password_confirmation: 'pino', name: 'Milohu', surname: 'Milohu')
 Physician.create(email: 'alejandrocarlos@gmail.com', password: 'pino', password_confirmation: 'pino', name: 'Alejandro', surname: 'Carlos')
