@@ -1,52 +1,40 @@
-
-<div class="container">
-
-  <div class="row front jumbotron jumbotron-home">
-
-
-    <div class="col-md-8">
-      <br><p></p>
-      <%= image_tag 'logo_epione.png', class:'img-responsive img-rounded' %>
-    </div>    <!--/col-md-8-->
-
-    <div class="col-md-4">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'})   do |f| %>
-        <h2 class="form-signin-heading text-muted-home">Por favor, identifíquese</h2>
-        <div> <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email' %></div>
-
-        <div><%= f.password_field :password, class: 'form-control', placeholder: 'contraseña' %></div>
-
-        <label class="checkbox checkbox-home">
-          <%= f.check_box :remember_me %> <small>Recordarme</small>
-        </label>
-
-        <div><%= f.submit "Acceder", class: 'btn btn-lg btn-primary btn-block' %></div>
-
-      <% end %>
-      <small><%= link_to '¿Olvidó su contraseña?', new_physician_password_path , class: 'text-muted-home' %> </small> <!--- It was designed to get the small tag inside the a tag, it should be considered to be changed if it is necessary -->
-    </div> <!--/col-md-4-->
-
-  </div><!--/row-->
-
-  <div class="row credits">
-   <!--logos cremas aquí-->
-    <div class="col-md-1 col-md-offset-2"><h4>Colaboran:</h4></div>
-    <div class="col-md-3 col-md-offset-1">
-          <h4> Dr. Juan Rafael García</h4>
-      <h5>Jefe del servicio de neurología del Hospital Universitario Insular de G.C.</h5>
+<% if flash[:notice] %>
+    <br>
+    <div class="alert alert-warning alert-dismissable col-md-6 col-md-offset-3 lead text-center">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= flash[:notice] %>
     </div>
-    <div class="col-md-3">
-      <a href="http://www.hospitalessanroque.com/">
+<%end%>
+<div class="container text-center">
 
-      </a>
-      </div>
-   <div class="col-md-2 ">
-     <small>
-       <h5><%= link_to 'Contacta con nosotros', support_path , class: '' %> </h5></small>
-   </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+          <div class="jumbotron jumbotron-home">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f| %>
+                <h2 class="form-signin-heading text-muted-home">Iniciar sesión</h2>
+                <div> <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email' %></div>
 
-  </div><!--/row-->
-</div> <!-- /container -->
+                <div><%= f.password_field :password, class: 'form-control', placeholder: 'contraseña' %></div>
 
+                <label class="checkbox checkbox-home">
+                  <%= f.check_box :remember_me %> <small>Recordarme</small>
+                </label>
+
+                <div><%= f.submit "Acceder", class: 'btn btn-lg btn-primary btn-block' %></div>
+
+            <% end %>
+            <small><%= link_to '¿Olvidó su contraseña?', new_physician_password_path , class: 'text-muted-home' %> </small>
+            <!--- It was designed to get the small tag inside the a tag, it should be considered to be changed if it is necessary -->
+        </div> <!--/jumbotron-->
+      </div> <!--/col-->
+    </div> <!--/row-->
+</div>
+<div class="footer_init">
+  <div class="container">
+      <div class="col-md-2 col-md-offset-6">BINNAC &copy</div>
+        <div class="col-md-2 "><%= link_to 'Términos de privacidad', privacidad_path , class: 'text-muted-home' %></div>
+        <div class="col-md-1"><%= link_to 'Contacto', 'mailto:soporte@e-pione.com' , class: 'text-muted-home' %></div>
+  </div>
+</div>
 
 

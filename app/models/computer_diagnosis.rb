@@ -6,6 +6,7 @@ class ComputerDiagnosis < Diagnosis
   validates :faq_score, :mmse_score, :education, :age, :education_select, presence: true
 
 	validates :education, inclusion: {in: 0..20 }
+  validates :age, inclusion: {in: 62..200}
 	validates :mmse_score, :faq_score, inclusion: {in: 0..30 }
 
 	def valid_siad_exec?

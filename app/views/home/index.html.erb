@@ -1,0 +1,157 @@
+
+<section class="intro">
+  <div class="intro-body">
+    <div class="container container-top">
+      <% if flash[:notice] %>
+          <br>
+          <div class="alert alert-success alert-dismissable col-md-6 col-md-offset-3 lead text-center">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <%= flash[:notice] %>
+          </div>
+      <%end%>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <!--Carousel -->
+
+          <ul class="bxslider">
+            <li><%= image_tag 'logo_epione_large.png', class:'img-rounded img-responsive ' %></li>
+            <li><%= image_tag 'screen1.png', class:'img-responsive img-rounded' %></li>
+            <li><%= image_tag 'screen5.png', class:'img-responsive img-rounded' %></li>
+
+          </ul>
+          <!--/Carousel -->
+          <br>
+          <div class="page-scroll">
+            <%= link_to "Solicitar una prueba", '#colaborate' ,class: 'btn btn-lg btn-primary btn-try' %>
+          </div>
+
+        </div>  <!--/col -->
+      </div><!--/row-->
+
+      <div class="row subtitle">
+        <div class="col-md-8 col-md-offset-2">
+          <h3 class=""> Diagnóstico preciso con la puntuación del FAQ y del MMSE, la edad y la educación del paciente</h3>
+          <div class="page-scroll">
+            <a href="#about" class=""></a>
+          </div>
+          <div class="page-scroll">
+            <a href="#about" class="btn btn-circle">
+              <i class="icon-double-angle-down animated"></i>
+            </a>
+          </div>   <!--/page scroll -->
+        </div>    <!--/col-->
+      </div>   <!--/col-->
+    </div><!-- /container -->
+     </div><!-- /intro-body-->
+
+</section>
+
+
+<section id="about" class="container content-section about-section">
+  <div class="row">
+      <h2 class="text-center">E-PIONE: CRIBADO INTELIGENTE</h2>
+  </div>
+  <p></p>
+  <div class = "row well-class text-left">
+    <div class="col-lg-2 col-lg-offset-1"><a class="icon-zoom-in icon-4x"></a></div>
+    <div class="col-lg-8">
+      <h4>e-pione es un Sistema Inteligente de Ayuda al Diagnóstico (SIAD) del deterioro cognitivo (DC)
+      </h4>
+    </div>
+  </div>
+
+
+  <div class = "row well-class text-left">
+    <div class="col-lg-2 col-lg-offset-1"><a class="icon-gears icon-4x"></a></div>
+    <div class="col-lg-8">
+      <h4>
+        Construido a partir de las últimas técnicas de minería de  datos, aprendizaje automático y
+        sistemas expertos, obtiene más de un 80 % de precisión totalmente balanceada
+      </h4>
+    </div>
+  </div>
+  <div class = "row well-class text-left">
+    <div class="col-lg-2 col-lg-offset-1"><a class="icon-check icon-4x"></a></div>
+    <div class="col-lg-8">
+      <h4>
+        Tan sólo es necesario el resultado del test FAQ, el MMSE, la edad y escolarización del paciente
+      </h4>
+    </div>
+  </div>
+  <div class = "row well-class text-left">
+    <div class="col-lg-2 col-lg-offset-1"><a class="icon-group icon-4x"></a></div>
+    <div class="col-lg-8">
+      <h4>
+        Los resultados han sido obtenidos y <%= link_to "validados", info_path %> sobre una base de datos de más de 1300 pacientes.
+        Más información sobre la validación
+        <%= link_to "aquí.", info_path %>
+
+      </h4>
+    </div>
+  </div>
+  <div class = "row well-class  text-left">
+    <div class="col-lg-2 col-lg-offset-1"><a class="icon-time icon-4x"></a></div>
+    <div class="col-lg-8">
+      <h4>
+        Tomar decisiones rápidamente no es suficiente cuando la salud está en juego.
+        Por eso, la opinión de un comité de expertos (SIAD) de forma instantánea en tu consulta es
+        un valor añadido en la calidad de tus diagnósticos
+      </h4>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="page-scroll">
+      <a href="#colaborate" class="btn btn-circle">
+        <i class="icon-double-angle-down animated"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section id="colaborate" class="container content-section colaborate-section text-center">
+  <div class="row">
+    <h2>COLABORA CON NOSOTROS</h2>
+  </div>
+  <br>
+  <p></p>
+  <div class="row">
+
+    <div class="col-md-5 col-md-offset-1">
+      <p>Equipo consultivo</p>
+      <dl class="text-left dl-horizontal">
+        <dt>Dr. Cristóbal Carnero</dt>
+        <dd>Jefe de Neurología Hospital de Granada</dd>
+        <dd>Creador del Fototest y asesor del servicio</dd>
+      </dl>
+      <hr>
+      <p>Colaboradores</p>
+      <dl class="text-left dl-horizontal">
+        <dt>Dr. Juan Rafael García </dt>
+        <dd>Jefe de Neurología Hospital Insular de Gran Canaria</dd>
+
+
+        <dt>Dra. María Pérez Vieitez </dt>
+        <dd>Especialista en Demencia, Doctora de Neurología Hospital Doctor Negrín</dd>
+
+        <dt>Dr. Domingo Quintana </dt>
+        <dd>Neuropsicólogo, Centro Socioanitario El Pino</dd>
+        <br>
+        <br>
+        <dt>Clínica San Roque</dt>
+        <dd><%= image_tag 'logosanroque.png', class:'img-responsive img-rounded' %> </dd>
+
+      </dl>
+    </div>
+        <%= render partial: 'contact_forms/form', locals: { contact_form: ContactForm.new } %>
+  </div> <!--/row-->
+  <div class="row text-center">
+    <div class="page-scroll go-up-scroll">
+      <a href="#page-top" class="">
+        <i class="icon-double-angle-up icon-3x animated"></i>
+      </a>
+    </div>
+  </div>
+
+</section>
+

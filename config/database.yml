@@ -1,0 +1,55 @@
+# MySQL.  Versions 4.1 and 5.0 are recommended.
+#
+# Install the MYSQL driver
+#   gem install mysql2
+#
+# Ensure the MySQL gem is defined in your Gemfile
+#   gem 'mysql2'
+#
+# And be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: e-pione_development
+  pool: 5
+  username: root
+  password: alzheimer
+  socket: /var/run/mysqld/mysqld.sock
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test: &test
+  adapter: mysql2
+  encoding: utf8
+  database: e-pione_test
+  pool: 5
+  username: root
+  password: 'alzheimer'
+  socket: /var/run/mysqld/mysqld.sock
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: e-pione_production
+  pool: 5
+  host: e-pione.cwmwruzeomph.us-east-1.rds.amazonaws.com
+  port: 3306
+  username: racer
+  password: '?*4zwpmY93CmgtB'
+  timeout: 5000
+
+staging:
+  adapter: mysql2
+  encoding: utf8
+  database: e_pione_staging
+  pool: 5
+  host: epione-staging.cxezxsdl9ucl.us-west-2.rds.amazonaws.com
+  port: 3306
+  username: root
+  password: 'bivY5oODFR9n2'
+  socket: /var/run/mysqld/mysqld.sock
+
+cucumber:
+  <<: *test

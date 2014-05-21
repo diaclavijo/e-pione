@@ -1,8 +1,7 @@
 /* This CSS file is used for the front page when the user is not signed in  */
 
+
 .body-home {
-  padding-top: 40px;
-  padding-bottom: 40px;
   background-color: #fff;
 }
 #title-home{
@@ -12,9 +11,7 @@
     color: #e4e4e4
 }
 
-.jumbotron-home {
-    background-color: #005a9f
-}
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -59,3 +56,204 @@
   line-height: 1.2 /*Controla el tema del checkbox*/
 
 }
+
+.about-section {
+    display: table;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.circle{
+    width: 140px;
+    height: 140px;
+    margin-top: 15px;
+    padding: 30px 30px;
+    border: 2px solid #005a9f;
+    border-radius: 120px;
+    color: #005a9f;
+    background: transparent;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+}
+
+
+
+
+h2{
+    color:#002948;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+h3{
+    color: #002948;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+
+.well-class {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #fff;
+
+}
+
+.well-class:hover{
+    background-color: #d1e3ff;
+
+}
+
+.btn-no-border {
+    border: 0px solid #ffffff;
+}
+
+a:focus {
+    outline: none; /*IE6 and IE7 do not support this property*/
+}
+
+.btn-no-padding{
+    padding: 0;
+}
+
+
+.jumbotron-home {
+    margin-top: 100px;  /* 80 px without btn-try */
+    margin-bottom: 0;
+    background-color: #005a9f;
+    padding: 7px; /*30 px without btn-try */
+    color:#fff
+}
+
+
+
+#wrap
+{
+    min-height: 100%;
+}
+
+#main
+{
+    overflow:auto;
+    padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height:50px;
+    margin-bottom: 0;
+    color: #ffffff;
+    background-color:#005a9f ;
+}
+.footer_init {
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height:55px;
+    margin-bottom: 0;
+    color: #ffffff;
+    background-color:#005a9f ;
+}
+
+@media (max-height: 468px){
+    .footer_init {
+        position: relative;
+        bottom:0;
+        width: 100%;
+        /* Set the fixed height of the footer here */
+        height:60px;
+        margin-bottom: 0;
+        color: #ffffff;
+        background-color:#005a9f ;
+    }
+    .footer{
+        /* Set the fixed height of the footer here */
+        height:60px;
+        margin-bottom: 0;
+        color: #ffffff;
+        background-color:#005a9f ;
+    }
+}
+
+@media (max-width: 1024px){
+    .footer{
+       display: none; /*Quick fix, this footer is still present in in sessions/new*/
+    }
+
+}
+/*media breakpoints for 15" laptops and beyond */
+@media (max-height: 768px){
+    .about-section{
+        width: 80%;
+    }
+    .well-class {
+        min-height: 20px;
+        padding: 7px;
+        margin-bottom: 4px;
+        background-color: #fff;
+    }
+
+    .go-up-scroll{
+        display: none;  /*PUEDE QUE ESTO SE VEA MAL EN PANTALLAS NO MUY GRANDES */
+
+    }
+}
+
+
+@media (min-height: 769px){
+
+}
+
+
+.subtitle{
+    color:#fff
+}
+
+hr{
+    background-color: #000000;
+}
+
+.well-contact {
+    min-height: 20px;
+    padding: 19px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #00689e;
+    color: #eeeeee;
+
+}
+
+
+
+.alert{
+    z-index:5000;
+    margin-bottom: 0;
+
+}
+
+.blue_link{
+    background-color:#005a9f ;
+}
+
+.container-top{
+margin-top: 50px;
+}
+.container-password{
+    margin-top: 75px;
+}
+
+
+
+
