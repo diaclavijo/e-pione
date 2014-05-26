@@ -1,86 +1,83 @@
-.ContLAncho
-  .OCntL
-    .NoSubSp
-      %p
-        .row
-          .col-md-1
-            Edad:
-            %span
-              %strong
-                = @fototest.age
-          .col-md-2
-            Educacion:
-            %span
-              %strong
-                = @fototest.education
-    .table-responsive
-      %table.table.table-condensed.table-bordered{border: '0', summary: 'Formulario del Fototest: resultados obtenidos', width: '90%'}
-        %caption.h4 Fototest - Test de las Fotos: Resultados
-        %thead
-          %tr.active
-            %th{width: '15ex'} Categoría
-            %th{width: '10ex'} Fotos
-            %th{width: '7ex'} Den
-            %th{width: '7ex'} RL
-            %th{width: '7ex'} RF
-            %th{width: '50ex'} Fluidez hombres (FH)
-            %th{width: '50ex'} Fluidez mujeres (FM)
-        %tbody
-          %tr
-            %td Juego
-            %td Cartas
-            %td= @fototest.cartas1
-            %td= @fototest.cartas2
-            %td= @fototest.cartas3
-            %td{rowspan: '6'}
-            %td{rowspan: '6'}
-          %tr
-            %td Vehículo
-            %td Coche
-            %td= @fototest.coche1
-            %td= @fototest.coche2
-            %td= @fototest.coche3
-          %tr
-            %td Fruta
-            %td Pera
-            %td= @fototest.pera1
-            %td= @fototest.pera2
-            %td= @fototest.pera3
-          %tr
-            %td Inst. Musical
-            %td Trompeta
-            %td= @fototest.trompeta1
-            %td= @fototest.trompeta2
-            %td= @fototest.trompeta3
-          %tr
-            %td Prenda vestir
-            %td Zapatos
-            %td= @fototest.zapatos1
-            %td= @fototest.zapatos2
-            %td= @fototest.zapatos3
-          %tr
-            %td Cubierto
-            %td Cuchara
-            %td= @fototest.cuchara1
-            %td= @fototest.cuchara2
-            %td= @fototest.cuchara3
-          %tr
-            %td{colspan: '2'} Subtotales
-            %td= @fototest.total1
-            %td= @fototest.total2
-            %td= @fototest.total3
-            %td= @fototest.total_hombres
-            %td= @fototest.total_mujeres
-          %tr
-            %td.h4.text-right{colspan: '6'} Total Test de las Fotos(Den + RL + RF + FH + FM)
-            %td.h4= @fototest.total
-      - message_kind_ft = @fototest.sane? ?  "alert-success" : "alert-danger"
-      %p{class: "alert #{message_kind_ft} alert-dismissable lead text-center"}
-        Paciente sano con probabilidad #{@fototest.probability}
-        / /TODO: Aquí pondríamos algo rollo #{@fototest.diagnosis_text}
-      %hr
-      .row
-        .col-md-2.col-md-offset-4
-          %input.btn.btn-info.btn-block{onclick: "parent.location='#{new_fototest_path}'", type: 'button', value: 'Nuevo test'}/
-        .col-md-2
-          %input.btn.btn-default.btn-block{onclick: 'window.print()', type: 'button', value: 'Imprimir'}/
+%p
+  .row
+    .col-md-1
+      Edad:
+      %span
+        %strong
+          = @fototest.age
+    .col-md-2
+      Educacion:
+      %span
+        %strong
+          = @fototest.education
+.table-responsive
+%table.table.table-condensed.table-bordered{border: '0', summary: 'Formulario del Fototest: resultados obtenidos', width: '90%'}
+  %caption.h4 Fototest - Test de las Fotos: Resultados
+  %thead
+    %tr.active
+      %th{width: '15ex'} Categoría
+      %th{width: '10ex'} Fotos
+      %th{width: '7ex'} Den
+      %th{width: '7ex'} RL
+      %th{width: '7ex'} RF
+      %th{width: '50ex'} Fluidez hombres (FH)
+      %th{width: '50ex'} Fluidez mujeres (FM)
+  %tbody
+    %tr
+      %td Juego
+      %td Cartas
+      %td= @fototest.cartas1
+      %td= @fototest.cartas2
+      %td= @fototest.cartas3
+      %td{rowspan: '6'}
+      %td{rowspan: '6'}
+    %tr
+      %td Vehículo
+      %td Coche
+      %td= @fototest.coche1
+      %td= @fototest.coche2
+      %td= @fototest.coche3
+    %tr
+      %td Fruta
+      %td Pera
+      %td= @fototest.pera1
+      %td= @fototest.pera2
+      %td= @fototest.pera3
+    %tr
+      %td Inst. Musical
+      %td Trompeta
+      %td= @fototest.trompeta1
+      %td= @fototest.trompeta2
+      %td= @fototest.trompeta3
+    %tr
+      %td Prenda vestir
+      %td Zapatos
+      %td= @fototest.zapatos1
+      %td= @fototest.zapatos2
+      %td= @fototest.zapatos3
+    %tr
+      %td Cubierto
+      %td Cuchara
+      %td= @fototest.cuchara1
+      %td= @fototest.cuchara2
+      %td= @fototest.cuchara3
+    %tr
+      %td{colspan: '2'} Subtotales
+      %td= @fototest.total1
+      %td= @fototest.total2
+      %td= @fototest.total3
+      %td= @fototest.total_hombres
+      %td= @fototest.total_mujeres
+    %tr
+      %td.h4.text-right{colspan: '6'} Total Test de las Fotos(Den + RL + RF + FH + FM)
+      %td.h4= @fototest.total
+- message_kind_ft = @fototest.sane? ?  "alert-success" : "alert-danger"
+%p{class: "alert #{message_kind_ft} alert-dismissable lead text-center"}
+  Paciente sano con probabilidad #{@fototest.probability}
+  / /TODO: Aquí pondríamos algo rollo #{@fototest.diagnosis_text}
+%hr
+.row
+  .col-md-2.col-md-offset-4
+    %input.btn.btn-info.btn-block{onclick: "parent.location='#{new_fototest_path}'", type: 'button', value: 'Nuevo test'}/
+  .col-md-2
+    %input.btn.btn-default.btn-block{onclick: 'window.print()', type: 'button', value: 'Imprimir'}/
