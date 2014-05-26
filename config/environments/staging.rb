@@ -83,7 +83,7 @@ Epione::Application.configure do
   config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
   config.assets.precompile += ['not_logged_in.css', 'not_logged_in.js']
-  config.assets.precompile += ['css3-mediaqueries.js', 'html5shiv.js', 'respond.min.js','iefix.js']
+  config.assets.precompile += ['html5shiv.js', 'respond.min.js','iefix.js']
 
 
   # Config for GoogleAnalytics
