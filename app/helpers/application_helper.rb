@@ -112,7 +112,7 @@ module ApplicationHelper
     case level
       when :notice then "alert alert-success alert-dismissable col-md-6 col-md-offset-3 lead text-center"
       when :success then "alert alert-success alert-dismissable col-md-6 col-md-offset-3 lead text-center"
-      when :error then "alert alert-warning alert-dismissable col-md-6 col-md-offset-3"
+      when :error then "alert alert-warning alert-dismissable col-md-6 col-md-offset-3 lead text-center"
       when :alert then "alert alert-danger alert-dismissable col-md-6 col-md-offset-3 lead text-center"
     end
   end
