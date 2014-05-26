@@ -3,4 +3,5 @@
  */
 
 //= require html5shiv
-//= require respond.min
+//= require css3-mediaqueries.js
+/* PROBAR SIN respond y con css3mediaqueries
