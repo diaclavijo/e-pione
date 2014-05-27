@@ -1,3 +1,7 @@
+- content_for :title do
+  Cribado AP
+- content_for :top_title do
+  Cribado AP: Fototest
 %p.lamina
   = image_tag 'fototest.jpg', alt: 'Lámina del Fototest', size: '900x638', usemap: '#Map2',
   class:'img-responsive center-block'
@@ -24,17 +28,17 @@
           %th
             %span Categoría
           %th Fotos
-          %th Denominación
-          %th Recuerdo Libre
-          %th Recuerdo Facilitado
-          %th
+          %th.text-center Denominación
+          %th.text-center Recuerdo Libre
+          %th.text-center Recuerdo Facilitado
+          %th.text-center
             %label{for: 'iniciaHombres', style: @fototest.errors[:total_hombres_set].any? ? 'border: 5px groove #ff0000;' : '' }
             %input#iniciaHombres{name: 'radio', onclick: 'temporizador = 0;clearTimeout(countdown);', type: 'radio', value: 'hombres'}/
             Fluidez Hombres
-          %th
+          %th.text-center
             %label{for: 'iniciaMujeres', style: @fototest.errors[:total_mujeres_set].any? ? 'border: 5px groove #ff0000;' : '' }
-              %input#iniciaMujeres{name: 'radio', onclick: 'temporizador = 0;clearTimeout(countdown);', type: 'radio', value: 'mujeres'}/
-              Fluidez Mujeres
+            %input#iniciaMujeres{name: 'radio', onclick: 'temporizador = 0;clearTimeout(countdown);', type: 'radio', value: 'mujeres'}/
+            Fluidez Mujeres
       %tfoot
         %tr
           %td.h4.text-right{colspan: '6'} Total Test de las Fotos (Den + RL + RF + FH + FM)
