@@ -175,13 +175,8 @@
     = f.hidden_field :total_hombres
     = f.hidden_field :total_mujeres
     .row
-      //FIXME:Buttons are not well aligned in ie7-8 possible fix:
-      //      http://www.maratz.com/blog/archives/2012/08/01/emulate-box-sizing-in-ie7/
-      //Maybe it has to do with col-md and mediaqueries:  http://stackoverflow.com/questions/20523885/bootstrap-grid-not-working-in-ie8
-      //Probar esto:
-      // o.. http://stackoverflow.com/questions/17947182/ie8-issue-with-twitter-bootstrap-3 lo de la meta-x esa chunga
-      .col-md-2.col-md-offset-4
+      .col-md-3.col-md-offset-2
         %input.btn.btn-info.btn-block#Reset{name: 'Reset', onclick: "cartas1 = coche1 = pera1 = trompeta1 = zapatos1 = cuchara1 = cartas2 = coche2 = pera2 = trompeta2 = zapatos2 = cuchara2 = cartas3 = coche3 = pera3 = trompeta3 = zapatos3 = cuchara3 = totalDenom = totalLibre = totalFacil = totalHombres = totalMujeres = puntos = temporizador = countdown_number = sonHombres = sonMujeres = 0; fase = 'ninguna'; clearTimeout(countdown);", type: 'reset', value: 'Nuevo test'}/
-      .col-md-2
+      .col-md-3.col-md-offset-1
         %input.btn.btn-primary.btn-block#Enviar{name: 'Enviar', onclick: 'send_form();', type: 'submit', value: 'Enviar datos'}/
     %br
