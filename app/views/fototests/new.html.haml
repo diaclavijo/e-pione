@@ -44,79 +44,79 @@
           %td Juego
           %td Cartas
           %td
-            %input#carta1{name: 'carta1', onclick: "SumaAciertoCartas('denom');", type: 'button', value: '±'}/
+            %input#carta1{name: 'carta1', onclick: "SumaAciertoCartas('denom');", type: 'button', value: '±',  class:'btn btn-default'}/
             %span#ca1 0
           %td
-            %input#carta2{name: 'carta2', onclick: "SumaAciertoCartas('libre');", type: 'button', value: '±'}/
+            %input#carta2{name: 'carta2', onclick: "SumaAciertoCartas('libre');", type: 'button', value: '±',  class:'btn btn-default'}/
             %span#ca2 0
           %td
-            %input#carta3{name: 'carta3', onclick: "SumaAciertoCartas('facil');", type: 'button', value: '±'}/
+            %input#carta3{name: 'carta3', onclick: "SumaAciertoCartas('facil');", type: 'button', value: '±',  class:'btn btn-default'}/
             %span#ca3 0
           %td{rowspan: '5'}
-            %input#hombresInc{name: 'hombresInc', onclick: 'sonHombres = 1;sonMujeres = 0;countdown_init();incHombres();', type: 'button', value: '+'}/
-            %input#hombresDec{name: 'hombresDec', onclick: 'sonHombres = 1;sonMujeres = 0;decHombres()', type: 'button', value: '-'}/
+            %input#hombresInc{name: 'hombresInc', onclick: 'sonHombres = 1;sonMujeres = 0;countdown_init();incHombres();', type: 'button', value: '+', class:'btn btn-default'}/
+            %input#hombresDec{name: 'hombresDec', onclick: 'sonHombres = 1;sonMujeres = 0;decHombres()', type: 'button', value: '-', class:'btn btn-default'}/
           %td{rowspan: '5'}
-            %input#mujeresInc{name: 'mujeresInc', onclick: 'sonMujeres = 1;sonHombres = 0;countdown_init();incMujeres();', type: 'button', value: '+'}/
-            %input#mujeresDec{name: 'mujeresDec', onclick: 'sonMujeres = 1;sonHombres = 0;decMujeres()', type: 'button', value: '-'}/
+            %input#mujeresInc{name: 'mujeresInc', onclick: 'sonMujeres = 1;sonHombres = 0;countdown_init();incMujeres();', type: 'button', value: '+', class:'btn btn-default'}/
+            %input#mujeresDec{name: 'mujeresDec', onclick: 'sonMujeres = 1;sonHombres = 0;decMujeres()', type: 'button', value: '-', class:'btn btn-default'}/
         %tr
           %td Vehículo
           %td Coche
           %td
-            %input#coch1{name: 'coch1', onclick: "SumaAciertoCoche('denom');", type: 'button', value: '±'}/
+            %input#coch1{name: 'coch1', onclick: "SumaAciertoCoche('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#co1 0
           %td
-            %input#coch2{name: 'coch2', onclick: "SumaAciertoCoche('libre');", type: 'button', value: '±'}/
+            %input#coch2{name: 'coch2', onclick: "SumaAciertoCoche('libre');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#co2 0
           %td
-            %input#coch3{name: 'coch3', onclick: "SumaAciertoCoche('facil');", type: 'button', value: '±'}/
+            %input#coch3{name: 'coch3', onclick: "SumaAciertoCoche('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#co3 0
         %tr
           %td Fruta
           %td Pera
           %td
-            %input#per1{name: 'per1', onclick: "SumaAciertoPera('denom');", type: 'button', value: '±'}/
+            %input#per1{name: 'per1', onclick: "SumaAciertoPera('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#pe1 0
           %td
-            %input#per2{name: 'per2', onclick: "SumaAciertoPera('libre');", type: 'button', value: '±'}/
+            %input#per2{name: 'per2', onclick: "SumaAciertoPera('libre');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#pe2 0
           %td
-            %input#per3{name: 'per3', onclick: "SumaAciertoPera('facil');", type: 'button', value: '±'}/
+            %input#per3{name: 'per3', onclick: "SumaAciertoPera('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#pe3 0
         %tr
           %td Inst. Musical
           %td Trompeta
           %td
-            %input#trompet1{name: 'trompet1', onclick: "SumaAciertoTrompeta('denom');", type: 'button', value: '±'}/
+            %input#trompet1{name: 'trompet1', onclick: "SumaAciertoTrompeta('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#tr1 0
           %td
-            %input#trompet2{name: 'trompet2', onclick: "SumaAciertoTrompeta('libre');", type: 'button', value: '±'}/
+            %input#trompet2{name: 'trompet2', onclick: "SumaAciertoTrompeta('libre');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#tr2 0
           %td
-            %input#trompet3{name: 'trompet3', onclick: "SumaAciertoTrompeta('facil');", type: 'button', value: '±'}/
+            %input#trompet3{name: 'trompet3', onclick: "SumaAciertoTrompeta('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#tr3 0
         %tr
           %td Prenda Vestir
           %td Zapatos
           %td
-            %input#zapato1{name: 'zapato1', onclick: "SumaAciertoZapatos('denom');", type: 'button', value: '±'}/
+            %input#zapato1{name: 'zapato1', onclick: "SumaAciertoZapatos('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#za1 0
           %td
-            %input#zapato2{name: 'zapato2', onclick: "SumaAciertoZapatos('libre');", type: 'button', value: '±'}/
+            %input#zapato2{name: 'zapato2', onclick: "SumaAciertoZapatos('libre');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#za2 0
           %td
-            %input#zapato3{name: 'zapato3', onclick: "SumaAciertoZapatos('facil');", type: 'button', value: '±'}/
+            %input#zapato3{name: 'zapato3', onclick: "SumaAciertoZapatos('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#za3 0
         %tr
           %td Cubierto
           %td Cuchara
           %td
-            %input#cuchar1{name: 'cuchar1', onclick: "SumaAciertoCuchara('denom');", type: 'button', value: '±'}/
+            %input#cuchar1{name: 'cuchar1', onclick: "SumaAciertoCuchara('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#cu1 0
           %td
-            %input#cuchar2{name: 'cuchar2', onclick: "SumaAciertoCuchara('libre');", type: 'button', value: '±'}/
+            %input#cuchar2{name: 'cuchar2', onclick: "SumaAciertoCuchara('libre');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#cu2 0
           %td
-            %input#cuchar3{name: 'cuchar3', onclick: "SumaAciertoCuchara('facil');", type: 'button', value: '±'}/
+            %input#cuchar3{name: 'cuchar3', onclick: "SumaAciertoCuchara('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#cu3 0
           %td.text-center{colspan: '2'}
             %span.h4 Tiempo restante:
@@ -130,22 +130,18 @@
           %td#totalHombres 0
           %td#totalMujeres 0
     .row
-      - if @fototest.errors.any?
-        #error_explanation
-          %div{class: flash_class(:error)}
-            %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
-            %h3 Por favor, rellene correctamente los campos marcados en rojo
-      .col-md-2.col-md-offset-4
+      .col-md-2.col-md-offset-2
         %label{for: 'Edad'}
           Edad:
           = f.number_field :age , class:'form-control'
-      .col-md-2.col-md-offset-4
+      .col-md-2
         %label{for: 'gender'}
           Sexo:
-          = f.select :gender, ['hombre', 'mujer'] , class:'form-control'
-      .col-md-3
+          = f.select :gender, genders , {},
+            { class: 'form-control' }
+      .col-md-2
         #education
-          = f.label :education, 'Escolaridad'
+          = f.label :education, 'Nivel de estudios:'
           = f.select :education,           |
             educations ,                          |
             { include_blank: 'Seleccionar...' } , |
