@@ -73,8 +73,7 @@
       %td.h4= @fototest.total
 - message_kind_ft = @fototest.sane? ?  "alert-success" : "alert-danger"
 %p{class: "alert #{message_kind_ft} alert-dismissable lead text-center"}
-  Paciente sano con probabilidad #{@fototest.probability}
-  / /TODO: Aquí pondríamos algo rollo #{@fototest.diagnosis_text}
+  Paciente #{@fototest.diagnosis_text} con probabilidad #{@fototest.probability}
 %hr
 .row
   .col-md-2.col-md-offset-4

@@ -41,7 +41,22 @@ class Fototest < ActiveRecord::Base
     aux
   end
 
+  def diagnosis_text
+    INT_TO_DIAGNOSIS[self.diagnosis]
+  end
+
   def sane?
     diagnosis == 0
   end
+
+  def mci?
+    diagnosis == 1
+  end
+
+  private
+
+  INT_TO_DIAGNOSIS = {
+      0 => 'sano',
+      1 => 'con deterioro cognitivo'
+  }
 end

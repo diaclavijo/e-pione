@@ -43,7 +43,7 @@ class FototestsController < ApplicationControllerSigned
         estudio: nil
     )
 
-      python_script = 'python3.3 /opt/SIAD/fototest.py'
+      python_script = 'python3.4 /opt/SIAD/fototest.py'
       return nil unless edad && sexo && # all the args are mandatory
           rl && rf && memoria && hombres && mujeres && fluidez &&
           fototest && estudio
