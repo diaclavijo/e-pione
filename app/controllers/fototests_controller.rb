@@ -25,6 +25,9 @@ class FototestsController < ApplicationControllerSigned
         if @fototest.save
           format.html { render 'show'	}
         else
+          #FIXME: Cuando hay un error, se rellenan los campos y se envia el test, el
+          #flash aparece en show y no debería.
+          flash[:error]= 'Por favor introduzca, edad, sexo y nivel de estudios '
           format.html { render action: 'new' }
         end
       end

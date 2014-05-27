@@ -130,22 +130,36 @@
           %td#totalHombres 0
           %td#totalMujeres 0
     .row
-      .col-md-2.col-md-offset-2
+      .col-md-2
         %label{for: 'Edad'}
           Edad:
+          %p
           = f.number_field :age , class:'form-control'
       .col-md-2
+        //FIXME: Radio button se desplazan cuando hay un error y no se colorean de rojo
         %label{for: 'gender'}
           Sexo:
-          = f.select :gender, genders , {},
-            { class: 'form-control' }
-      .col-md-2
+          %p
+          %label.radio
+            Hombre
+            = f.radio_button :gender ,'0'
+          %label.radio
+            Mujer
+            = f.radio_button :gender ,'1'
+
+      .col-md-7
         #education
           = f.label :education, 'Nivel de estudios:'
-          = f.select :education,           |
-            educations ,                          |
-            { include_blank: 'Seleccionar...' } , |
-            class:'form-control'                  |
+          %p
+          %label.radio
+            Inferior a Estudios Primarios
+            = f.radio_button :education ,'0'
+          %label.radio
+            Estudios Primarios
+            = f.radio_button :education ,'1'
+          %label.radio
+            Superior a Estudios Primarios
+            = f.radio_button :education ,'2'
         %br/
     = f.hidden_field :cartas1
     = f.hidden_field :cartas2
