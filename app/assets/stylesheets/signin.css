@@ -1,6 +1,5 @@
 /* This CSS file is used for the front page when the user is not signed in  */
 
-
 .body-home {
   background-color: #fff;
 }
@@ -123,18 +122,6 @@ a:focus {
 .btn-no-padding{
     padding: 0;
 }
-
-
-.jumbotron-home {
-    margin-top: 100px;  /* 80 px without btn-try */
-    margin-bottom: 0;
-    background-color: #005a9f;
-    padding: 7px; /*30 px without btn-try */
-    color:#fff
-}
-
-
-
 #wrap
 {
     min-height: 100%;
@@ -212,11 +199,6 @@ a:focus {
 }
 
 
-@media (min-height: 769px){
-
-}
-
-
 .subtitle{
     color:#fff
 }
@@ -247,13 +229,23 @@ hr{
     background-color:#005a9f ;
 }
 
-.container-top{
-margin-top: 50px;
+.container-top{  /* FIXME: En 768x1024 tiene que haber un mediaquery por ahí que hace que esto se vea mal
+                            muy abajo.
+                    */
+margin-top: 75px;
 }
 .container-password{
     margin-top: 75px;
 }
 
+
+.jumbotron-home {
+    margin-top: 100px;  /* 80 px without btn-try */
+    margin-bottom: 0;
+    background-color: #005a9f;
+    padding: 7px; /*30 px without btn-try */
+    color:#fff
+}
 
 
 
