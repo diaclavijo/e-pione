@@ -14,13 +14,13 @@
     %area{alt: 'cuchara', coords: '600,384,819,444', href: 'javascript:void(0)', onclick: "SumaAciertoCuchara('denom');", shape: 'rect'}/
 %p
   .row
-    .col-md-3.col-md-offset-2
-      %input#ayuda.btn.btn-info.btn-block{name: 'ayuda',type: 'button',
-       onclick:"parent.location='#{help_fototest_path}'",value: 'Ayuda / Instrucciones'}/
-    .col-md-4.col-md-offset-1
+    .col-md-4.col-md-offset-2
       %button#toggle.btn.btn-primary.btn-block Pulse para ocultar o reponer la lámina
+    .col-md-3.col-md-offset-1
+      %input#ayuda.btn.btn-default.btn-block{name: 'ayuda',type: 'button',
+             onclick:"parent.location='#{help_fototest_path}'",value: 'Ayuda / Instrucciones'}/
 = form_for @fototest, html: {id: 'form1'}, url: fototests_path do |f|
-  .table-responsive
+  .table-responsive.text-center
     %table.table.table-condensed.table-bordered{border: '0 ', summary: 'Formulario del test de las fotos. En él se introducen automá…ltados de las distintas fases de la administración del test.', width: '90%'}
       %caption Fototest - El Test de las Fotos
       %thead
@@ -45,8 +45,8 @@
           %td.h4#Resultado 0
       %tbody
         %tr
-          %td Juego
-          %td Cartas
+          %td.text-left Juego
+          %td.text-left Cartas
           %td
             %input#carta1{name: 'carta1', onclick: "SumaAciertoCartas('denom');", type: 'button', value: '±',  class:'btn btn-default'}/
             %span#ca1 0
@@ -63,8 +63,8 @@
             %input#mujeresInc{name: 'mujeresInc', onclick: 'sonMujeres = 1;sonHombres = 0;countdown_init();incMujeres();', type: 'button', value: '+', class:'btn btn-default'}/
             %input#mujeresDec{name: 'mujeresDec', onclick: 'sonMujeres = 1;sonHombres = 0;decMujeres()', type: 'button', value: '-', class:'btn btn-default'}/
         %tr
-          %td Vehículo
-          %td Coche
+          %td.text-left Vehículo
+          %td.text-left Coche
           %td
             %input#coch1{name: 'coch1', onclick: "SumaAciertoCoche('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#co1 0
@@ -75,8 +75,8 @@
             %input#coch3{name: 'coch3', onclick: "SumaAciertoCoche('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#co3 0
         %tr
-          %td Fruta
-          %td Pera
+          %td.text-left Fruta
+          %td.text-left Pera
           %td
             %input#per1{name: 'per1', onclick: "SumaAciertoPera('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#pe1 0
@@ -87,8 +87,8 @@
             %input#per3{name: 'per3', onclick: "SumaAciertoPera('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#pe3 0
         %tr
-          %td Inst. Musical
-          %td Trompeta
+          %td.text-left Inst. Musical
+          %td.text-left Trompeta
           %td
             %input#trompet1{name: 'trompet1', onclick: "SumaAciertoTrompeta('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#tr1 0
@@ -99,8 +99,8 @@
             %input#trompet3{name: 'trompet3', onclick: "SumaAciertoTrompeta('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#tr3 0
         %tr
-          %td Prenda Vestir
-          %td Zapatos
+          %td.text-left Prenda Vestir
+          %td.text-left Zapatos
           %td
             %input#zapato1{name: 'zapato1', onclick: "SumaAciertoZapatos('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#za1 0
@@ -111,8 +111,8 @@
             %input#zapato3{name: 'zapato3', onclick: "SumaAciertoZapatos('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#za3 0
         %tr
-          %td Cubierto
-          %td Cuchara
+          %td.text-left Cubierto
+          %td.text-left Cuchara
           %td
             %input#cuchar1{name: 'cuchar1', onclick: "SumaAciertoCuchara('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#cu1 0
@@ -133,7 +133,7 @@
           %td#totalFacil 0
           %td#totalHombres 0
           %td#totalMujeres 0
-    .row
+    .row.text-left
       .col-md-2
         %label{for: 'Edad'}
           Edad:
@@ -187,8 +187,8 @@
     = f.hidden_field :total_mujeres
     .row
       .col-md-3.col-md-offset-2
-        %input.btn.btn-info.btn-block#Reset{name: 'Reset', onclick: "cartas1 = coche1 = pera1 = trompeta1 = zapatos1 = cuchara1 = cartas2 = coche2 = pera2 = trompeta2 = zapatos2 = cuchara2 = cartas3 = coche3 = pera3 = trompeta3 = zapatos3 = cuchara3 = totalDenom = totalLibre = totalFacil = totalHombres = totalMujeres = puntos = temporizador = countdown_number = sonHombres = sonMujeres = 0; fase = 'ninguna'; clearTimeout(countdown);", type: 'reset', value: 'Nuevo test'}/
-      .col-md-3.col-md-offset-1
         %input.btn.btn-primary.btn-block#Enviar{name: 'Enviar', onclick: 'send_form();', type: 'submit', value: 'Enviar datos'}/
+      .col-md-3.col-md-offset-1
+        %input.btn.btn-default.btn-block#Reset{name: 'Reset', onclick: "cartas1 = coche1 = pera1 = trompeta1 = zapatos1 = cuchara1 = cartas2 = coche2 = pera2 = trompeta2 = zapatos2 = cuchara2 = cartas3 = coche3 = pera3 = trompeta3 = zapatos3 = cuchara3 = totalDenom = totalLibre = totalFacil = totalHombres = totalMujeres = puntos = temporizador = countdown_number = sonHombres = sonMujeres = 0; fase = 'ninguna'; clearTimeout(countdown);", type: 'reset', value: 'Nuevo test'}/
     %br
     %br
