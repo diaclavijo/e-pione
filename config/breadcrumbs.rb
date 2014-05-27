@@ -1,5 +1,5 @@
 crumb :root do
-  link 'Diagnóstico rápido', new_quick_diagnosis_path
+  link 'Diagnóstico AE', new_quick_diagnosis_path
 end
 
 crumb :patients do
