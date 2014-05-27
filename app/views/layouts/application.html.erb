@@ -6,13 +6,13 @@
   <%= favicon_link_tag 'favicon.ico' %>
   <title><%= yield :title %> - E-PIONE </title>
 
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all"%>
+	<%= javascript_include_tag "application" %>
 
   <%= csrf_meta_tags %>
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-     <%= javascript_include_tag "iefix", "data-turbolinks-track" => true %>
+     <%= javascript_include_tag "iefix" %>
   <![endif]-->
 
 </head>
