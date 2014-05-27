@@ -10,11 +10,11 @@
     %area{alt: 'cuchara', coords: '600,384,819,444', href: 'javascript:void(0)', onclick: "SumaAciertoCuchara('denom');", shape: 'rect'}/
 %p
   .row
-    .col-md-2.col-md-offset-4
-      %input#ayuda.btn.btn-info{name: 'ayuda',type: 'button',
+    .col-md-3.col-md-offset-2
+      %input#ayuda.btn.btn-info.btn-block{name: 'ayuda',type: 'button',
        onclick:"parent.location='#{help_fototest_path}'",value: 'Ayuda / Instrucciones'}/
-    .col-md-2
-      %button#toggle.btn.btn-primary Pulse para ocultar o reponer la lámina
+    .col-md-4.col-md-offset-1
+      %button#toggle.btn.btn-primary.btn-block Pulse para ocultar o reponer la lámina
 = form_for @fototest, html: {id: 'form1'}, url: fototests_path do |f|
   .table-responsive
     %table.table.table-condensed.table-bordered{border: '0 ', summary: 'Formulario del test de las fotos. En él se introducen automá…ltados de las distintas fases de la administración del test.', width: '90%'}
@@ -175,6 +175,11 @@
     = f.hidden_field :total_hombres
     = f.hidden_field :total_mujeres
     .row
+      //FIXME:Buttons are not well aligned in ie7-8 possible fix:
+      //      http://www.maratz.com/blog/archives/2012/08/01/emulate-box-sizing-in-ie7/
+      //Maybe it has to do with col-md and mediaqueries:  http://stackoverflow.com/questions/20523885/bootstrap-grid-not-working-in-ie8
+      //Probar esto:
+      // o.. http://stackoverflow.com/questions/17947182/ie8-issue-with-twitter-bootstrap-3 lo de la meta-x esa chunga
       .col-md-2.col-md-offset-4
         %input.btn.btn-info.btn-block#Reset{name: 'Reset', onclick: "cartas1 = coche1 = pera1 = trompeta1 = zapatos1 = cuchara1 = cartas2 = coche2 = pera2 = trompeta2 = zapatos2 = cuchara2 = cartas3 = coche3 = pera3 = trompeta3 = zapatos3 = cuchara3 = totalDenom = totalLibre = totalFacil = totalHombres = totalMujeres = puntos = temporizador = countdown_number = sonHombres = sonMujeres = 0; fase = 'ninguna'; clearTimeout(countdown);", type: 'reset', value: 'Nuevo test'}/
       .col-md-2
