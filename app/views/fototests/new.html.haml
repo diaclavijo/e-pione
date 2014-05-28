@@ -141,15 +141,14 @@
           = f.number_field :age , class:'form-control'
       .col-md-2
         //FIXME: Radio button se desplazan cuando hay un error y no se colorean de rojo
-        %label{for: 'gender'}
-          Sexo:
-          %p
-          %label.radio
-            Hombre
-            = f.radio_button :gender ,'0'
-          %label.radio
-            Mujer
-            = f.radio_button :gender ,'1'
+        = f.label :education, 'Sexo'
+        %p
+        %label.radio
+          Hombre
+          = f.radio_button :gender ,'0'
+        %label.radio
+          Mujer
+          = f.radio_button :gender ,'1'
 
       .col-md-7
         #education
