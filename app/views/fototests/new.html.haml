@@ -1,7 +1,7 @@
 - content_for :title do
-  Cribado AP
+  AP screening
 - content_for :top_title do
-  Cribado AP: Fototest
+  AP: screening
 %p.lamina
   = image_tag 'fototest.jpg', alt: 'Lámina del Fototest', size: '900x638', usemap: '#Map2',
   class:'img-responsive center-block'
@@ -22,31 +22,31 @@
 = form_for @fototest, html: {id: 'form1'}, url: fototests_path do |f|
   .table-responsive.text-center
     %table.table.table-condensed.table-bordered{border: '0 ', summary: 'Formulario del test de las fotos. En él se introducen automá…ltados de las distintas fases de la administración del test.', width: '90%'}
-      %caption Fototest - El Test de las Fotos
+      %caption Phototest - Test of the photos
       %thead
         %tr.active
           %th
-            %span Categoría
-          %th Fotos
-          %th.text-center Denominación
-          %th.text-center Recuerdo Libre
-          %th.text-center Recuerdo Facilitado
+            %span Category
+          %th Photos
+          %th.text-center Denomination
+          %th.text-center Free Recall
+          %th.text-center Aided recall
           %th.text-center
             %label{for: 'iniciaHombres', style: @fototest.errors[:total_hombres_set].any? ? 'border: 5px groove #ff0000;' : '' }
             %input#iniciaHombres{name: 'radio', onclick: 'temporizador = 0;clearTimeout(countdown);', type: 'radio', value: 'hombres'}/
-            Fluidez Hombres
+            Verbal fluency men
           %th.text-center
             %label{for: 'iniciaMujeres', style: @fototest.errors[:total_mujeres_set].any? ? 'border: 5px groove #ff0000;' : '' }
             %input#iniciaMujeres{name: 'radio', onclick: 'temporizador = 0;clearTimeout(countdown);', type: 'radio', value: 'mujeres'}/
-            Fluidez Mujeres
+            Verbal fluency women
       %tfoot
         %tr
-          %td.h4.text-right{colspan: '6'} Total Test de las Fotos (Den + RL + RF + FH + FM)
+          %td.h4.text-right{colspan: '6'} Total Phototest (Den + FR + AR + VFM + VFW)
           %td.h4#Resultado 0
       %tbody
         %tr
-          %td.text-left Juego
-          %td.text-left Cartas
+          %td.text-left Game
+          %td.text-left Cards
           %td
             %input#carta1{name: 'carta1', onclick: "SumaAciertoCartas('denom');", type: 'button', value: '±',  class:'btn btn-default'}/
             %span#ca1 0
@@ -63,8 +63,8 @@
             %input#mujeresInc{name: 'mujeresInc', onclick: 'sonMujeres = 1;sonHombres = 0;countdown_init();incMujeres();', type: 'button', value: '+', class:'btn btn-default'}/
             %input#mujeresDec{name: 'mujeresDec', onclick: 'sonMujeres = 1;sonHombres = 0;decMujeres()', type: 'button', value: '-', class:'btn btn-default'}/
         %tr
-          %td.text-left Vehículo
-          %td.text-left Coche
+          %td.text-left Vehicle
+          %td.text-left Car
           %td
             %input#coch1{name: 'coch1', onclick: "SumaAciertoCoche('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#co1 0
@@ -75,8 +75,8 @@
             %input#coch3{name: 'coch3', onclick: "SumaAciertoCoche('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#co3 0
         %tr
-          %td.text-left Fruta
-          %td.text-left Pera
+          %td.text-left Fruit
+          %td.text-left Pear
           %td
             %input#per1{name: 'per1', onclick: "SumaAciertoPera('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#pe1 0
@@ -87,8 +87,8 @@
             %input#per3{name: 'per3', onclick: "SumaAciertoPera('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#pe3 0
         %tr
-          %td.text-left Inst. Musical
-          %td.text-left Trompeta
+          %td.text-left Musical inst.
+          %td.text-left Trumpet
           %td
             %input#trompet1{name: 'trompet1', onclick: "SumaAciertoTrompeta('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#tr1 0
@@ -99,8 +99,8 @@
             %input#trompet3{name: 'trompet3', onclick: "SumaAciertoTrompeta('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#tr3 0
         %tr
-          %td.text-left Prenda Vestir
-          %td.text-left Zapatos
+          %td.text-left Piece of clothing
+          %td.text-left Shoes
           %td
             %input#zapato1{name: 'zapato1', onclick: "SumaAciertoZapatos('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#za1 0
@@ -111,8 +111,8 @@
             %input#zapato3{name: 'zapato3', onclick: "SumaAciertoZapatos('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#za3 0
         %tr
-          %td.text-left Cubierto
-          %td.text-left Cuchara
+          %td.text-left Cutlery
+          %td.text-left Spoon
           %td
             %input#cuchar1{name: 'cuchar1', onclick: "SumaAciertoCuchara('denom');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#cu1 0
@@ -123,11 +123,11 @@
             %input#cuchar3{name: 'cuchar3', onclick: "SumaAciertoCuchara('facil');", type: 'button', value: '±', class:'btn btn-default'}/
             %span#cu3 0
           %td.text-center{colspan: '2'}
-            %span.h4 Tiempo restante:
+            %span.h4 Remaining time:
             %span#countdown_text.h4 30
             %span.h4 s
         %tr
-          %td{colspan: '2'} Subtotales
+          %td{colspan: '2'} Subtotals:
           %td#totalDenom 0
           %td#totalLibre 0
           %td#totalFacil 0
@@ -135,33 +135,33 @@
           %td#totalMujeres 0
     .row.text-left
       .col-md-2
-        %label{for: 'Edad'}
-          Edad:
+        %label{for: 'Age'}
+          Age:
           %p
           = f.number_field :age , class:'form-control'
       .col-md-2
         //FIXME: Radio button se desplazan cuando hay un error y no se colorean de rojo
-        = f.label :education, 'Sexo'
+        = f.label :education, 'Gender'
         %p
         %label.radio
-          Hombre
+          Man
           = f.radio_button :gender ,'0'
         %label.radio
-          Mujer
+          Woman
           = f.radio_button :gender ,'1'
 
       .col-md-7
         #education
-          = f.label :education, 'Nivel de estudios:'
+          = f.label :education, 'Education Level:'
           %p
           %label.radio
-            Inferior a Estudios Primarios
+            Below Primary Studies
             = f.radio_button :education ,'0'
           %label.radio
-            Estudios Primarios
+            Primary Studies
             = f.radio_button :education ,'1'
           %label.radio
-            Superior a Estudios Primarios
+            Above Primary Studies
             = f.radio_button :education ,'2'
         %br/
     = f.hidden_field :cartas1
@@ -186,8 +186,8 @@
     = f.hidden_field :total_mujeres
     .row
       .col-md-3.col-md-offset-2
-        %input.btn.btn-primary.btn-block#Enviar{name: 'Enviar', onclick: 'send_form();', type: 'submit', value: 'Enviar datos'}/
+        %input.btn.btn-primary.btn-block#Enviar{name: 'Enviar', onclick: 'send_form();', type: 'submit', value: 'Send data'}/
       .col-md-3.col-md-offset-1
-        %input.btn.btn-default.btn-block#Reset{name: 'Reset', onclick: "cartas1 = coche1 = pera1 = trompeta1 = zapatos1 = cuchara1 = cartas2 = coche2 = pera2 = trompeta2 = zapatos2 = cuchara2 = cartas3 = coche3 = pera3 = trompeta3 = zapatos3 = cuchara3 = totalDenom = totalLibre = totalFacil = totalHombres = totalMujeres = puntos = temporizador = countdown_number = sonHombres = sonMujeres = 0; fase = 'ninguna'; clearTimeout(countdown);", type: 'reset', value: 'Nuevo test'}/
+        %input.btn.btn-default.btn-block#Reset{name: 'Reset', onclick: "cartas1 = coche1 = pera1 = trompeta1 = zapatos1 = cuchara1 = cartas2 = coche2 = pera2 = trompeta2 = zapatos2 = cuchara2 = cartas3 = coche3 = pera3 = trompeta3 = zapatos3 = cuchara3 = totalDenom = totalLibre = totalFacil = totalHombres = totalMujeres = puntos = temporizador = countdown_number = sonHombres = sonMujeres = 0; fase = 'ninguna'; clearTimeout(countdown);", type: 'reset', value: 'New test'}/
     %br
     %br
