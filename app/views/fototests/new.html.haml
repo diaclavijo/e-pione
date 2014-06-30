@@ -15,10 +15,10 @@
 %p
   .row
     .col-md-4.col-md-offset-2
-      %button#toggle.btn.btn-primary.btn-block Pulse para ocultar o reponer la lámina
+      %button#toggle.btn.btn-primary.btn-block Press to hide/show sheet
     .col-md-3.col-md-offset-1
       %input#ayuda.btn.btn-default.btn-block{name: 'ayuda',type: 'button',
-             onclick:"parent.location='#{help_fototest_path}'",value: 'Ayuda / Instrucciones'}/
+             onclick:"parent.location='#{help_fototest_path}'",value: 'Help / Instructions'}/
 = form_for @fototest, html: {id: 'form1'}, url: fototests_path do |f|
   .table-responsive.text-center
     %table.table.table-condensed.table-bordered{border: '0 ', summary: 'Formulario del test de las fotos. En él se introducen automá…ltados de las distintas fases de la administración del test.', width: '90%'}
