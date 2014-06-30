@@ -15,16 +15,16 @@
         <ul class="nav navbar-nav">
 
           <li class=<%= 'active' if current_page?(new_fototest_path) %>>
-            <%= link_to 'Cribado AP', new_fototest_path %>
+            <%= link_to 'AP Screening', new_fototest_path %>
           </li>
           <li class=<%= 'active' if current_page?(new_quick_diagnosis_path) %>>
-            <%= link_to 'Diagnóstico AE', new_quick_diagnosis_path %>
+            <%= link_to 'SS Diagnose', new_quick_diagnosis_path %>
           </li>
           <li class=<%= 'active' if current_page?(new_support_path) %> >
-            <%= link_to 'Contactar', new_support_path %>
+            <%= link_to 'Contact', new_support_path %>
           </li>
           <li class=<%= 'active' if current_page?(edit_physician_registration_path) %> >
-            <%= link_to 'Su cuenta', edit_physician_registration_path %>
+            <%= link_to 'Your account', edit_physician_registration_path %>
           </li>
 
         </ul>
