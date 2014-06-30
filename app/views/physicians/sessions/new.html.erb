@@ -11,19 +11,19 @@
       <div class="col-md-8 col-md-offset-2">
           <div class="jumbotron jumbotron-home">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f| %>
-                <h2 class="form-signin-heading text-muted-home">Iniciar sesión</h2>
+                <h2 class="form-signin-heading text-muted-home">Sign in</h2>
                 <div> <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email' %></div>
 
-                <div><%= f.password_field :password, class: 'form-control', placeholder: 'contraseña' %></div>
+                <div><%= f.password_field :password, class: 'form-control', placeholder: 'password' %></div>
 
                 <label class="checkbox checkbox-home">
-                  <%= f.check_box :remember_me %> <small>Recordarme</small>
+                  <%= f.check_box :remember_me %> <small>Rembember me</small>
                 </label>
 
-                <div><%= f.submit "Acceder", class: 'btn btn-lg btn-primary btn-block' %></div>
+                <div><%= f.submit "Sign in", class: 'btn btn-lg btn-primary btn-block' %></div>
 
             <% end %>
-            <small><%= link_to '¿Olvidó su contraseña?', new_physician_password_path , class: 'text-muted-home' %> </small>
+            <small><%= link_to 'Forgot your password?', new_physician_password_path , class: 'text-muted-home' %> </small>
             <!--- It was designed to get the small tag inside the a tag, it should be considered to be changed if it is necessary -->
         </div> <!--/jumbotron-->
       </div> <!--/col-->
@@ -32,8 +32,8 @@
 <div class="footer_init">
   <div class="container">
       <div class="col-md-2 col-md-offset-6">BINNAC &copy</div>
-        <div class="col-md-2 "><%= link_to 'Términos de privacidad', privacidad_path , class: 'text-muted-home' %></div>
-        <div class="col-md-1"><%= link_to 'Contacto', 'mailto:soporte@e-pione.com' , class: 'text-muted-home' %></div>
+        <div class="col-md-2 "><%= link_to 'Privacy terms', privacidad_path , class: 'text-muted-home' %></div>
+        <div class="col-md-1"><%= link_to 'Contact', 'mailto:soporte@e-pione.com' , class: 'text-muted-home' %></div>
   </div>
 </div>
 
