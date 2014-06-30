@@ -73,7 +73,7 @@
       %td.h4= @fototest.total
 - message_kind_ft = @fototest.sane? ?  "alert-success" : "alert-danger"
 %p{class: "alert #{message_kind_ft} alert-dismissable lead text-center"}
-   #{@fototest.diagnosis_text} - probability #{@fototest.probability}
+  #{@fototest.diagnosis_text} - probability #{@fototest.probability}
 %hr
 .row
   .col-md-2.col-md-offset-4
