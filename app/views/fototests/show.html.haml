@@ -1,27 +1,27 @@
 %p
   .row
     .col-md-1
-      Edad:
+      Age:
       %span
         %strong
           = @fototest.age
     .col-md-2
-      Educacion:
+      Education:
       %span
         %strong
           = @fototest.education
 .table-responsive
 %table.table.table-condensed.table-bordered{border: '0', summary: 'Formulario del Fototest: resultados obtenidos', width: '90%'}
-  %caption.h4 Fototest - Test de las Fotos: Resultados
+  %caption.h4 Phototest - Test of the photos: Results
   %thead
     %tr.active
-      %th{width: '15ex'} Categoría
-      %th{width: '10ex'} Fotos
+      %th{width: '15ex'} Category
+      %th{width: '10ex'} Photos
       %th{width: '7ex'} Den
-      %th{width: '7ex'} RL
-      %th{width: '7ex'} RF
-      %th{width: '50ex'} Fluidez hombres (FH)
-      %th{width: '50ex'} Fluidez mujeres (FM)
+      %th{width: '7ex'} FR
+      %th{width: '7ex'} AR
+      %th{width: '50ex'} Verbal fluency men (VFM)
+      %th{width: '50ex'} Verbal mujeres (VFW)
   %tbody
     %tr
       %td Juego
@@ -69,15 +69,15 @@
       %td= @fototest.total_hombres
       %td= @fototest.total_mujeres
     %tr
-      %td.h4.text-right{colspan: '6'} Total Test de las Fotos(Den + RL + RF + FH + FM)
+      %td.h4.text-right{colspan: '6'} Phototest total(Den + FR + AR + VFM + VFW)
       %td.h4= @fototest.total
 - message_kind_ft = @fototest.sane? ?  "alert-success" : "alert-danger"
 %p{class: "alert #{message_kind_ft} alert-dismissable lead text-center"}
-  Paciente #{@fototest.diagnosis_text} con probabilidad #{@fototest.probability}
+   #{@fototest.diagnosis_text} - probability #{@fototest.probability}
 %hr
 .row
   .col-md-2.col-md-offset-4
-    %input.btn.btn-info.btn-block{onclick: "parent.location='#{new_fototest_path}'", type: 'button', value: 'Nuevo test'}/
+    %input.btn.btn-info.btn-block{onclick: "parent.location='#{new_fototest_path}'", type: 'button', value: 'New test'}/
   .col-md-2
     %input.btn.btn-default.btn-block{onclick: 'window.print()', type: 'button', value: 'Imprimir'}/
 %br
