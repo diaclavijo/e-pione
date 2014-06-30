@@ -57,6 +57,6 @@ class Fototest < ActiveRecord::Base
 
   INT_TO_DIAGNOSIS = {
       0 => 'Sane',
-      1 => 'Mild Cognitive'
+      1 => 'Cognitive Impairment'
   }
 end
