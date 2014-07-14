@@ -126,7 +126,7 @@ $(document).ready(function(){ // pone a cero todos los valores en las casillas d
   });
 
   $("button").click(function(){  // Conmutador que oculta o muestra la lámina al sujeto
-    $(".lamina").toggle();
+    $(".lamina").toggle(1000);
   });
 });
 
